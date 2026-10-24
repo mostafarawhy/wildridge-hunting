@@ -1,0 +1,682 @@
+{
+  "projectConfig": {
+    "home_page": {
+      "desert": {
+        "photo": "home/9acaeada-76c4-4ea7-8ad3-f3bd1e11a971.jpg",
+        "text": {
+          "ar": {
+            "heading": "تجربة الصيد في الأدغال"
+          },
+          "en": {
+            "heading": "Jungle Hunting Experience"
+          },
+          "ru": {
+            "heading": "Охотничий опыт в джунглях"
+          }
+        },
+        "video": "home/d8c1ad9c-d63b-4fb4-a96a-28535833e942.mp4"
+      },
+      "hero": {
+        "photo": "home/6e7854bb-194a-4a33-bee7-e79e3dd07e9b.jpg",
+        "primaryHref": "/shop?groups=rifles",
+        "secondaryHref": "/shop/optics",
+        "text": {
+          "ar": {
+            "eyebrow": "مجهّزون للميدان.",
+            "heading": "دقة.\nبلا تنازل.",
+            "photoAlt": "صياد في الميدان عند الفجر",
+            "primaryLabel": "تسوق البنادق",
+            "secondaryLabel": "تسوق البصريات"
+          },
+          "en": {
+            "eyebrow": "Outfitted for the field.",
+            "heading": "Precision.\nNo compromise.",
+            "photoAlt": "Hunter in the field at dawn",
+            "primaryLabel": "Shop Rifles",
+            "secondaryLabel": "Shop Optics"
+          },
+          "ru": {
+            "eyebrow": "Готовы к выходу в поле.",
+            "heading": "Точность.\nБез компромиссов.",
+            "photoAlt": "Охотник на рассвете",
+            "primaryLabel": "Купить винтовки",
+            "secondaryLabel": "Купить оптику"
+          }
+        }
+      },
+      "newsletter": {
+        "photo": "home/47d16174-bc68-4931-97ee-5e11ee0c3b31.jpg",
+        "text": {
+          "ar": {
+            "body": "وصولات جديدة وعروض حصرية ورؤى معدات مختبرة ميدانياً — تصل إلى بريدك. بلا ضجيج، فقط المفيد.",
+            "heading": "استعدّ.\nانطلق.\nكرر."
+          },
+          "en": {
+            "body": "New arrivals, exclusive dealer offers, and field-tested gear insights — delivered to your inbox. No noise, just signal.",
+            "heading": "Gear up.\nHead out.\nRepeat."
+          },
+          "ru": {
+            "body": "Новые поступления, эксклюзивные предложения дилера и обзоры снаряжения — прямо на почту. Только по делу.",
+            "heading": "Подготовься.\nВыходи.\nПовтори."
+          }
+        }
+      },
+      "showcase": {
+        "photo": "home/93215522-ba20-4c71-aa95-9f8d05da0bde.png",
+        "primaryHref": "/shop?groups=rifles",
+        "secondaryHref": "/about",
+        "text": {
+          "ar": {
+            "body": "كل بندقية في كتالوجنا مختارة يدوياً للدقة والموثوقية والأداء الميداني. من الميدان إلى البرية — مبنية للأداء حين يهم.",
+            "eyebrow": "مصمم للدقة",
+            "heading": "ثقة\nمهندسة.",
+            "photoAlt": "بندقية دقيقة",
+            "primaryLabel": "استكشف موديلات البنادق",
+            "secondaryLabel": "ما هو Wildridge Hunting؟"
+          },
+          "en": {
+            "body": "Every rifle in our catalog is hand-selected for accuracy, reliability, and field performance. From the range to the wilderness — built to perform when it matters most.",
+            "eyebrow": "Built for precision",
+            "heading": "Engineered\nconfidence.",
+            "photoAlt": "Precision rifle",
+            "primaryLabel": "Explore Rifle Models",
+            "secondaryLabel": "What is Wildridge Hunting?"
+          },
+          "ru": {
+            "body": "Каждая винтовка в нашем каталоге отобрана вручную за точность, надёжность и полевые характеристики. От стрельбища до дикой природы — создана работать там, где это важно.",
+            "eyebrow": "Создано для точности",
+            "heading": "Уверенность,\nрождённая инженерией.",
+            "photoAlt": "Высокоточная винтовка",
+            "primaryLabel": "Изучить модели винтовок",
+            "secondaryLabel": "Что такое Wildridge Hunting?"
+          }
+        }
+      },
+      "story": {
+        "buttonHref": "/about",
+        "photo": "home/0c9a92b2-ec15-4b80-9ce8-3d0db3e470ab.jpg",
+        "text": {
+          "ar": {
+            "body": "من رمال الربع الخالي إلى جبال آسيا الوسطى — نجهز الصيادين الذين يطلبون الدقة والموثوقية ومعدات تؤدي دورها حين يهم الأمر.",
+            "buttonLabel": "قصتنا",
+            "eyebrow": "خلف الاسم",
+            "heading": "لحب الصيد"
+          },
+          "en": {
+            "body": "From the dunes of the Empty Quarter to the mountains of Central Asia — we equip hunters who demand precision, reliability, and equipment that performs when it matters most.",
+            "buttonLabel": "Our Story",
+            "eyebrow": "Behind the name",
+            "heading": "For the love\nof the hunt"
+          },
+          "ru": {
+            "body": "От дюн Руб-эль-Хали до гор Центральной Азии — мы оснащаем охотников, которым нужны точность, надёжность и снаряжение, которое не подведёт в нужный момент.",
+            "buttonLabel": "Наша история",
+            "eyebrow": "За именем",
+            "heading": "Во имя\nохоты"
+          }
+        },
+        "video": "home/09b4f6b6-b54f-4f94-8d7f-165783a12048.mp4"
+      },
+      "tiles": [
+        {
+          "href": "/shop?groups=rifles",
+          "photo": "home/f039242e-a0c2-412f-a1bf-814af4addb0b.jpg",
+          "text": {
+            "ar": {
+              "eyebrow": "الرماية الدقيقة",
+              "title": "البنادق"
+            },
+            "en": {
+              "eyebrow": "Precision Shooting",
+              "title": "Rifles"
+            },
+            "ru": {
+              "eyebrow": "Точная стрельба",
+              "title": "Винтовки"
+            }
+          }
+        },
+        {
+          "href": "/shop/optics",
+          "photo": "home/15880457-8a08-4a82-a8b9-b7fadc6258f8.jpg",
+          "text": {
+            "ar": {
+              "eyebrow": "وضوح تام",
+              "title": "البصريات"
+            },
+            "en": {
+              "eyebrow": "Crystal Clear",
+              "title": "Optics"
+            },
+            "ru": {
+              "eyebrow": "Кристальная чёткость",
+              "title": "Оптика"
+            }
+          }
+        },
+        {
+          "href": "/shop/accessories",
+          "photo": "home/9cb3c37f-a8e2-4410-9443-5b54cc7fa59c.jpg",
+          "text": {
+            "ar": {
+              "eyebrow": "جاهز للميدان",
+              "title": "الملحقات"
+            },
+            "en": {
+              "eyebrow": "Field Ready",
+              "title": "Accessories"
+            },
+            "ru": {
+              "eyebrow": "Готово к полевым условиям",
+              "title": "Аксессуары"
+            }
+          }
+        },
+        {
+          "href": "/shop/pellets-ammo",
+          "photo": "home/a8cc5f00-3649-40a3-ad7f-a3cb4df7091c.jpg",
+          "text": {
+            "ar": {
+              "eyebrow": "لكل عيار",
+              "title": "الذخيرة"
+            },
+            "en": {
+              "eyebrow": "Every Calibre",
+              "title": "Ammo"
+            },
+            "ru": {
+              "eyebrow": "Любой калибр",
+              "title": "Боеприпасы"
+            }
+          }
+        }
+      ]
+    },
+    "about_page": {
+      "figures": {
+        "items": [
+          {
+            "icon": "calendar",
+            "label": {
+              "ar": "سنة انطلاقتنا",
+              "en": "Year we opened",
+              "ru": "Год открытия"
+            },
+            "source": "manual",
+            "value": "2016"
+          },
+          {
+            "icon": "tag",
+            "label": {
+              "ar": "علامة تجارية نوفّرها",
+              "en": "Brands we carry",
+              "ru": "Брендов в ассортименте"
+            },
+            "source": "brands",
+            "value": ""
+          },
+          {
+            "icon": "language",
+            "label": {
+              "ar": "لغات نخدمك بها",
+              "en": "Languages we serve you in",
+              "ru": "Языка обслуживания"
+            },
+            "source": "manual",
+            "value": "3"
+          },
+          {
+            "icon": "shield",
+            "label": {
+              "ar": "من الطلبات المرخّصة موثّقة",
+              "en": "Licensed orders verified",
+              "ru": "Лицензионных заказов проверено"
+            },
+            "source": "manual",
+            "value": "100%"
+          }
+        ],
+        "visible": true
+      },
+      "mission": {
+        "copy": {
+          "ar": {
+            "body": "شراء سلاح ناري في الإمارات أمر منظَّم، وهكذا يجب أن يكون. نتولّى الإجراءات معك لتبقى بسيطة.",
+            "eyebrow": "مهمتنا",
+            "heading": "كيف نبيع",
+            "points": [
+              {
+                "line": "نتحقق من ترخيصك وهويتك قبل شحن أول طلب مرخّص، ثم نحتفظ بها في ملفك.",
+                "title": "تحقق لمرة واحدة"
+              },
+              {
+                "line": "نرشّح ما يناسب رحلة صيدك أو رياضتك، لا الأغلى ثمنًا.",
+                "title": "النصيحة أولًا"
+              },
+              {
+                "line": "كل شحنة مرخّصة تتبع لوائح دولة الإمارات.",
+                "title": "توصيل وفق القانون"
+              }
+            ]
+          },
+          "en": {
+            "body": "Buying a firearm in the UAE is regulated, and it should be. We handle the paperwork with you so it stays simple.",
+            "eyebrow": "Our mission",
+            "heading": "How we sell",
+            "points": [
+              {
+                "line": "Your licence and identity are checked before your first licensed order ships, then kept on file.",
+                "title": "Verified once"
+              },
+              {
+                "line": "We recommend what suits your hunt or discipline, not what costs the most.",
+                "title": "Advice first"
+              },
+              {
+                "line": "Every licensed shipment follows UAE regulations.",
+                "title": "Delivered legally"
+              }
+            ]
+          },
+          "ru": {
+            "body": "Покупка оружия в ОАЭ регулируется законом, и так и должно быть. Мы помогаем с оформлением, чтобы всё оставалось просто.",
+            "eyebrow": "Наша миссия",
+            "heading": "Как мы продаём",
+            "points": [
+              {
+                "line": "Мы проверяем лицензию и личность перед отправкой первого лицензионного заказа и сохраняем данные в вашем профиле.",
+                "title": "Одна проверка"
+              },
+              {
+                "line": "Мы рекомендуем то, что подходит для вашей охоты или дисциплины, а не самое дорогое.",
+                "title": "Сначала совет"
+              },
+              {
+                "line": "Каждая лицензионная отправка соответствует законодательству ОАЭ.",
+                "title": "Доставка по закону"
+              }
+            ]
+          }
+        },
+        "icons": [
+          "shield",
+          "conversation",
+          "truck"
+        ],
+        "photo": null,
+        "visible": true
+      },
+      "story": {
+        "copy": {
+          "ar": {
+            "body": "انطلقت Wildridge عام 2016 بتشكيلة صغيرة من معدات الصيد، اختارها أشخاص يقضون عطلات أسابيعهم في البراري.\n\nأردنا متجرًا يعطيك جوابًا صريحًا، ولا يعرض إلا ما كنا سنحمله بأنفسنا، ويجعل الطلب بسيطًا بقدر ما هي المعدات موثوقة.",
+            "eyebrow": "كيف بدأنا",
+            "heading": "بداياتنا"
+          },
+          "en": {
+            "body": "Wildridge began in 2016 with a small range of hunting gear, put together by people who spend their weekends in the field.\n\nWe wanted a shop that gives straight answers, stocks only what we would carry ourselves, and makes ordering as simple as the gear is dependable.",
+            "eyebrow": "How it began",
+            "heading": "Where we started"
+          },
+          "ru": {
+            "body": "Wildridge начался в 2016 с небольшой коллекции снаряжения для охоты, которую собрали люди, проводящие выходные в поле.\n\nНам хотелось магазина, который отвечает прямо, держит в ассортименте только то, что мы взяли бы себе, и делает заказ таким же простым, как надёжно само снаряжение.",
+            "eyebrow": "Как всё начиналось",
+            "heading": "С чего мы начинали"
+          }
+        },
+        "photo": "about/d58f891a-0e34-4191-a1cd-613f66402a5d.jpg"
+      },
+      "team": {
+        "album": [],
+        "copy": {
+          "ar": {
+            "body": "فريقنا يمارس الصيد والرماية أيضًا، لذا تأتيك نصيحتنا من الميدان وميدان الرماية.\n\nنخدم الصيادين والرماة الرياضيين الأفراد، وهواة الجمع، وعملاء الأعمال مثل الأندية وميادين الرماية والموزعين. يمكن لعملاء الأعمال فتح حساب أعمال للحصول على عروض الأسعار والطلبات المسعّرة وجهة تواصل مخصّصة.",
+            "eyebrow": "فريقنا",
+            "heading": "أشخاص يمارسون الصيد والرماية"
+          },
+          "en": {
+            "body": "Our team hunts and shoots too, so the advice you get comes from the field and the range.\n\nWe serve individual hunters and sport shooters, private collectors, and business customers such as clubs, ranges and resellers. Business customers can open a business account for quotes, priced orders and a dedicated contact.",
+            "eyebrow": "Our team",
+            "heading": "People who hunt and shoot"
+          },
+          "ru": {
+            "body": "Наша команда тоже охотится и стреляет, поэтому наши советы основаны на опыте в поле и на стрельбище.\n\nМы обслуживаем частных охотников и спортивных стрелков, коллекционеров, а также бизнес-клиентов: клубы, стрельбища и реселлеров. Бизнес-клиенты могут открыть бизнес-аккаунт для коммерческих предложений, заказов по согласованным ценам и персонального менеджера.",
+            "eyebrow": "Наша команда",
+            "heading": "Люди, которые сами охотятся и стреляют"
+          }
+        },
+        "photo": null,
+        "visible": true
+      },
+      "visit": {
+        "visible": true
+      }
+    },
+    "site_banners": {
+      "announcement": {
+        "endsOn": "",
+        "href": "",
+        "message": {
+          "ar": "استكشف النسخة التجريبية بحساب تجريبي بنقرة واحدة من صفحة تسجيل الدخول",
+          "en": "Explore the demo with a one-click demo account from the sign-in page",
+          "ru": "Изучите демо с демо-аккаунтом в один клик на странице входа"
+        },
+        "startsOn": ""
+      },
+      "focus": {
+        "menuPhoto": {
+          "x": 67,
+          "y": 60
+        },
+        "pagesHero": {
+          "x": 47,
+          "y": 32
+        },
+        "shopPhoto": {
+          "x": 34,
+          "y": 46
+        },
+        "storesHero": {
+          "x": 50,
+          "y": 50
+        }
+      },
+      "menuPhoto": "site/e21b9c94-63e1-406a-aae0-061ae16bac4a.jpg",
+      "pagesHero": "site/ec78fc84-a144-418e-8964-78016f301817.jpg",
+      "shopPhoto": "site/7cee0df9-19a1-4c6a-9af3-9075f13363f2.jpg",
+      "storesHero": null
+    },
+    "home_popup_style": {
+      "buttonColor": "red",
+      "purpose": "link",
+      "theme": "light"
+    },
+    "store_profile": {
+      "addressLine": "Unit 14, Falcon Ridge Street, Al Quoz Industrial Area 3, Dubai, United Arab Emirates",
+      "contactEmail": "hello@wildridge.example",
+      "contactPhone": "+971 4 000 0000",
+      "instagramUrl": "",
+      "storeName": "Wildridge Hunting",
+      "youtubeUrl": ""
+    }
+  },
+  "popupBanner": {
+    "bannerId": "BNR-HOME-POPUP",
+    "pageKey": "popup",
+    "titleEn": "Welcome to Wildridge",
+    "titleAr": "مرحباً بك في وايلدريدج",
+    "titleRu": "Добро пожаловать в Wildridge",
+    "subtitleEn": "This is a portfolio demo store. Sign in with a one-click demo account to try checkout, ID verification and the business portal.",
+    "subtitleAr": "هذا متجر تجريبي لعرض الأعمال. ادخل بحساب تجريبي بنقرة واحدة لتجربة الدفع والتحقق من الهوية وبوابة الشركات.",
+    "subtitleRu": "Это демо-магазин для портфолио. Войдите в демо-аккаунт в один клик и попробуйте оформление заказа, проверку личности и бизнес-кабинет.",
+    "ctaEn": "Try a demo account",
+    "ctaAr": "جرّب حساباً تجريبياً",
+    "ctaRu": "Открыть демо-аккаунт",
+    "linkUrl": "/?auth=login",
+    "imageFilename": "Gemini_Generated_Image_jvaofljvaofljvao.jpeg",
+    "storageKey": "banners/BNR-HOME-POPUP/4d818071-4722-41c2-a5ea-f212a3322249.jpg",
+    "isActive": true,
+    "displayOrder": 0,
+    "startsAt": null,
+    "endsAt": null
+  },
+  "pages": [
+    {
+      "key": "about",
+      "slug": "about",
+      "titleEn": "About Wildridge Hunting",
+      "titleAr": "عن وايلدريدج للصيد",
+      "titleRu": "О Wildridge Hunting",
+      "contentEn": "Wildridge Hunting is a fictional UAE retailer of hunting gear, air rifles and optics, built as a portfolio demo. Here is how the shop works and the people behind it.",
+      "contentAr": "وايلدريدج للصيد متجر إماراتي افتراضي لمعدات الصيد وبنادق الهواء والبصريات، صُمم لأغراض معرض الأعمال. إليك كيف يعمل المتجر ومن يقف وراءه.",
+      "contentRu": "Wildridge Hunting — вымышленный магазин охотничьего снаряжения, пневматических винтовок и оптики в ОАЭ, созданный как демонстрационный проект для портфолио. Здесь рассказано, как работает магазин и кто за ним стоит.",
+      "metaTitleEn": "About Us | Wildridge Hunting",
+      "metaTitleAr": "من نحن | وايلدريدج للصيد",
+      "metaTitleRu": "О нас | Wildridge Hunting",
+      "metaDescriptionEn": "Meet Wildridge Hunting, a fictional UAE retailer of hunting gear, air rifles and optics built for a portfolio demo.",
+      "metaDescriptionAr": "تعرّف على وايلدريدج للصيد، متجر إماراتي افتراضي لمعدات الصيد وبنادق الهواء والبصريات صُمم لمعرض أعمال.",
+      "metaDescriptionRu": "Познакомьтесь с Wildridge Hunting — вымышленным магазином охотничьего снаряжения, пневматики и оптики в ОАЭ, созданным для портфолио.",
+      "isActive": true
+    },
+    {
+      "key": "contact",
+      "slug": "contact",
+      "titleEn": "Contact us",
+      "titleAr": "تواصل معنا",
+      "titleRu": "Свяжитесь с нами",
+      "contentEn": "Questions about an order, a product or your account? Here is how to reach the Wildridge Hunting team. This is a portfolio demo, so the contact details are fictional.\n\n## When we reply\n\n- Email: within one working day\n- Phone and WhatsApp: during showroom hours\n- Showroom visits: no appointment needed\n\nOur team answers in English, Arabic and Russian.\n\n## Help us help you faster\n\nPlease include these details in your message.\n\n- Your order number, if your question is about an order.\n- The product name or code, if it is about a product.\n- A photo, if something arrived damaged.\n- The email address you used for your account.\n\n> Your documents are private\n> Please do not send ID or licence documents by email. Upload them from your account instead, where they are stored privately.\n\n## Other ways to get help\n\nMany answers are already in the [FAQ](/faq). For delivery details read the [shipping page](/shipping), and for returns read the [returns policy](/returns). Showroom addresses and opening hours are on the [stores page](/stores).",
+      "contentAr": "لديك سؤال عن طلب أو منتج أو حسابك؟ إليك طريقة التواصل مع فريق وايلدريدج للصيد. هذا موقع تجريبي لأغراض معرض الأعمال، لذلك فبيانات التواصل افتراضية.\n\n## متى نرد\n\n- البريد الإلكتروني: خلال يوم عمل واحد\n- الهاتف والواتساب: خلال ساعات عمل المعرض\n- زيارة المعرض: دون الحاجة إلى موعد\n\nيجيب فريقنا بالعربية والإنجليزية والروسية.\n\n## ساعدنا لنساعدك بشكل أسرع\n\nيرجى ذكر هذه التفاصيل في رسالتك.\n\n- رقم طلبك، إذا كان سؤالك عن طلب.\n- اسم المنتج أو رمزه، إذا كان السؤال عن منتج.\n- صورة، إذا وصل شيء تالفًا.\n- عنوان البريد الإلكتروني الذي استخدمته لحسابك.\n\n> مستنداتك خاصة\n> يرجى عدم إرسال مستندات الهوية أو الرخصة بالبريد الإلكتروني. ارفعها من حسابك بدلًا من ذلك، حيث تُحفظ بشكل خاص.\n\n## طرق أخرى للحصول على المساعدة\n\nكثير من الإجابات موجودة بالفعل في [الأسئلة الشائعة](/faq). ولتفاصيل التوصيل اقرأ [صفحة الشحن](/shipping)، وللإرجاع اقرأ [سياسة الإرجاع](/returns). وعناوين المعارض وساعات العمل في [صفحة المعارض](/stores).",
+      "contentRu": "Есть вопрос о заказе, товаре или учётной записи? Вот как связаться с командой Wildridge Hunting. Это демонстрационный проект для портфолио, поэтому контактные данные вымышленные.\n\n## Когда мы отвечаем\n\n- Электронная почта: в течение одного рабочего дня\n- Телефон и WhatsApp: в часы работы шоу-рума\n- Визит в шоу-рум: без предварительной записи\n\nНаша команда отвечает на английском, арабском и русском языках.\n\n## Помогите нам ответить быстрее\n\nПожалуйста, укажите в сообщении следующее.\n\n- Номер заказа, если вопрос касается заказа.\n- Название или код товара, если вопрос о товаре.\n- Фото, если что-то пришло повреждённым.\n- Адрес электронной почты, который вы использовали для учётной записи.\n\n> Ваши документы остаются закрытыми\n> Пожалуйста, не отправляйте документы, удостоверяющие личность, и лицензии по электронной почте. Загрузите их в личном кабинете, где они хранятся в закрытом виде.\n\n## Другие способы получить помощь\n\nМногие ответы уже есть в разделе [Вопросы и ответы](/faq). Подробности о доставке — на [странице доставки](/shipping), о возврате — в [политике возврата](/returns). Адреса и часы работы шоу-румов указаны на [странице магазинов](/stores).",
+      "metaTitleEn": "Contact | Wildridge Hunting",
+      "metaTitleAr": "تواصل معنا | وايلدريدج للصيد",
+      "metaTitleRu": "Контакты | Wildridge Hunting",
+      "metaDescriptionEn": "Reach the Wildridge Hunting demo shop team about orders, products, ID verification or business accounts.",
+      "metaDescriptionAr": "تواصل مع فريق متجر وايلدريدج للصيد التجريبي بخصوص الطلبات والمنتجات والتحقق من الهوية وحسابات الأعمال.",
+      "metaDescriptionRu": "Свяжитесь с командой демо-магазина Wildridge Hunting по вопросам заказов, товаров, проверки личности или бизнес-аккаунтов.",
+      "isActive": true
+    },
+    {
+      "key": "faq",
+      "slug": "faq",
+      "titleEn": "Frequently asked questions",
+      "titleAr": "الأسئلة الشائعة",
+      "titleRu": "Вопросы и ответы",
+      "contentEn": "Quick answers about ordering from Wildridge Hunting, a portfolio demo shop. Answers are sample content. Cannot find yours? [Contact us](/contact).\n\n## Orders and payment\n\n### How do I place an order?\n\nAdd items to your cart, check the delivery option and pay at checkout. You need an account, and we email you a confirmation as soon as the order is accepted.\n\n### Which payment methods do you accept?\n\nYou can pay by card at checkout. Approved business accounts can also pay a quote by bank transfer. Payment is confirmed before we prepare your order.\n\n### Are prices shown with VAT?\n\nYes. All prices are in UAE dirhams (AED) and include VAT at 5%. Your invoice shows the VAT amount separately.\n\n### Can I change or cancel an order?\n\nYou can cancel while the order is waiting for payment or verification. After it has been prepared, contact us and we will see what is possible.\n\n## ID verification\n\n### Why do I need to verify my identity?\n\nAir rifles, pistols and some other items are restricted, so we can only sell them to verified buyers. You complete the check once, and your result is kept for later orders.\n\n### What do I need to upload?\n\nYou upload a photo or scan of a valid ID, a document that proves your address, and a clear photo of yourself. Files must be JPEG, PNG or PDF and no larger than 5 MB each.\n\n### How long does verification take?\n\nMost checks are reviewed within one working day. You get an email when the result is ready, and your order moves on automatically after approval.\n\n### Who can see my documents?\n\nOnly the staff who review them. They are stored privately and never shown on the website. See our [privacy policy](/privacy) for details.\n\n## Shipping\n\n### Where do you deliver?\n\nEverywhere in the United Arab Emirates. We do not ship abroad.\n\n### How much does delivery cost?\n\nStandard delivery is AED 50 and takes 3 to 5 working days. Express delivery is AED 100 and takes 1 to 2 working days. Standard delivery is free on orders over AED 500.\n\n### Do I need to be home to receive a restricted item?\n\nYes. The person who receives it must show a valid ID that matches the verified buyer. Read more on the [shipping page](/shipping).\n\n## Returns\n\n### Can I return an item?\n\nMost unused items can be returned within 14 days of delivery in their original packaging. The [returns page](/returns) lists what we cannot take back.\n\n### How long do refunds take?\n\nWe refund to your original payment method after we check the return. Card refunds usually appear within 5 to 10 business days.\n\n### What if my item arrives damaged?\n\nTell us within 48 hours and keep the packaging. We will arrange a replacement or a full refund.\n\n## Business accounts and loyalty\n\n### Who can open a business account?\n\nCompanies, clubs, ranges and resellers. Apply on the [business page](/b2b) with a trade licence and, if you have one, a VAT certificate. We review each application before approval.\n\n### What do I get with a business account?\n\nYou can request quotes, receive priced offers for larger quantities and place orders against an accepted quote, with a dedicated contact for your account.\n\n### How do loyalty points work?\n\nYou earn points on eligible purchases. You can use your points as a discount at checkout. Your balance and history are in your account.\n\n### Do points expire?\n\nPoints have no cash value and are not transferable. Points from a cancelled or returned order are taken back.",
+      "contentAr": "إجابات سريعة عن الطلب من وايلدريدج للصيد، وهو متجر تجريبي لأغراض معرض الأعمال. الإجابات محتوى توضيحي. لم تجد إجابتك؟ [تواصل معنا](/contact).\n\n## الطلبات والدفع\n\n### كيف أقدّم طلبًا؟\n\nأضف المنتجات إلى سلتك، واختر خيار التوصيل، ثم ادفع عند إتمام الطلب. تحتاج إلى حساب، ونرسل إليك تأكيدًا بالبريد الإلكتروني فور قبول الطلب.\n\n### ما وسائل الدفع المتاحة؟\n\nيمكنك الدفع بالبطاقة عند إتمام الطلب. ويمكن لحسابات الأعمال المعتمدة أيضًا دفع عرض السعر بالتحويل المصرفي. نؤكد الدفع قبل تجهيز طلبك.\n\n### هل الأسعار المعروضة شاملة ضريبة القيمة المضافة؟\n\nنعم. جميع الأسعار بالدرهم الإماراتي (AED) وتشمل ضريبة القيمة المضافة بنسبة 5%. وتُظهر الفاتورة مبلغ الضريبة بشكل منفصل.\n\n### هل يمكنني تعديل الطلب أو إلغاؤه؟\n\nيمكنك الإلغاء ما دام الطلب بانتظار الدفع أو التحقق. وبعد تجهيزه تواصل معنا وسنرى ما يمكن فعله.\n\n## التحقق من الهوية\n\n### لماذا أحتاج إلى التحقق من هويتي؟\n\nبنادق الهواء والمسدسات وبعض المنتجات الأخرى مقيّدة، لذلك لا نبيعها إلا لمشترٍ موثّق. تُكمل الفحص مرة واحدة وتُحفظ نتيجته لطلباتك اللاحقة.\n\n### ما الذي أحتاج إلى رفعه؟\n\nترفع صورة أو نسخة ممسوحة لهوية سارية، ومستندًا يثبت عنوانك، وصورة واضحة لك. يجب أن تكون الملفات بصيغة JPEG أو PNG أو PDF وألا يتجاوز حجم كل ملف 5 ميغابايت.\n\n### كم يستغرق التحقق؟\n\nتُراجَع معظم الفحوصات خلال يوم عمل واحد. يصلك بريد إلكتروني عند جاهزية النتيجة، وينتقل طلبك تلقائيًا بعد الموافقة.\n\n### من يستطيع رؤية مستنداتي؟\n\nالموظفون الذين يراجعونها فقط. فهي مخزّنة بشكل خاص ولا تُعرض أبدًا على الموقع. اطّلع على [سياسة الخصوصية](/privacy) للتفاصيل.\n\n## الشحن\n\n### أين توصّلون؟\n\nفي جميع أنحاء دولة الإمارات العربية المتحدة. ولا نشحن إلى الخارج.\n\n### كم تبلغ تكلفة التوصيل؟\n\nالتوصيل القياسي 50 درهمًا ويستغرق من 3 إلى 5 أيام عمل. والتوصيل السريع 100 درهم ويستغرق من يوم إلى يومين. والتوصيل القياسي مجاني للطلبات التي تزيد على 500 درهم.\n\n### هل يجب أن أكون في المنزل لاستلام منتج مقيّد؟\n\nنعم. على المستلم إبراز هوية سارية تطابق المشتري الموثّق. اقرأ المزيد في [صفحة الشحن](/shipping).\n\n## الإرجاع\n\n### هل يمكنني إرجاع منتج؟\n\nيمكن إرجاع معظم المنتجات غير المستخدمة خلال 14 يومًا من التسليم في عبوتها الأصلية. وتبيّن [صفحة الإرجاع](/returns) ما لا يمكننا استرجاعه.\n\n### كم يستغرق استرداد المبلغ؟\n\nنعيد المبلغ إلى وسيلة الدفع الأصلية بعد فحص المرتجع. وتظهر المبالغ المستردة على البطاقة عادةً خلال 5 إلى 10 أيام عمل.\n\n### ماذا لو وصل المنتج تالفًا؟\n\nأخبرنا خلال 48 ساعة واحتفظ بالتغليف. وسنرتّب استبدالًا أو استردادًا كاملًا للمبلغ.\n\n## حسابات الأعمال والولاء\n\n### من يستطيع فتح حساب أعمال؟\n\nالشركات والنوادي وميادين الرماية والموزعون. قدّم طلبك في [صفحة الأعمال](/b2b) مع رخصة تجارية وشهادة ضريبة القيمة المضافة إن وُجدت. نراجع كل طلب قبل الموافقة عليه.\n\n### ماذا يوفّر لي حساب الأعمال؟\n\nيمكنك طلب عروض الأسعار، وتلقي عروض بأسعار محددة للكميات الكبيرة، وتقديم طلبات بناءً على عرض مقبول، مع جهة اتصال مخصّصة لحسابك.\n\n### كيف تعمل نقاط الولاء؟\n\nتكسب نقاطًا على المشتريات المؤهلة، ويمكنك استخدامها كخصم عند إتمام الطلب. ويظهر رصيدك وسجلّه في حسابك.\n\n### هل تنتهي صلاحية النقاط؟\n\nليست للنقاط قيمة نقدية ولا يمكن تحويلها. وتُسترد النقاط الممنوحة عن طلب أُلغي أو أُرجع.",
+      "contentRu": "Быстрые ответы о заказах в Wildridge Hunting — демонстрационном магазине для портфолио. Ответы являются образцом содержимого. Не нашли свой вопрос? [Свяжитесь с нами](/contact).\n\n## Заказы и оплата\n\n### Как оформить заказ?\n\nДобавьте товары в корзину, выберите способ доставки и оплатите заказ при оформлении. Нужна учётная запись, а подтверждение мы отправим по электронной почте, как только заказ будет принят.\n\n### Какие способы оплаты вы принимаете?\n\nОплатить можно картой при оформлении заказа. Одобренные бизнес-аккаунты могут также оплатить коммерческое предложение банковским переводом. Мы подтверждаем оплату до комплектации заказа.\n\n### Цены указаны с НДС?\n\nДа. Все цены указаны в дирхамах ОАЭ (AED) и включают НДС 5%. В счёте сумма НДС показана отдельно.\n\n### Можно ли изменить или отменить заказ?\n\nОтменить заказ можно, пока он ожидает оплаты или проверки. После комплектации свяжитесь с нами, и мы посмотрим, что можно сделать.\n\n## Проверка личности\n\n### Зачем подтверждать личность?\n\nПневматические винтовки, пистолеты и некоторые другие товары относятся к товарам с ограничениями, поэтому мы продаём их только проверенным покупателям. Проверку нужно пройти один раз, а результат сохраняется для следующих заказов.\n\n### Что нужно загрузить?\n\nФото или скан действующего документа, удостоверяющего личность, документ, подтверждающий адрес, и чёткое фото себя. Файлы должны быть в формате JPEG, PNG или PDF размером не более 5 МБ каждый.\n\n### Сколько занимает проверка?\n\nБольшинство проверок рассматривается в течение одного рабочего дня. Когда результат будет готов, вы получите письмо, а после одобрения заказ продолжит обработку автоматически.\n\n### Кто видит мои документы?\n\nТолько сотрудники, которые их проверяют. Документы хранятся в закрытом хранилище и никогда не показываются на сайте. Подробнее — в [политике конфиденциальности](/privacy).\n\n## Доставка\n\n### Куда вы доставляете?\n\nПо всей территории Объединённых Арабских Эмиратов. За границу мы не отправляем.\n\n### Сколько стоит доставка?\n\nСтандартная доставка стоит 50 AED и занимает 3–5 рабочих дней. Экспресс-доставка стоит 100 AED и занимает 1–2 рабочих дня. Стандартная доставка бесплатна для заказов свыше 500 AED.\n\n### Нужно ли быть дома, чтобы получить товар с ограничениями?\n\nДа. Получатель должен предъявить действующий документ, соответствующий проверенному покупателю. Подробнее — на [странице доставки](/shipping).\n\n## Возврат\n\n### Можно ли вернуть товар?\n\nБольшинство неиспользованных товаров можно вернуть в течение 14 дней после доставки в оригинальной упаковке. Что мы не принимаем обратно, указано на [странице возврата](/returns).\n\n### Как быстро возвращаются деньги?\n\nМы возвращаем деньги на исходный способ оплаты после проверки возврата. Возврат на карту обычно занимает от 5 до 10 рабочих дней.\n\n### Что делать, если товар пришёл повреждённым?\n\nСообщите нам в течение 48 часов и сохраните упаковку. Мы организуем замену или полный возврат средств.\n\n## Бизнес-аккаунты и бонусы\n\n### Кто может открыть бизнес-аккаунт?\n\nКомпании, клубы, стрельбища и реселлеры. Подайте заявку на [странице для бизнеса](/b2b), приложив торговую лицензию и, если она у вас есть, свидетельство плательщика НДС. Мы рассматриваем каждую заявку перед одобрением.\n\n### Что даёт бизнес-аккаунт?\n\nВы можете запрашивать коммерческие предложения, получать цены на крупные партии и оформлять заказы по принятому предложению, а также получаете персонального контактного сотрудника.\n\n### Как работают бонусные баллы?\n\nВы получаете баллы за подходящие покупки и можете использовать их как скидку при оформлении заказа. Баланс и история находятся в вашем личном кабинете.\n\n### Баллы сгорают?\n\nУ баллов нет денежной стоимости, их нельзя передавать другим. Баллы за отменённый или возвращённый заказ списываются обратно.",
+      "metaTitleEn": "FAQ | Wildridge Hunting",
+      "metaTitleAr": "الأسئلة الشائعة | وايلدريدج للصيد",
+      "metaTitleRu": "Вопросы и ответы | Wildridge Hunting",
+      "metaDescriptionEn": "Answers about orders, ID verification, delivery, returns, business accounts and loyalty points at the Wildridge Hunting demo shop.",
+      "metaDescriptionAr": "إجابات عن الطلبات والتحقق من الهوية والتوصيل والإرجاع وحسابات الأعمال ونقاط الولاء في متجر وايلدريدج للصيد التجريبي.",
+      "metaDescriptionRu": "Ответы о заказах, проверке личности, доставке, возврате, бизнес-аккаунтах и бонусных баллах в демо-магазине Wildridge Hunting.",
+      "isActive": true
+    },
+    {
+      "key": "privacy",
+      "slug": "privacy",
+      "titleEn": "Privacy Policy",
+      "titleAr": "سياسة الخصوصية",
+      "titleRu": "Политика конфиденциальности",
+      "contentEn": "This is a portfolio demo. The text on this page is sample content and has no legal effect.\n\n## What this policy covers\n\nWildridge Hunting is a fictional shop, and this sample policy shows how a real retailer could explain the way it handles personal data. It covers the website, your account, orders, quotes and the newsletter.\n\n## What we collect\n\nWe collect only what we need to run the shop.\n\n- Account details such as your name, email address, phone number and delivery addresses.\n- Order and quote history, including the items, prices and payment status.\n- Identity documents you upload for verification, and the result of the check.\n- Business documents such as a trade licence or VAT certificate, for business accounts.\n- Messages you send to our support team.\n- Basic technical data such as your language choice and the pages you open.\n\n## Why we use it\n\nWe use your data to process orders, deliver parcels, verify identity for restricted items, answer questions and prevent fraud. If you subscribe to the newsletter we also use your email address to send it. You can unsubscribe at any time from the link in every message.\n\n## Identity and business documents\n\nDocuments you upload are stored privately and are visible only to staff who review them. They are never shown on the website, and they are not used for marketing. We keep a copy of the documents attached to an order for the period the law requires.\n\n> Your documents stay private\n> Verification files are kept in private storage. Staff open them only through short-lived secure links.\n\n## Who we share it with\n\nWe share data only with the services that help us run the shop.\n\n- Payment providers, to take card payments.\n- Delivery partners, to bring your parcel to you.\n- An email service, to send order messages and the newsletter.\n\nWe do not sell your personal data.\n\n## How long we keep it\n\nWe keep account and order records while your account is open and for as long as the law requires afterwards. Newsletter data is deleted when you unsubscribe and ask us to remove it. Identity documents are kept for the legal retention period, then deleted.\n\n## Your choices\n\nYou can ask to see, correct or delete your data, or to close your account. Write to us through the [contact page](/contact) and we will reply within 30 days. Some records must be kept by law, and we will tell you which.\n\n## Cookies\n\nThe site uses a small number of cookies to keep you signed in, remember your language and keep your cart. We do not use advertising cookies in this demo.\n\n## Changes to this policy\n\nIf we change this policy, the date at the bottom of the page will change too. See also our [terms of service](/terms).",
+      "contentAr": "هذا موقع تجريبي لأغراض معرض الأعمال. النص في هذه الصفحة محتوى توضيحي ولا يترتب عليه أي أثر قانوني.\n\n## ما الذي تغطيه هذه السياسة\n\nوايلدريدج للصيد متجر افتراضي، وتوضّح هذه السياسة التجريبية كيف يمكن لمتجر حقيقي أن يشرح طريقة تعامله مع البيانات الشخصية. تشمل السياسة الموقع وحسابك والطلبات وعروض الأسعار والنشرة البريدية.\n\n## ما الذي نجمعه\n\nلا نجمع إلا ما نحتاج إليه لتشغيل المتجر.\n\n- بيانات الحساب مثل اسمك وبريدك الإلكتروني ورقم هاتفك وعناوين التوصيل.\n- سجل الطلبات وعروض الأسعار، بما في ذلك المنتجات والأسعار وحالة الدفع.\n- مستندات الهوية التي ترفعها للتحقق ونتيجة الفحص.\n- مستندات الأعمال مثل الرخصة التجارية وشهادة ضريبة القيمة المضافة لحسابات الأعمال.\n- الرسائل التي ترسلها إلى فريق الدعم.\n- بيانات تقنية أساسية مثل اللغة التي تختارها والصفحات التي تفتحها.\n\n## لماذا نستخدمها\n\nنستخدم بياناتك لمعالجة الطلبات وتوصيل الطرود والتحقق من الهوية للمنتجات المقيّدة والرد على الأسئلة ومنع الاحتيال. وإذا اشتركت في النشرة البريدية فنستخدم بريدك الإلكتروني لإرسالها أيضًا. يمكنك إلغاء الاشتراك في أي وقت من الرابط الموجود في كل رسالة.\n\n## مستندات الهوية والأعمال\n\nتُحفظ المستندات التي ترفعها في مساحة خاصة ولا يراها إلا الموظفون الذين يراجعونها. ولا تُعرض أبدًا على الموقع ولا تُستخدم في التسويق. ونحتفظ بنسخة من المستندات المرتبطة بالطلب للمدة التي يفرضها القانون.\n\n> مستنداتك تبقى خاصة\n> تُحفظ ملفات التحقق في مساحة تخزين خاصة، ولا يفتحها الموظفون إلا عبر روابط آمنة قصيرة المدة.\n\n## مع من نشاركها\n\nلا نشارك البيانات إلا مع الخدمات التي تساعدنا على تشغيل المتجر.\n\n- مزوّدو الدفع، لقبول الدفع بالبطاقة.\n- شركاء التوصيل، لإيصال الطرد إليك.\n- خدمة البريد الإلكتروني، لإرسال رسائل الطلبات والنشرة البريدية.\n\nنحن لا نبيع بياناتك الشخصية.\n\n## مدة الاحتفاظ بها\n\nنحتفظ بسجلات الحساب والطلبات طالما حسابك مفتوح وللمدة التي يفرضها القانون بعد ذلك. تُحذف بيانات النشرة البريدية عند إلغاء الاشتراك وطلب الحذف. وتُحفظ مستندات الهوية طوال مدة الاحتفاظ القانونية ثم تُحذف.\n\n## خياراتك\n\nيمكنك أن تطلب الاطلاع على بياناتك أو تصحيحها أو حذفها، أو إغلاق حسابك. راسلنا عبر [صفحة التواصل](/contact) وسنرد خلال 30 يومًا. بعض السجلات يجب الاحتفاظ بها بحكم القانون، وسنوضح لك أيّها.\n\n## ملفات تعريف الارتباط\n\nيستخدم الموقع عددًا قليلًا من ملفات تعريف الارتباط للإبقاء على تسجيل دخولك وتذكّر لغتك وحفظ سلة مشترياتك. ولا نستخدم ملفات إعلانية في هذا الموقع التجريبي.\n\n## تعديل هذه السياسة\n\nإذا عدّلنا هذه السياسة فسيتغيّر التاريخ في أسفل الصفحة. اطّلع أيضًا على [شروط الخدمة](/terms).",
+      "contentRu": "Это демонстрационный проект для портфолио. Текст на этой странице — образец содержимого, он не имеет юридической силы.\n\n## Что охватывает эта политика\n\nWildridge Hunting — вымышленный магазин, и эта примерная политика показывает, как настоящий розничный продавец мог бы объяснить порядок обработки персональных данных. Она охватывает сайт, вашу учётную запись, заказы, коммерческие предложения и рассылку.\n\n## Что мы собираем\n\nМы собираем только то, что нужно для работы магазина.\n\n- Данные учётной записи: имя, адрес электронной почты, номер телефона и адреса доставки.\n- История заказов и коммерческих предложений: товары, цены и статус оплаты.\n- Документы, удостоверяющие личность, которые вы загружаете для проверки, и результат проверки.\n- Документы компании, например торговая лицензия или свидетельство плательщика НДС, для бизнес-аккаунтов.\n- Сообщения, которые вы отправляете в службу поддержки.\n- Базовые технические данные: выбранный язык и открытые страницы.\n\n## Зачем мы их используем\n\nМы используем ваши данные, чтобы обрабатывать заказы, доставлять посылки, проверять личность при покупке товаров с ограничениями, отвечать на вопросы и предотвращать мошенничество. Если вы подписаны на рассылку, мы также используем адрес электронной почты для её отправки. Отписаться можно в любой момент по ссылке в каждом письме.\n\n## Документы личности и компании\n\nЗагруженные документы хранятся в закрытом хранилище, и их видят только сотрудники, которые их проверяют. Они никогда не показываются на сайте и не используются в маркетинге. Копии документов, относящихся к заказу, мы храним в течение срока, установленного законом.\n\n> Ваши документы остаются закрытыми\n> Файлы для проверки хранятся в закрытом хранилище. Сотрудники открывают их только по защищённым ссылкам с коротким сроком действия.\n\n## С кем мы делимся данными\n\nМы передаём данные только сервисам, которые помогают нам работать.\n\n- Платёжным провайдерам — для приёма оплаты картой.\n- Партнёрам по доставке — чтобы доставить вам посылку.\n- Почтовому сервису — для отправки сообщений о заказах и рассылки.\n\nМы не продаём ваши персональные данные.\n\n## Как долго мы их храним\n\nДанные учётной записи и заказов мы храним, пока ваша учётная запись активна, а затем столько, сколько требует закон. Данные рассылки удаляются, когда вы отписываетесь и просите их удалить. Документы, удостоверяющие личность, хранятся в течение установленного законом срока, после чего удаляются.\n\n## Ваш выбор\n\nВы можете запросить доступ к своим данным, их исправление или удаление, а также закрыть учётную запись. Напишите нам через [страницу контактов](/contact), и мы ответим в течение 30 дней. Некоторые записи нужно хранить по закону, и мы сообщим, какие именно.\n\n## Файлы cookie\n\nСайт использует небольшое число файлов cookie, чтобы вы оставались в системе, а также чтобы запоминать язык и хранить корзину. В этом демонстрационном проекте рекламные файлы cookie не используются.\n\n## Изменения в политике\n\nЕсли мы изменим эту политику, изменится и дата внизу страницы. См. также наши [условия использования](/terms).",
+      "metaTitleEn": "Privacy Policy | Wildridge Hunting",
+      "metaTitleAr": "سياسة الخصوصية | وايلدريدج للصيد",
+      "metaTitleRu": "Политика конфиденциальности | Wildridge Hunting",
+      "metaDescriptionEn": "Sample privacy policy for the Wildridge Hunting demo shop: what we collect, why, and how long we keep it.",
+      "metaDescriptionAr": "سياسة خصوصية توضيحية لمتجر وايلدريدج للصيد التجريبي: ما نجمعه ولماذا ومدة الاحتفاظ به.",
+      "metaDescriptionRu": "Примерная политика конфиденциальности демо-магазина Wildridge Hunting: что мы собираем, зачем и как долго храним.",
+      "isActive": true
+    },
+    {
+      "key": "returns",
+      "slug": "returns",
+      "titleEn": "Returns & Exchanges",
+      "titleAr": "الإرجاع والاستبدال",
+      "titleRu": "Возврат и обмен",
+      "contentEn": "This is a portfolio demo. The text on this page is sample content and has no legal effect.\n\n## Our 14-day return window\n\nYou can return most unused items within 14 days of delivery. The item must be in its original packaging with all accessories, and you will need your order number. We are happy to exchange an item for a different size or model when stock allows.\n\n## What we can take back\n\n- Optics, accessories, clothing and cases in new condition.\n- Air rifles and pistols that are unfired and sealed or unmarked.\n- Items that arrive damaged or are not what you ordered.\n\n## What we cannot take back\n\n- Opened tins of pellets and other ammunition.\n- Products made or configured to your order.\n- Items that show signs of use, wear or modification.\n- Gift cards and loyalty points.\n\n> A note on restricted items\n> Air rifles and pistols can only go back to us through a verified return. Contact us first, and do not post or hand over a restricted item without a return reference.\n\n## How to start a return\n\n1. Open your order in your account, or [contact us](/contact) with your order number.\n2. Tell us what you want to return and why, with photos if the item is damaged.\n3. We send you a return reference and the address to use.\n4. Pack the item securely and send it back or bring it to a showroom listed on the [stores page](/stores).\n\n## Refunds\n\nOnce we receive and check your return, we refund it to the original payment method. Card refunds usually appear within 5 to 10 business days, depending on your bank. If you used loyalty points, the points are restored to your account.\n\n- Standard delivery fees are refunded only if we made the mistake.\n- Return shipping is paid by you unless the item was faulty or wrong.\n- Business orders follow the terms agreed in the quote.\n\n## Damaged or wrong items\n\nCheck your parcel when it arrives. If something is wrong, tell us within 48 hours, and keep the packaging. We will arrange a replacement or a full refund, including delivery.\n\n## Faulty products\n\nIf an item stops working normally, contact us. Many products carry a manufacturer warranty, and we will help you use it or arrange a repair.\n\nDelivery times and prices are listed on the [shipping page](/shipping). More answers are in the [FAQ](/faq).",
+      "contentAr": "هذا موقع تجريبي لأغراض معرض الأعمال. النص في هذه الصفحة محتوى توضيحي ولا يترتب عليه أي أثر قانوني.\n\n## مهلة الإرجاع لدينا 14 يومًا\n\nيمكنك إرجاع معظم المنتجات غير المستخدمة خلال 14 يومًا من التسليم. يجب أن يكون المنتج في عبوته الأصلية مع جميع ملحقاته، وستحتاج إلى رقم طلبك. ويسعدنا استبدال المنتج بمقاس أو طراز آخر عندما يسمح المخزون.\n\n## ما يمكننا استرجاعه\n\n- البصريات والملحقات والملابس والحقائب بحالة جديدة.\n- بنادق الهواء والمسدسات التي لم تُستخدم وما زالت مغلقة أو بلا علامات.\n- المنتجات التي تصل تالفة أو تختلف عمّا طلبته.\n\n## ما لا يمكننا استرجاعه\n\n- علب الرصاصات المفتوحة وغيرها من الذخيرة.\n- المنتجات المصنّعة أو المجهّزة حسب طلبك.\n- المنتجات التي تظهر عليها آثار استخدام أو تلف أو تعديل.\n- بطاقات الهدايا ونقاط الولاء.\n\n> ملاحظة بخصوص المنتجات المقيّدة\n> لا تعود بنادق الهواء والمسدسات إلينا إلا عبر إرجاع موثّق. تواصل معنا أولًا، ولا ترسل منتجًا مقيّدًا أو تسلّمه دون رقم مرجعي للإرجاع.\n\n## كيف تبدأ عملية الإرجاع\n\n1. افتح طلبك في حسابك، أو [تواصل معنا](/contact) مع رقم الطلب.\n2. أخبرنا بما تريد إرجاعه وسبب ذلك، مع صور إذا كان المنتج تالفًا.\n3. نرسل لك رقمًا مرجعيًا للإرجاع والعنوان المطلوب.\n4. غلّف المنتج جيدًا وأرسله إلينا أو أحضره إلى أحد المعارض المذكورة في [صفحة المعارض](/stores).\n\n## المبالغ المستردة\n\nبعد أن نستلم المرتجع ونفحصه، نعيد المبلغ إلى وسيلة الدفع الأصلية. تظهر المبالغ المستردة على البطاقة عادةً خلال 5 إلى 10 أيام عمل بحسب مصرفك. وإذا استخدمت نقاط الولاء فتُعاد النقاط إلى حسابك.\n\n- لا تُسترد رسوم التوصيل القياسي إلا إذا كان الخطأ منا.\n- تتحمل أنت تكلفة شحن الإرجاع ما لم يكن المنتج معيبًا أو خاطئًا.\n- تتبع طلبات الأعمال الشروط المتفق عليها في عرض السعر.\n\n## المنتجات التالفة أو الخاطئة\n\nافحص الطرد عند وصوله. وإذا كان هناك خطأ فأخبرنا خلال 48 ساعة واحتفظ بالتغليف. سنرتّب استبدالًا أو استردادًا كاملًا يشمل التوصيل.\n\n## المنتجات المعيبة\n\nإذا توقف منتج عن العمل بشكل طبيعي فتواصل معنا. كثير من المنتجات عليها ضمان من الشركة المصنّعة، وسنساعدك على الاستفادة منه أو ترتيب الإصلاح.\n\nأوقات التوصيل وأسعاره مذكورة في [صفحة الشحن](/shipping). وستجد مزيدًا من الإجابات في [الأسئلة الشائعة](/faq).",
+      "contentRu": "Это демонстрационный проект для портфолио. Текст на этой странице — образец содержимого, он не имеет юридической силы.\n\n## 14 дней на возврат\n\nБольшинство неиспользованных товаров можно вернуть в течение 14 дней после доставки. Товар должен быть в оригинальной упаковке со всеми аксессуарами, и вам понадобится номер заказа. Мы с радостью обменяем товар на другой размер или модель, если позволяют остатки.\n\n## Что мы принимаем обратно\n\n- Оптику, аксессуары, одежду и кейсы в новом состоянии.\n- Пневматические винтовки и пистолеты, которые не использовались и остаются запечатанными или без следов эксплуатации.\n- Товары, которые пришли повреждёнными или не соответствуют заказу.\n\n## Что мы не принимаем обратно\n\n- Вскрытые банки с пулями и другие боеприпасы.\n- Товары, изготовленные или настроенные по вашему заказу.\n- Товары со следами использования, износа или переделки.\n- Подарочные карты и бонусные баллы.\n\n> О товарах с ограничениями\n> Пневматические винтовки и пистолеты можно вернуть только через оформленный возврат. Сначала свяжитесь с нами и не отправляйте и не передавайте такой товар без номера возврата.\n\n## Как оформить возврат\n\n1. Откройте заказ в личном кабинете или [свяжитесь с нами](/contact), указав номер заказа.\n2. Расскажите, что хотите вернуть и почему, а при повреждении приложите фото.\n3. Мы пришлём номер возврата и адрес для отправки.\n4. Надёжно упакуйте товар и отправьте его или привезите в один из шоу-румов, перечисленных на [странице магазинов](/stores).\n\n## Возврат средств\n\nКогда мы получим и проверим возвращённый товар, деньги вернутся на исходный способ оплаты. Возврат на карту обычно занимает от 5 до 10 рабочих дней в зависимости от банка. Если вы использовали бонусные баллы, они вернутся на ваш счёт.\n\n- Стоимость стандартной доставки возвращается только в случае нашей ошибки.\n- Обратную доставку оплачиваете вы, если товар не был бракованным или ошибочным.\n- Бизнес-заказы подчиняются условиям, согласованным в коммерческом предложении.\n\n## Повреждённые или ошибочные товары\n\nПроверьте посылку при получении. Если что-то не так, сообщите нам в течение 48 часов и сохраните упаковку. Мы организуем замену или полный возврат средств, включая доставку.\n\n## Бракованные товары\n\nЕсли товар перестал нормально работать, свяжитесь с нами. На многие товары распространяется гарантия производителя, и мы поможем ею воспользоваться или организуем ремонт.\n\nСроки и стоимость доставки указаны на [странице доставки](/shipping). Другие ответы вы найдёте в разделе [Вопросы и ответы](/faq).",
+      "metaTitleEn": "Returns & Exchanges | Wildridge Hunting",
+      "metaTitleAr": "الإرجاع والاستبدال | وايلدريدج للصيد",
+      "metaTitleRu": "Возврат и обмен | Wildridge Hunting",
+      "metaDescriptionEn": "Sample returns policy for the Wildridge Hunting demo shop: the 14-day window, what we accept and how refunds work.",
+      "metaDescriptionAr": "سياسة إرجاع توضيحية لمتجر وايلدريدج للصيد التجريبي: مهلة 14 يومًا وما نقبله وكيف تتم المبالغ المستردة.",
+      "metaDescriptionRu": "Примерная политика возврата демо-магазина Wildridge Hunting: 14 дней на возврат, что мы принимаем и как проходят возвраты средств.",
+      "isActive": true
+    },
+    {
+      "key": "shipping",
+      "slug": "shipping",
+      "titleEn": "Shipping & Delivery",
+      "titleAr": "الشحن والتوصيل",
+      "titleRu": "Доставка",
+      "contentEn": "This is a portfolio demo. The text on this page is sample content and has no legal effect.\n\n## Where we deliver\n\nWe deliver to addresses across the United Arab Emirates. We do not ship outside the UAE. For a remote location we may need to quote the delivery price by hand, and we will tell you before you pay.\n\n## Delivery options\n\n- Standard delivery: AED 50, usually 3 to 5 working days\n- Express delivery: AED 100, usually 1 to 2 working days\n\nStandard delivery is free for orders over AED 500. Your cart shows how close you are to free delivery.\n\n## Order timing\n\nOrders paid before 2 pm on a working day are normally prepared the same day. Orders placed later, or on weekends and public holidays, are prepared on the next working day. Delivery times start when your order leaves our showroom, not when you place it.\n\n## Restricted items and ID\n\nAir rifles, pistols and some other products are restricted. We hold these orders until your identity check is approved, which is why we ask you to complete it early. You can start from your account.\n\n> Be ready to show your ID\n> The person receiving a restricted item is asked to show a valid ID that matches the verified buyer. If nobody can show it, the courier brings the parcel back to us.\n\n## Tracking your parcel\n\nWhen your order ships we email you the courier and the tracking details, and the status in your account changes to shipped. If a parcel has not arrived within a few days of the estimate, [contact us](/contact) with your order number.\n\n## Failed deliveries\n\nThe courier tries to deliver up to two times. If they cannot reach you, the parcel comes back to us and we get in touch to arrange a new delivery or a refund. A second delivery attempt may carry a delivery fee.\n\n## Picking up in person\n\nYou are welcome to collect an order from a showroom once we confirm it is ready. Bring your order number and your ID. Our locations and opening hours are on the [stores page](/stores).\n\n## Business orders\n\nBusiness accounts can agree delivery terms in their quote, including bulk deliveries to a club or range. Learn more on the [business page](/b2b).\n\n## Damaged parcels\n\nCheck the parcel in front of the courier if you can. If something looks wrong, tell us within 48 hours and read the [returns policy](/returns).",
+      "contentAr": "هذا موقع تجريبي لأغراض معرض الأعمال. النص في هذه الصفحة محتوى توضيحي ولا يترتب عليه أي أثر قانوني.\n\n## أين نوصّل\n\nنوصّل إلى العناوين في جميع أنحاء دولة الإمارات العربية المتحدة. ولا نشحن إلى خارج الإمارات. وفي المواقع النائية قد نحتاج إلى تحديد سعر التوصيل يدويًا، وسنخبرك قبل الدفع.\n\n## خيارات التوصيل\n\n- التوصيل القياسي: 50 درهمًا، وعادةً من 3 إلى 5 أيام عمل\n- التوصيل السريع: 100 درهم، وعادةً من يوم إلى يومين\n\nالتوصيل القياسي مجاني للطلبات التي تزيد قيمتها على 500 درهم. وتوضح لك السلة مقدار ما تبقّى للوصول إلى التوصيل المجاني.\n\n## موعد تجهيز الطلب\n\nيُجهَّز الطلب المدفوع قبل الساعة 2 ظهرًا في يوم عمل عادةً في اليوم نفسه. أما الطلبات التي تُقدَّم بعد ذلك، أو في عطلات نهاية الأسبوع والعطلات الرسمية، فتُجهَّز في يوم العمل التالي. وتبدأ مدة التوصيل من لحظة خروج طلبك من معرضنا لا من لحظة تقديمه.\n\n## المنتجات المقيّدة والهوية\n\nبنادق الهواء والمسدسات وبعض المنتجات الأخرى مقيّدة. نحتفظ بهذه الطلبات إلى أن تتم الموافقة على فحص هويتك، ولهذا ننصحك بإكماله مبكرًا. يمكنك البدء من حسابك.\n\n> كن مستعدًا لإبراز هويتك\n> يُطلب من مستلم المنتج المقيّد إبراز هوية سارية تطابق المشتري الموثّق. وإذا لم يتمكن أحد من إبرازها فيعيد المندوب الطرد إلينا.\n\n## تتبّع الطرد\n\nعند شحن طلبك نرسل إليك بالبريد الإلكتروني اسم شركة التوصيل وتفاصيل التتبع، وتتغير حالة الطلب في حسابك إلى «تم الشحن». وإذا لم يصل الطرد خلال أيام من الموعد المتوقع فـ[تواصل معنا](/contact) مع رقم الطلب.\n\n## محاولات التوصيل الفاشلة\n\nيحاول المندوب التوصيل حتى مرتين. وإذا تعذّر الوصول إليك يعود الطرد إلينا ونتواصل معك لترتيب توصيل جديد أو استرداد المبلغ. وقد تُفرض رسوم على محاولة التوصيل الثانية.\n\n## الاستلام شخصيًا\n\nيسعدنا أن تستلم طلبك من أحد المعارض بعد أن نؤكد جاهزيته. أحضر رقم الطلب وهويتك. مواقعنا وساعات العمل موجودة في [صفحة المعارض](/stores).\n\n## طلبات الأعمال\n\nيمكن لحسابات الأعمال الاتفاق على شروط التوصيل في عرض السعر، بما في ذلك التوصيل بكميات كبيرة إلى نادٍ أو ميدان رماية. اعرف المزيد في [صفحة الأعمال](/b2b).\n\n## الطرود التالفة\n\nافحص الطرد أمام المندوب إن أمكن. وإذا بدا أن هناك خطأ فأخبرنا خلال 48 ساعة واطّلع على [سياسة الإرجاع](/returns).",
+      "contentRu": "Это демонстрационный проект для портфолио. Текст на этой странице — образец содержимого, он не имеет юридической силы.\n\n## Куда мы доставляем\n\nМы доставляем по адресам по всей территории Объединённых Арабских Эмиратов. За пределы ОАЭ мы не отправляем. Для отдалённых мест стоимость доставки иногда приходится рассчитывать вручную, и мы сообщим о ней до оплаты.\n\n## Варианты доставки\n\n- Стандартная доставка: 50 AED, обычно 3–5 рабочих дней\n- Экспресс-доставка: 100 AED, обычно 1–2 рабочих дня\n\nСтандартная доставка бесплатна для заказов свыше 500 AED. В корзине видно, сколько осталось до бесплатной доставки.\n\n## Сроки комплектации\n\nЗаказы, оплаченные до 14:00 в рабочий день, обычно комплектуются в тот же день. Заказы, оформленные позже, а также в выходные и праздничные дни, комплектуются в следующий рабочий день. Срок доставки отсчитывается с момента отправки заказа из нашего шоу-рума, а не с момента оформления.\n\n## Товары с ограничениями и документы\n\nПневматические винтовки, пистолеты и некоторые другие товары относятся к товарам с ограничениями. Мы удерживаем такие заказы до одобрения проверки вашей личности, поэтому советуем пройти её заранее. Начать можно в личном кабинете.\n\n> Приготовьте документ\n> Получатель товара с ограничениями должен предъявить действующий документ, соответствующий проверенному покупателю. Если предъявить его некому, курьер возвращает посылку нам.\n\n## Отслеживание посылки\n\nКогда заказ отправлен, мы присылаем по электронной почте название курьерской службы и данные для отслеживания, а статус заказа в личном кабинете меняется на «Отправлен». Если посылка не пришла в течение нескольких дней после ожидаемой даты, [свяжитесь с нами](/contact), указав номер заказа.\n\n## Неудачная доставка\n\nКурьер делает до двух попыток доставки. Если до вас не удалось дозвониться, посылка возвращается к нам, и мы связываемся с вами, чтобы согласовать новую доставку или возврат средств. За повторную попытку может взиматься плата за доставку.\n\n## Самовывоз\n\nВы можете забрать заказ в шоу-руме, когда мы подтвердим его готовность. Возьмите с собой номер заказа и документ, удостоверяющий личность. Адреса и часы работы указаны на [странице магазинов](/stores).\n\n## Заказы для бизнеса\n\nБизнес-аккаунты могут согласовать условия доставки в коммерческом предложении, включая крупные поставки в клуб или на стрельбище. Подробнее — на [странице для бизнеса](/b2b).\n\n## Повреждённые посылки\n\nПо возможности проверьте посылку при курьере. Если что-то выглядит неправильно, сообщите нам в течение 48 часов и прочитайте [политику возврата](/returns).",
+      "metaTitleEn": "Shipping & Delivery | Wildridge Hunting",
+      "metaTitleAr": "الشحن والتوصيل | وايلدريدج للصيد",
+      "metaTitleRu": "Доставка | Wildridge Hunting",
+      "metaDescriptionEn": "Sample delivery information for the Wildridge Hunting demo shop: UAE delivery options, prices, times and ID checks.",
+      "metaDescriptionAr": "معلومات توصيل توضيحية لمتجر وايلدريدج للصيد التجريبي: خيارات التوصيل داخل الإمارات وأسعارها وأوقاتها وفحص الهوية.",
+      "metaDescriptionRu": "Примерная информация о доставке демо-магазина Wildridge Hunting: варианты по ОАЭ, цены, сроки и проверка документов.",
+      "isActive": true
+    },
+    {
+      "key": "stores",
+      "slug": "stores",
+      "titleEn": "Our showrooms",
+      "titleAr": "معارضنا",
+      "titleRu": "Наши шоу-румы",
+      "contentEn": "Visit a Wildridge Hunting showroom to handle the gear, get advice from the team and collect your order. This is a portfolio demo, so the showrooms and addresses are fictional.\n\n## Before you visit\n\n- Bring a valid ID if you plan to collect a restricted item.\n- Bring your order number when collecting an online order.\n- Tell us in advance if you want to try a specific product.\n\n>! At the showroom\n- Browse air rifles, optics and accessories in person.\n- Collect orders once we confirm they are ready.\n- Start a return in person.\n\nShopping from home? Read the [shipping page](/shipping) for delivery times, or [contact us](/contact).",
+      "contentAr": "زُر أحد معارض وايلدريدج للصيد لتجرّب المعدات بنفسك وتحصل على نصيحة الفريق وتستلم طلبك. هذا موقع تجريبي لأغراض معرض الأعمال، لذلك فالمعارض والعناوين افتراضية.\n\n## قبل زيارتك\n\n- أحضر هوية سارية إذا كنت تنوي استلام منتج مقيّد.\n- أحضر رقم طلبك عند استلام طلب من الموقع.\n- أخبرنا مسبقًا إذا أردت تجربة منتج بعينه.\n\n>! في المعرض\n- تصفّح بنادق الهواء والبصريات والملحقات شخصيًا.\n- استلم طلباتك بعد أن نؤكد جاهزيتها.\n- ابدأ عملية إرجاع شخصيًا.\n\nتفضّل التسوق من المنزل؟ اقرأ [صفحة الشحن](/shipping) لمعرفة أوقات التوصيل، أو [تواصل معنا](/contact).",
+      "contentRu": "Приезжайте в шоу-рум Wildridge Hunting, чтобы подержать снаряжение в руках, получить совет команды и забрать заказ. Это демонстрационный проект для портфолио, поэтому шоу-румы и адреса вымышленные.\n\n## Перед визитом\n\n- Возьмите действующий документ, удостоверяющий личность, если собираетесь забрать товар с ограничениями.\n- Возьмите номер заказа, если забираете заказ с сайта.\n- Предупредите заранее, если хотите примерить или посмотреть конкретный товар.\n\n>! В шоу-руме\n- Посмотрите пневматические винтовки, оптику и аксессуары вживую.\n- Заберите заказ, когда мы подтвердим его готовность.\n- Оформите возврат лично.\n\nПокупаете из дома? Сроки доставки — на [странице доставки](/shipping), а вопросы можно задать через [контакты](/contact).",
+      "metaTitleEn": "Our Showrooms | Wildridge Hunting",
+      "metaTitleAr": "معارضنا | وايلدريدج للصيد",
+      "metaTitleRu": "Наши шоу-румы | Wildridge Hunting",
+      "metaDescriptionEn": "Find the Wildridge Hunting demo showrooms in Dubai and Abu Dhabi, with addresses, opening hours and directions.",
+      "metaDescriptionAr": "اعثر على معارض وايلدريدج للصيد التجريبية في دبي وأبوظبي مع العناوين وساعات العمل والاتجاهات.",
+      "metaDescriptionRu": "Найдите демонстрационные шоу-румы Wildridge Hunting в Дубае и Абу-Даби: адреса, часы работы и маршруты.",
+      "isActive": true
+    },
+    {
+      "key": "terms",
+      "slug": "terms",
+      "titleEn": "Terms of Service",
+      "titleAr": "شروط الخدمة",
+      "titleRu": "Условия использования",
+      "contentEn": "This is a portfolio demo. The text on this page is sample content and has no legal effect.\n\n## About these terms\n\nWildridge Hunting is a fictional retailer of hunting gear, air rifles and optics in the United Arab Emirates. These sample terms show how a shop like this could describe the rules for using its website and placing orders. By creating an account or placing an order you agree to the terms below.\n\n## Your account\n\nYou need an account to place an order. Keep your sign-in details private and give us accurate information. You are responsible for everything that happens under your account.\n\n- You must be at least 21 years old to buy restricted items.\n- A personal account belongs to one person only.\n- Business customers apply for a separate business account.\n\n## Orders and prices\n\nAll prices are shown in UAE dirhams (AED) and include VAT at 5%. An order is accepted when we confirm it by email. We may cancel an order if an item is out of stock, a price was shown in error, or we cannot complete the checks described below. If we cancel an order you have already paid for, you receive a full refund.\n\n## ID verification\n\nAir rifles, pistols and some other items are restricted. Before your first restricted order ships we verify your identity and keep a record of the check. You can upload your documents from your account. An order that needs verification waits until the check is approved.\n\n> Why we ask\n> Restricted items can only be sold to verified buyers, so we never release them without a completed check.\n\n## Payment\n\nYou can pay by card at checkout. Approved business accounts can also pay a quote by bank transfer. An order is not prepared until payment is confirmed.\n\n## Delivery\n\nWe deliver within the United Arab Emirates. Delivery times and prices are listed on the [shipping page](/shipping). For restricted items, the person receiving the parcel may be asked to show a valid ID.\n\n## Returns\n\nYou can return most unused items within 14 days of delivery. Restricted items, opened ammunition and made-to-order products follow the rules on the [returns page](/returns).\n\n## Business accounts\n\nCompanies, clubs and ranges can apply for a business account to request quotes and place priced orders. Business accounts are reviewed before approval, and we may ask for a trade licence and a VAT certificate. Read more on the [business page](/b2b).\n\n## Loyalty points\n\nYou earn points on eligible purchases and can use them as a discount at checkout. Points have no cash value, are not transferable, and may be adjusted if an order is cancelled or returned.\n\n## Limits of liability\n\nWe take care to describe every product accurately. We are not responsible for misuse of a product, or for losses we could not reasonably have foreseen. Nothing in these terms limits rights you have under UAE law.\n\n## Changes to these terms\n\nWe may update these terms from time to time. The date at the bottom of this page shows the latest version. Questions? [Contact us](/contact).",
+      "contentAr": "هذا موقع تجريبي لأغراض معرض الأعمال. النص في هذه الصفحة محتوى توضيحي ولا يترتب عليه أي أثر قانوني.\n\n## نبذة عن هذه الشروط\n\nوايلدريدج للصيد متجر افتراضي لبيع معدات الصيد وبنادق الهواء والبصريات في دولة الإمارات العربية المتحدة. توضّح هذه الشروط التجريبية كيف يمكن لمتجر من هذا النوع أن يصف قواعد استخدام موقعه وتقديم الطلبات. بإنشاء حساب أو تقديم طلب فإنك توافق على الشروط الواردة أدناه.\n\n## حسابك\n\nتحتاج إلى حساب لتقديم الطلب. حافظ على سرّية بيانات الدخول وزوّدنا بمعلومات صحيحة. أنت مسؤول عن كل ما يجري عبر حسابك.\n\n- يجب ألا يقل عمرك عن 21 عامًا لشراء المنتجات المقيّدة.\n- الحساب الشخصي يخص شخصًا واحدًا فقط.\n- يتقدّم عملاء الأعمال بطلب حساب أعمال منفصل.\n\n## الطلبات والأسعار\n\nجميع الأسعار معروضة بالدرهم الإماراتي (AED) وتشمل ضريبة القيمة المضافة بنسبة 5%. يُقبل الطلب عندما نؤكده عبر البريد الإلكتروني. يجوز لنا إلغاء الطلب إذا نفد المنتج من المخزون، أو ظهر السعر بشكل خاطئ، أو تعذّر علينا إتمام الفحوصات الموضّحة أدناه. وإذا ألغينا طلبًا دفعت قيمته، فستسترد المبلغ كاملًا.\n\n## التحقق من الهوية\n\nبنادق الهواء والمسدسات وبعض المنتجات الأخرى مقيّدة. قبل شحن أول طلب مقيّد نتحقق من هويتك ونحتفظ بسجل لهذا الفحص. يمكنك رفع مستنداتك من حسابك. وينتظر الطلب الذي يتطلب التحقق إلى أن تتم الموافقة على الفحص.\n\n> لماذا نطلب ذلك\n> لا يُباع المنتج المقيّد إلا لمشترٍ موثّق، لذلك لا نفرج عنه قبل اكتمال الفحص.\n\n## الدفع\n\nيمكنك الدفع بالبطاقة عند إتمام الطلب. ويمكن لحسابات الأعمال المعتمدة أيضًا دفع عرض السعر بالتحويل المصرفي. لا يبدأ تجهيز الطلب قبل تأكيد الدفع.\n\n## التوصيل\n\nنوصّل داخل دولة الإمارات العربية المتحدة. أوقات التوصيل وأسعاره مذكورة في [صفحة الشحن](/shipping). وبالنسبة إلى المنتجات المقيّدة، قد يُطلب من مستلم الطرد إبراز هوية سارية.\n\n## الإرجاع\n\nيمكنك إرجاع معظم المنتجات غير المستخدمة خلال 14 يومًا من التسليم. أما المنتجات المقيّدة والذخيرة المفتوحة والمنتجات المصنّعة حسب الطلب فتخضع للقواعد الواردة في [صفحة الإرجاع](/returns).\n\n## حسابات الأعمال\n\nيمكن للشركات والنوادي وميادين الرماية التقدّم بطلب حساب أعمال لطلب عروض الأسعار وتقديم طلبات بأسعار محددة. تُراجع حسابات الأعمال قبل الموافقة عليها، وقد نطلب رخصة تجارية وشهادة ضريبة القيمة المضافة. اطّلع على التفاصيل في [صفحة الأعمال](/b2b).\n\n## نقاط الولاء\n\nتكسب نقاطًا على المشتريات المؤهلة ويمكنك استخدامها كخصم عند إتمام الطلب. ليست للنقاط قيمة نقدية ولا يمكن تحويلها، وقد تُعدَّل إذا أُلغي الطلب أو أُرجع.\n\n## حدود المسؤولية\n\nنحرص على وصف كل منتج بدقة. ولا نتحمل مسؤولية إساءة استخدام المنتج، ولا الخسائر التي لم يكن بوسعنا توقعها بشكل معقول. لا تقيّد هذه الشروط أي حقوق لك بموجب قانون دولة الإمارات.\n\n## تعديل هذه الشروط\n\nقد نحدّث هذه الشروط من حين لآخر. يبيّن التاريخ في أسفل الصفحة أحدث نسخة. لديك سؤال؟ [تواصل معنا](/contact).",
+      "contentRu": "Это демонстрационный проект для портфолио. Текст на этой странице — образец содержимого, он не имеет юридической силы.\n\n## Об этих условиях\n\nWildridge Hunting — вымышленный магазин снаряжения для охоты, пневматических винтовок и оптики в Объединённых Арабских Эмиратах. Эти примерные условия показывают, как такой магазин мог бы описать правила пользования сайтом и оформления заказов. Создавая учётную запись или оформляя заказ, вы соглашаетесь с условиями ниже.\n\n## Ваша учётная запись\n\nДля заказа нужна учётная запись. Храните данные для входа в тайне и указывайте достоверные сведения. Вы отвечаете за всё, что происходит под вашей учётной записью.\n\n- Для покупки товаров с ограничениями вам должно быть не менее 21 года.\n- Личная учётная запись принадлежит только одному человеку.\n- Бизнес-клиенты подают заявку на отдельную бизнес-учётную запись.\n\n## Заказы и цены\n\nВсе цены указаны в дирхамах ОАЭ (AED) и включают НДС 5%. Заказ считается принятым, когда мы подтвердим его по электронной почте. Мы вправе отменить заказ, если товара нет в наличии, цена указана ошибочно или мы не можем завершить описанные ниже проверки. Если мы отменяем уже оплаченный заказ, вы получаете полный возврат средств.\n\n## Проверка личности\n\nПневматические винтовки, пистолеты и некоторые другие товары относятся к товарам с ограничениями. Перед отправкой первого такого заказа мы проверяем вашу личность и сохраняем запись о проверке. Документы можно загрузить в личном кабинете. Заказ, требующий проверки, ожидает её одобрения.\n\n> Почему мы это просим\n> Товары с ограничениями продаются только проверенным покупателям, поэтому мы не отправляем их без завершённой проверки.\n\n## Оплата\n\nОплатить заказ можно картой при оформлении. Одобренные бизнес-аккаунты могут также оплатить коммерческое предложение банковским переводом. Заказ не комплектуется, пока оплата не подтверждена.\n\n## Доставка\n\nМы доставляем по территории Объединённых Арабских Эмиратов. Сроки и стоимость доставки указаны на [странице доставки](/shipping). При получении товаров с ограничениями получателя могут попросить предъявить действующий документ, удостоверяющий личность.\n\n## Возврат\n\nБольшинство неиспользованных товаров можно вернуть в течение 14 дней после доставки. Товары с ограничениями, вскрытые боеприпасы и товары, изготовленные на заказ, подчиняются правилам на [странице возврата](/returns).\n\n## Бизнес-аккаунты\n\nКомпании, клубы и стрельбища могут подать заявку на бизнес-аккаунт, чтобы запрашивать коммерческие предложения и оформлять заказы по согласованным ценам. Бизнес-аккаунты проверяются перед одобрением, и мы можем запросить торговую лицензию и свидетельство о регистрации плательщика НДС. Подробнее — на [странице для бизнеса](/b2b).\n\n## Бонусные баллы\n\nЗа подходящие покупки вы получаете баллы и можете использовать их как скидку при оформлении заказа. У баллов нет денежной стоимости, их нельзя передавать другим, и они могут быть скорректированы при отмене или возврате заказа.\n\n## Ограничение ответственности\n\nМы стараемся точно описывать каждый товар. Мы не отвечаем за неправильное использование товара и за убытки, которых нельзя было разумно предвидеть. Ничто в этих условиях не ограничивает ваши права по законодательству ОАЭ.\n\n## Изменение условий\n\nМы можем время от времени обновлять эти условия. Дата внизу страницы показывает последнюю версию. Есть вопросы? [Свяжитесь с нами](/contact).",
+      "metaTitleEn": "Terms of Service | Wildridge Hunting",
+      "metaTitleAr": "شروط الخدمة | وايلدريدج للصيد",
+      "metaTitleRu": "Условия использования | Wildridge Hunting",
+      "metaDescriptionEn": "Sample terms for using the Wildridge Hunting demo shop, placing orders and buying restricted items.",
+      "metaDescriptionAr": "شروط توضيحية لاستخدام متجر وايلدريدج للصيد التجريبي وتقديم الطلبات وشراء المنتجات المقيّدة.",
+      "metaDescriptionRu": "Примерные условия использования демо-магазина Wildridge Hunting, оформления заказов и покупки товаров с ограничениями.",
+      "isActive": true
+    }
+  ],
+  "stores": [
+    {
+      "nameEn": "Wildridge Dubai Showroom",
+      "nameAr": "معرض وايلدريدج دبي",
+      "nameRu": "Шоу-рум Wildridge в Дубае",
+      "addressEn": "Unit 14, Falcon Ridge Street, Al Quoz Industrial Area 3, Dubai, United Arab Emirates",
+      "addressAr": "الوحدة 14، شارع فالكون ريدج، منطقة القوز الصناعية 3، دبي، الإمارات العربية المتحدة",
+      "addressRu": "Юнит 14, улица Фолкон-Ридж, промышленная зона Аль-Кувз 3, Дубай, ОАЭ",
+      "descriptionEn": "Our main showroom. Handle air rifles, optics and accessories, get advice from the team, and collect your online order at the counter.",
+      "descriptionAr": "معرضنا الرئيسي. جرّب بنادق الهواء والبصريات والملحقات بنفسك، واحصل على نصيحة الفريق، واستلم طلبك من الموقع عند المنضدة.",
+      "descriptionRu": "Наш главный шоу-рум. Посмотрите пневматические винтовки, оптику и аксессуары, получите совет команды и заберите заказ с сайта на стойке выдачи.",
+      "hoursNoteEn": "On Fridays we open at 2 pm. Public holiday hours may differ.",
+      "hoursNoteAr": "نفتح يوم الجمعة في الساعة 2 ظهرًا. وقد تختلف ساعات العمل في العطلات الرسمية.",
+      "hoursNoteRu": "По пятницам мы открываемся в 14:00. В праздничные дни часы работы могут отличаться.",
+      "latitude": 25.1425,
+      "longitude": 55.235,
+      "phone": "+971 4 000 0000",
+      "email": "stores@wildridge.example",
+      "openingHours": {
+        "fri": {
+          "close": "22:00",
+          "open": "14:00"
+        },
+        "mon": {
+          "close": "22:00",
+          "open": "10:00"
+        },
+        "sat": {
+          "close": "22:00",
+          "open": "10:00"
+        },
+        "sun": {
+          "close": "22:00",
+          "open": "10:00"
+        },
+        "thu": {
+          "close": "22:00",
+          "open": "10:00"
+        },
+        "tue": {
+          "close": "22:00",
+          "open": "10:00"
+        },
+        "wed": {
+          "close": "22:00",
+          "open": "10:00"
+        }
+      },
+      "isActive": true,
+      "isPrimary": true,
+      "displayOrder": 0
+    },
+    {
+      "nameEn": "Wildridge Abu Dhabi Showroom",
+      "nameAr": "معرض وايلدريدج أبوظبي",
+      "nameRu": "Шоу-рум Wildridge в Абу-Даби",
+      "addressEn": "Showroom 6, Saker Row, Mussafah Industrial Area, Abu Dhabi, United Arab Emirates",
+      "addressAr": "المعرض 6، صف ساكر، منطقة مصفح الصناعية، أبوظبي، الإمارات العربية المتحدة",
+      "addressRu": "Шоу-рум 6, ряд Сакер, промышленная зона Муссафах, Абу-Даби, ОАЭ",
+      "descriptionEn": "Our Abu Dhabi showroom. See the range in person, ask the team for advice, and collect orders placed online.",
+      "descriptionAr": "معرضنا في أبوظبي. شاهد التشكيلة بنفسك، واطلب نصيحة الفريق، واستلم الطلبات المقدَّمة عبر الموقع.",
+      "descriptionRu": "Наш шоу-рум в Абу-Даби. Посмотрите ассортимент вживую, спросите совета у команды и заберите заказ, оформленный на сайте.",
+      "hoursNoteEn": "On Fridays we open at 2 pm. Public holiday hours may differ.",
+      "hoursNoteAr": "نفتح يوم الجمعة في الساعة 2 ظهرًا. وقد تختلف ساعات العمل في العطلات الرسمية.",
+      "hoursNoteRu": "По пятницам мы открываемся в 14:00. В праздничные дни часы работы могут отличаться.",
+      "latitude": 24.348,
+      "longitude": 54.49,
+      "phone": "+971 4 000 0000",
+      "email": "stores@wildridge.example",
+      "openingHours": {
+        "fri": {
+          "close": "21:00",
+          "open": "14:00"
+        },
+        "mon": {
+          "close": "21:00",
+          "open": "10:00"
+        },
+        "sat": {
+          "close": "21:00",
+          "open": "10:00"
+        },
+        "sun": {
+          "close": "21:00",
+          "open": "10:00"
+        },
+        "thu": {
+          "close": "21:00",
+          "open": "10:00"
+        },
+        "tue": {
+          "close": "21:00",
+          "open": "10:00"
+        },
+        "wed": {
+          "close": "21:00",
+          "open": "10:00"
+        }
+      },
+      "isActive": true,
+      "isPrimary": false,
+      "displayOrder": 1
+    }
+  ],
+  "featured": {
+    "key": "homepage-featured",
+    "nameEn": "Field Tested. New Arrivals.",
+    "nameAr": "اختُبر ميدانياً. وصل حديثاً.",
+    "nameRu": "Проверено в полевых условиях. Новинки.",
+    "isActive": true,
+    "skus": [
+      "HLV-34-45",
+      "HLV-48-55",
+      "HLV-54-45",
+      "BRF-GLE95-45",
+      "BRF-GLE125-55",
+      "HLV-RNG-45",
+      "HLV-KST50-45",
+      "HLV-KST80-55"
+    ]
+  }
+}

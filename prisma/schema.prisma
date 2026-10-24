@@ -1,0 +1,1819 @@
+generator client {
+  provider        = "prisma-client"
+  output          = "../app/generated/prisma"
+  previewFeatures = ["partialIndexes"]
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Brand {
+  id        String    @id @default(cuid())
+  nameEn    String
+  nameAr    String?
+  nameRu    String?
+  slug      String    @unique
+  isVisible Boolean   @default(true)
+  deletedAt DateTime?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  products  Product[]
+
+  @@index([isVisible])
+  @@index([deletedAt])
+}
+
+model Category {
+  id            String     @id @default(cuid())
+  nameAr        String
+  nameEn        String
+  nameRu        String?
+  slug          String
+  parentId      String?
+  displayOrder  Int        @default(0)
+  imageFilename String?
+  storageKey    String?
+  isVisible     Boolean    @default(true)
+  navGroup      NavGroup?
+  deletedAt     DateTime?
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+  parent        Category?  @relation("CategoryTree", fields: [parentId], references: [id])
+  children      Category[] @relation("CategoryTree")
+  products      Product[]
+  productLinks  ProductCategory[]
+
+  @@index([parentId])
+  @@index([slug])
+  @@index([nameEn])
+  @@index([isVisible])
+  @@index([displayOrder])
+  @@index([deletedAt])
+  @@index([navGroup])
+}
+
+model Product {
+  id                     String                   @id @default(cuid())
+  sku                    String                   @unique
+  nameAr                 String
+  nameEn                 String
+  nameRu                 String?
+  slugEn                 String                   @unique
+  legacyBrand            String?                  @map("brand")
+  brandId                String?
+  actionType             ActionType
+  caliberMm              Decimal?                 @db.Decimal(5, 2)
+  descriptionAr          String?
+  descriptionEn          String?
+  descriptionRu          String?
+  categoryId             String
+  tags                   String[]                 @default([])
+  price                  Decimal                  @db.Decimal(10, 2)
+  compareAtPrice         Decimal?                 @db.Decimal(10, 2)
+  stockQuantity          Int                      @default(0)
+  reservedQuantity       Int                      @default(0)
+  lowStockThreshold      Int                      @default(5)
+  weightGrams            Int?
+  requiresIdVerification Boolean                  @default(false)
+  serialTracking         SerialTracking           @default(NONE)
+  supportsAddons         Boolean                  @default(false)
+  b2bAvailable           Boolean                  @default(false)
+  minOrderQty            Int                      @default(1)
+  maxOrderQty            Int?
+  isNewArrival           Boolean                  @default(false)
+  isFeatured             Boolean                  @default(false)
+  sortOrder              Int?
+  loyaltyPointsEarn      Int                      @default(0)
+  loyaltyRule            LoyaltyEarnRule          @default(STANDARD)
+  loyaltyMultiplier      Decimal?                 @db.Decimal(4, 1)
+  loyaltyRuleStartsAt    DateTime?
+  loyaltyRuleEndsAt      DateTime?
+  publishStatus          PublishStatus            @default(DRAFT)
+  metaTitleAr            String?                  @db.VarChar(60)
+  metaTitleEn            String?                  @db.VarChar(60)
+  metaTitleRu            String?                  @db.VarChar(60)
+  metaDescriptionAr      String?                  @db.VarChar(160)
+  metaDescriptionEn      String?                  @db.VarChar(160)
+  metaDescriptionRu      String?                  @db.VarChar(160)
+  internalNotes          String?
+  deletedAt              DateTime?
+  createdAt              DateTime                 @default(now())
+  updatedAt              DateTime                 @updatedAt
+  addonLinks             AddonProductLink[]
+  accessoryLinks         ProductAccessory[]       @relation("ProductAccessories")
+  accessoryOf            ProductAccessory[]       @relation("AccessoryOf")
+  categoryLinks          ProductCategory[]
+  cartItems              CartItem[]
+  orderItems             OrderItem[]
+  brandRef               Brand?                   @relation(fields: [brandId], references: [id], onDelete: Restrict)
+  category               Category                 @relation(fields: [categoryId], references: [id])
+  images                 ProductImage[]
+  reviews                ProductReview[]
+  specs                  ProductSpec[]
+  quoteItems             QuoteItem[]
+  stockMovements         StockMovement[]
+  wishlistItems          WishlistItem[]
+  featuredInCollections  FeaturedCollectionItem[]
+
+  @@index([b2bAvailable])
+  @@index([categoryId, publishStatus, sortOrder])
+  @@index([requiresIdVerification])
+  @@index([publishStatus])
+  @@index([isFeatured])
+  @@index([isNewArrival])
+  @@index([legacyBrand])
+  @@index([brandId])
+  @@index([actionType])
+  @@index([caliberMm])
+  @@index([price])
+  @@index([stockQuantity])
+  @@index([sortOrder])
+  @@index([createdAt])
+  @@index([deletedAt])
+  @@index([tags], map: "idx_product_tags", type: Gin)
+}
+
+model ProductImage {
+  id           String   @id @default(cuid())
+  productSku   String
+  filename     String
+  storageKey   String?
+  altTextAr    String?
+  altTextEn    String?
+  altTextRu    String?
+  displayOrder Int      @default(1)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  product      Product  @relation(fields: [productSku], references: [sku], onDelete: Cascade)
+
+  @@unique([productSku, displayOrder])
+  @@index([productSku])
+}
+
+model ProductSpec {
+  id           String   @id @default(cuid())
+  productSku   String
+  labelAr      String
+  labelEn      String
+  labelRu      String?
+  valueAr      String
+  valueEn      String
+  valueRu      String?
+  displayOrder Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  product      Product  @relation(fields: [productSku], references: [sku], onDelete: Cascade)
+
+  @@unique([productSku, labelEn])
+  @@index([productSku])
+  @@index([displayOrder])
+}
+
+model Addon {
+  id                String               @id @default(cuid())
+  addonId           String               @unique
+  nameAr            String
+  nameEn            String
+  nameRu            String?
+  descriptionAr     String?
+  descriptionEn     String?
+  descriptionRu     String?
+  price             Decimal              @db.Decimal(10, 2)
+  compareAtPrice    Decimal?             @db.Decimal(10, 2)
+  stockQuantity     Int                  @default(0)
+  reservedQuantity  Int                  @default(0)
+  lowStockThreshold Int                  @default(5)
+  imageFilename     String?
+  storageKey        String?
+  isActive          Boolean              @default(true)
+  deletedAt         DateTime?
+  createdAt         DateTime             @default(now())
+  updatedAt         DateTime             @updatedAt
+  productLinks      AddonProductLink[]
+  stockMovements    AddonStockMovement[]
+  cartAddons        CartSelectedAddon[]
+  orderItems        OrderItem[]
+  quoteAddons       QuoteSelectedAddon[]
+
+  @@index([isActive])
+  @@index([stockQuantity])
+  @@index([deletedAt])
+}
+
+model AddonProductLink {
+  id           String   @id @default(cuid())
+  addonId      String
+  productSku   String
+  displayOrder Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  addon        Addon    @relation(fields: [addonId], references: [addonId], onDelete: Cascade)
+  product      Product  @relation(fields: [productSku], references: [sku], onDelete: Cascade)
+
+  @@unique([addonId, productSku])
+  @@index([productSku])
+  @@index([addonId])
+}
+
+model ProductAccessory {
+  id           String   @id @default(cuid())
+  productSku   String
+  accessorySku String
+  displayOrder Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  product      Product  @relation("ProductAccessories", fields: [productSku], references: [sku], onDelete: Cascade)
+  accessory    Product  @relation("AccessoryOf", fields: [accessorySku], references: [sku], onDelete: Cascade)
+
+  @@unique([productSku, accessorySku])
+  @@index([accessorySku])
+}
+
+model ProductCategory {
+  id         String   @id @default(cuid())
+  productSku String
+  categoryId String
+  createdAt  DateTime @default(now())
+  product    Product  @relation(fields: [productSku], references: [sku], onDelete: Cascade)
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@unique([productSku, categoryId])
+  @@index([categoryId])
+}
+
+model Banner {
+  id            String    @id @default(cuid())
+  bannerId      String    @unique
+  pageKey       String
+  titleAr       String
+  titleEn       String
+  titleRu       String?
+  subtitleAr    String?
+  subtitleEn    String?
+  subtitleRu    String?
+  ctaAr         String?
+  ctaEn         String?
+  ctaRu         String?
+  linkUrl       String?
+  imageFilename String?
+  storageKey    String?
+  isActive      Boolean   @default(true)
+  displayOrder  Int       @default(0)
+  startsAt      DateTime?
+  endsAt        DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@index([pageKey, isActive])
+  @@index([displayOrder])
+}
+
+model Page {
+  id                String   @id @default(cuid())
+  key               String   @unique
+  slug              String   @unique
+  titleAr           String
+  titleEn           String
+  titleRu           String?
+  contentAr         String?
+  contentEn         String?
+  contentRu         String?
+  metaTitleAr       String?  @db.VarChar(60)
+  metaTitleEn       String?  @db.VarChar(60)
+  metaTitleRu       String?  @db.VarChar(60)
+  metaDescriptionAr String?  @db.VarChar(160)
+  metaDescriptionEn String?  @db.VarChar(160)
+  metaDescriptionRu String?  @db.VarChar(160)
+  isActive          Boolean  @default(true)
+  updatedAt         DateTime @updatedAt
+  createdAt         DateTime @default(now())
+
+  @@index([slug])
+  @@index([isActive])
+}
+
+model Store {
+  id            String   @id @default(cuid())
+  nameEn        String
+  nameAr        String?
+  nameRu        String?
+  addressEn     String
+  addressAr     String?
+  addressRu     String?
+  descriptionEn String?
+  descriptionAr String?
+  descriptionRu String?
+  hoursNoteEn   String?
+  hoursNoteAr   String?
+  hoursNoteRu   String?
+  latitude      Float
+  longitude     Float
+  phone         String?
+  email         String?
+  openingHours  Json?
+  isActive      Boolean  @default(true)
+  isPrimary     Boolean  @default(false)
+  displayOrder  Int      @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([isActive, displayOrder])
+  @@unique([isPrimary], map: "Store_single_primary_key", where: raw("\"isPrimary\""))
+}
+
+model ProjectConfig {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     Json
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Staff {
+  id                    String               @id @default(cuid())
+  supabaseUserId        String?              @unique
+  email                 String               @unique
+  name                  String
+  role                  StaffRole
+  passwordHash          String?
+  mustChangePassword    Boolean              @default(false)
+  isActive              Boolean              @default(true)
+  lastLoginAt           DateTime?
+  previousLoginAt       DateTime?
+  tokenVersion          Int                  @default(0)
+  createdAt             DateTime             @default(now())
+  updatedAt             DateTime             @updatedAt
+  addonStockMovements   AddonStockMovement[]
+  reviewedB2B           B2BAccount[]         @relation("B2BReviewedBy")
+  importBatches         ImportBatch[]
+  orderEvents           OrderEvent[]
+  quoteEvents           QuoteEvent[]
+  quotedQuotes          QuoteRequest[]       @relation("QuoteQuotedBy")
+  stockMovements        StockMovement[]
+  reviewedVerifications VerificationEvent[]  @relation("VerificationReviewedBy")
+  ticketsCreated        Ticket[]             @relation("TicketCreatedBy")
+  ticketsAssigned       Ticket[]             @relation("TicketAssignedTo")
+  ticketEvents          TicketEvent[]
+  documentRequests      DocumentRequest[]    @relation("DocumentRequestedBy")
+  verificationDocumentRequests VerificationDocumentRequest[] @relation("VerificationDocumentRequestedBy")
+  orderPayments         OrderPayment[]
+  orderRefunds          OrderRefund[]
+  orderItemSerials      OrderItemSerial[]
+
+  @@index([role])
+  @@index([isActive])
+}
+
+model Customer {
+  id                    String               @id @default(cuid())
+  supabaseUserId        String?              @unique
+  email                 String               @unique
+  name                  String
+  phone                 String?
+  passwordHash          String?
+  role                  CustomerRole         @default(B2C)
+  isActive              Boolean              @default(true)
+  lastLoginAt           DateTime?
+  emailVerifiedAt       DateTime?
+  verificationStatus    VerificationStatus   @default(NOT_REQUIRED)
+  verifiedAt            DateTime?
+  verificationExpiresAt DateTime?
+  uaePassUuid           String?              @unique
+  loyaltyPoints         Int                  @default(0)
+  tokenVersion          Int                  @default(0)
+  locale                String               @default("en")
+  internalNotes         String?
+  deletedAt             DateTime?
+  createdAt             DateTime             @default(now())
+  updatedAt             DateTime             @updatedAt
+  b2bAccount            B2BAccount[]
+  carts                 Cart[]
+  couponRedemptions     CouponRedemption[]
+  addresses             CustomerAddress[]
+  klaviyoEvents         KlaviyoEvent[]
+  loyaltyTransactions   LoyaltyTransaction[]
+  orders                Order[]
+  personalCoupons       Coupon[]
+  reviews               ProductReview[]
+  quoteRequests         QuoteRequest[]
+  verificationEvents    VerificationEvent[]
+  wishlistItems         WishlistItem[]
+  tickets               Ticket[]
+  createdTickets        Ticket[]             @relation("TicketCreatedByCustomer")
+  uaePassTickets        UaePassSignInTicket[]
+  passwordResetTokens   PasswordResetToken[]
+  emailVerificationTokens EmailVerificationToken[]
+
+  @@index([role])
+  @@index([verificationStatus])
+  @@index([isActive])
+  @@index([createdAt])
+  @@index([deletedAt])
+}
+
+model CustomerAddress {
+  id           String   @id @default(cuid())
+  customerId   String
+  label        String?
+  fullName     String
+  phone        String
+  addressLine1 String
+  addressLine2 String?
+  city         String
+  emirate      String
+  country      String   @default("AE")
+  postalCode   String?
+  isDefault    Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  customer     Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+
+  @@index([customerId])
+  @@index([emirate])
+}
+
+model UaePassSignInTicket {
+  id         String    @id @default(cuid())
+  tokenHash  String    @unique
+  customerId String
+  expiresAt  DateTime
+  consumedAt DateTime?
+  createdAt  DateTime  @default(now())
+  customer   Customer  @relation(fields: [customerId], references: [id], onDelete: Cascade)
+
+  @@index([customerId])
+  @@index([expiresAt])
+}
+
+model PasswordResetToken {
+  id         String    @id @default(cuid())
+  tokenHash  String    @unique
+  customerId String
+  expiresAt  DateTime
+  consumedAt DateTime?
+  createdAt  DateTime  @default(now())
+  customer   Customer  @relation(fields: [customerId], references: [id], onDelete: Cascade)
+
+  @@index([customerId])
+  @@index([expiresAt])
+}
+
+model EmailVerificationToken {
+  id         String    @id @default(cuid())
+  tokenHash  String    @unique
+  customerId String
+  expiresAt  DateTime
+  consumedAt DateTime?
+  createdAt  DateTime  @default(now())
+  customer   Customer  @relation(fields: [customerId], references: [id], onDelete: Cascade)
+
+  @@index([customerId])
+  @@index([expiresAt])
+}
+
+model UaePassPendingLink {
+  id           String    @id @default(cuid())
+  tokenHash    String    @unique
+  uaePassUuid  String
+  email        String?
+  fullnameEN   String?
+  firstnameEN  String?
+  lastnameEN   String?
+  nationalityEN String?
+  userType     String
+  idnPresent   Boolean   @default(false)
+  locale       String
+  callbackUrl  String
+  attemptCount Int       @default(0)
+  expiresAt    DateTime
+  consumedAt   DateTime?
+  createdAt    DateTime  @default(now())
+
+  @@index([expiresAt])
+  @@index([uaePassUuid])
+}
+
+model B2BAccount {
+  id               String            @id @default(cuid())
+  customerId       String
+  companyNameEn    String
+  companyNameAr    String?
+  contactName      String?
+  contactPhone     String?
+  tradeLicenseNo   String
+  vatNumber        String?
+  status           B2BStatus         @default(PENDING)
+  reviewedById     String?
+  reviewedAt       DateTime?
+  verifiedAt       DateTime?
+  expiresAt        DateTime?
+  rejectionReason  String?
+  creditLimitAed   Decimal?          @db.Decimal(10, 2)
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+  customer         Customer          @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  reviewedBy       Staff?            @relation("B2BReviewedBy", fields: [reviewedById], references: [id])
+  documents        B2BDocument[]
+  quoteRequests    QuoteRequest[]
+  documentRequests DocumentRequest[]
+  tickets          Ticket[]
+
+  @@unique([customerId], map: "unique_active_b2b_per_customer", where: raw("(\"status\" IN ('PENDING', 'APPROVED', 'SUSPENDED'))"))
+  @@unique([tradeLicenseNo], map: "unique_active_b2b_per_trade_license", where: raw("(\"status\" IN ('PENDING', 'APPROVED', 'SUSPENDED'))"))
+  @@index([customerId])
+  @@index([status])
+  @@index([reviewedById])
+}
+
+model B2BDocument {
+  id             String           @id @default(cuid())
+  b2bAccountId   String
+  type           DocumentType
+  filename       String
+  storageKey     String
+  mimeType       String?
+  uploadedAt     DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+  supersededAt   DateTime?
+  declaredNumber String?
+  label          String?
+  requestId      String?
+  b2bAccount     B2BAccount       @relation(fields: [b2bAccountId], references: [id], onDelete: Cascade)
+  request        DocumentRequest? @relation(fields: [requestId], references: [id])
+
+  @@index([b2bAccountId])
+  @@index([type])
+  @@index([b2bAccountId, supersededAt])
+  @@index([requestId])
+}
+
+model DocumentRequest {
+  id            String                @id @default(cuid())
+  b2bAccountId  String
+  scope         DocumentRequestScope  @default(DOCUMENTS)
+  status        DocumentRequestStatus @default(OPEN)
+  types         DocumentType[]        @default([])
+  message       String
+  requestedById String
+  fulfilledAt   DateTime?
+  cancelledAt   DateTime?
+  createdAt     DateTime              @default(now())
+  updatedAt     DateTime              @updatedAt
+  b2bAccount    B2BAccount            @relation(fields: [b2bAccountId], references: [id], onDelete: Cascade)
+  requestedBy   Staff                 @relation("DocumentRequestedBy", fields: [requestedById], references: [id])
+  documents     B2BDocument[]
+
+  @@unique([b2bAccountId], map: "unique_open_document_request_per_account", where: raw("(\"status\" = 'OPEN')"))
+  @@index([b2bAccountId])
+  @@index([status])
+  @@index([requestedById])
+}
+
+model Cart {
+  id         String     @id @default(cuid())
+  customerId String?
+  guestToken String?    @unique
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+  customer   Customer?  @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  items      CartItem[]
+
+  @@index([customerId])
+  @@index([guestToken])
+  @@index([updatedAt])
+}
+
+model CartItem {
+  id             String              @id @default(cuid())
+  cartId         String
+  productSku     String
+  quantity       Int
+  createdAt      DateTime            @default(now())
+  updatedAt      DateTime            @updatedAt
+  cart           Cart                @relation(fields: [cartId], references: [id], onDelete: Cascade)
+  product        Product             @relation(fields: [productSku], references: [sku])
+  selectedAddons CartSelectedAddon[]
+
+  @@unique([cartId, productSku])
+  @@index([cartId])
+  @@index([productSku])
+}
+
+model CartSelectedAddon {
+  id         String   @id @default(cuid())
+  cartItemId String
+  addonId    String
+  quantity   Int      @default(1)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  addon      Addon    @relation(fields: [addonId], references: [addonId])
+  cartItem   CartItem @relation(fields: [cartItemId], references: [id], onDelete: Cascade)
+
+  @@unique([cartItemId, addonId])
+  @@index([cartItemId])
+  @@index([addonId])
+}
+
+model WishlistItem {
+  id         String   @id @default(cuid())
+  customerId String
+  productSku String
+  createdAt  DateTime @default(now())
+  customer   Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  product    Product  @relation(fields: [productSku], references: [sku])
+
+  @@unique([customerId, productSku])
+  @@index([customerId])
+  @@index([productSku])
+}
+
+model ProductReview {
+  id                 String       @id @default(cuid())
+  productSku         String
+  customerId         String?
+  rating             Int
+  title              String?
+  body               String?
+  status             ReviewStatus @default(PENDING)
+  isVerifiedPurchase Boolean      @default(false)
+  createdAt          DateTime     @default(now())
+  updatedAt          DateTime     @updatedAt
+  customer           Customer?    @relation(fields: [customerId], references: [id])
+  product            Product      @relation(fields: [productSku], references: [sku])
+
+  @@unique([productSku, customerId], map: "unique_review_per_customer_per_product", where: raw("(\"customerId\" IS NOT NULL)"))
+  @@index([productSku, customerId])
+  @@index([productSku])
+  @@index([customerId])
+  @@index([status])
+  @@index([rating])
+}
+
+model Order {
+  id                      String               @id @default(cuid())
+  orderNumber             String               @unique
+  customerId              String
+  status                  OrderStatus          @default(PENDING)
+  subtotal                Decimal              @db.Decimal(10, 2)
+  addonTotal              Decimal              @default(0) @db.Decimal(10, 2)
+  shippingCost            Decimal              @default(0) @db.Decimal(10, 2)
+  discountAmount          Decimal              @default(0) @db.Decimal(10, 2)
+  taxAmount               Decimal              @default(0) @db.Decimal(10, 2)
+  total                   Decimal              @db.Decimal(10, 2)
+  loyaltyPointsEarned     Int                  @default(0)
+  loyaltyPointsUsed       Int                  @default(0)
+  loyaltyDiscountAmount   Decimal              @default(0) @db.Decimal(10, 2)
+  loyaltyPointsFrozenAt   DateTime?
+  refundDue               Decimal              @default(0) @db.Decimal(10, 2)
+  couponCode              String?
+  paymentProvider         PaymentProvider      @default(NGENIUS)
+  nGeniusOrderRef         String?
+  nGeniusPayRef           String?
+  paidAt                  DateTime?
+  shippingAddressSnapshot Json
+  billingAddressSnapshot  Json?
+  complianceSnapshot      Json?
+  trackingNumber          String?
+  trackingUrl             String?
+  shippedAt               DateTime?
+  shippingQuotedAt        DateTime?
+  shippingQuotedBy        String?
+  deliveredAt             DateTime?
+  carrier                 String?
+  parcelCount             Int?
+  shipmentNote            String?
+  deliveryReceivedBy      String?
+  deliveryIdChecked       Boolean?
+  deliveryNote            String?
+  deliveryProofKey        String?
+  deliveryProofFilename   String?
+  deliveryProofMimeType   String?
+  estimatedDelivery       DateTime?
+  customerNote            String?
+  internalNote            String?
+  shippingMethodId        String?
+  shippingMethodSnapshot  Json?
+  createdAt               DateTime             @default(now())
+  updatedAt               DateTime             @updatedAt
+  couponRedemption        CouponRedemption?
+  emailLogs               EmailLog[]
+  loyaltyTransactions     LoyaltyTransaction[]
+  customer                Customer             @relation(fields: [customerId], references: [id])
+  shippingMethod          ShippingMethod?      @relation(fields: [shippingMethodId], references: [id])
+  events                  OrderEvent[]
+  items                   OrderItem[]
+  payments                PaymentTransaction[]
+  settlements             OrderPayment[]
+  refunds                 OrderRefund[]
+  rewardCouponsIssued    Coupon[]
+  tickets                 Ticket[]
+  convertedFromQuote      QuoteRequest?        @relation("QuoteConversion")
+  complianceDocuments     OrderComplianceDocument[]
+
+  @@index([customerId])
+  @@index([paidAt])
+  @@index([couponCode])
+  @@index([shippingMethodId])
+  @@index([status])
+  @@index([status, createdAt])
+  @@index([createdAt])
+}
+
+model OrderItem {
+  id                String        @id @default(cuid())
+  orderId           String
+  itemType          OrderItemType @default(PRODUCT)
+  productSku        String?
+  addonId           String?
+  parentOrderItemId String?
+  itemNameEn        String
+  itemNameAr        String
+  itemNameRu        String?
+  itemImageSnapshot String?
+  unitPrice         Decimal       @db.Decimal(10, 2)
+  quantity          Int
+  lineTotal         Decimal       @db.Decimal(10, 2)
+  createdAt         DateTime      @default(now())
+  addon             Addon?        @relation(fields: [addonId], references: [addonId], onDelete: Restrict)
+  order             Order         @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  parentOrderItem   OrderItem?    @relation("OrderItemAddons", fields: [parentOrderItemId], references: [id])
+  addonItems        OrderItem[]   @relation("OrderItemAddons")
+  product           Product?      @relation(fields: [productSku], references: [sku], onDelete: Restrict)
+  serials           OrderItemSerial[]
+
+  @@index([orderId])
+  @@index([productSku])
+  @@index([addonId])
+  @@index([itemType])
+  @@index([parentOrderItemId])
+}
+
+model OrderItemSerial {
+  id             String    @id @default(cuid())
+  orderItemId    String
+  unitIndex      Int
+  value          String?
+  overrideReason String?
+  recordedById   String
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  orderItem      OrderItem @relation(fields: [orderItemId], references: [id], onDelete: Cascade)
+  recordedBy     Staff     @relation(fields: [recordedById], references: [id])
+
+  @@unique([orderItemId, unitIndex])
+  @@index([value])
+  @@index([recordedById])
+}
+
+model OrderComplianceDocument {
+  id             String                   @id @default(cuid())
+  orderId        String
+  source         ComplianceDocumentSource
+  documentKind   String
+  documentType   String?
+  filename       String
+  mimeType       String?
+  declaredNumber String?
+  sourceKey      String
+  archiveKey     String?
+  archivedAt     DateTime?
+  createdAt      DateTime                 @default(now())
+  order          Order                    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  @@index([orderId])
+}
+
+model OrderEvent {
+  id             String          @id @default(cuid())
+  orderId        String
+  actor          OrderEventActor
+  staffId        String?
+  fromStatus     OrderStatus?
+  toStatus       OrderStatus
+  note           String?
+  trackingNumber String?
+  trackingUrl    String?
+  rawPayload     Json?
+  createdAt      DateTime        @default(now())
+  order          Order           @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  staff          Staff?          @relation(fields: [staffId], references: [id])
+
+  @@index([orderId])
+  @@index([staffId])
+  @@index([createdAt])
+}
+
+model PaymentTransaction {
+  id                String          @id @default(cuid())
+  orderId           String
+  provider          PaymentProvider @default(NGENIUS)
+  providerOrderId   String?
+  providerPaymentId String?
+  status            PaymentStatus
+  amount            Decimal         @db.Decimal(10, 2)
+  failureCode       String?
+  failureMessage    String?
+  rawRequest        Json?
+  rawResponse       Json?
+  webhookPayload    Json?
+  createdAt         DateTime        @default(now())
+  updatedAt         DateTime        @updatedAt
+  paymentEvents     PaymentEvent[]
+  order             Order           @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  @@index([orderId])
+  @@index([orderId, status])
+  @@index([provider])
+  @@index([status])
+  @@index([providerOrderId])
+  @@index([providerPaymentId])
+  @@index([createdAt])
+}
+
+model OrderPayment {
+  id                String        @id @default(cuid())
+  orderId           String
+  method            PaymentMethod
+  methodOtherLabel  String?
+  externalReference String
+  amount            Decimal       @db.Decimal(10, 2)
+  paidAt            DateTime
+  recordedById      String
+  notes             String?
+  filename          String
+  storageKey        String
+  mimeType          String?
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+  order             Order         @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  recordedBy        Staff         @relation(fields: [recordedById], references: [id])
+
+  @@index([orderId])
+  @@index([recordedById])
+  @@index([paidAt])
+}
+
+model OrderRefund {
+  id                String       @id @default(cuid())
+  orderId           String
+  method            RefundMethod
+  methodOtherLabel  String?
+  externalReference String
+  amount            Decimal      @db.Decimal(10, 2)
+  refundedAt        DateTime
+  recordedById      String
+  notes             String?
+  filename          String
+  storageKey        String
+  mimeType          String?
+  createdAt         DateTime     @default(now())
+  updatedAt         DateTime     @updatedAt
+  order             Order        @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  recordedBy        Staff        @relation(fields: [recordedById], references: [id])
+
+  @@index([orderId])
+  @@index([recordedById])
+  @@index([refundedAt])
+}
+
+model PaymentEvent {
+  id                   String             @id @default(cuid())
+  paymentTransactionId String
+  providerEventId      String             @unique
+  eventType            String
+  payload              Json
+  status               WebhookEventStatus @default(PENDING)
+  processedAt          DateTime?
+  error                String?
+  createdAt            DateTime           @default(now())
+  paymentTransaction   PaymentTransaction @relation(fields: [paymentTransactionId], references: [id], onDelete: Cascade)
+
+  @@index([paymentTransactionId])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model WebhookEvent {
+  id              String             @id @default(cuid())
+  provider        WebhookProvider
+  providerEventId String             @unique
+  eventType       String
+  payload         Json
+  status          WebhookEventStatus @default(PENDING)
+  processedAt     DateTime?
+  error           String?
+  createdAt       DateTime           @default(now())
+
+  @@index([provider])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model QuoteRequest {
+  id                      String       @id @default(cuid())
+  quoteNumber             String       @unique
+  customerId              String
+  b2bAccountId            String
+  snapshotLegalNameEn     String?
+  snapshotLegalNameAr     String?
+  snapshotTradeLicenseNo  String?
+  snapshotVatNumber       String?
+  acceptedTermsSnapshot   Json?
+  acceptedRulesSnapshot   Json?
+  status                  QuoteStatus  @default(NEW)
+  customerNote            String?
+  internalNote            String?
+  quotedTotal             Decimal?     @db.Decimal(10, 2)
+  quotedAt                DateTime?
+  quotedByStaffId         String?
+  sendNote                String?
+  shippingCost            Decimal?     @db.Decimal(10, 2)
+  shippingMethodLabel     String?
+  shippingAddressSnapshot Json?
+  salesEmailTo            String?
+  createdAt               DateTime     @default(now())
+  updatedAt               DateTime     @updatedAt
+  convertedOrderId        String?      @unique
+  convertedOrder          Order?       @relation("QuoteConversion", fields: [convertedOrderId], references: [id], onDelete: SetNull)
+  emailLogs               EmailLog[]
+  events                  QuoteEvent[]
+  items                   QuoteItem[]
+  b2bAccount              B2BAccount   @relation(fields: [b2bAccountId], references: [id])
+  customer                Customer     @relation(fields: [customerId], references: [id])
+  quotedByStaff           Staff?       @relation("QuoteQuotedBy", fields: [quotedByStaffId], references: [id])
+  tickets                 Ticket[]
+
+  @@index([customerId])
+  @@index([quotedByStaffId])
+  @@index([b2bAccountId])
+  @@index([status])
+  @@index([status, createdAt])
+  @@index([createdAt])
+}
+
+model QuoteItem {
+  id                String               @id @default(cuid())
+  quoteRequestId    String
+  productSku        String
+  productNameEn     String
+  productNameAr     String
+  productNameRu     String?
+  quantity          Int
+  requestedQuantity Int?
+  quotedUnitPrice   Decimal?             @db.Decimal(10, 2)
+  quotedLineTotal   Decimal?             @db.Decimal(10, 2)
+  adminNote         String?
+  createdAt         DateTime             @default(now())
+  updatedAt         DateTime             @updatedAt
+  product           Product              @relation(fields: [productSku], references: [sku])
+  quoteRequest      QuoteRequest         @relation(fields: [quoteRequestId], references: [id], onDelete: Cascade)
+  selectedAddons    QuoteSelectedAddon[]
+
+  @@index([quoteRequestId])
+  @@index([productSku])
+}
+
+model QuoteSelectedAddon {
+  id              String    @id @default(cuid())
+  quoteItemId     String
+  addonId         String
+  addonNameEn     String
+  addonNameAr     String
+  addonNameRu     String?
+  quantity        Int       @default(1)
+  quotedUnitPrice Decimal?  @db.Decimal(10, 2)
+  quotedLineTotal Decimal?  @db.Decimal(10, 2)
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  addon           Addon     @relation(fields: [addonId], references: [addonId])
+  quoteItem       QuoteItem @relation(fields: [quoteItemId], references: [id], onDelete: Cascade)
+
+  @@index([quoteItemId])
+  @@index([addonId])
+}
+
+model QuoteEvent {
+  id             String          @id @default(cuid())
+  quoteRequestId String
+  actor          OrderEventActor
+  staffId        String?
+  fromStatus     QuoteStatus?
+  toStatus       QuoteStatus
+  note           String?
+  createdAt      DateTime        @default(now())
+  quoteRequest   QuoteRequest    @relation(fields: [quoteRequestId], references: [id], onDelete: Cascade)
+  staff          Staff?          @relation(fields: [staffId], references: [id])
+
+  @@index([quoteRequestId])
+  @@index([staffId])
+  @@index([createdAt])
+}
+
+model Ticket {
+  id                  String              @id @default(cuid())
+  ticketNumber        String              @unique
+  subject             String
+  description         String
+  category            TicketCategory
+  priority            TicketPriority      @default(NORMAL)
+  status              TicketStatus        @default(OPEN)
+  orderId             String?
+  quoteRequestId      String?
+  b2bAccountId        String?
+  verificationEventId String?
+  customerId          String?
+  contactEmail        String?
+  assignedToStaffId   String?
+  createdByStaffId    String?
+  createdByCustomerId String?
+  quoteContactReason  QuoteContactReason?
+  resolvedAt          DateTime?
+  closedAt            DateTime?
+  createdAt           DateTime            @default(now())
+  updatedAt           DateTime            @updatedAt
+  order               Order?              @relation(fields: [orderId], references: [id], onDelete: SetNull)
+  quoteRequest        QuoteRequest?       @relation(fields: [quoteRequestId], references: [id], onDelete: SetNull)
+  b2bAccount          B2BAccount?         @relation(fields: [b2bAccountId], references: [id], onDelete: SetNull)
+  verificationEvent   VerificationEvent?  @relation(fields: [verificationEventId], references: [id], onDelete: SetNull)
+  customer            Customer?           @relation(fields: [customerId], references: [id], onDelete: SetNull)
+  assignedTo          Staff?              @relation("TicketAssignedTo", fields: [assignedToStaffId], references: [id])
+  createdBy           Staff?              @relation("TicketCreatedBy", fields: [createdByStaffId], references: [id])
+  createdByCustomer   Customer?           @relation("TicketCreatedByCustomer", fields: [createdByCustomerId], references: [id], onDelete: SetNull)
+  events              TicketEvent[]
+
+  @@index([status])
+  @@index([status, priority])
+  @@index([status, createdAt])
+  @@index([orderId])
+  @@index([quoteRequestId])
+  @@index([b2bAccountId])
+  @@index([verificationEventId])
+  @@index([customerId])
+  @@index([contactEmail])
+  @@index([assignedToStaffId])
+  @@index([createdByCustomerId])
+  @@index([createdAt])
+}
+
+model TicketEvent {
+  id         String          @id @default(cuid())
+  ticketId   String
+  type       TicketEventType
+  actor      OrderEventActor
+  staffId    String?
+  fromStatus TicketStatus?
+  toStatus   TicketStatus?
+  note       String?
+  createdAt  DateTime        @default(now())
+  ticket     Ticket          @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  staff      Staff?          @relation(fields: [staffId], references: [id])
+
+  @@index([ticketId])
+  @@index([staffId])
+  @@index([createdAt])
+}
+
+model StockMovement {
+  id             String            @id @default(cuid())
+  productSku     String
+  delta          Int
+  quantityBefore Int
+  quantityAfter  Int
+  type           StockMovementType
+  reason         String?
+  reference      String?
+  staffId        String?
+  createdAt      DateTime          @default(now())
+  product        Product           @relation(fields: [productSku], references: [sku])
+  staff          Staff?            @relation(fields: [staffId], references: [id])
+
+  @@index([productSku])
+  @@index([type])
+  @@index([reference])
+  @@index([staffId])
+  @@index([createdAt])
+}
+
+model AddonStockMovement {
+  id             String            @id @default(cuid())
+  addonId        String
+  delta          Int
+  quantityBefore Int
+  quantityAfter  Int
+  type           StockMovementType
+  reason         String?
+  reference      String?
+  staffId        String?
+  createdAt      DateTime          @default(now())
+  addon          Addon             @relation(fields: [addonId], references: [addonId])
+  staff          Staff?            @relation(fields: [staffId], references: [id])
+
+  @@index([addonId])
+  @@index([type])
+  @@index([reference])
+  @@index([staffId])
+  @@index([createdAt])
+}
+
+model LoyaltyTransaction {
+  id           String                 @id @default(cuid())
+  customerId   String
+  orderId      String?
+  type         LoyaltyTransactionType
+  delta        Int
+  balanceAfter Int
+  reason       String?
+  reference    String?
+  createdAt    DateTime               @default(now())
+  customer     Customer               @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  order        Order?                 @relation(fields: [orderId], references: [id])
+
+  @@index([customerId])
+  @@index([orderId])
+  @@index([type])
+  @@index([reference])
+  @@index([createdAt])
+}
+
+model Coupon {
+  id                String             @id @default(cuid())
+  code              String             @unique
+  type              CouponType
+  value             Decimal            @db.Decimal(10, 2)
+  minOrderAmount    Decimal?           @db.Decimal(10, 2)
+  maxDiscountAmount Decimal?           @db.Decimal(10, 2)
+  usageLimit        Int?
+  usedCount         Int                @default(0)
+  startsAt          DateTime?
+  endsAt            DateTime?
+  isActive          Boolean            @default(true)
+  allowedRole       CustomerRole?
+  customerId        String?
+  sourceRuleId      String?
+  sourceOrderId     String?
+  customer          Customer?          @relation(fields: [customerId], references: [id])
+  sourceRule        CouponRewardRule?  @relation(fields: [sourceRuleId], references: [id])
+  sourceOrder       Order?             @relation(fields: [sourceOrderId], references: [id])
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
+  redemptions       CouponRedemption[]
+
+  @@unique([sourceRuleId, sourceOrderId])
+  @@index([customerId])
+  @@index([isActive])
+  @@index([endsAt])
+}
+
+model CouponRedemption {
+  id             String   @id @default(cuid())
+  couponId       String
+  customerId     String
+  orderId        String   @unique
+  discountAmount Decimal  @db.Decimal(10, 2)
+  createdAt      DateTime @default(now())
+  coupon         Coupon   @relation(fields: [couponId], references: [id])
+  customer       Customer @relation(fields: [customerId], references: [id])
+  order          Order    @relation(fields: [orderId], references: [id])
+
+  @@index([couponId])
+  @@index([customerId])
+}
+
+model CouponRewardRule {
+  id                      String     @id @default(cuid())
+  name                    String
+  minOrderTotal           Decimal    @db.Decimal(10, 2)
+  rewardType              CouponType
+  rewardValue             Decimal    @db.Decimal(10, 2)
+  rewardMaxDiscountAmount Decimal?   @db.Decimal(10, 2)
+  rewardMinOrderAmount    Decimal?   @db.Decimal(10, 2)
+  validityDays            Int
+  codePrefix              String
+  isActive                Boolean    @default(true)
+  createdAt               DateTime   @default(now())
+  updatedAt               DateTime   @updatedAt
+  issuedCoupons           Coupon[]
+
+  @@index([isActive])
+}
+
+model ShippingMethod {
+  id                   String         @id @default(cuid())
+  code                 String         @unique
+  nameAr               String
+  nameEn               String
+  nameRu               String?
+  isActive             Boolean        @default(true)
+  displayOrder         Int            @default(0)
+  freeShippingEligible Boolean        @default(false)
+  createdAt            DateTime       @default(now())
+  updatedAt            DateTime       @updatedAt
+  orders               Order[]
+  rates                ShippingRate[]
+
+  @@index([isActive])
+  @@index([displayOrder])
+}
+
+model ShippingRate {
+  id               String         @id @default(cuid())
+  shippingMethodId String
+  basePrice        Decimal        @db.Decimal(10, 2)
+  estimatedDaysMin Int?
+  estimatedDaysMax Int?
+  isActive         Boolean        @default(true)
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+  shippingZoneId   String
+  shippingZone     ShippingZone   @relation(fields: [shippingZoneId], references: [id], onDelete: Cascade)
+  shippingMethod   ShippingMethod @relation(fields: [shippingMethodId], references: [id], onDelete: Cascade)
+
+  @@unique([shippingMethodId, shippingZoneId])
+  @@index([shippingMethodId])
+  @@index([isActive])
+  @@index([shippingZoneId])
+}
+
+model ShippingZone {
+  id                    String                @id @default(cuid())
+  code                  String                @unique
+  nameEn                String
+  nameAr                String
+  nameRu                String?
+  isActive              Boolean               @default(true)
+  displayOrder          Int                   @default(0)
+  freeShippingEnabled   Boolean               @default(false)
+  freeShippingThreshold Decimal?              @db.Decimal(10, 2)
+  quoteRequired         Boolean               @default(false)
+  createdAt             DateTime              @default(now())
+  updatedAt             DateTime              @updatedAt
+  countries             ShippingZoneCountry[]
+  rates                 ShippingRate[]
+
+  @@index([isActive])
+  @@index([displayOrder])
+}
+
+model ShippingZoneCountry {
+  id             String       @id @default(cuid())
+  shippingZoneId String
+  country        String       @unique
+  shippingZone   ShippingZone @relation(fields: [shippingZoneId], references: [id], onDelete: Cascade)
+
+  @@index([shippingZoneId])
+}
+
+model VerificationEvent {
+  id                 String                 @id @default(cuid())
+  customerId         String
+  provider           VerificationProvider   @default(MANUAL_REVIEW)
+  applicantId        String?
+  status             VerificationStatus
+  reviewResult       String?
+  rejectionReason    String?
+  declaredIdNumber   String?
+  declaredAddress    String?
+  acknowledgmentText String?
+  acknowledgedAt     DateTime?
+  rawPayload         Json?
+  reviewedById       String?
+  reviewedAt         DateTime?
+  createdAt          DateTime               @default(now())
+  updatedAt          DateTime               @updatedAt
+  customer           Customer               @relation(fields: [customerId], references: [id], onDelete: Restrict)
+  reviewedBy         Staff?                 @relation("VerificationReviewedBy", fields: [reviewedById], references: [id], onDelete: SetNull)
+  documents          VerificationDocument[]
+  documentRequests   VerificationDocumentRequest[]
+  tickets            Ticket[]
+
+  @@index([customerId])
+  @@index([applicantId])
+  @@index([status])
+  @@index([createdAt])
+  @@index([reviewedById])
+}
+
+model VerificationDocument {
+  id                  String                   @id @default(cuid())
+  verificationEventId String
+  role                VerificationDocumentRole
+  type                VerificationDocumentType
+  filename            String
+  storageKey          String
+  mimeType            String
+  sizeBytes           Int
+  supersededAt        DateTime?
+  requestId           String?
+  createdAt           DateTime                 @default(now())
+  updatedAt           DateTime                 @updatedAt
+  verificationEvent   VerificationEvent        @relation(fields: [verificationEventId], references: [id], onDelete: Cascade)
+  request             VerificationDocumentRequest? @relation(fields: [requestId], references: [id])
+
+  @@index([verificationEventId])
+  @@index([role])
+  @@index([verificationEventId, supersededAt])
+  @@index([requestId])
+}
+
+model VerificationDocumentRequest {
+  id                  String                     @id @default(cuid())
+  verificationEventId String
+  scope               DocumentRequestScope       @default(DOCUMENTS)
+  status              DocumentRequestStatus      @default(OPEN)
+  roles               VerificationDocumentRole[] @default([])
+  message             String
+  requestedById       String
+  fulfilledAt         DateTime?
+  cancelledAt         DateTime?
+  createdAt           DateTime                   @default(now())
+  updatedAt           DateTime                   @updatedAt
+  verificationEvent   VerificationEvent          @relation(fields: [verificationEventId], references: [id], onDelete: Cascade)
+  requestedBy         Staff                      @relation("VerificationDocumentRequestedBy", fields: [requestedById], references: [id])
+  documents           VerificationDocument[]
+
+  @@unique([verificationEventId], map: "unique_open_verification_document_request", where: raw("(\"status\" = 'OPEN')"))
+  @@index([verificationEventId])
+  @@index([status])
+  @@index([requestedById])
+}
+
+model KlaviyoEvent {
+  id         String    @id @default(cuid())
+  customerId String?
+  guestEmail String?
+  eventType  String
+  payload    Json
+  sentAt     DateTime?
+  failedAt   DateTime?
+  error      String?
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  customer   Customer? @relation(fields: [customerId], references: [id])
+
+  @@index([customerId])
+  @@index([guestEmail])
+  @@index([eventType])
+  @@index([sentAt])
+  @@index([createdAt])
+}
+
+model NewsletterSubscriber {
+  id              String           @id @default(cuid())
+  email           String           @unique
+  locale          String
+  source          NewsletterSource
+  consentAt       DateTime
+  unsubscribedAt  DateTime?
+  klaviyoSyncedAt DateTime?
+  klaviyoError    String?
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+
+  @@index([createdAt])
+  @@index([unsubscribedAt])
+}
+
+model EmailLog {
+  id              String        @id @default(cuid())
+  provider        EmailProvider @default(RESEND)
+  templateKey     String
+  toEmail         String
+  subject         String?
+  locale          String?
+  orderId         String?
+  quoteRequestId  String?
+  status          EmailStatus   @default(PENDING)
+  providerEmailId String?
+  error           String?
+  payload         Json?
+  sentAt          DateTime?
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  order           Order?        @relation(fields: [orderId], references: [id])
+  quoteRequest    QuoteRequest? @relation(fields: [quoteRequestId], references: [id])
+
+  @@index([toEmail])
+  @@index([templateKey])
+  @@index([status])
+  @@index([orderId])
+  @@index([quoteRequestId])
+  @@index([createdAt])
+}
+
+model EmailTemplate {
+  id             String   @id @default(cuid())
+  templateKey    String
+  locale         String
+  subject        String?
+  preheaderText  String?
+  bodyParagraphs Json?
+  ctaLabel       String?
+  enabled        Boolean  @default(true)
+  updatedById    String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@unique([templateKey, locale])
+  @@index([templateKey])
+}
+
+model ImportBatch {
+  id             String             @id @default(cuid())
+  filename       String
+  uploadedById   String?
+  status         ImportStatus       @default(PENDING)
+  totalRows      Int                @default(0)
+  successRows    Int                @default(0)
+  failedRows     Int                @default(0)
+  errorReportKey String?
+  storageKey     String?
+  fileSha256     String?
+  fileSizeBytes  Int?
+  createdCount   Int?
+  updatedCount   Int?
+  unchangedCount Int?
+  createdAt      DateTime           @default(now())
+  completedAt    DateTime?
+  updatedAt      DateTime           @updatedAt
+  uploadedBy     Staff?             @relation(fields: [uploadedById], references: [id])
+  errors         ImportBatchError[]
+
+  @@index([uploadedById])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model ImportBatchError {
+  id            String      @id @default(cuid())
+  importBatchId String
+  rowNumber     Int?
+  sheet         String?
+  columnKey     String?
+  sku           String?
+  message       String
+  found         String?
+  fix           String?
+  rawRow        Json?
+  createdAt     DateTime    @default(now())
+  importBatch   ImportBatch @relation(fields: [importBatchId], references: [id], onDelete: Cascade)
+
+  @@index([importBatchId])
+  @@index([rowNumber])
+  @@index([sku])
+}
+
+model AuditLog {
+  id         String         @id @default(cuid())
+  actorType  AuditActorType
+  actorId    String?
+  action     String
+  entityType String
+  entityId   String?
+  before     Json?
+  after      Json?
+  metadata   Json?
+  createdAt  DateTime       @default(now())
+
+  /// DB-generated STORED column (see migration add_auditlog_search_trgm).
+  /// Populated by Postgres from entityId + actorId + before/after/metadata.
+  /// Never written by application code; used for trigram search only.
+  searchText String?
+
+  @@index([actorType, actorId])
+  @@index([entityType, entityId])
+  @@index([action])
+  @@index([createdAt])
+}
+
+model FeaturedCollection {
+  id           String                   @id @default(cuid())
+  key          String                   @unique
+  nameEn       String
+  nameAr       String
+  nameRu       String?
+  isActive     Boolean                  @default(true)
+  displayOrder Int                      @default(0)
+  createdAt    DateTime                 @default(now())
+  updatedAt    DateTime                 @updatedAt
+  items        FeaturedCollectionItem[]
+
+  @@index([key])
+  @@index([isActive])
+  @@index([displayOrder])
+}
+
+model FeaturedCollectionItem {
+  id                  String             @id @default(cuid())
+  collectionId        String
+  productSku          String
+  displayOrder        Int                @default(0)
+  placeholderImageUrl String?
+  createdAt           DateTime           @default(now())
+  updatedAt           DateTime           @updatedAt
+  collection          FeaturedCollection @relation(fields: [collectionId], references: [id], onDelete: Cascade)
+  product             Product            @relation(fields: [productSku], references: [sku], onDelete: Cascade)
+
+  @@unique([collectionId, productSku])
+  @@index([collectionId])
+  @@index([productSku])
+  @@index([displayOrder])
+}
+
+enum NavGroup {
+  RIFLES
+  OPTICS
+  ACCESSORIES
+  AMMO
+}
+
+enum ActionType {
+  Spring
+  PCP
+  CO2
+  Gas_Ram    @map("Gas-Ram")
+  Multi_Pump @map("Multi-Pump")
+  NA         @map("N/A")
+}
+
+enum PublishStatus {
+  PUBLISHED
+  DRAFT
+  ARCHIVED
+}
+
+enum StaffRole {
+  SUPER_ADMIN
+  OPS_MANAGER
+  CATALOG_MGR
+  ORDER_MGR
+  WAREHOUSE
+  FINANCE
+  SUPPORT
+  STAFF_ADMIN
+}
+
+enum CustomerRole {
+  B2C
+  B2B
+}
+
+enum B2BStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  SUSPENDED
+}
+
+enum QuoteStatus {
+  NEW
+  CONTACTED
+  QUOTED
+  CLOSED
+  CANCELLED
+  ACCEPTED
+}
+
+enum OrderStatus {
+  PENDING
+  PAYMENT_PENDING
+  PAYMENT_FAILED
+  PAID
+  CONFIRMED
+  PROCESSING
+  READY_TO_SHIP
+  SHIPPED
+  DELIVERED
+  CANCELLED
+  REFUNDED
+  PARTIALLY_REFUNDED
+  AWAITING_SHIPPING_QUOTE
+  AWAITING_QUOTE_APPROVAL
+  AWAITING_MANUAL_PAYMENT
+  RETURNED
+}
+
+enum OrderEventActor {
+  SYSTEM
+  CUSTOMER
+  STAFF
+}
+
+enum PaymentProvider {
+  NGENIUS
+  MANUAL
+}
+
+enum PaymentMethod {
+  BANK_TRANSFER
+  CASH
+  CHEQUE
+  CARD_TERMINAL
+  OTHER
+}
+
+enum RefundMethod {
+  ORIGINAL_PAYMENT
+  BANK_TRANSFER
+  CASH
+  CHEQUE
+  CARD_TERMINAL
+  OTHER
+}
+
+enum PaymentStatus {
+  INITIATED
+  PENDING
+  AUTHORIZED
+  CAPTURED
+  FAILED
+  CANCELLED
+  REFUNDED
+  PARTIALLY_REFUNDED
+}
+
+enum VerificationStatus {
+  NOT_REQUIRED
+  PENDING
+  APPROVED
+  REJECTED
+  EXPIRED
+}
+
+enum DocumentType {
+  TRADE_LICENSE
+  VAT_CERTIFICATE
+  COMPANY_ID
+  ID_DOCUMENT
+  OTHER
+}
+
+enum DocumentRequestScope {
+  DOCUMENTS
+  DETAILS
+}
+
+enum DocumentRequestStatus {
+  OPEN
+  FULFILLED
+  CANCELLED
+}
+
+enum VerificationDocumentRole {
+  IDENTITY
+  PROOF_OF_ADDRESS
+  PHOTO
+}
+
+enum VerificationDocumentType {
+  EMIRATES_ID
+  PASSPORT
+  DRIVING_LICENSE
+  UTILITY_BILL
+  TENANCY_CONTRACT
+  RESIDENCE_VISA
+  BANK_STATEMENT
+  SELFIE
+}
+
+enum ReviewStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum LoyaltyTransactionType {
+  EARNED
+  REDEEMED
+  ADJUSTED
+  EXPIRED
+  REFUNDED
+  REVERSED
+}
+
+enum LoyaltyEarnRule {
+  STANDARD
+  BOOSTED
+  FIXED
+  NONE
+}
+
+enum StockMovementType {
+  PURCHASE
+  SALE
+  RETURN
+  MANUAL_ADJUSTMENT
+  IMPORT_ADJUSTMENT
+  DAMAGE
+}
+
+enum OrderItemType {
+  PRODUCT
+  ADDON
+}
+
+enum SerialTracking {
+  NONE
+  SERIAL
+  LOT
+}
+
+enum ComplianceDocumentSource {
+  VERIFICATION
+  B2B
+}
+
+enum ImportStatus {
+  PENDING
+  PROCESSING
+  COMPLETED
+  COMPLETED_WITH_ERRORS
+  FAILED
+}
+
+enum EmailStatus {
+  PENDING
+  SENT
+  FAILED
+}
+
+enum CouponType {
+  PERCENTAGE
+  FIXED
+  FREE_SHIPPING
+}
+
+enum WebhookEventStatus {
+  PENDING
+  PROCESSING
+  PROCESSED
+  FAILED
+}
+
+enum AuditActorType {
+  STAFF
+  CUSTOMER
+  SYSTEM
+}
+
+enum VerificationProvider {
+  SUMSUB
+  UAE_PASS
+  MANUAL_REVIEW
+}
+
+enum EmailProvider {
+  RESEND
+}
+
+enum WebhookProvider {
+  NGENIUS
+  SUMSUB
+  KLAVIYO
+}
+
+enum TicketStatus {
+  OPEN
+  IN_PROGRESS
+  WAITING_ON_CUSTOMER
+  RESOLVED
+  CLOSED
+}
+
+enum TicketCategory {
+  REFUND
+  RETURN
+  ORDER_ISSUE
+  QUOTE_ISSUE
+  PAYMENT
+  SHIPPING
+  GENERAL
+  B2B
+  VERIFICATION
+}
+
+enum TicketPriority {
+  LOW
+  NORMAL
+  HIGH
+  URGENT
+}
+
+enum TicketEventType {
+  STATUS_CHANGE
+  ASSIGNMENT
+  COMMENT
+}
+
+enum QuoteContactReason {
+  PRICING
+  SHIPPING
+  QUANTITIES
+  PAYMENT_TERMS
+  OTHER
+}
+
+enum NewsletterSource {
+  HOME
+  POPUP
+}

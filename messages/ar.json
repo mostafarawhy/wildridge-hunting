@@ -1,0 +1,2436 @@
+{
+  "nav": {
+    "shop_all": "تسوق الكل",
+    "rifles_pistols": "البنادق والمسدسات",
+    "optics": "البصريات",
+    "ammo": "الذخيرة",
+    "accessories": "الملحقات",
+    "b2b": "البيع بالجملة",
+    "account": "الحساب",
+    "cart": "السلة",
+    "search": "بحث",
+    "aria_home": "Wildridge Hunting — الرئيسية",
+    "aria_cart": "السلة — {count} عناصر",
+    "aria_open_menu": "فتح القائمة",
+    "lang_label": "اللغة",
+    "lang_en": "الإنجليزية",
+    "lang_ar": "العربية",
+    "lang_ru": "الروسية",
+    "dropdown_air_rifles": "البنادق الهوائية",
+    "dropdown_pcp_rifles": "بنادق PCP",
+    "dropdown_co2_pistols": "مسدسات CO2",
+    "dropdown_scopes": "المناظير والبصريات",
+    "dropdown_cases": "الحقائب والحافظات",
+    "dropdown_spare_parts": "قطع الغيار",
+    "dropdown_knives": "السكاكين",
+    "shop_all_rifles": "تسوق البنادق والمسدسات",
+    "shop_all_optics": "تسوق البصريات",
+    "shop_all_accessories": "تسوق الملحقات",
+    "group_rifles": "البنادق والمسدسات",
+    "group_optics": "البصريات",
+    "group_accessories": "الملحقات",
+    "wishlist": "المفضلة",
+    "aria_quote": "طلب عرض سعر، {count} عناصر",
+    "shop_mode_label": "التسوق بصفة",
+    "shop_mode_business": "أعمال",
+    "shop_mode_personal": "شخصي",
+    "loading": "جارٍ التحميل…"
+  },
+  "home": {
+    "announcement_shipping": "شحن مجاني داخل الإمارات للطلبات التي تتجاوز {amount}",
+    "announcement_dealer": "معدات صيد وبنادق هوائية وبصريات",
+    "hero_eyebrow": "مجهّزون للميدان.",
+    "hero_heading": "دقة.\nبلا تنازل.",
+    "hero_cta_primary": "تسوق البنادق",
+    "hero_cta_secondary": "تسوق البصريات",
+    "hero_image_alt": "صياد في الميدان عند الفجر",
+    "featured_eyebrow": "مختارة بعناية",
+    "featured_label": "اختُبرت ميدانياً. وصلت حديثاً.",
+    "see_all": "عرض الكل →",
+    "collection_tile_1_eyebrow": "الرماية الدقيقة",
+    "collection_tile_2_eyebrow": "وضوح تام",
+    "collection_tile_3_eyebrow": "جاهز للميدان",
+    "collection_tile_4_eyebrow": "لكل عيار",
+    "collection_rifles": "البنادق",
+    "collection_optics": "البصريات",
+    "collection_accessories": "الملحقات",
+    "collection_ammo": "الذخيرة",
+    "collection_shop_now": "تسوق الآن",
+    "brand_eyebrow": "خلف الاسم",
+    "brand_heading": "لحب الصيد",
+    "brand_body": "من رمال الربع الخالي إلى جبال آسيا الوسطى — نجهز الصيادين الذين يطلبون الدقة والموثوقية ومعدات تؤدي دورها حين يهم الأمر.",
+    "brand_cta": "قصتنا",
+    "newsletter_heading": "استعدّ.\nانطلق.\nكرر.",
+    "newsletter_body": "وصولات جديدة وعروض حصرية ورؤى معدات مختبرة ميدانياً — تصل إلى بريدك. بلا ضجيج، فقط المفيد.",
+    "newsletter_legal_prefix": "بالاشتراك توافق على",
+    "newsletter_legal_link": "سياسة الخصوصية",
+    "newsletter_legal_suffix": "يمكنك إلغاء الاشتراك في أي وقت.",
+    "desert_heading": "إلى الميدان",
+    "showcase_eyebrow": "مصمم للدقة",
+    "showcase_heading": "ثقة\nمهندسة.",
+    "showcase_body": "كل بندقية في كتالوجنا مختارة يدوياً للدقة والموثوقية والأداء الميداني. من الميدان إلى البرية — مبنية للأداء حين يهم.",
+    "showcase_cta_rifles": "استكشف موديلات البنادق",
+    "showcase_cta_about": "ما هو Wildridge Hunting؟",
+    "showcase_image_alt": "بندقية دقيقة",
+    "popup_dismiss": "لا، شكراً"
+  },
+  "footer": {
+    "newsletter_label": "تحديثات الميدان والوصولات الجديدة",
+    "copyright": "© {year} Wildridge Hunting. جميع الحقوق محفوظة.",
+    "legal": "معدات صيد وبنادق هوائية وبصريات",
+    "location": "الإمارات",
+    "shop_label": "المتجر",
+    "support_label": "الدعم",
+    "company_label": "الشركة",
+    "link_rifles": "البنادق",
+    "link_optics": "البصريات",
+    "link_ammo": "الذخيرة",
+    "link_accessories": "الملحقات",
+    "link_b2b": "البيع بالجملة",
+    "link_shipping": "الشحن والتوصيل",
+    "link_returns": "الإرجاع والاستبدال",
+    "link_size_guide": "دليل المقاسات",
+    "link_warranty": "الضمان",
+    "link_faq": "الأسئلة الشائعة",
+    "link_about": "من نحن",
+    "link_contact": "تواصل معنا",
+    "link_stores": "فروعنا",
+    "link_privacy": "سياسة الخصوصية",
+    "link_terms": "شروط الخدمة",
+    "link_login": "دخول العملاء",
+    "aria_instagram": "تابعنا على إنستغرام",
+    "aria_whatsapp": "تواصل معنا عبر واتساب",
+    "aria_youtube": "شاهدنا على يوتيوب",
+    "aria_nav": "روابط التذييل"
+  },
+  "common": {
+    "subscribe": "اشترك",
+    "email_placeholder": "أدخل بريدك الإلكتروني"
+  },
+  "product": {
+    "add_to_cart": "أضف إلى السلة",
+    "add_to_quote": "أضف إلى العرض",
+    "out_of_stock": "نفد المخزون",
+    "id_required": "التحقق من الهوية مطلوب"
+  },
+  "cart": {
+    "title": "سلة التسوق",
+    "empty": "سلتك فارغة",
+    "emptyCta": "متابعة التسوق",
+    "subtotal": "المجموع الجزئي",
+    "checkout": "إتمام الشراء",
+    "remove": "إزالة المنتج",
+    "unavailable": "لم يعد متوفراً. احذفه لإتمام الشراء.",
+    "outOfStock": "نفد من المخزون. احذفه لإتمام الشراء.",
+    "blockedNote": "احذف المنتجات المشار إليها أعلاه لإتمام الشراء.",
+    "taxAtCheckout": "الأسعار شاملة ضريبة القيمة المضافة. تُحتسب رسوم الشحن عند إتمام الطلب.",
+    "addedToCart": "تمت الإضافة إلى السلة",
+    "addForFreeShipping": "أضف <amt></amt> للشحن المجاني",
+    "freeShippingUnlocked": "تم فتح الشحن المجاني",
+    "errors": {
+      "VALIDATION_ERROR": "طلب غير صالح. يرجى المحاولة مجدداً.",
+      "PRODUCT_NOT_FOUND": "هذا المنتج لم يعد متاحاً.",
+      "ADDON_NOT_FOUND": "تعذر العثور على إضافة أو أكثر.",
+      "ADDON_NOT_LINKED": "هذه الإضافة غير متاحة للمنتج المحدد.",
+      "OUT_OF_STOCK": "نفد مخزون هذا المنتج.",
+      "INSUFFICIENT_STOCK": "الكمية المطلوبة غير متوفرة في المخزون.",
+      "ADDON_INSUFFICIENT_STOCK": "لا توجد كمية كافية من أحد الإضافات المختارة. يرجى تقليل الكمية.",
+      "CART_ITEM_NOT_FOUND": "العنصر غير موجود في السلة.",
+      "INTERNAL_ERROR": "حدث خطأ ما. يرجى المحاولة مجدداً.",
+      "B2B_QUOTE_ONLY": "حسابك مخصص لطلبات عروض الأسعار فقط. الرجاء طلب عرض سعر بدلًا من ذلك."
+    },
+    "itemCount": "{count, plural, zero {# منتجات} one {منتج واحد} two {منتجان} few {# منتجات} many {# منتجًا} other {# منتج}}",
+    "pointsEarn": "النقاط مع هذا الطلب: <b>{points}</b>"
+  },
+  "checkout": {
+    "title": "إتمام الشراء",
+    "breadcrumb": "إتمام الشراء",
+    "orderSummary": "ملخص الطلب",
+    "summaryShow": "عرض ملخص الطلب",
+    "summaryHide": "إخفاء ملخص الطلب",
+    "subtotal": "المجموع الجزئي",
+    "discount": "الخصم",
+    "shipping": {
+      "placeholder": "اختر طريقة التوصيل"
+    },
+    "total": "الإجمالي",
+    "vatNote": "الأسعار تشمل ضريبة القيمة المضافة",
+    "vatIncluded": "شامل ضريبة القيمة المضافة ({rate}%)",
+    "unitEach": "<price></price> للقطعة",
+    "idRequiredNote": "يتطلب واحد أو أكثر من منتجات طلبك التحقق من الهوية قبل الشحن.",
+    "freeShipping": "مجاني",
+    "items": "{count} منتجات",
+    "steps": {
+      "payment": "الدفع",
+      "label": "خطوات إتمام الشراء",
+      "cart": "السلة",
+      "details": "التفاصيل"
+    },
+    "uaePass": {
+      "cta": "الاستمرار عبر الهوية الرقمية",
+      "connecting": "جارٍ الاتصال…",
+      "comingSoon": "الهوية الرقمية — قريباً",
+      "divider": "أو تابع باستخدام البريد الإلكتروني",
+      "error": {
+        "denied": "قام المستخدم بإلغاء تسجيل الدخول",
+        "accountError": "تعذر إنشاء حسابك. يرجى المحاولة مجدداً.",
+        "generic": "الهوية الرقمية غير متاحة حالياً. يرجى تسجيل الدخول عبر البريد الإلكتروني."
+      }
+    },
+    "verify": {
+      "credential": {
+        "eyebrow": "شهادة إثبات الهوية",
+        "status": "سارية",
+        "holder": "الحامل",
+        "method": "طريقة التحقق",
+        "verified": "تاريخ التحقق",
+        "validUntil": "صالحة حتى",
+        "reference": "الرقم المرجعي",
+        "methodUaePass": "UAE PASS",
+        "methodManual": "مراجعة المستندات"
+      },
+      "methodSelector": {
+        "title": "تحقق من هويتك للمتابعة",
+        "subtitle": "يتطلب واحد أو أكثر من المنتجات في سلتك التحقق من الهوية قبل الشراء.",
+        "uaePass": {
+          "title": "التحقق عبر UAE PASS",
+          "subtitle": "للمقيمين والمواطنين في الإمارات. تحقق فوري.",
+          "badge": "الأسرع",
+          "cta": "الاستمرار عبر الهوية الرقمية",
+          "comingSoon": "قريباً"
+        },
+        "manual": {
+          "title": "رفع الوثائق",
+          "subtitle": "ثلاث وثائق — الهوية والعنوان وصورة شخصية. تستغرق المراجعة 24–48 ساعة.",
+          "cta": "رفع الوثائق"
+        },
+        "errors": {
+          "generic": "حدث خطأ ما. يرجى المحاولة مرة أخرى."
+        }
+      },
+      "manualForm": {
+        "heading": "ارفع وثائقك",
+        "headingHint": "ثلاث وثائق. يراجعها فريق الامتثال لدينا خلال 24–48 ساعة.",
+        "typePlaceholder": "اختر نوع الوثيقة",
+        "identity": {
+          "label": "إثبات الهوية",
+          "typeLabel": "نوع الوثيقة",
+          "hint": "بطاقة الهوية الإماراتية أو جواز السفر. JPEG أو PNG أو PDF. بحد أقصى 5 ميغابايت.",
+          "numberLabel": "رقم الهوية أو جواز السفر",
+          "numberPlaceholder": "كما هو مطبوع على الوثيقة"
+        },
+        "proofOfAddress": {
+          "label": "إثبات العنوان",
+          "typeLabel": "نوع الوثيقة",
+          "hint": "صادرة خلال آخر 3 أشهر حيثما ينطبق. JPEG أو PNG أو PDF. بحد أقصى 5 ميغابايت.",
+          "addressLabel": "العنوان المذكور في الوثيقة",
+          "addressPlaceholder": "العنوان الكامل تماماً كما يظهر"
+        },
+        "photo": {
+          "label": "صورة شخصية لك",
+          "hint": "صورة واضحة وحديثة لوجهك في إضاءة جيدة. نقارنها بوثيقة هويتك."
+        },
+        "fileUpload": {
+          "dropOrClick": "أسقط الملف هنا أو انقر للرفع",
+          "remove": "حذف",
+          "tooLarge": "حجم الملف يتجاوز الحد الأقصى البالغ 5 ميغابايت.",
+          "invalidType": "يُسمح فقط بملفات PDF أو JPG أو PNG."
+        },
+        "documentTypes": {
+          "EMIRATES_ID": "بطاقة الهوية الإماراتية",
+          "PASSPORT": "جواز السفر",
+          "DRIVING_LICENSE": "رخصة القيادة",
+          "UTILITY_BILL": "فاتورة خدمات",
+          "TENANCY_CONTRACT": "عقد الإيجار",
+          "RESIDENCE_VISA": "تأشيرة الإقامة",
+          "BANK_STATEMENT": "كشف حساب بنكي",
+          "SELFIE": "صورة شخصية"
+        },
+        "notesLabel": "ملاحظات إضافية (اختياري)",
+        "notesPlaceholder": "أي معلومات تودّ إضافتها حول طلبك",
+        "notesCharCount": "{count} / 500",
+        "submit": "إرسال للمراجعة",
+        "uploading": "جارٍ رفع الوثائق…",
+        "removeFile": "حذف",
+        "instructions": {
+          "heading": "قبل الرفع"
+        },
+        "acknowledgment": {
+          "heading": "الإقرار",
+          "consentLabel": "لقد قرأت ما ورد أعلاه وأوافق عليه"
+        }
+      },
+      "approved": {
+        "title": "تم التحقق من الهوية",
+        "body": "تم التحقق بتاريخ {verifiedDate}. صالح حتى {expiryDate}.",
+        "renewNotice": "تنتهي صلاحية التحقق قريباً.",
+        "renewCta": "تجديد الآن"
+      },
+      "pending": {
+        "title": "الوثائق قيد المراجعة",
+        "body": "يراجع فريق الامتثال لدينا طلبك. تستغرق العملية عادةً 24–48 ساعة. سنرسل لك بريداً إلكترونياً عند اتخاذ القرار.",
+        "submittedAt": "تم الإرسال بتاريخ {date}"
+      },
+      "rejected": {
+        "title": "لم يتم قبول التحقق",
+        "reasonLabel": "سبب الرفض من فريقنا",
+        "body": "يرجى مراجعة السبب أعلاه وإعادة التقديم بالوثائق الصحيحة.",
+        "ctaContact": "تواصل مع الدعم",
+        "reviewedOn": "تمت المراجعة في {date}"
+      },
+      "expired": {
+        "title": "انتهت صلاحية التحقق",
+        "body": "يرجى إعادة التحقق من هويتك لمتابعة شراء المنتجات المقيدة.",
+        "expiredOn": "انتهت الصلاحية في {date}"
+      },
+      "errors": {
+        "submitFailed": "تعذر إرسال وثائقك. يرجى المحاولة مجدداً.",
+        "identityRequired": "يرجى رفع إثبات الهوية.",
+        "identityTypeRequired": "اختر نوع وثيقة الهوية التي ترفعها.",
+        "proofOfAddressRequired": "يرجى رفع إثبات العنوان.",
+        "proofOfAddressTypeRequired": "اختر نوع إثبات العنوان الذي ترفعه.",
+        "photoRequired": "يرجى رفع صورة شخصية لك.",
+        "idNumberRequired": "أدخل رقم الهوية أو جواز السفر.",
+        "addressRequired": "أدخل العنوان المذكور في وثيقتك.",
+        "alreadyUnderReview": "لديك طلب قيد المراجعة بالفعل.",
+        "sessionExpired": "انتهت جلستك. يرجى تسجيل الدخول مرة أخرى والمحاولة من جديد.",
+        "DEMO_UPLOADS_DISABLED": "رفع الملفات معطّل في هذه النسخة التجريبية. لم يتم إرسال أي شيء."
+      },
+      "required": {
+        "title": "التحقق من الهوية مطلوب",
+        "subtitle": "تحتوي سلتك على منتجات مقيّدة. يرجى رفع بطاقة هوية إماراتية سارية أو جواز سفر قبل الانتقال إلى الدفع.",
+        "cta": "تحقق الآن",
+        "or": "أو سجّل الدخول بـ",
+        "uaePass": "UAE PASS"
+      },
+      "uaePass": {
+        "verified": "تم التحقق من الهوية عبر UAE PASS"
+      },
+      "resubmit": "إعادة التقديم",
+      "reverify": "إعادة التحقق"
+    },
+    "address": {
+      "placeholder": "اختر عنوان الشحن",
+      "fullName": "الاسم الكامل",
+      "phone": "رقم الهاتف",
+      "emirate": "الإمارة",
+      "country": "الدولة",
+      "line1": "العنوان — السطر الأول",
+      "line2": "العنوان — السطر الثاني",
+      "optional": "اختياري",
+      "save": "حفظ العنوان",
+      "cancel": "إلغاء",
+      "change": "تغيير العنوان",
+      "addNew": "إضافة عنوان جديد",
+      "useThis": "استخدام هذا العنوان"
+    },
+    "payment": {
+      "placeholder": "أدخل بيانات الدفع",
+      "cardNumber": "رقم البطاقة",
+      "expiry": "تاريخ الانتهاء",
+      "cvv": "CVV",
+      "nameOnCard": "الاسم على البطاقة",
+      "payNow": "تأكيد الطلب",
+      "secure": "256-bit SSL — مؤمّن بواسطة N-Genius",
+      "lockedAddress": "أكمل عنوان التوصيل أولاً",
+      "lockedVerify": "أكمل التحقق من الهوية لفتح الدفع"
+    },
+    "returnToCart": "العودة إلى السلة",
+    "contact": {
+      "title": "بيانات التواصل",
+      "signedInAs": "تم تسجيل الدخول باسم <email></email>",
+      "optInLabel": "أرغب في تلقي التحديثات والأخبار عبر البريد الإلكتروني",
+      "optional": "اختياري"
+    },
+    "billing": {
+      "title": "عنوان التوصيل",
+      "requiredHelper": "الحقول المطلوبة",
+      "defaultBadge": "الافتراضي",
+      "fullName": "الاسم الكامل",
+      "phone": "رقم الهاتف",
+      "emirate": "الإمارة",
+      "emiratePlaceholder": "اختر الإمارة",
+      "country": "الدولة / المنطقة",
+      "line1": "عنوان الشارع",
+      "line2": "شقة، جناح، طابق، إلخ.",
+      "city": "المدينة",
+      "postalCode": "الرمز البريدي",
+      "optional": "اختياري",
+      "save": "حفظ العنوان",
+      "cancel": "إلغاء",
+      "change": "تغيير العنوان",
+      "addNew": "إضافة عنوان جديد",
+      "invoiceNote": "يُستخدم أيضاً كعنوان الفوترة في فاتورتك.",
+      "useThis": "استخدم هذا العنوان",
+      "shipToDifferent": "الشحن إلى عنوان مختلف",
+      "editAddress": "تعديل",
+      "deleteAddress": "حذف",
+      "confirmDelete": "اضغط مرة أخرى للتأكيد",
+      "setAsDefault": "تعيين كافتراضي",
+      "saving": "جارٍ الحفظ…",
+      "deleting": "جارٍ الحذف…",
+      "errors": {
+        "UNAUTHORIZED": "يرجى تسجيل الدخول مرة أخرى.",
+        "VALIDATION_ERROR": "يرجى مراجعة بياناتك والمحاولة مجدداً.",
+        "ADDRESS_NOT_FOUND": "العنوان غير موجود.",
+        "ADDRESS_NOT_OWNED": "العنوان غير موجود.",
+        "CANNOT_DELETE_LAST_DEFAULT": "لا يمكنك حذف عنوانك الوحيد.",
+        "INTERNAL_ERROR": "حدث خطأ ما. يرجى المحاولة مرة أخرى."
+      },
+      "countryPlaceholder": "اختر الدولة",
+      "subdivisionEmirate": "الإمارة",
+      "subdivisionRegion": "المنطقة",
+      "subdivisionState": "الولاية",
+      "subdivisionGeneric": "الولاية / المحافظة / المنطقة",
+      "subdivisionPlaceholder": "اختر",
+      "fieldErrors": {
+        "fullNameShort": "أدخل اسمك الكامل (حرفان على الأقل)",
+        "fullNameLong": "الاسم طويل جدًا",
+        "countryInvalid": "اختر دولة نشحن إليها",
+        "phoneRequired": "أدخل رقم هاتفك",
+        "phoneInvalid": "أدخل رقم هاتف صالحًا للدولة المختارة",
+        "line1Short": "أدخل عنوان الشارع (5 أحرف على الأقل)",
+        "line1Long": "عنوان الشارع طويل جدًا",
+        "line2Long": "العنوان الثاني طويل جدًا",
+        "cityShort": "أدخل المدينة (حرفان على الأقل)",
+        "cityLong": "اسم المدينة طويل جدًا",
+        "subdivisionRequired": "اختر أو أدخل منطقتك",
+        "subdivisionInvalid": "اختر خيارًا صالحًا للدولة المختارة",
+        "postalLong": "الرمز البريدي طويل جدًا",
+        "labelLong": "التسمية طويلة جدًا"
+      }
+    },
+    "verification": {
+      "title": "التحقق من الهوية",
+      "approved": {
+        "body": "يمكنك شراء المنتجات المنظمة."
+      },
+      "pending": {
+        "title": "المستندات قيد المراجعة",
+        "body": "يقوم فريق الامتثال لدينا بمراجعة طلبك. يستغرق ذلك عادةً من 24 إلى 48 ساعة. سنرسل لك بريداً إلكترونياً عند اتخاذ القرار."
+      },
+      "rejected": {
+        "title": "لم تتم الموافقة على التحقق",
+        "body": "يرجى مراجعة السبب أدناه وإعادة الإرسال بالمستندات الصحيحة.",
+        "reasonLabel": "السبب من فريقنا",
+        "cta": "إعادة إرسال المستندات"
+      },
+      "expired": {
+        "title": "انتهت صلاحية التحقق",
+        "body": "يرجى إعادة التحقق من هويتك لمواصلة شراء المنتجات المقيدة.",
+        "cta": "إعادة التحقق من الهوية"
+      },
+      "required": {
+        "title": "التحقق من الهوية مطلوب",
+        "body": "واحد أو أكثر من منتجات طلبك خاضع للتنظيم. قم برفع بطاقة الهوية الإماراتية أو جواز السفر من صفحة حسابك. تستغرق المراجعة من 1 إلى 2 يوم عمل وسيتم إخطارك بالبريد الإلكتروني.",
+        "cta": "التحقق من حسابي"
+      }
+    },
+    "paymentForm": {
+      "title": "الدفع",
+      "secureNote": "جميع المعاملات آمنة ومشفّرة.",
+      "payWithCard": "الدفع بالبطاقة",
+      "cardNextNote": "ستُدخل بيانات بطاقتك في صفحة الدفع الآمنة في الخطوة التالية.",
+      "demoNote": "عملية دفع تجريبية. لن يتم خصم أي مبلغ من بطاقتك.",
+      "secureProvider": "256-bit SSL — مؤمّن بواسطة N-Genius"
+    },
+    "promo": {
+      "title": "كود الخصم",
+      "placeholder": "أدخل الكود",
+      "apply": "تطبيق",
+      "applying": "جارٍ التطبيق…",
+      "applied": "مُطبّق",
+      "remove": "إزالة",
+      "youSaved": "لقد وفّرت",
+      "freeShippingApplied": "تم تطبيق الشحن المجاني",
+      "freeShippingNotEligible": "الشحن المجاني غير متاح لطريقة التوصيل المختاره.",
+      "reward": {
+        "label": "مكافأة متاحة",
+        "freeShipping": "شحن مجاني",
+        "discount": "وفّر <amt></amt>",
+        "apply": "تطبيق"
+      },
+      "errors": {
+        "notFound": "كود القسيمة غير صحيح.",
+        "inactive": "لم تعد هذه القسيمة فعّالة.",
+        "notStarted": "لم تُفعّل هذه القسيمة بعد.",
+        "expired": "انتهت صلاحية هذه القسيمة.",
+        "roleNotAllowed": "هذه القسيمة غير متاحة لحسابك.",
+        "minOrderNotMet": "طلبك لا يستوفي الحد الأدنى لهذه القسيمة.",
+        "usageLimitReached": "وصلت هذه القسيمة إلى حد الاستخدام.",
+        "emptyCart": "سلة التسوق فارغة.",
+        "unauthenticated": "يرجى تسجيل الدخول لاستخدام قسيمة.",
+        "generic": "لا يمكن تطبيق هذا الكود.",
+        "freeShippingQuoteRequired": "لا يمكن استخدام قسيمة الشحن المجاني لهذه الوجهة — يُحدَّد الشحن يدويًا. أزل الرمز للمتابعة."
+      }
+    },
+    "terms": {
+      "privacyBody": "ستُستخدم بياناتك الشخصية لمعالجة طلبك ودعم تجربتك في هذا الموقع، وللأغراض الأخرى الموضحة في <link>سياسة الخصوصية</link>.",
+      "agreeBody": "لقد قرأت ووافقت على <link>الشروط والأحكام</link>",
+      "placeOrder": "تأكيد الطلب",
+      "required": "وافق على الشروط والأحكام لإتمام طلبك.",
+      "addressRequired": "اختر عنوان التوصيل."
+    },
+    "orderSummaryPanel": {
+      "shippingMethod": "طريقة التوصيل",
+      "enterAddressNote": "أدخل عنوانك لعرض خيارات الشحن.",
+      "shippingToBeQuoted": "يُحدَّد لاحقًا"
+    },
+    "heldOrder": {
+      "placeOrder": "اطلب عرض سعر الشحن",
+      "noChargeNote": "سنحسب تكلفة الشحن إلى عنوانك ونرسل لك عرض السعر بالبريد الإلكتروني. لن يُخصم أي مبلغ حتى توافق عليه.",
+      "noteTitle": "يُحدَّد الشحن لهذه الوجهة يدويًا",
+      "provisionalTotal": "الإجمالي المبدئي",
+      "provisionalTotalNote": "تُضاف تكلفة الشحن بعد عرض السعر · لن يُخصم أي مبلغ الآن."
+    },
+    "shippingSection": {
+      "title": "طريقة التوصيل",
+      "resolving": "جارٍ تحديث خيارات التوصيل…",
+      "quoteNote": "سيتم احتساب الشحن لهذا العنوان بعد إتمام الطلب وتأكيده قبل الدفع.",
+      "unavailableNote": "لا نقوم بالشحن إلى هذا العنوان حاليًا. يُرجى اختيار عنوان توصيل آخر.",
+      "error": "تعذّر تحميل خيارات التوصيل. حاول مرة أخرى."
+    },
+    "addForFreeShipping": "أضِف <amt></amt> للحصول على شحن مجاني",
+    "freeShippingUnlocked": "لقد حصلت على شحن مجاني",
+    "placingOrder": "جارٍ تقديم الطلب...",
+    "orderErrors": {
+      "unauthorized": "يرجى تسجيل الدخول لتقديم الطلب.",
+      "emptyCart": "سلة التسوق فارغة.",
+      "verificationRequired": "مطلوب التحقق من الهوية لهذا الطلب.",
+      "addressNotFound": "يرجى اختيار عنوان شحن صالح.",
+      "insufficientStock": "بعض المنتجات غير متوفرة في المخزون. يرجى تحديث سلتك.",
+      "paymentFailed": "لم نتمكن من إتمام الدفع. يرجى المحاولة مرة أخرى.",
+      "generic": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+      "couponNotApplicable": "لم تعد هذه القسيمة صالحة. يرجى إزالتها والمحاولة مرة أخرى.",
+      "noAddress": "يرجى إضافة أو اختيار عنوان التوصيل قبل تأكيد الطلب.",
+      "couponFreeShippingQuoteRequired": "لا يمكن استخدام قسائم الشحن المجاني للوجهات التي تتطلب عرض سعر للشحن. يرجى إزالة الرمز.",
+      "pointsNotAvailable": "لا يمكن استخدام النقاط عندما يُحدَّد سعر الشحن بشكل منفصل. أزلها للمتابعة.",
+      "pointsInvalid": "لم تعد النقاط مناسبة لهذا الطلب. يُرجى مراجعتها والمحاولة مرة أخرى.",
+      "pointsInsufficient": "تغيّر رصيد نقاطك. يُرجى مراجعة النقاط والمحاولة مرة أخرى.",
+      "pointsRateChanged": "تغيّرت قيمة النقاط. أزلنا النقاط من طلبك؛ طبّقها مرة أخرى لترى المبلغ الجديد."
+    },
+    "success": {
+      "title": "شكراً لك. تم تأكيد طلبك.",
+      "titleFailed": "لم تكتمل عملية الدفع",
+      "subtitle": "أرسلنا الإيصال إلى {email}.",
+      "subtitleFailed": "طلبك محفوظ ولم يُخصم أي مبلغ. حاول مرة أخرى بالبطاقة نفسها أو ببطاقة أخرى.",
+      "orderNumber": "رقم الطلب",
+      "orderDate": "تاريخ الطلب",
+      "items": "المنتجات",
+      "shippingTo": "الشحن إلى",
+      "continueShopping": "متابعة التسوق",
+      "tryAgain": "إعادة محاولة الدفع",
+      "contactSupport": "تواصل مع الدعم",
+      "subtotal": "المجموع الجزئي",
+      "addons": "الإضافات",
+      "shipping": "الشحن",
+      "shippingMethod": "طريقة الشحن",
+      "total": "الإجمالي",
+      "viewOrder": "عرض الطلب",
+      "discount": "الخصم",
+      "freeShipping": "تم تطبيق الشحن المجاني",
+      "confirmingTitle": "جارٍ تأكيد الدفع",
+      "confirmingBody": "يستغرق ذلك عادةً بضع ثوانٍ. يُرجى إبقاء هذه الصفحة مفتوحة.",
+      "points": "النقاط",
+      "orderLabel": "الطلب",
+      "stepPlaced": "تم الطلب",
+      "stepPaid": "تم الدفع",
+      "stepShipped": "تم الشحن",
+      "stepDelivered": "تم التسليم",
+      "delivery": "التوصيل",
+      "nextTitle": "ما الذي سيحدث بعد ذلك",
+      "next1": "نجهّز طلبك ونرسل إليك بريداً إلكترونياً عند شحنه.",
+      "next2": "ستصلك تفاصيل شركة الشحن ورقم التتبع عبر البريد الإلكتروني.",
+      "next3Id": "أحضر هويتك الإماراتية. لا تُسلَّم المنتجات الخاضعة للتنظيم إلا بعد التحقق من الهوية.",
+      "helpPrompt": "هل لديك أسئلة حول هذا الطلب؟",
+      "saveReceipt": "حفظ الإيصال",
+      "stillStuck": "هل ما زلت بحاجة إلى مساعدة؟",
+      "orderSummary": "ملخص الطلب",
+      "toPay": "المبلغ المستحق"
+    },
+    "pay": {
+      "secureHeading": "دفع آمن",
+      "sandboxChip": "وضع تجريبي",
+      "payee": "الدفع إلى",
+      "sandboxTitle": "دفع تجريبي — لا يُحوَّل أي مبلغ",
+      "sandboxBody": "يتم التحقق من بيانات البطاقة في متصفحك ولا تُرسل إلى خوادمنا ولا تُحفظ.",
+      "payingFor": "الطلب {orderNumber}",
+      "payingForQuote": "من عرض السعر {quoteNumber}",
+      "cardHeading": "بيانات البطاقة",
+      "cardNumber": "رقم البطاقة",
+      "nameOnCard": "الاسم على البطاقة",
+      "expiry": "تاريخ الانتهاء (شهر / سنة)",
+      "cvc": "رمز التحقق",
+      "billingAddress": "عنوان الفوترة",
+      "billingSet": "حُدّد عند إتمام الطلب",
+      "payNow": "ادفع {total}",
+      "submitting": "جارٍ المعالجة…",
+      "noChargeNote": "لن يُخصم أي مبلغ حتى تضغط على الدفع.",
+      "dontClose": "لا تغلق هذه الصفحة ولا تضغط على زر الرجوع.",
+      "summaryHeading": "طلبك",
+      "addons": "الإضافات",
+      "shipping": "الشحن",
+      "discount": "الخصم",
+      "total": "الإجمالي",
+      "afterTitle": "بعد الدفع",
+      "afterStep1": "نؤكد عملية الدفع ونحدّث حالة طلبك.",
+      "afterStep2": "يجهّز فريقنا منتجاتك وأوراق الترخيص.",
+      "afterStep3": "سنرسل لك بريداً إلكترونياً فور شحن طلبك.",
+      "testCardsTitle": "بطاقات الاختبار التجريبية",
+      "testCardSuccess": "تمت الموافقة على الدفع",
+      "testCardDeclined": "تم رفض الدفع",
+      "declinedTitle": "تم رفض الدفع",
+      "declinedBody": "لم يُخصم أي مبلغ ولم يطرأ أي تغيير على طلبك.",
+      "contactTeam": "تواصل مع فريقنا لترتيب الدفع",
+      "cardNumberError": "أدخل رقم بطاقة صالحاً.",
+      "expiryError": "أدخل تاريخ انتهاء صالحاً.",
+      "cvcError": "أدخل رمز تحقق صالحاً.",
+      "nameError": "أدخل الاسم كما يظهر على البطاقة.",
+      "errors": {
+        "UNAUTHENTICATED": "يرجى تسجيل الدخول للمتابعة.",
+        "ORDER_NOT_FOUND": "لم نتمكن من العثور على هذا الطلب.",
+        "INVALID_STATE": "لم يعد بالإمكان دفع هذا الطلب من هنا.",
+        "NOT_MOCK": "الدفع التجريبي غير متاح.",
+        "VALIDATION_ERROR": "يرجى التحقق من بيانات بطاقتك والمحاولة مرة أخرى.",
+        "INTERNAL_ERROR": "حدث خطأ ما. يرجى المحاولة مرة أخرى."
+      }
+    },
+    "pointsEarnLabel": "النقاط التي ستكسبها",
+    "pointsEarnNote": "تُضاف عند تسليم طلبك",
+    "pointsUnit": "نقطة",
+    "points": {
+      "title": "نقاط الولاء",
+      "balance": "رصيدك: <b>{points}</b> نقطة، بقيمة <amt></amt>",
+      "pointsCount": "{points} نقطة",
+      "applied": "مطبّقة",
+      "youSaved": "وفّرت",
+      "remove": "إزالة",
+      "placeholder": "النقاط",
+      "apply": "تطبيق",
+      "useMax": "استخدم الحد الأقصى",
+      "range": "بين {min} و{max} نقطة",
+      "rate": "{points} نقطة = <amt></amt> · حتى {share}% من قيمة المنتجات",
+      "belowMinimum": "رصيدك: {points} نقطة. يمكنك استخدام النقاط ابتداءً من {min}.",
+      "orderTooSmall": "يمكن استخدام النقاط على منتجات بقيمة <amt></amt> أو أكثر.",
+      "quoteRequired": "لا يمكن استخدام النقاط عندما يُحدَّد سعر الشحن بشكل منفصل.",
+      "errors": {
+        "range": "أدخل عدداً بين {min} و{max} نقطة."
+      }
+    },
+    "pointsLine": "النقاط",
+    "receipt": {
+      "title": "الإيصال",
+      "taxInvoice": "فاتورة ضريبية",
+      "docTitle": "{title} {orderNumber}",
+      "orderNumber": "رقم الطلب",
+      "orderDate": "تاريخ الطلب",
+      "paidOn": "تاريخ الدفع",
+      "payment": "الدفع",
+      "billTo": "الفوترة إلى",
+      "shipTo": "الشحن إلى",
+      "item": "المنتج",
+      "qty": "الكمية",
+      "unitPrice": "سعر الوحدة",
+      "amount": "المبلغ",
+      "refunds": "المبالغ المستردة",
+      "refundLine": "تم الاسترداد في {date}",
+      "settlementLine": "دفعة {reference} · {date}",
+      "paymentCard": "بطاقة",
+      "paymentOffline": "دفع خارج الموقع",
+      "trn": "الرقم الضريبي",
+      "tradeLicence": "الرخصة التجارية",
+      "taxInvoiceAlt": "Tax invoice",
+      "unitExVat": "سعر الوحدة دون الضريبة",
+      "exVat": "دون الضريبة",
+      "vatRate": "الضريبة {rate}%",
+      "inclVat": "شامل الضريبة",
+      "totalExVat": "الإجمالي دون الضريبة",
+      "vatAt": "ضريبة القيمة المضافة بنسبة {rate}%",
+      "totalInclVat": "الإجمالي شامل الضريبة",
+      "amountsInAed": "جميع المبالغ بالدرهم الإماراتي.",
+      "issued": "صدر هذا المستند إلكترونياً وهو صالح دون توقيع.",
+      "thanks": "شكراً لتسوقك من {store}.",
+      "save": "حفظ بصيغة PDF",
+      "print": "طباعة",
+      "back": "العودة إلى الطلب",
+      "saveHint": "في نافذة الطباعة، اختر «حفظ بصيغة PDF» للاحتفاظ بنسخة."
+    }
+  },
+  "account": {
+    "verification": {
+      "title": "التحقق من الهوية",
+      "subtitle": "تتطلب بعض المنتجات التحقق من الهوية قبل الشراء. تحقق مرة واحدة وستكون مؤهلاً لمدة سنتين.",
+      "manualReviewNotice": "لا يتضمن حسابك في الهوية الرقمية بيانات الهوية الإماراتية اللازمة للتحقق التلقائي. يُرجى رفع مستنداتك أدناه بدلاً من ذلك.",
+      "documents": {
+        "heading": "مستنداتك",
+        "identity": "وثيقة الهوية",
+        "proofOfAddress": "إثبات العنوان",
+        "photo": "صورة",
+        "enlargeHint": "انقر للتكبير",
+        "zoomHint": "مرّر أو اضغط للتكبير",
+        "resetZoom": "إعادة التعيين",
+        "openPdf": "فتح المستند",
+        "unavailable": "غير متاح",
+        "previousHeading": "المستندات السابقة",
+        "previousHint": "تم استبدالها عندما طلب فريقنا مستندات جديدة. محفوظة في سجلاتنا."
+      },
+      "submittedDetails": {
+        "heading": "التفاصيل التي قدّمتها",
+        "idLabel": "رقم الهوية / جواز السفر",
+        "addressLabel": "العنوان",
+        "hint": "وفقًا لما قدّمته عند الإرسال. إذا احتاجت إلى تصحيح، تواصل مع الدعم وسنرسل إليك طلبًا لتحديثها.",
+        "submittedLabel": "تاريخ التقديم",
+        "declarationLabel": "تاريخ قبول الإقرار"
+      },
+      "request": {
+        "heading": "مطلوب إجراء",
+        "body": "يحتاج فريقنا إلى المزيد منك قبل أن نتمكن من التحقق من هويتك.",
+        "messageLabel": "رسالة من فريقنا",
+        "requestedOn": "طُلبت في {date}",
+        "bodyDetails": "يحتاج فريقنا إلى تصحيح البيانات التي صرّحت بها قبل أن نتمكن من التحقق من هويتك.",
+        "detailsCta": "تحديث بياناتك"
+      },
+      "provide": {
+        "heading": "ارفع ما طلبناه",
+        "submit": "إرسال المستندات",
+        "submitting": "جارٍ الإرسال…",
+        "fileRequired": "يرجى رفع ملف لهذا المستند.",
+        "errors": {
+          "UNAUTHENTICATED": "يجب تسجيل الدخول لرفع المستندات.",
+          "NO_REQUEST": "لا يوجد طلب مستندات مفتوح على حسابك.",
+          "NO_FILES_PROVIDED": "يجب أن يتضمن كل مستند مطلوب ملفًا.",
+          "FILE_TOO_LARGE": "أحد ملفاتك يتجاوز الحد الأقصى 5 ميجابايت.",
+          "INVALID_FILE_TYPE": "أحد ملفاتك من نوع غير مدعوم. المسموح: JPEG أو PNG أو PDF.",
+          "VALIDATION_ERROR": "يرجى مراجعة النموذج والمحاولة مرة أخرى.",
+          "STORAGE_ERROR": "فشل رفع المستندات. يرجى المحاولة مرة أخرى.",
+          "INTERNAL_ERROR": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+          "DEMO_UPLOADS_DISABLED": "رفع الملفات معطّل في هذه النسخة التجريبية. لم يتم إرسال أي شيء."
+        },
+        "acknowledgmentRequired": "يجب الموافقة على الإقرار للمتابعة."
+      },
+      "details": {
+        "pageTitle": "تحديث بياناتك المصرّح بها",
+        "subtitle": "قم بإجراء التغييرات التي طلبها فريقنا.",
+        "messageLabel": "رسالة من فريقنا",
+        "previousValue": "كان {value}",
+        "submit": "إرسال للمراجعة",
+        "submitting": "جارٍ الإرسال…",
+        "fields": {
+          "declaredIdNumber": {
+            "label": "رقم الهوية / جواز السفر"
+          },
+          "declaredAddress": {
+            "label": "العنوان"
+          }
+        },
+        "acknowledgment": {
+          "heading": "الإقرار",
+          "consentLabel": "لقد قرأت ما ورد أعلاه وأوافق عليه"
+        },
+        "validation": {
+          "idRequired": "رقم الهوية مطلوب.",
+          "addressRequired": "العنوان مطلوب.",
+          "noChanges": "غيّر بيانًا واحدًا على الأقل قبل الإرسال.",
+          "acknowledgmentRequired": "يجب الموافقة على الإقرار للمتابعة."
+        },
+        "errors": {
+          "UNAUTHENTICATED": "يجب تسجيل الدخول لتحديث بياناتك.",
+          "NO_REQUEST": "لا يوجد طلب مفتوح لتحديث بياناتك.",
+          "NO_CHANGES": "غيّر بيانًا واحدًا على الأقل قبل الإرسال.",
+          "VALIDATION_ERROR": "يرجى مراجعة النموذج والمحاولة مرة أخرى.",
+          "INTERNAL_ERROR": "حدث خطأ ما. يرجى المحاولة مرة أخرى."
+        }
+      }
+    },
+    "b2b": {
+      "pageTitle": "حساب الأعمال B2B",
+      "subtitle": "تفاصيل حساب الأعمال الخاص بك ومستندات التحقق.",
+      "pending": {
+        "heading": "الطلب قيد المراجعة",
+        "body": "تم استلام طلبك وهو قيد المراجعة من قِبل فريق الامتثال لدينا. تستغرق العملية عادةً 1–2 يوم عمل. سنرسل لك بريداً إلكترونياً بمجرد اتخاذ القرار.",
+        "submittedOn": "تاريخ التقديم"
+      },
+      "approved": {
+        "heading": "تمت الموافقة على حساب الأعمال",
+        "body": "حساب الأعمال الخاص بك نشط الآن. يمكنك الوصول إلى أسعار الجملة وأولوية التنفيذ.",
+        "approvedOn": "تاريخ الموافقة",
+        "ctaShop": "تسوق الآن"
+      },
+      "rejected": {
+        "heading": "لم تتم الموافقة على الطلب",
+        "body": "للأسف لم تتم الموافقة على طلبك. يمكنك مراجعة السبب أعلاه وتقديم طلب جديد بالتفاصيل الصحيحة، أو التواصل مع فريقنا إذا كانت لديك أسئلة.",
+        "reasonLabel": "سبب الرفض من فريقنا",
+        "ctaReapply": "تقديم طلب جديد",
+        "ctaContact": "تواصل مع الدعم"
+      },
+      "suspended": {
+        "heading": "الحساب موقوف",
+        "body": "تم تعليق حساب الأعمال الخاص بك. يرجى التواصل مع فريقنا للحصول على مزيد من المعلومات.",
+        "ctaContact": "تواصل مع الدعم",
+        "reasonLabel": "السبب من فريقنا"
+      },
+      "request": {
+        "heading": "إجراء مطلوب",
+        "body": "طلب فريقنا منك تقديم مستندات إضافية لحسابك التجاري.",
+        "messageLabel": "رسالة من فريقنا",
+        "requestedOn": "تاريخ الطلب {date}",
+        "cta": "رفع المستندات",
+        "bodyDetails": "طلب منك فريقنا تحديث بيانات شركتك.",
+        "ctaDetails": "تحديث البيانات"
+      },
+      "provide": {
+        "pageTitle": "تقديم المستندات",
+        "subtitle": "ارفع المستندات التي طلبها فريقنا.",
+        "messageLabel": "رسالة من فريقنا",
+        "documents": {
+          "typeLabel": "نوع الوثيقة",
+          "rowLabel": "الوثيقة {index}",
+          "numberLabel": "رقم الوثيقة",
+          "numberPlaceholder": "كما هو مطبوع على الوثيقة",
+          "nameLabel": "اسم الوثيقة",
+          "namePlaceholder": "مثال: شهادة الغرفة التجارية",
+          "fileLabel": "الملف",
+          "fileHint": "JPEG أو PNG أو PDF. بحد أقصى 5 ميغابايت.",
+          "remove": "حذف الوثيقة {index}",
+          "add": "إضافة وثيقة أخرى",
+          "count": "{used} من {max} وثائق"
+        },
+        "types": {
+          "TRADE_LICENSE": "الرخصة التجارية",
+          "VAT_CERTIFICATE": "شهادة ضريبة القيمة المضافة",
+          "COMPANY_ID": "هوية الشركة",
+          "OTHER": "أخرى"
+        },
+        "fileUpload": {
+          "dropOrClick": "أسقط الملف هنا أو انقر للرفع",
+          "remove": "حذف",
+          "tooLarge": "حجم الملف يتجاوز الحد الأقصى البالغ 5 ميغابايت.",
+          "invalidType": "يُسمح فقط بملفات PDF أو JPG أو PNG."
+        },
+        "acknowledgment": {
+          "heading": "الإقرار",
+          "consentLabel": "لقد قرأت ما ورد أعلاه وأوافق عليه"
+        },
+        "submit": "إرسال المستندات",
+        "submitting": "جارٍ الإرسال…",
+        "validation": {
+          "fileRequired": "يرجى رفع ملف لهذه الوثيقة.",
+          "nameRequired": "أعطِ هذه الوثيقة اسماً.",
+          "acknowledgmentRequired": "يجب الموافقة على الإقرار للمتابعة.",
+          "missingType": "يُرجى إضافة {type} قبل الإرسال."
+        },
+        "errors": {
+          "UNAUTHENTICATED": "يجب تسجيل الدخول لرفع المستندات.",
+          "NO_ACCOUNT": "لم يتم العثور على حساب تجاري.",
+          "NO_REQUEST": "لا يوجد طلب مستندات مفتوح على حسابك.",
+          "NO_FILES_PROVIDED": "يجب أن تتضمن كل وثيقة ملفاً.",
+          "TOO_MANY_FILES": "يمكنك رفع 8 وثائق كحد أقصى.",
+          "FILE_TOO_LARGE": "أحد ملفاتك يتجاوز الحد الأقصى البالغ 5 ميغابايت.",
+          "INVALID_FILE_TYPE": "أحد ملفاتك من نوع غير مدعوم. المسموح: JPEG وPNG وPDF.",
+          "VALIDATION_ERROR": "يرجى مراجعة النموذج والمحاولة مرة أخرى.",
+          "STORAGE_ERROR": "فشل رفع المستندات. يرجى المحاولة مرة أخرى.",
+          "INTERNAL_ERROR": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+          "REQUEST_MISMATCH": "لا تطابق المستندات المرفوعة ما طلبه فريقنا. يُرجى تحديث الصفحة والمحاولة مرة أخرى.",
+          "DEMO_UPLOADS_DISABLED": "رفع الملفات معطّل في هذه النسخة التجريبية. لم يتم إرسال أي شيء."
+        }
+      },
+      "details": {
+        "pageTitle": "تحديث بيانات شركتك",
+        "subtitle": "قم بإجراء التغييرات التي طلبها فريقنا.",
+        "consequence": "بإرسال النموذج يعود حسابك إلى المراجعة. تتوقف أسعار الجملة حتى تتم الموافقة عليه مرة أخرى.",
+        "previousValue": "كان {value}",
+        "submit": "إرسال للمراجعة",
+        "messageLabel": "رسالة من فريقنا",
+        "fields": {
+          "companyNameEn": {
+            "label": "اسم الشركة (بالإنجليزية)",
+            "placeholder": "كما هو مسجل في الرخصة التجارية"
+          },
+          "tradeLicenseNo": {
+            "label": "رقم الرخصة التجارية",
+            "placeholder": "مثال: CN-1234567"
+          },
+          "contactName": {
+            "label": "اسم جهة الاتصال",
+            "placeholder": "المسؤول الرئيسي عن هذا الحساب"
+          },
+          "contactPhone": {
+            "label": "هاتف جهة الاتصال",
+            "placeholder": "+971 XX XXX XXXX"
+          },
+          "companyNameAr": {
+            "label": "اسم الشركة (بالعربية)",
+            "placeholder": "اسم الشركة بالعربية",
+            "optional": "اختياري"
+          },
+          "vatNumber": {
+            "label": "رقم التسجيل الضريبي",
+            "placeholder": "رقم TRN المكوّن من 15 خانة",
+            "optional": "اختياري"
+          }
+        },
+        "documents": {
+          "rowLabel": "مستند الرخصة التجارية",
+          "instruction": "لقد قمت بتغيير رقم الرخصة، لذا نحتاج إلى مستند الرخصة المطابق.",
+          "fileLabel": "الملف",
+          "fileHint": "JPEG أو PNG أو PDF. بحد أقصى 5 ميغابايت."
+        },
+        "fileUpload": {
+          "dropOrClick": "أسقط الملف هنا أو انقر للرفع",
+          "remove": "حذف",
+          "tooLarge": "حجم الملف يتجاوز الحد الأقصى البالغ 5 ميغابايت.",
+          "invalidType": "يُسمح فقط بملفات PDF أو JPG أو PNG."
+        },
+        "acknowledgment": {
+          "heading": "الإقرار",
+          "consentLabel": "لقد قرأت ما ورد أعلاه وأوافق عليه"
+        },
+        "submitting": "جارٍ الإرسال…",
+        "validation": {
+          "companyNameEnRequired": "اسم الشركة مطلوب.",
+          "tradeLicenseNoRequired": "رقم الرخصة التجارية مطلوب.",
+          "contactNameRequired": "اسم جهة الاتصال مطلوب.",
+          "contactPhoneRequired": "هاتف جهة الاتصال مطلوب.",
+          "contactPhoneInvalid": "يرجى إدخال رقم هاتف إماراتي صحيح.",
+          "acknowledgmentRequired": "يجب الموافقة على الإقرار للمتابعة.",
+          "fileRequired": "يرجى رفع ملف لهذه الوثيقة.",
+          "noChanges": "غيّر بيانًا واحدًا على الأقل قبل الإرسال."
+        },
+        "errors": {
+          "UNAUTHENTICATED": "يجب تسجيل الدخول لتحديث بيانات شركتك.",
+          "NO_ACCOUNT": "لم يتم العثور على حساب تجاري.",
+          "NO_REQUEST": "لا يوجد طلب مفتوح لتحديث بياناتك.",
+          "MISSING_LICENSE_DOCUMENT": "لقد قمت بتغيير رقم الرخصة، لذا يلزم إرفاق مستند الرخصة المطابق.",
+          "DUPLICATE_LICENSE": "يوجد بالفعل حساب تجاري مسجّل برقم الرخصة التجارية هذا.",
+          "VALIDATION_ERROR": "يرجى مراجعة النموذج والمحاولة مرة أخرى.",
+          "STORAGE_ERROR": "فشل رفع المستندات. يرجى المحاولة مرة أخرى.",
+          "INTERNAL_ERROR": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+          "FILE_TOO_LARGE": "أحد ملفاتك يتجاوز الحد الأقصى البالغ 5 ميغابايت.",
+          "INVALID_FILE_TYPE": "أحد ملفاتك من نوع غير مدعوم. المسموح: JPEG وPNG وPDF.",
+          "NO_CHANGES": "غيّر بيانًا واحدًا على الأقل قبل الإرسال.",
+          "DEMO_UPLOADS_DISABLED": "رفع الملفات معطّل في هذه النسخة التجريبية. لم يتم إرسال أي شيء."
+        }
+      },
+      "credential": {
+        "eyebrow": "الحساب التجاري",
+        "status": "نشط",
+        "company": "الشركة",
+        "contact": "جهة الاتصال",
+        "approvedOn": "تاريخ الموافقة",
+        "validUntil": "صالح حتى",
+        "reference": "الرقم المرجعي للحساب"
+      },
+      "documents": {
+        "currentHeading": "مستنداتك",
+        "previousHeading": "المستندات السابقة",
+        "previousHint": "تم استبدالها عند آخر تجديد. محفوظة في سجلاتنا.",
+        "tradeLicense": "الرخصة التجارية",
+        "vatCertificate": "شهادة ضريبة القيمة المضافة",
+        "companyId": "هوية الشركة",
+        "other": "مستند آخر",
+        "enlargeHint": "انقر للتكبير",
+        "zoomHint": "مرّر أو اضغط للتكبير",
+        "resetZoom": "إعادة التعيين",
+        "openPdf": "فتح المستند",
+        "unavailable": "غير متاح"
+      },
+      "businessDetails": {
+        "heading": "تفاصيل نشاطك التجاري",
+        "tradeLicenseLabel": "رقم الرخصة التجارية",
+        "vatLabel": "الرقم الضريبي",
+        "companyLabel": "اسم الشركة",
+        "contactNameLabel": "اسم جهة الاتصال",
+        "contactPhoneLabel": "هاتف جهة الاتصال",
+        "hint": "وفقًا لما قدّمته عند الإرسال. إذا احتاجت إلى تصحيح، تواصل مع الدعم وسنرسل إليك طلبًا لتحديثها."
+      },
+      "expired": {
+        "heading": "انتهت صلاحية الحساب التجاري",
+        "body": "انتهت صلاحية حسابك التجاري. جدّده لاستعادة أسعار الجملة وأولوية التنفيذ.",
+        "ctaRenew": "تجديد الحساب التجاري"
+      },
+      "renew": {
+        "pageTitle": "تجديد حسابك التجاري",
+        "subtitle": "ارفع مستندات محدّثة لتجديد حساب الأعمال بالجملة الخاص بك.",
+        "licenseLabel": "رقم الرخصة التجارية",
+        "licenseLocked": "هذا الرقم مسجّل لدينا ولا يمكن تعديله هنا. تواصل مع الدعم إذا احتجت إلى تحديثه.",
+        "instructions": {
+          "heading": "قبل الرفع"
+        },
+        "checklist": {
+          "heading": "المستندات المطلوب تجهيزها",
+          "required": "مطلوبة",
+          "recommended": "موصى بها",
+          "footnote": "يمكنك إضافة أي مستند غير مذكور أعلاه كمستند إضافي أدناه."
+        },
+        "documents": {
+          "typeLabel": "نوع الوثيقة",
+          "rowLabel": "الوثيقة {index}",
+          "required": "مطلوبة",
+          "numberLabel": "رقم الوثيقة",
+          "numberPlaceholder": "كما هو مطبوع على الوثيقة",
+          "nameLabel": "اسم الوثيقة",
+          "namePlaceholder": "مثال: شهادة الغرفة التجارية",
+          "fileLabel": "الملف",
+          "fileHint": "JPEG أو PNG أو PDF. بحد أقصى 5 ميغابايت.",
+          "remove": "حذف الوثيقة {index}",
+          "add": "إضافة وثيقة أخرى",
+          "count": "{used} من {max} وثائق"
+        },
+        "types": {
+          "TRADE_LICENSE": "الرخصة التجارية",
+          "VAT_CERTIFICATE": "شهادة ضريبة القيمة المضافة",
+          "COMPANY_ID": "هوية الشركة",
+          "OTHER": "أخرى"
+        },
+        "fileUpload": {
+          "dropOrClick": "أسقط الملف هنا أو انقر للرفع",
+          "remove": "حذف",
+          "tooLarge": "حجم الملف يتجاوز الحد الأقصى البالغ 5 ميغابايت.",
+          "invalidType": "يُسمح فقط بملفات PDF أو JPG أو PNG."
+        },
+        "acknowledgment": {
+          "heading": "الإقرار",
+          "consentLabel": "لقد قرأت ما ورد أعلاه وأوافق عليه"
+        },
+        "submit": "إرسال التجديد",
+        "submitting": "جارٍ الإرسال…",
+        "validation": {
+          "fileRequired": "يرجى رفع ملف لهذه الوثيقة.",
+          "nameRequired": "أعطِ هذه الوثيقة اسماً.",
+          "acknowledgmentRequired": "يجب الموافقة على الإقرار للمتابعة."
+        },
+        "errors": {
+          "UNAUTHENTICATED": "يجب تسجيل الدخول لطلب تجديد الحساب التجاري.",
+          "NO_ACCOUNT": "لم يتم العثور على حساب تجاري.",
+          "NOT_ELIGIBLE": "حسابك التجاري غير مؤهل للتجديد.",
+          "NO_FILES_PROVIDED": "يجب أن تتضمن كل وثيقة ملفاً.",
+          "TOO_MANY_FILES": "يمكنك رفع 8 وثائق كحد أقصى.",
+          "MISSING_REQUIRED_DOCUMENT": "أحد المستندات الإلزامية مفقود. يرجى رفع كل مستند مدرج ضمن المستندات المطلوبة.",
+          "FILE_TOO_LARGE": "أحد ملفاتك يتجاوز الحد الأقصى البالغ 5 ميغابايت.",
+          "INVALID_FILE_TYPE": "أحد ملفاتك من نوع غير مدعوم. المسموح: JPEG وPNG وPDF.",
+          "VALIDATION_ERROR": "يرجى مراجعة النموذج والمحاولة مرة أخرى.",
+          "STORAGE_ERROR": "فشل رفع المستندات. يرجى المحاولة مرة أخرى.",
+          "INTERNAL_ERROR": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+          "DEMO_UPLOADS_DISABLED": "رفع الملفات معطّل في هذه النسخة التجريبية. لم يتم إرسال أي شيء."
+        }
+      }
+    },
+    "nav": {
+      "title": "حسابي",
+      "overview": "نظرة عامة",
+      "orders": "الطلبات",
+      "quotes": "عروض الأسعار",
+      "wishlist": "المفضلة",
+      "addresses": "العناوين",
+      "verification": "التحقق",
+      "b2b": "حساب الأعمال",
+      "loyalty": "الولاء",
+      "coupons": "القسائم",
+      "settings": "الإعدادات",
+      "logout": "تسجيل الخروج",
+      "needsAttention": "بحاجة إلى إجراء",
+      "support": "المساعدة والدعم"
+    },
+    "quotes": {
+      "title": "طلبات عروض الأسعار",
+      "subtitle": "تتبع طلبات عروض الأسعار التي أرسلتها وردود التسعير.",
+      "empty": "لم تطلب أي عروض أسعار بعد.",
+      "emptyCta": "تصفح المنتجات",
+      "inactiveNotice": "حسابك التجاري غير نشط، لذا لا يمكن إرسال طلبات عروض أسعار جديدة.",
+      "inactiveCta": "عرض الحساب التجاري",
+      "itemCount": "{count, plural, =0 {لا منتجات} =1 {منتج واحد} =2 {منتجان} few {# منتجات} many {# منتجاً} other {# منتج}}",
+      "quoteNumber": "رقم عرض السعر",
+      "placedUnder": "بيانات المنشأة",
+      "legalEntity": "الكيان القانوني",
+      "tradeLicense": "رقم الرخصة التجارية",
+      "vatNumber": "الرقم الضريبي",
+      "backToQuotes": "العودة إلى عروض الأسعار",
+      "cancel": "إلغاء",
+      "items": "المنتجات",
+      "customerNote": "ملاحظتك",
+      "shippingCost": "الشحن",
+      "shippingTo": "الشحن إلى",
+      "total": "الإجمالي",
+      "staffNote": "ملاحظة من فريقنا",
+      "awaitingPricing": "يجهّز فريقنا أسعارك. سنرسل لك بريداً إلكترونياً عندما تكون جاهزة.",
+      "quotedTotal": "الإجمالي المعروض",
+      "acceptCta": "قبول عرض السعر",
+      "acceptConfirmTitle": "قبول عرض السعر هذا؟",
+      "acceptConfirmBody": "أنت تقبل عرض السعر هذا بقيمة {total}. هذا يؤكد نيتك للشراء ولا يمكن التراجع عنه.",
+      "cancelQuoteCta": "إلغاء هذا العرض",
+      "requestContactCta": "طلب التواصل",
+      "requestContact": {
+        "title": "طلب التواصل",
+        "intro": "اختر موضوع طلبك، ثم أضف أي تفاصيل. سيتواصل معك فريقنا مباشرة.",
+        "reasonLabel": "ما موضوع طلبك؟",
+        "reasons": {
+          "PRICING": "الأسعار",
+          "SHIPPING": "الشحن",
+          "QUANTITIES": "الكميات",
+          "PAYMENT_TERMS": "شروط الدفع",
+          "OTHER": "أمر آخر"
+        },
+        "messageLabel": "الرسالة",
+        "messagePlaceholder": "أضف أي تفاصيل تود أن يعرفها فريقنا.",
+        "starters": {
+          "PRICING": "هل يمكننا مراجعة أسعار هذا العرض؟ ",
+          "SHIPPING": "هل يمكننا مراجعة تكلفة الشحن لهذا العرض؟ ",
+          "QUANTITIES": "هل يمكننا مراجعة الكميات في هذا العرض؟ ",
+          "PAYMENT_TERMS": "هل يمكننا مناقشة شروط الدفع لهذا العرض؟ ",
+          "OTHER": ""
+        },
+        "send": "إرسال الطلب"
+      },
+      "cancelConfirmTitle": "هل تريد إلغاء هذا العرض؟",
+      "cancelConfirmBody": "سيؤدي هذا إلى سحب طلب عرض الأسعار. لا يمكن التراجع عن هذا الإجراء.",
+      "acceptedAdvisory": "لقد قبلت عرض السعر هذا. سيتواصل معك فريقنا قريباً لترتيب الدفع والتسليم.",
+      "consentTermsHeading": "الشروط والأحكام",
+      "consentRulesHeading": "القواعد",
+      "consentCheckbox": "لقد قرأت الشروط والأحكام والقواعد وأوافق عليها. وأدرك أن القبول مُلزم.",
+      "whatNextHeading": "ما الذي يحدث بعد ذلك",
+      "whatNextBody": "بمجرد قبولك، يتم إخطار فريقنا وسيتواصل معك لإتمام الطلب والدفع.",
+      "consentUnavailable": "هذا العرض غير جاهز للقبول عبر الإنترنت بعد. يُرجى التواصل مع فريقنا وسنساعدك على إتمامه.",
+      "timeline": "سجل الحالة",
+      "pricing": "التسعير",
+      "finalizeCta": "إتمام طلبك",
+      "convertedToOrder": "تم التحويل إلى الطلب {orderNumber}",
+      "errors": {
+        "UNAUTHENTICATED": "يرجى تسجيل الدخول مرة أخرى للمتابعة.",
+        "NOT_B2B": "هذا الإجراء متاح لحسابات الأعمال المعتمدة.",
+        "NOT_OWNER": "لم يتم العثور على عرض السعر.",
+        "NOT_ELIGIBLE": "لم تعد طلبات التواصل متاحة لعرض السعر هذا.",
+        "B2B_EXPIRED": "انتهت صلاحية حسابك التجاري. جدّده للمتابعة.",
+        "QUOTE_NOT_QUOTED": "لم يعد بالإمكان قبول عرض السعر هذا.",
+        "QUOTE_CHANGED": "تم تحديث عرض السعر. يرجى مراجعة الإجمالي الجديد قبل القبول.",
+        "TERMS_UNAVAILABLE": "لا يمكن قبول عرض السعر هذا عبر الإنترنت حاليًا. يرجى التواصل مع فريقنا.",
+        "NOT_CANCELABLE": "لم يعد بالإمكان إلغاء عرض السعر هذا.",
+        "VALIDATION_ERROR": "يرجى التحقق من بياناتك والمحاولة مرة أخرى.",
+        "INTERNAL_ERROR": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+        "ALREADY_OPEN": "لديك طلب مفتوح بالفعل بخصوص عرض السعر هذا. يمكنك متابعته من المساعدة والدعم."
+      },
+      "finalize": {
+        "heading": "إتمام طلبك",
+        "subheading": "راجع طلبك قبل تقديمه.",
+        "shippingAddressHeading": "عنوان الشحن",
+        "addressLockedNote": "تم استخدام هذا العنوان لتسعير عرضك ولا يمكن تغييره هنا. تواصل معنا إذا كان بحاجة إلى تعديل.",
+        "paymentHeading": "الدفع",
+        "itemsHeading": "المنتجات في هذا الطلب",
+        "goodsSubtotal": "المنتجات",
+        "shippingLine": "الشحن",
+        "vatInclLine": "شامل ضريبة القيمة المضافة {rate}%",
+        "total": "الإجمالي",
+        "arrangePaymentCta": "ترتيب الدفع مع فريقنا",
+        "arrangePaymentNote": "سنتواصل معك لترتيب الدفع والتوصيل. تم تسجيل طلبك الآن وسيتم الاحتفاظ به لك.",
+        "verifyFirstNote": "أكمل التحقق من الهوية أعلاه قبل إتمام الطلب.",
+        "expiredTitle": "انتهت صلاحية الحساب التجاري",
+        "expiredBody": "انتهت صلاحية حسابك التجاري. جدّده لإتمام هذا الطلب.",
+        "expiredCta": "الذهاب إلى الحساب التجاري",
+        "arrangePaymentConfirmTitle": "تأكيد هذا الطلب؟",
+        "arrangePaymentConfirmBody": "سيتم تسجيل طلبك بقيمة {total} وسيتواصل معك فريقنا لترتيب الدفع. لا يمكن التراجع عن هذا الإجراء.",
+        "cancel": "إلغاء",
+        "errors": {
+          "UNAUTHENTICATED": "يرجى تسجيل الدخول مرة أخرى للمتابعة.",
+          "NOT_B2B": "هذا الإجراء متاح للحسابات التجارية المعتمدة.",
+          "NOT_OWNER": "لم يتم العثور على عرض السعر.",
+          "B2B_EXPIRED": "انتهت صلاحية حسابك التجاري. جدّده لإتمام الطلب.",
+          "INVALID_STATUS": "لم يعد بالإمكان إتمام عرض السعر هذا.",
+          "ALREADY_CONVERTED": "تم بالفعل تحويل عرض السعر هذا إلى طلب.",
+          "QUOTE_MISSING_SHIPPING": "تفاصيل الشحن غير متوفرة في عرض السعر هذا. يرجى التواصل معنا للمتابعة.",
+          "ID_VERIFICATION_REQUIRED": "التحقق من الهوية مطلوب قبل إتمام الطلب.",
+          "VALIDATION_ERROR": "يرجى التحقق من بياناتك والمحاولة مرة أخرى.",
+          "INTERNAL_ERROR": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+          "QUOTE_TOTAL_MISMATCH": "لا تتطابق إجماليات عرض السعر هذا. يرجى التواصل مع فريقنا قبل المتابعة."
+        },
+        "addonSubtotal": "الإضافات",
+        "shippingPendingTitle": "لم يتم تسعير الشحن بعد",
+        "shippingPendingCta": "العودة إلى عرض السعر"
+      },
+      "status": {
+        "NEW": "مُرسَل",
+        "CONTACTED": "قيد النقاش",
+        "QUOTED": "تم التسعير",
+        "CLOSED": "مغلق",
+        "CANCELLED": "ملغى",
+        "ACCEPTED": "مقبول"
+      },
+      "goodsSubtotal": "المنتجات",
+      "addonsSubtotal": "الإضافات",
+      "statusConverted": "مُحوَّل",
+      "cancelledAdvisory": "تم إلغاء طلب عرض السعر هذا، ولم يُنشأ أي طلب شراء. إذا أردت البدء من جديد، أو لم يكن هذا مقصوداً، يمكن لفريقنا مساعدتك.",
+      "closedAdvisory": "طلب عرض السعر هذا مغلق، ولم يُنشأ أي طلب شراء. إذا كنت لا تزال بحاجة إلى هذه المنتجات، أو لديك سؤال بشأن هذا الطلب، يمكن لفريقنا مساعدتك.",
+      "requestedQuantity": "المطلوب {count}",
+      "confirmedQuantity": "المؤكد {count}"
+    },
+    "overview": {
+      "greeting": "مرحبًا بعودتك، {name}",
+      "statOrders": "الطلبات",
+      "statWishlist": "المفضلة",
+      "statPoints": "النقاط",
+      "activity": "النشاط",
+      "recentOrderTitle": "أحدث طلب",
+      "viewAllOrders": "عرض كل الطلبات",
+      "noOrders": "لم تقم بأي طلب بعد.",
+      "startShopping": "ابدأ التسوق",
+      "sublabelOrders": "عرض سجل الطلبات",
+      "sublabelWishlist": "العناصر المحفوظة",
+      "sublabelPoints": "نقاط الولاء الخاصة بك"
+    },
+    "status": {
+      "title": "حالة الحساب",
+      "accountType": "نوع الحساب",
+      "typeB2C": "شخصي",
+      "typeB2B": "أعمال",
+      "verificationLabel": "التحقق من الهوية",
+      "vNOT_REQUIRED": "غير مطلوب",
+      "vPENDING": "قيد المراجعة",
+      "vAPPROVED": "موثّق",
+      "vREJECTED": "إجراء مطلوب",
+      "vEXPIRED": "منتهي",
+      "b2bLabel": "حالة الأعمال",
+      "bPENDING": "قيد المراجعة",
+      "bAPPROVED": "معتمد",
+      "bREJECTED": "إجراء مطلوب",
+      "bSUSPENDED": "موقوف",
+      "bEXPIRED": "منتهي",
+      "memberSince": "عضو منذ",
+      "verifiedOn": "موثّق في"
+    },
+    "settings": {
+      "title": "الإعدادات",
+      "subtitle": "إدارة ملفك الشخصي وكلمة المرور.",
+      "profileSection": "الملف الشخصي",
+      "profileSectionHint": "حدّث بياناتك الشخصية.",
+      "name": "الاسم الكامل",
+      "phone": "رقم الهاتف",
+      "phoneOptional": "اختياري",
+      "email": "البريد الإلكتروني",
+      "emailReadonly": "لا يمكن تغيير البريد الإلكتروني.",
+      "language": "اللغة",
+      "languageHint": "تُستخدم أيضًا في رسائل البريد الإلكتروني التي نرسلها إليك.",
+      "saveChanges": "حفظ التغييرات",
+      "profileSaved": "تم تحديث الملف الشخصي.",
+      "passwordSection": "كلمة المرور",
+      "passwordSectionHint": "اختر كلمة مرور قوية لا تستخدمها في مكان آخر.",
+      "currentPassword": "كلمة المرور الحالية",
+      "newPassword": "كلمة المرور الجديدة",
+      "confirmPassword": "تأكيد كلمة المرور الجديدة",
+      "updatePassword": "تحديث كلمة المرور",
+      "passwordChanged": "تم تحديث كلمة المرور.",
+      "uaePass": {
+        "title": "UAE PASS",
+        "hint": "سجّل الدخول باستخدام هويتك الرقمية الوطنية.",
+        "linkTitle": "اربط حساب UAE PASS الخاص بك",
+        "linkBody": "سجّل الدخول دون كلمة مرور. يتم توثيق حاملي الهوية الإماراتية تلقائيًا للمنتجات المقيّدة.",
+        "linkCta": "المتابعة باستخدام UAE PASS",
+        "comingSoon": "قريبًا",
+        "linkedTitle": "تم ربط UAE PASS بهذا الحساب",
+        "linkedBody": "يمكنك الآن تسجيل الدخول باستخدام UAE PASS.",
+        "linkedBadge": "مرتبط",
+        "errors": {
+          "denied": "تم إلغاء طلب الربط.",
+          "uuidTaken": "حساب UAE PASS هذا مرتبط بحساب آخر بالفعل.",
+          "sessionExpired": "انتهت جلستك. يرجى تسجيل الدخول مرة أخرى والمحاولة من جديد.",
+          "generic": "حدث خطأ ما أثناء الربط، يرجى المحاولة مرة أخرى لاحقًا!"
+        },
+        "notices": {
+          "linked": "تم ربط UAE PASS بحسابك.",
+          "linkedVerified": "تم ربط UAE PASS وتوثيق هويتك."
+        }
+      },
+      "errors": {
+        "sessionExpired": "انتهت جلستك. يرجى تسجيل الدخول مرة أخرى والمحاولة من جديد.",
+        "invalidInput": "يرجى التحقق من البيانات التي أدخلتها.",
+        "incorrectPassword": "كلمة المرور الحالية غير صحيحة.",
+        "samePassword": "يجب أن تختلف كلمة المرور الجديدة عن الحالية.",
+        "noPasswordSet": "لا توجد كلمة مرور محددة لهذا الحساب.",
+        "passwordWeak": "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل وأن تتضمن حرفًا ورقمًا.",
+        "passwordsDoNotMatch": "كلمتا المرور غير متطابقتين.",
+        "generic": "حدث خطأ ما. يرجى المحاولة مرة أخرى."
+      }
+    },
+    "addresses": {
+      "title": "العناوين",
+      "subtitle": "إدارة عناوين التوصيل المحفوظة.",
+      "addAddress": "إضافة عنوان",
+      "empty": "لم تقم بحفظ أي عنوان بعد.",
+      "emptyCta": "أضف عنوانك الأول",
+      "defaultBadge": "الافتراضي",
+      "edit": "تعديل",
+      "delete": "حذف",
+      "setAsDefault": "تعيين كافتراضي",
+      "addedOn": "أضيف {date}",
+      "addTitle": "إضافة عنوان جديد",
+      "editTitle": "تعديل العنوان",
+      "fullName": "الاسم الكامل",
+      "phone": "رقم الهاتف",
+      "emirate": "الإمارة",
+      "emiratePlaceholder": "اختر الإمارة",
+      "line1": "عنوان الشارع",
+      "line2": "شقة، جناح، طابق، إلخ.",
+      "city": "المدينة",
+      "postalCode": "الرمز البريدي",
+      "label": "تسمية العنوان",
+      "labelHint": "مثال: المنزل، المكتب",
+      "country": "الدولة / المنطقة",
+      "countryPlaceholder": "اختر دولة",
+      "optional": "اختياري",
+      "save": "حفظ العنوان",
+      "cancel": "إلغاء",
+      "saving": "جارٍ الحفظ…",
+      "deleting": "جارٍ الحذف…",
+      "deleteTitle": "حذف العنوان؟",
+      "deleteMessage": "سيتم حذف هذا العنوان نهائياً.",
+      "confirmDelete": "حذف",
+      "addressSaved": "تم حفظ العنوان.",
+      "addressDeleted": "تم حذف العنوان.",
+      "defaultUpdated": "تم تحديث العنوان الافتراضي.",
+      "errors": {
+        "UNAUTHORIZED": "يرجى تسجيل الدخول مجدداً.",
+        "VALIDATION_ERROR": "يرجى مراجعة بياناتك والمحاولة مجدداً.",
+        "ADDRESS_NOT_FOUND": "العنوان غير موجود.",
+        "ADDRESS_NOT_OWNED": "العنوان غير موجود.",
+        "CANNOT_DELETE_LAST_DEFAULT": "لا يمكنك حذف عنوانك الوحيد.",
+        "INTERNAL_ERROR": "حدث خطأ ما. يرجى المحاولة مجدداً."
+      }
+    },
+    "orders": {
+      "title": "الطلبات",
+      "subtitle": "اعرض سجل طلباتك وتتبع طلباتك الحالية.",
+      "empty": "لم تقم بأي طلب بعد.",
+      "emptyCta": "ابدأ التسوق",
+      "itemCount": "{count, plural, =0 {لا منتجات} =1 {منتج واحد} =2 {منتجان} few {# منتجات} many {# منتجاً} other {# منتج}}",
+      "orderNumber": "رقم الطلب",
+      "orderDate": "تاريخ الطلب",
+      "viewOrder": "عرض الطلب",
+      "backToOrders": "العودة إلى الطلبات",
+      "items": "المنتجات",
+      "subtotal": "المجموع الفرعي",
+      "addons": "الإضافات",
+      "shipping": "الشحن",
+      "discount": "الخصم",
+      "freeShipping": "تم تطبيق الشحن المجاني",
+      "vatInclLine": "شامل ضريبة القيمة المضافة {rate}%",
+      "total": "الإجمالي",
+      "shippingTo": "الشحن إلى",
+      "shippingMethod": "طريقة الشحن",
+      "estimatedDelivery": "التسليم المتوقع",
+      "customerNote": "ملاحظة الطلب",
+      "trackingTitle": "التتبع",
+      "trackingNumber": "رقم التتبع",
+      "trackingUrl": "رابط التتبع",
+      "trackPackage": "تتبّع الشحنة",
+      "serial": "الرقم التسلسلي",
+      "lot": "رقم الدفعة",
+      "carrier": "شركة الشحن",
+      "parcels": "{count, plural, zero {# طرد} one {طرد واحد} two {طردان} few {# طرود} many {# طردًا} other {# طرد}}",
+      "deliveredOn": "تاريخ التسليم",
+      "shipmentNote": "ملاحظة من المتجر",
+      "quoteRequestTitle": "طلب عرض السعر",
+      "viewQuoteRequest": "فتح طلب عرض السعر",
+      "status": {
+        "PENDING": "معلّق",
+        "PAYMENT_PENDING": "في انتظار الدفع",
+        "AWAITING_MANUAL_PAYMENT": "في انتظار ترتيب الدفع",
+        "AWAITING_SHIPPING_QUOTE": "في انتظار عرض سعر الشحن",
+        "AWAITING_QUOTE_APPROVAL": "في انتظار الموافقة على العرض",
+        "PAYMENT_FAILED": "فشل الدفع",
+        "PAID": "مدفوع",
+        "CONFIRMED": "مؤكد",
+        "PROCESSING": "قيد المعالجة",
+        "READY_TO_SHIP": "جاهز للشحن",
+        "SHIPPED": "تم الشحن",
+        "DELIVERED": "تم التسليم",
+        "CANCELLED": "ملغى",
+        "REFUNDED": "مسترد",
+        "PARTIALLY_REFUNDED": "مسترد جزئياً",
+        "RETURNED": "مُرتجع"
+      },
+      "quote": {
+        "awaitingQuoteTitle": "نقوم بحساب تكلفة الشحن",
+        "awaitingQuoteBody": "يقوم فريقنا بحساب تكلفة الشحن إلى عنوانك. سنرسل لك عرض السعر بالبريد الإلكتروني — لن يتم خصم أي مبلغ حتى توافق عليه.",
+        "quotedTitle": "عرض سعر الشحن جاهز",
+        "quotedBody": "راجع الإجمالي أدناه. لن يتم خصم أي مبلغ إلا بعد موافقتك.",
+        "shippingToBeQuoted": "بانتظار التسعير",
+        "provisionalTotal": "الإجمالي المبدئي",
+        "quotedShipping": "الشحن (حسب العرض)",
+        "approvePay": "الموافقة والدفع",
+        "approveConfirmTitle": "الموافقة على عرض السعر؟",
+        "approveConfirmTotalLabel": "الإجمالي المستحق",
+        "approveConfirmVatNote": "شامل ضريبة القيمة المضافة",
+        "approveConfirmBody": "سيتم نقلك إلى صفحة الدفع الآمنة لإدخال بيانات بطاقتك. لن يتم خصم أي مبلغ حتى تُتم عملية الدفع هناك.",
+        "approveConfirmCta": "المتابعة إلى الدفع",
+        "approveConfirmBack": "رجوع",
+        "declineCancel": "الرفض وإلغاء الطلب",
+        "declineConfirmTitle": "رفض عرض السعر؟",
+        "declineConfirmBody": "سيتم إلغاء طلبك وإرجاع المنتجات إلى المخزون. لا يمكن التراجع عن هذا الإجراء.",
+        "declineReasonLabel": "السبب (اختياري)",
+        "declineConfirm": "الرفض والإلغاء",
+        "declineBack": "الاحتفاظ بالطلب",
+        "errors": {
+          "QUOTE_CHANGED": "تم تحديث عرض السعر. يرجى مراجعة الإجمالي الجديد قبل الموافقة.",
+          "INVALID_STATUS": "هذا الطلب لم يعد بانتظار الموافقة.",
+          "COUPON_NOT_APPLICABLE": "قسيمتك لم تعد صالحة. يرجى التواصل مع الدعم.",
+          "PAYMENT_INIT_FAILED": "تعذّر بدء عملية الدفع. يرجى المحاولة مرة أخرى.",
+          "NOT_FOUND": "الطلب غير موجود.",
+          "UNAUTHENTICATED": "يرجى تسجيل الدخول مرة أخرى.",
+          "VALIDATION_ERROR": "يرجى مراجعة رسالتك والمحاولة مرة أخرى.",
+          "INTERNAL_ERROR": "حدث خطأ ما. يرجى المحاولة مرة أخرى."
+        }
+      },
+      "payment": {
+        "pendingTitle": "لم يكتمل الدفع",
+        "pendingBody": "لم يكتمل الدفع ولم يتم خصم أي مبلغ. يمكنك المتابعة إلى صفحة الدفع الآمنة متى كنت جاهزًا.",
+        "failedTitle": "تم رفض الدفع",
+        "failedBody": "رفض البنك عملية الدفع ولم يتم خصم أي مبلغ. يمكنك المحاولة مرة أخرى بالبطاقة نفسها أو ببطاقة أخرى.",
+        "payNow": "ادفع الآن",
+        "errors": {
+          "UNAUTHENTICATED": "يرجى تسجيل الدخول مرة أخرى.",
+          "NOT_FOUND": "لم يتم العثور على الطلب.",
+          "VALIDATION_ERROR": "تعذّر التحقق من هذا الطلب. يرجى تحديث الصفحة والمحاولة مرة أخرى.",
+          "INVALID_STATUS": "هذا الطلب لم يعد بانتظار الدفع.",
+          "TOTAL_CHANGED": "تم تغيير إجمالي الطلب. يرجى تحديث الصفحة ومراجعة الإجمالي الجديد.",
+          "RETRY_IN_PROGRESS": "تجري معالجة محاولة دفع أخرى. يرجى الانتظار لحظة ثم المحاولة مرة أخرى.",
+          "ITEM_UNAVAILABLE": "أحد المنتجات في هذا الطلب لم يعد متوفراً، لذا لا يمكن إتمام الدفع. يرجى التواصل معنا أو إنشاء طلب جديد.",
+          "PAYMENT_INIT_FAILED": "تعذّر بدء عملية الدفع. يرجى المحاولة مرة أخرى.",
+          "INTERNAL_ERROR": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+          "POINTS_INSUFFICIENT_BALANCE": "لم يعد لديك ما يكفي من النقاط لهذا الطلب. يُرجى إنشاء طلب جديد."
+        }
+      },
+      "contact": {
+        "cardTitle": "بانتظار الدفع",
+        "cardBody": "سنحتفظ بهذا الطلب حتى يصلنا التحويل. إذا كان هناك ما يحتاج إلى توضيح أو رغبت في ترتيب آخر، أرسل لنا رسالة.",
+        "cta": "طلب التواصل",
+        "title": "طلب التواصل بشأن هذا الطلب",
+        "intro": "أخبرنا بما تحتاجه وسيعود إليك فريقنا.",
+        "messageLabel": "الرسالة",
+        "messagePlaceholder": "صف ما تحتاج المساعدة بشأنه",
+        "send": "إرسال",
+        "cancel": "إلغاء",
+        "errors": {
+          "UNAUTHENTICATED": "يرجى تسجيل الدخول مرة أخرى.",
+          "VALIDATION_ERROR": "يرجى كتابة رسالة قبل الإرسال.",
+          "NOT_OWNER": "لم يتم العثور على الطلب.",
+          "NOT_ELIGIBLE": "لم تعد طلبات التواصل متاحة لهذا الطلب.",
+          "INTERNAL_ERROR": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+          "ALREADY_OPEN": "لديك طلب مفتوح بالفعل بخصوص هذا الطلب. يمكنك متابعته من المساعدة والدعم."
+        }
+      },
+      "delivery": {
+        "cardTitle": "هل وصل طلبك؟",
+        "cardBody": "أخبرنا عند وصول شحنتك إليك. إذا كان هناك شيء مفقود أو تالف، تواصل معنا بدلاً من ذلك.",
+        "cta": "تأكيد الاستلام",
+        "confirmTitle": "هل تؤكد استلام هذا الطلب؟",
+        "confirmBody": "لا تؤكد إلا بعد وصول جميع المنتجات إليك. لا يمكن التراجع عن هذا الإجراء.",
+        "confirmCta": "نعم، استلمته",
+        "confirmBack": "ليس بعد",
+        "errors": {
+          "UNAUTHENTICATED": "يرجى تسجيل الدخول مرة أخرى.",
+          "VALIDATION_ERROR": "تعذّر التحقق من هذا الطلب. يرجى تحديث الصفحة والمحاولة مرة أخرى.",
+          "NOT_OWNER": "لم يتم العثور على الطلب.",
+          "INVALID_STATUS": "لم يعد هذا الطلب بانتظار تأكيد الاستلام.",
+          "INTERNAL_ERROR": "حدث خطأ ما. يرجى المحاولة مرة أخرى."
+        }
+      },
+      "loyaltyPointsPending": "نقاط الولاء: <b>{points}</b> عند تسليم هذا الطلب",
+      "loyaltyPointsEarned": "النقاط المكتسبة: <b>{points}</b>",
+      "points": "النقاط",
+      "refund": {
+        "title": "الاسترداد",
+        "due": "المبلغ المستحق للاسترداد",
+        "line": "تم استرداد {amount} في {date}",
+        "pending": "سنرسل لك بريدًا إلكترونيًا عند إرسال المبلغ المسترد.",
+        "method": {
+          "ORIGINAL_PAYMENT": "طريقة الدفع الأصلية",
+          "BANK_TRANSFER": "تحويل بنكي",
+          "CASH": "نقدًا",
+          "CHEQUE": "شيك",
+          "CARD_TERMINAL": "جهاز البطاقات",
+          "OTHER": "أخرى"
+        }
+      }
+    },
+    "loyalty": {
+      "title": "النقاط",
+      "subtitle": "رصيد نقاطك وسجل المعاملات.",
+      "balanceLabel": "رصيد النقاط",
+      "pointsUnit": "نقطة",
+      "earnRate": "النقاط لكل 1 درهم تنفقه: {rate}",
+      "earnRules": "بعض المنتجات تمنح عددًا محددًا من النقاط، أو نقاطًا إضافية لفترة محدودة، أو لا تمنح نقاطًا. تُضاف النقاط عند تسليم طلبك. الخصومات تقلل النقاط المكتسبة، والشحن وضريبة القيمة المضافة لا يُحتسبان.",
+      "balanceWorth": "قيمتها <amt></amt> عند الدفع",
+      "spendRule": "استخدام النقاط عند الدفع: خصم <amt></amt> لكل {points} · الحد الأدنى {min} · حتى {share}% من قيمة منتجاتك",
+      "earningPaused": "كسب النقاط متوقف حالياً.",
+      "pending": "قيد الانتظار: <b>{points}</b> من {orders, plural, zero {# طلب} one {طلب واحد} two {طلبين} few {# طلبات} many {# طلبًا} other {# طلب}} بانتظار التسليم",
+      "empty": "لا يوجد نشاط للنقاط بعد.",
+      "forOrder": "طلب {orderNumber}",
+      "balanceAfter": "الرصيد: {balance}",
+      "type": {
+        "EARNED": "مكتسبة",
+        "REDEEMED": "مستخدمة",
+        "ADJUSTED": "تعديل من المتجر",
+        "EXPIRED": "منتهية",
+        "REFUNDED": "مُعادة",
+        "REVERSED": "مُلغاة بعد الإرجاع"
+      }
+    },
+    "wishlist": {
+      "title": "المفضلة",
+      "subtitle": "المنتجات التي حفظتها للاطلاع لاحقاً.",
+      "empty": "قائمة مفضلتك فارغة.",
+      "emptyCta": "تصفّح المتجر",
+      "removed": "تمت الإزالة من المفضلة."
+    },
+    "coupons": {
+      "title": "قسائمي",
+      "subtitle": "قسائم المكافآت الشخصية الفعّالة الخاصة بك.",
+      "codeLabel": "الكود",
+      "freeShipping": "شحن مجاني",
+      "expires": "تنتهي في {date}",
+      "noExpiry": "بلا تاريخ انتهاء",
+      "minOrder": "الحد الأدنى للطلب {amount}",
+      "empty": "ليس لديك أي قسائم فعّالة بعد."
+    },
+    "history": {
+      "heading": "السجل",
+      "messageLabel": "رسالة من فريقنا",
+      "reasonLabel": "السبب من فريقنا",
+      "kinds": {
+        "submitted": "تم التقديم",
+        "renewalSubmitted": "تم تقديم طلب التجديد",
+        "documentsRequested": "طُلبت مستندات",
+        "detailsRequested": "طُلب تحديث البيانات",
+        "documentsProvided": "تم تقديم المستندات",
+        "detailsUpdated": "تم تحديث البيانات",
+        "approved": "تمت الموافقة",
+        "rejected": "لم تتم الموافقة",
+        "suspended": "تم التعليق",
+        "expired": "انتهت الصلاحية"
+      }
+    },
+    "support": {
+      "eyebrow": "خدمة العملاء",
+      "title": "المساعدة والدعم",
+      "intro": "تواصل معنا مباشرة، أو أرسل طلبًا وتابعه من هنا.",
+      "channels": {
+        "whatsapp": "واتساب",
+        "whatsappHint": "أسرع رد",
+        "call": "اتصل بنا",
+        "email": "راسلنا",
+        "emailHint": "يفتح بريدك مع نموذج قصير لتعبئته"
+      },
+      "links": {
+        "faq": "تصفح الأسئلة الشائعة",
+        "contact": "صفحة التواصل"
+      },
+      "email": {
+        "subject": "طلب مساعدة من {name}",
+        "body": "مرحبًا فريق Wildridge Hunting،\n\nالاسم: {name}\nالبريد الإلكتروني للحساب: {email}\nرقم الطلب أو عرض السعر (إن وجد): \nالموضوع (طلب، توصيل، دفع، حساب، منتج، أخرى): \n\nماذا حدث:\n\n\nما الذي أحتاجه منكم:\n\n\nيُرجى عدم إرسال كلمات المرور أو أرقام البطاقات."
+      },
+      "form": {
+        "title": "أرسل طلبًا",
+        "topicLabel": "بماذا يتعلق طلبك؟",
+        "topics": {
+          "ORDER": "طلب شراء",
+          "QUOTE": "عرض سعر",
+          "ACCOUNT": "الحساب والتحقق",
+          "BUSINESS": "حساب الأعمال",
+          "PRODUCT": "منتج",
+          "OTHER": "أمر آخر"
+        },
+        "orderLabel": "أي طلب؟",
+        "quoteLabel": "أي عرض سعر؟",
+        "recordPlaceholder": "اختر واحدًا",
+        "subjectLabel": "الموضوع",
+        "subjectPlaceholder": "ملخص قصير",
+        "messageLabel": "رسالتك",
+        "messagePlaceholder": "أخبرنا بما حدث وما تحتاجه.",
+        "note": "لا ترسل كلمات المرور أو أرقام البطاقات أبدًا.",
+        "submit": "إرسال الطلب",
+        "sending": "جارٍ الإرسال…",
+        "sentTitle": "تم إرسال الطلب",
+        "sentBody": "سنرد عبر البريد الإلكتروني، ويمكنك متابعة الحالة أدناه.",
+        "sentRef": "رقمك المرجعي",
+        "sendAnother": "أرسل طلبًا آخر"
+      },
+      "errors": {
+        "UNAUTHENTICATED": "انتهت جلستك. سجّل الدخول مجددًا لإرسال الطلب.",
+        "VALIDATION_ERROR": "تحقق من الحقول المحددة وحاول مرة أخرى.",
+        "RECORD_REQUIRED": "اختر الطلب أو عرض السعر المعني.",
+        "NOT_OWNER": "لم نتمكن من العثور على هذا السجل في حسابك.",
+        "TOPIC_UNAVAILABLE": "هذا الموضوع غير متاح لحسابك. اختر موضوعًا آخر.",
+        "ALREADY_OPEN": "لديك طلب مفتوح بالفعل بخصوص هذا الأمر. سنرد عليه قريبًا.",
+        "RATE_LIMITED": "لقد أرسلت عدة طلبات اليوم. للتواصل معنا أسرع، اتصل بنا أو راسلنا عبر واتساب.",
+        "INTERNAL_ERROR": "حدث خطأ ما. حاول مرة أخرى بعد قليل.",
+        "subjectInvalid": "أدخل موضوعًا من 3 إلى 120 حرفًا.",
+        "messageInvalid": "أدخل رسالة من 10 إلى 2000 حرف."
+      },
+      "list": {
+        "title": "طلباتك",
+        "empty": "لا توجد طلبات بعد. عند إرسال طلب ستظهر حالته هنا.",
+        "opened": "فُتح في {date}",
+        "aboutOrder": "بخصوص الطلب",
+        "aboutQuote": "بخصوص عرض السعر",
+        "linked": {
+          "order": "الطلب",
+          "quote": "عرض السعر",
+          "b2b": "حساب الأعمال",
+          "verification": "التحقق"
+        },
+        "showMessage": "رسالتك",
+        "waitingHint": "تواصلنا معك عبر البريد الإلكتروني أو الهاتف."
+      },
+      "status": {
+        "OPEN": "تم الاستلام",
+        "IN_PROGRESS": "قيد المعالجة",
+        "WAITING_ON_CUSTOMER": "بانتظار ردك",
+        "RESOLVED": "تم الحل",
+        "CLOSED": "مغلق"
+      },
+      "needHelp": "هل تحتاج إلى مساعدة؟"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "تسجيل الدخول",
+      "subtitle": "مرحباً بعودتك إلى حسابك",
+      "email": {
+        "label": "البريد الإلكتروني",
+        "placeholder": "you@example.com"
+      },
+      "password": {
+        "label": "كلمة المرور",
+        "placeholder": "كلمة مرورك"
+      },
+      "submitButton": "تسجيل الدخول",
+      "submitting": "جارٍ تسجيل الدخول…",
+      "noAccount": "ليس لديك حساب؟",
+      "registerLink": "أنشئ حساباً",
+      "forgotPassword": "نسيت كلمة المرور؟",
+      "error": {
+        "invalidCredentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
+        "inactiveAccount": "تم تعطيل حسابك. يرجى التواصل مع الدعم.",
+        "emailNotVerified": "يُرجى تأكيد بريدك الإلكتروني قبل تسجيل الدخول. تحقّق من بريدك الوارد للعثور على الرابط الذي أرسلناه.",
+        "validation": "يرجى التحقق من بياناتك والمحاولة مجدداً.",
+        "generic": "حدث خطأ ما. يرجى المحاولة مجدداً."
+      },
+      "resend": {
+        "button": "إرسال رابط جديد",
+        "sending": "جارٍ الإرسال…",
+        "sent": "إذا كانت بياناتك صحيحة، فسيصلك رابط جديد قريبًا. يعمل الرابط لمدة 24 ساعة."
+      },
+      "validation": {
+        "emailRequired": "البريد الإلكتروني مطلوب.",
+        "emailInvalid": "يرجى إدخال بريد إلكتروني صحيح.",
+        "passwordRequired": "كلمة المرور مطلوبة."
+      },
+      "success": {
+        "registered": "تم إنشاء الحساب. يرجى تسجيل الدخول."
+      },
+      "brandHeadline": "مرحباً بعودتك إلى الصيد.",
+      "brandSupporting": "معداتك. طلباتك. حسابك."
+    },
+    "register": {
+      "title": "إنشاء حساب",
+      "subtitle": "انضم إلى مجتمع Wildridge Hunting",
+      "name": {
+        "label": "الاسم الكامل",
+        "placeholder": "اسمك الكامل"
+      },
+      "email": {
+        "label": "البريد الإلكتروني",
+        "placeholder": "you@example.com"
+      },
+      "password": {
+        "label": "كلمة المرور",
+        "placeholder": "8 أحرف على الأقل",
+        "hint": "يجب أن تحتوي على حرف واحد ورقم واحد على الأقل"
+      },
+      "confirmPassword": {
+        "label": "تأكيد كلمة المرور",
+        "placeholder": "كرر كلمة مرورك",
+        "mismatch": "كلمتا المرور غير متطابقتين."
+      },
+      "terms": {
+        "label": "أوافق على شروط الخدمة",
+        "required": "يجب قبول الشروط للمتابعة."
+      },
+      "submitButton": "إنشاء الحساب",
+      "submitting": "جارٍ إنشاء الحساب…",
+      "haveAccount": "لديك حساب بالفعل؟",
+      "loginLink": "تسجيل الدخول",
+      "error": {
+        "emailTaken": "يوجد حساب مرتبط بهذا البريد الإلكتروني بالفعل.",
+        "validation": "يرجى التحقق من بياناتك والمحاولة مجدداً.",
+        "generic": "حدث خطأ ما. يرجى المحاولة مجدداً."
+      },
+      "validation": {
+        "nameRequired": "الاسم الكامل مطلوب.",
+        "nameTooLong": "يجب ألا يتجاوز الاسم 100 حرف.",
+        "emailRequired": "البريد الإلكتروني مطلوب.",
+        "emailInvalid": "يرجى إدخال بريد إلكتروني صحيح.",
+        "passwordRequired": "كلمة المرور مطلوبة.",
+        "passwordTooShort": "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل.",
+        "passwordWeak": "يجب أن تحتوي كلمة المرور على حرف واحد ورقم واحد على الأقل.",
+        "confirmPasswordRequired": "يرجى تأكيد كلمة المرور."
+      },
+      "brandHeadline": "انضم إلى الصيد.",
+      "brandSupporting": "الوصول إلى عروض حصرية وسجل الطلبات وتجربة دفع سلسة."
+    },
+    "b2bRegister": {
+      "title": "التقديم لحساب B2B",
+      "subtitle": "وصول بالجملة للموزعين والتجار المرخصين",
+      "instructions": {
+        "heading": "قبل الرفع"
+      },
+      "checklist": {
+        "heading": "المستندات المطلوب تجهيزها",
+        "required": "مطلوبة",
+        "recommended": "موصى بها",
+        "footnote": "يمكنك إضافة أي مستند غير مذكور أعلاه كمستند إضافي أدناه."
+      },
+      "sections": {
+        "company": "معلومات الشركة",
+        "documents": "الوثائق",
+        "contact": "جهة الاتصال"
+      },
+      "fields": {
+        "companyNameEn": {
+          "label": "اسم الشركة (بالإنجليزية)",
+          "placeholder": "كما هو مسجل في الرخصة التجارية"
+        },
+        "companyNameAr": {
+          "label": "اسم الشركة (بالعربية)",
+          "placeholder": "اسم الشركة بالعربية",
+          "optional": "اختياري"
+        },
+        "tradeLicenseNo": {
+          "label": "رقم الرخصة التجارية",
+          "placeholder": "مثال: CN-1234567"
+        },
+        "vatNumber": {
+          "label": "رقم التسجيل الضريبي",
+          "placeholder": "رقم TRN المكوّن من 15 خانة",
+          "optional": "اختياري"
+        },
+        "contactName": {
+          "label": "اسم جهة الاتصال",
+          "placeholder": "المسؤول الرئيسي عن هذا الحساب"
+        },
+        "contactPhone": {
+          "label": "هاتف جهة الاتصال",
+          "placeholder": "+971 XX XXX XXXX"
+        }
+      },
+      "documents": {
+        "typeLabel": "نوع الوثيقة",
+        "rowLabel": "الوثيقة {index}",
+        "required": "مطلوبة",
+        "numberLabel": "رقم الوثيقة",
+        "numberPlaceholder": "كما هو مطبوع على الوثيقة",
+        "nameLabel": "اسم الوثيقة",
+        "namePlaceholder": "مثال: شهادة الغرفة التجارية",
+        "fileLabel": "الملف",
+        "fileHint": "JPEG أو PNG أو PDF. بحد أقصى 5 ميغابايت.",
+        "remove": "حذف الوثيقة {index}",
+        "add": "إضافة وثيقة أخرى",
+        "count": "{used} من {max} وثائق"
+      },
+      "types": {
+        "TRADE_LICENSE": "الرخصة التجارية",
+        "VAT_CERTIFICATE": "شهادة ضريبة القيمة المضافة",
+        "COMPANY_ID": "هوية الشركة",
+        "OTHER": "أخرى"
+      },
+      "fileUpload": {
+        "dropOrClick": "أسقط الملف هنا أو انقر للرفع",
+        "remove": "حذف",
+        "fileSize": "{size} كيلوبايت",
+        "tooLarge": "حجم الملف يتجاوز الحد الأقصى البالغ 5 ميغابايت.",
+        "invalidType": "يُسمح فقط بملفات PDF أو JPG أو PNG."
+      },
+      "acknowledgment": {
+        "heading": "الإقرار",
+        "consentLabel": "لقد قرأت ما ورد أعلاه وأوافق عليه"
+      },
+      "submitButton": "إرسال الطلب",
+      "submitting": "جارٍ الإرسال…",
+      "validation": {
+        "companyNameEnRequired": "اسم الشركة مطلوب.",
+        "tradeLicenseNoRequired": "رقم الرخصة التجارية مطلوب.",
+        "contactNameRequired": "اسم جهة الاتصال مطلوب.",
+        "contactPhoneRequired": "هاتف جهة الاتصال مطلوب.",
+        "contactPhoneInvalid": "يرجى إدخال رقم هاتف إماراتي صحيح.",
+        "acknowledgmentRequired": "يجب الموافقة على الإقرار للمتابعة.",
+        "fileRequired": "يرجى رفع ملف لهذه الوثيقة.",
+        "nameRequired": "أعطِ هذه الوثيقة اسماً.",
+        "vatNumberRequired": "رقم التسجيل الضريبي مطلوب."
+      },
+      "errors": {
+        "UNAUTHENTICATED": "يجب تسجيل الدخول للتقدّم بطلب حساب تجاري.",
+        "ALREADY_APPLIED": "لقد قمت بالفعل بإرسال طلب حساب تجاري.",
+        "DUPLICATE_LICENSE": "يوجد بالفعل حساب تجاري مسجّل برقم الرخصة التجارية هذا.",
+        "NO_FILES_PROVIDED": "يجب أن تتضمن كل وثيقة ملفاً.",
+        "TOO_MANY_FILES": "يمكنك رفع 8 وثائق كحد أقصى.",
+        "MISSING_REQUIRED_DOCUMENT": "أحد المستندات الإلزامية مفقود. يرجى رفع كل مستند مدرج ضمن المستندات المطلوبة.",
+        "FILE_TOO_LARGE": "أحد ملفاتك يتجاوز الحد الأقصى البالغ 5 ميغابايت.",
+        "INVALID_FILE_TYPE": "أحد ملفاتك من نوع غير مدعوم. المسموح: JPEG وPNG وPDF.",
+        "VALIDATION_ERROR": "يرجى مراجعة النموذج والمحاولة مرة أخرى.",
+        "STORAGE_ERROR": "فشل رفع المستندات. يرجى المحاولة مرة أخرى.",
+        "INTERNAL_ERROR": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+        "DEMO_UPLOADS_DISABLED": "رفع الملفات معطّل في هذه النسخة التجريبية. لم يتم إرسال أي شيء."
+      }
+    },
+    "logout": "تسجيل الخروج",
+    "account": "حسابي",
+    "myAccount": "حسابي",
+    "myOrders": "طلباتي",
+    "quotes": "عروض الأسعار",
+    "wishlist": "المفضلة",
+    "signIn": "تسجيل الدخول",
+    "uaePass": {
+      "cta": {
+        "signIn": "تسجيل الدخول بالهوية الرقمية",
+        "signUp": "إنشاء الحساب بالهوية الرقمية"
+      },
+      "comingSoon": "قريباً",
+      "connecting": "جارٍ الاتصال…",
+      "createAccount": "إنشاء حساب",
+      "divider": {
+        "signIn": "أو سجّل الدخول بالبريد الإلكتروني",
+        "signUp": "أو أنشئ حساباً بالبريد الإلكتروني",
+        "continue": "أو تابع باستخدام البريد الإلكتروني"
+      },
+      "whatIs": "ما هي الهوية الرقمية؟",
+      "tooltip": "الهوية الرقمية هي هوية رقمية وطنية موحدة وموثوقة لجميع المواطنين والمقيمين والزوار في دولة الإمارات العربية المتحدة",
+      "errors": {
+        "loginCancelled": "قام المستخدم بإلغاء تسجيل الدخول",
+        "dataSharingExited": "لقد خرجت من طلب الإشعار، يرجى إعادة المحاولة مرة أخرى.",
+        "dataSharingError": "حصل خطأ أثناء جمع مستنداتك من الهوية الرقمية. يرجى إعادة المحاولة.",
+        "existingAccount": "يوجد حساب مسجل بهذا البريد الإلكتروني بالفعل. يرجى تسجيل الدخول باستخدام كلمة المرور الخاصة بك، ثم ربط هوية UAE PASS من إعدادات الحساب.",
+        "generic": "حدث خطأ ما أثناء تسجيل الدخول، يرجى المحاولة مرة أخرى لاحقًا!"
+      }
+    },
+    "passwordReset": {
+      "request": {
+        "email": {
+          "label": "البريد الإلكتروني",
+          "placeholder": "you@example.com"
+        },
+        "loginLink": "تسجيل الدخول",
+        "validation": {
+          "emailRequired": "البريد الإلكتروني مطلوب.",
+          "emailInvalid": "يرجى إدخال بريد إلكتروني صحيح."
+        },
+        "error": {
+          "validation": "يرجى التحقق من بياناتك والمحاولة مجدداً.",
+          "generic": "حدث خطأ ما. يرجى المحاولة مجدداً."
+        },
+        "title": "نسيت كلمة المرور",
+        "subtitle": "أدخل بريدك الإلكتروني وسنرسل لك رابطاً لتعيين كلمة مرور جديدة.",
+        "submitButton": "إرسال رابط الاستعادة",
+        "submitting": "جارٍ الإرسال…",
+        "rememberedPrompt": "تذكرت كلمة المرور؟",
+        "sent": {
+          "eyebrow": "تم إرسال الرابط",
+          "title": "تحقق من بريدك الإلكتروني",
+          "subtitle": "إذا كان هناك حساب مرتبط بهذا البريد الإلكتروني، فسيصلك رابط الاستعادة.",
+          "notice": "تنتهي صلاحية الرابط خلال 30 دقيقة ويمكن استخدامه مرة واحدة فقط.",
+          "backToLogin": "العودة إلى تسجيل الدخول"
+        }
+      },
+      "reset": {
+        "password": {
+          "placeholder": "8 أحرف على الأقل",
+          "hint": "يجب أن تحتوي على حرف واحد ورقم واحد على الأقل",
+          "label": "كلمة المرور الجديدة"
+        },
+        "confirmPassword": {
+          "label": "تأكيد كلمة المرور",
+          "placeholder": "كرر كلمة مرورك",
+          "mismatch": "كلمتا المرور غير متطابقتين."
+        },
+        "success": {
+          "signInLink": "تسجيل الدخول",
+          "title": "تم تحديث كلمة المرور",
+          "subtitle": "يمكنك الآن تسجيل الدخول باستخدام كلمة المرور الجديدة.",
+          "notice": "تم تسجيل خروجك من الأجهزة الأخرى لأسباب أمنية."
+        },
+        "validation": {
+          "passwordRequired": "كلمة المرور مطلوبة.",
+          "passwordTooShort": "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل.",
+          "passwordWeak": "يجب أن تحتوي كلمة المرور على حرف واحد ورقم واحد على الأقل.",
+          "confirmPasswordRequired": "يرجى تأكيد كلمة المرور."
+        },
+        "error": {
+          "inactiveAccount": "تم تعطيل حسابك. يرجى التواصل مع الدعم.",
+          "validation": "يرجى التحقق من بياناتك والمحاولة مجدداً.",
+          "generic": "حدث خطأ ما. يرجى المحاولة مجدداً.",
+          "invalidToken": "هذا الرابط غير صالح أو انتهت صلاحيته. اطلب رابطاً جديداً."
+        },
+        "title": "تعيين كلمة مرور جديدة",
+        "subtitle": "اختر كلمة مرور لحسابك.",
+        "submitButton": "تعيين كلمة المرور",
+        "submitting": "جارٍ تعيين كلمة المرور…",
+        "requestNewLink": "اطلب رابطاً جديداً",
+        "backToLogin": "العودة إلى تسجيل الدخول",
+        "missingToken": {
+          "eyebrow": "رابط غير صالح",
+          "title": "الرابط غير صالح",
+          "subtitle": "رابط الاستعادة غير مكتمل. اطلب رابطاً جديداً للمتابعة.",
+          "button": "طلب رابط جديد"
+        }
+      }
+    },
+    "emailVerification": {
+      "sent": {
+        "eyebrow": "تم إنشاء الحساب",
+        "title": "تحقّق من بريدك الوارد",
+        "subtitle": "أرسلنا إليك رابطًا لتأكيد بريدك الإلكتروني.",
+        "notice": "يعمل الرابط لمدة 24 ساعة. يمكنك تسجيل الدخول بعد تأكيد بريدك الإلكتروني.",
+        "backToLogin": "العودة إلى تسجيل الدخول"
+      },
+      "confirm": {
+        "title": "أكّد بريدك الإلكتروني",
+        "subtitle": "بقيت خطوة واحدة. أكّد عنوان البريد الإلكتروني هذا لتفعيل حسابك.",
+        "submitButton": "تأكيد البريد الإلكتروني",
+        "submitting": "جارٍ التأكيد…"
+      },
+      "success": {
+        "title": "تم تأكيد بريدك الإلكتروني",
+        "subtitle": "حسابك مفعّل الآن. سجّل الدخول للمتابعة.",
+        "signInLink": "تسجيل الدخول"
+      },
+      "missingToken": {
+        "eyebrow": "رابط غير مكتمل",
+        "title": "هذا الرابط غير مكتمل",
+        "subtitle": "افتح الرابط من رسالتك مرة أخرى، أو سجّل الدخول للحصول على رابط جديد.",
+        "button": "الانتقال إلى تسجيل الدخول"
+      },
+      "error": {
+        "invalidToken": "انتهت صلاحية هذا الرابط أو سبق استخدامه. إذا كنت قد أكّدت بريدك الإلكتروني، فسجّل الدخول. وإلا فسجّل الدخول للحصول على رابط جديد.",
+        "validation": "هناك خطأ في هذا الرابط. افتحه من رسالتك مرة أخرى.",
+        "generic": "حدث خطأ ما. يُرجى المحاولة مرة أخرى."
+      }
+    },
+    "uaePassLink": {
+      "choice": {
+        "title": "اربط هويتك الرقمية",
+        "subtitle": "لم نعثر على حساب في Wildridge Hunting مرتبط بهذه الهوية الرقمية.",
+        "existingNotice": "يوجد حساب بهذا البريد الإلكتروني بالفعل. سجّل الدخول لربطه.",
+        "question": "هل لديك حساب في Wildridge Hunting بالفعل؟",
+        "notice": "هذه خطوة تتم لمرة واحدة. بعد الربط، سيكون تسجيل الدخول بالهوية الرقمية فورياً.",
+        "hasAccount": "نعم، لدي حساب",
+        "noAccount": "لا، أنشئ حساباً جديداً",
+        "creating": "جارٍ إنشاء حسابك…"
+      },
+      "credentials": {
+        "title": "سجّل الدخول للربط",
+        "subtitle": "أدخل بيانات حسابك في Wildridge Hunting لربطه بالهوية الرقمية.",
+        "submitButton": "ربط الحساب",
+        "submitting": "جارٍ الربط…",
+        "back": "العودة"
+      },
+      "error": {
+        "credentials": "لم نتمكن من مطابقة هذه البيانات. يرجى التحقق منها والمحاولة مجدداً.",
+        "inactiveAccount": "تم تعطيل حسابك. يرجى التواصل مع الدعم.",
+        "noPassword": "يتم تسجيل الدخول إلى هذا الحساب بالهوية الرقمية. أعد تعيين كلمة المرور للمتابعة، أو ارجع وأنشئ حساباً جديداً.",
+        "alreadyLinked": "هذا الحساب مرتبط بهوية رقمية أخرى.",
+        "tooManyAttempts": "عدد المحاولات كبير جداً. يرجى البدء من جديد من صفحة تسجيل الدخول.",
+        "validation": "يرجى التحقق من بياناتك والمحاولة مجدداً.",
+        "generic": "حدث خطأ ما. يرجى المحاولة مجدداً."
+      },
+      "expired": {
+        "eyebrow": "انتهت الجلسة",
+        "title": "انتهت صلاحية جلسة الربط",
+        "subtitle": "لم تعد جلسة الربط هذه صالحة. سجّل الدخول بالهوية الرقمية مرة أخرى للمتابعة.",
+        "button": "العودة إلى تسجيل الدخول"
+      },
+      "noEmail": {
+        "title": "لا يوجد بريد إلكتروني في الهوية الرقمية",
+        "subtitle": "لا يمكننا إنشاء حساب بدون بريد إلكتروني. يرجى تسجيل الدخول بحسابك الحالي بدلاً من ذلك."
+      }
+    }
+  },
+  "b2b": {
+    "landing": {
+      "headline": "الجملة وB2B",
+      "subtitle": "أسعار الجملة وإدارة حساب مخصصة وسير عمل مبسط لطلبات العروض للموزعين والتجار المرخصين في منطقة الخليج.",
+      "cta": "قدّم الآن",
+      "features": {
+        "pricing": {
+          "title": "أسعار الكميات",
+          "body": "أسعار جملة متدرجة على كامل الكتالوج. كلما زادت طلباتك، كلما وفّرت أكثر."
+        },
+        "support": {
+          "title": "دعم مخصص",
+          "body": "مدير حساب مخصص للإعداد وإعادة الطلبات والمعالجة ذات الأولوية."
+        },
+        "quotes": {
+          "title": "عروض أسعار مبسّطة",
+          "body": "أرسل طلبات عروض الأسعار مباشرةً من صفحات المنتجات. احصل على الردود خلال يوم عمل واحد."
+        }
+      },
+      "requirements": {
+        "heading": "المتطلبات",
+        "items": [
+          "رخصة تجارية إماراتية سارية",
+          "شركة مسجلة في الإمارات",
+          "مفوّض موقّع في السجل",
+          "حد أدنى للطلب الأول 5,000 درهم"
+        ]
+      },
+      "statusCta": "عرض حساب B2B",
+      "checkStatus": "قدّمت طلباً بالفعل؟",
+      "hero": {
+        "eyebrow": "للتجار، ميادين الرماية وموردي الرحلات",
+        "headline": "مجهّز للتجارة.",
+        "subtitle": "أسعار جملة، طلبات عبر عروض الأسعار، وخط مباشر مع فريقنا — مصمم للشركات التي تدير أحجام طلبات حقيقية عبر الخليج.",
+        "footer": "Wildridge Hunting · برنامج التجار · الإمارات"
+      },
+      "panel": {
+        "title": "قدّم للحصول على وصول تجاري",
+        "wordmark": "Wildridge Hunting",
+        "ctaApply": "قدّم الآن",
+        "ctaViewApplication": "عرض الطلب",
+        "signInLink": "لديك حساب تاجر بالفعل؟ سجّل الدخول",
+        "benefits": {
+          "heading": "ما الذي ستحصل عليه",
+          "items": [
+            "أسعار خاصة بالجملة",
+            "أولوية في تجهيز الطلبات",
+            "مدير حساب مخصص"
+          ]
+        },
+        "steps": {
+          "heading": "كيف تعمل العملية",
+          "items": [
+            {
+              "number": "01",
+              "text": "إنشاء حساب"
+            },
+            {
+              "number": "02",
+              "text": "إرسال مستنداتك"
+            },
+            {
+              "number": "03",
+              "text": "يقوم فريق الامتثال بالمراجعة خلال 1–2 يوم عمل"
+            },
+            {
+              "number": "04",
+              "text": "احصل على الموافقة وابدأ الطلب بأسعار التجار"
+            }
+          ]
+        },
+        "whoCanApply": {
+          "heading": "من يمكنه التقديم",
+          "items": [
+            "تجار الأسلحة المرخصون",
+            "متاجر معدات الصيد",
+            "منظمو الرحلات وميادين الرماية"
+          ]
+        },
+        "documentsPopover": {
+          "title": "المستندات المطلوبة",
+          "note": "يجب أن تكون جميع المستندات سارية وواضحة. PDF أو JPG أو PNG بحد أقصى 5 ميغابايت لكل ملف."
+        }
+      }
+    }
+  },
+  "shop": {
+    "all_products": "جميع المنتجات",
+    "description_heading": "الوصف",
+    "zoom_hint": "مرّر أو اقرص للتكبير",
+    "zoom_reset": "إعادة ضبط التكبير",
+    "addons_hint": "تُضاف بالكمية نفسها، ويمكنك تعديلها في سلة التسوق.",
+    "addons_show_more": "عرض {count} أخرى",
+    "addons_show_less": "عرض أقل",
+    "addon_eyebrow": "ملحق",
+    "addon_add": "أضف إلى هذا المنتج",
+    "addon_remove": "إزالة",
+    "addon_view_product": "عرض المنتج",
+    "quickview_error": "تعذّر تحميل هذا المنتج. حاول مرة أخرى.",
+    "close": "إغلاق",
+    "vat_included": "شامل ضريبة القيمة المضافة",
+    "help_prompt": "هل لديك أسئلة حول هذا المنتج؟",
+    "help_link": "تواصل مع فريقنا",
+    "delivery_heading": "التوصيل والإرجاع",
+    "delivery_body": "تجد مواعيد التوصيل وتكاليفه وشروط الإرجاع في سياساتنا.",
+    "delivery_shipping_link": "سياسة الشحن",
+    "delivery_returns_link": "سياسة الإرجاع",
+    "gallery_open": "عرض بملء الشاشة",
+    "filter_label": "تصفية",
+    "sort_label": "ترتيب حسب",
+    "sort_newest": "الأحدث",
+    "sort_price_asc": "السعر: من الأقل إلى الأعلى",
+    "sort_price_desc": "السعر: من الأعلى إلى الأقل",
+    "sort_featured": "المميزة",
+    "filter_brand": "الماركة",
+    "filter_action": "نوع الآلية",
+    "filter_caliber": "العيار",
+    "filter_price": "نطاق السعر",
+    "filter_clear": "مسح الفلاتر",
+    "in_stock_only": "المتوفر فقط",
+    "results_count": "{count} منتج",
+    "no_results": "لم يتم العثور على منتجات",
+    "no_results_hint": "جرب تعديل الفلاتر",
+    "pagination_prev": "السابق",
+    "pagination_next": "التالي",
+    "page_of": "صفحة {page} من {total}",
+    "quick_add": "إضافة سريعة",
+    "view_details": "عرض التفاصيل",
+    "stock_status": {
+      "in_stock": "متوفر",
+      "low_stock": "مخزون منخفض",
+      "out_of_stock": "نفد المخزون",
+      "not_enough_for_qty": "غير متوفر بهذه الكمية"
+    },
+    "availability": "التوفر",
+    "free_shipping": "شحن مجاني",
+    "specs_label": "المواصفات",
+    "addons_label": "الملحقات",
+    "reviews_label": "التقييمات",
+    "review_count": "{count} تقييم",
+    "no_reviews": "لا توجد تقييمات بعد",
+    "verified_purchase": "شراء موثق",
+    "id_notice": {
+      "title": "يلزم التحقق من الهوية",
+      "body": "يُباع فقط للعملاء الموثّقين. تحقّق مرة واحدة عبر UAE PASS أو الهوية الإماراتية لتبقى موثّقًا لمدة عامين.",
+      "body_without_uaepass": "يُباع فقط للعملاء الموثّقين. تحقّق مرة واحدة عبر الهوية الإماراتية لتبقى موثّقًا لمدة عامين.",
+      "link": "كيف يتم التحقق",
+      "faq_query": "التحقق"
+    },
+    "category_all": "جميع الفئات",
+    "back_to_shop": "العودة إلى المتجر",
+    "badge_low_stock": "مخزون منخفض",
+    "badge_out_of_stock": "نفد المخزون",
+    "badge_id_required": "هوية مطلوبة",
+    "badge_sale": "تخفيض",
+    "badge_new": "وصل حديثاً",
+    "badge_in_stock": "متوفر",
+    "badge_points_boost": "نقاط ×{multiplier}",
+    "points_earn": "النقاط مع هذا الشراء: <b>{points}</b>",
+    "points_boost_until": "نقاط ×{multiplier} حتى {date}.",
+    "points_on_delivery": "تُضاف عند تسليم طلبك.",
+    "active_filters": "الفلاتر النشطة",
+    "clear_all": "مسح الكل",
+    "brand": "الماركة",
+    "caliber": "العيار",
+    "price_range": "نطاق السعر",
+    "price_from": "من",
+    "price_to": "إلى",
+    "in_stock": "متوفر",
+    "requires_id": "يتطلب هوية / تصريح",
+    "no_id_required": "لا يتطلب هوية",
+    "new_arrivals": "وصل حديثا",
+    "new_arrivals_only": "وصل حديثا فقط",
+    "pagination_nav": "التصفح",
+    "search_placeholder": "ابحث — بندقية، عيار، ماركة…",
+    "gallery_prev": "الصورة السابقة",
+    "gallery_next": "الصورة التالية",
+    "gallery_thumb": "عرض الصورة",
+    "total_label": "الإجمالي",
+    "view_product": "عرض المنتج",
+    "notify_me": "أشعرني",
+    "min_price": "أدنى سعر",
+    "max_price": "أعلى سعر",
+    "action_type": "نوع الآلية",
+    "action_spring": "نابض",
+    "action_pcp": "PCP",
+    "action_co2": "CO2",
+    "action_gas_ram": "غاز رام",
+    "action_multi_pump": "ضخ متعدد",
+    "add_to_cart": "أضف إلى السلة",
+    "add_to_quote": "طلب عرض سعر",
+    "contact_for_pricing": "تواصل لمعرفة السعر",
+    "out_of_stock": "نفد المخزون",
+    "trust_dealer": "مجهّزون للميدان",
+    "trust_shipping": "شحن مجاني داخل الإمارات للطلبات التي تتجاوز {amount}",
+    "trust_authentic": "منتجات أصلية مضمونة",
+    "shop_all_rifles": "البنادق والمسدسات",
+    "shop_all_optics": "البصريات",
+    "shop_all_accessories": "الملحقات",
+    "qty_label": "الكمية",
+    "b2b_nudge_prefix": "تشتري بكميات كبيرة؟",
+    "b2b_nudge_link": "البيع بالجملة",
+    "b2b_nudge_suffix": " أسعار متاحة لطلبات كهذه.",
+    "wishlist_add": "أضف إلى المفضلة",
+    "wishlist_remove": "إزالة من المفضلة",
+    "wishlist_sign_in": "سجّل دخولك لحفظ المنتجات في مفضلتك.",
+    "wishlist_errors": {
+      "UNAUTHORIZED": "يرجى تسجيل الدخول لحفظ المنتجات.",
+      "PRODUCT_NOT_FOUND": "هذا المنتج لم يعد متاحاً.",
+      "INTERNAL_ERROR": "حدث خطأ ما. يرجى المحاولة مجدداً."
+    },
+    "brand_search": "ابحث عن علامة تجارية",
+    "brand_show_all": "عرض الكل ({count})",
+    "brand_show_less": "عرض أقل",
+    "brand_no_match": "لا توجد علامة تجارية مطابقة",
+    "filters_title": "تصفية",
+    "show_results": "{count, plural, =0 {لا توجد منتجات} one {عرض منتج واحد} two {عرض منتجين} few {عرض # منتجات} many {عرض # منتجًا} other {عرض # منتج}}",
+    "search_brands_categories": "العلامات التجارية والفئات",
+    "search_products": "المنتجات",
+    "search_kind_brand": "علامة تجارية",
+    "search_kind_category": "فئة",
+    "search_see_all": "{count, plural, one {عرض نتيجة واحدة لـ «{query}»} two {عرض نتيجتين لـ «{query}»} few {عرض # نتائج لـ «{query}»} many {عرض # نتيجة لـ «{query}»} other {عرض # نتيجة لـ «{query}»}}",
+    "search_keyboard_hint": "↑↓ للتنقل · Enter للفتح",
+    "search_recent": "عمليات البحث الأخيرة",
+    "search_recent_clear": "مسح",
+    "search_no_match": "لا توجد نتائج لـ «{query}»",
+    "search_no_match_hint": "تحقق من الإملاء، أو ابحث بالعلامة التجارية أو العيار أو نوع المنتج.",
+    "search_browse_all": "تصفح جميع المنتجات",
+    "search_suggestions_label": "اقتراحات البحث",
+    "search_clear": "مسح البحث",
+    "search_close": "إغلاق البحث",
+    "more_in_category": "المزيد من {category}"
+  },
+  "quote": {
+    "title": "طلب عرض سعرك",
+    "empty": "لم تضف أي منتج إلى طلب العرض بعد.",
+    "empty_cta": "تصفح المنتجات",
+    "line_count": "{count} عناصر",
+    "qty_label": "الكمية",
+    "note_label": "ملاحظة لفريقنا (اختياري)",
+    "note_placeholder": "هل هناك شيء تودّ إعلامنا به حول هذا الطلب؟",
+    "submit": "إرسال طلب عرض السعر",
+    "submitting": "جارٍ الإرسال…",
+    "success_title": "تم إرسال طلب عرض السعر",
+    "success_body": "استلمنا طلبك {quoteNumber}. سيرد فريقنا بالأسعار قريباً.",
+    "success_cta": "عرض عروض الأسعار",
+    "confirm_modal": {
+      "title": "تأكيد طلب عرض السعر",
+      "add_more_items": "إضافة المزيد من المنتجات",
+      "ship_to_label": "الشحن إلى",
+      "ship_to_required_tag": "مطلوب",
+      "ship_to_note": "نقوم بتسعير الشحن إلى هذا العنوان، لذا فإن إجماليك نهائي.",
+      "add_new_address": "إضافة عنوان جديد",
+      "select_address_prompt": "يرجى اختيار عنوان شحن للمتابعة.",
+      "submit_cta": "إرسال الطلب",
+      "cancel_cta": "إلغاء"
+    },
+    "errors": {
+      "UNAUTHENTICATED": "يرجى تسجيل الدخول لطلب عرض سعر.",
+      "NOT_B2B": "طلبات عروض الأسعار متاحة للحسابات التجارية المعتمدة فقط.",
+      "NO_B2B_ACCOUNT": "حسابك التجاري لم يتم اعتماده بعد.",
+      "B2B_EXPIRED": "انتهت صلاحية حسابك التجاري. يرجى تجديده لطلب عروض الأسعار.",
+      "EMPTY_QUOTE": "أضف منتجاً واحداً على الأقل إلى طلب عرض السعر.",
+      "VALIDATION_ERROR": "يرجى مراجعة طلب عرض السعر والمحاولة مجدداً.",
+      "PRODUCT_NOT_FOUND": "منتج أو أكثر لم يعد متاحاً.",
+      "ADDON_NOT_LINKED": "إحدى الإضافات المحددة غير صالحة.",
+      "ADDRESS_NOT_FOUND": "العنوان غير موجود.",
+      "INTERNAL_ERROR": "حدث خطأ ما. يرجى المحاولة مجدداً."
+    }
+  },
+  "errorPage": {
+    "error": {
+      "eyebrow": "خطأ",
+      "title": "تعذّر تحميل هذه الصفحة",
+      "body": "حدث خطأ من جهتنا. حاول مرة أخرى، أو عُد إلى الصفحة الرئيسية.",
+      "retry": "حاول مرة أخرى",
+      "home": "العودة إلى الرئيسية",
+      "reference": "إذا تكرر ذلك، تواصل معنا واذكر الرقم المرجعي <ref>{digest}</ref>."
+    },
+    "notFound": {
+      "eyebrow": "404",
+      "title": "الصفحة غير موجودة",
+      "body": "الصفحة التي تبحث عنها غير موجودة أو تم نقلها.",
+      "home": "العودة إلى الرئيسية",
+      "shop": "تصفّح المتجر"
+    }
+  },
+  "email": {
+    "greeting": "مرحبًا {name}،",
+    "sections": {
+      "orderSummary": "ملخص الطلب",
+      "shippingTo": "عنوان الشحن",
+      "needHelp": "هل تحتاج إلى مساعدة؟"
+    },
+    "support": "تواصل معنا عبر {contacts}",
+    "ladder": {
+      "subtotal": "المجموع الفرعي",
+      "addons": "الإضافات",
+      "shipping": "الشحن",
+      "quotedSeparately": "يُحدَّد سعره بشكل منفصل",
+      "discount": "الخصم",
+      "total": "الإجمالي",
+      "includesVat": "شامل ضريبة القيمة المضافة ({rate}%)",
+      "points": "النقاط",
+      "serial": "الرقم التسلسلي",
+      "lot": "رقم الدفعة"
+    },
+    "cta": {
+      "fallback": "هل تواجه مشكلة في الزر؟ انسخ هذا الرابط:"
+    },
+    "notes": {
+      "customerOrder": "تصلك هذه الرسالة لأنك قدّمت طلبًا لدى Wildridge Hunting.",
+      "customerQuote": "تصلك هذه الرسالة لأنك طلبت عرض سعر من Wildridge Hunting.",
+      "customerB2B": "تصلك هذه الرسالة لأنك تقدّمت بطلب حساب أعمال لدى Wildridge Hunting."
+    }
+  },
+  "pages": {
+    "breadcrumb": {
+      "home": "الرئيسية",
+      "legal": "قانوني",
+      "care": "خدمة العملاء",
+      "help": "المساعدة",
+      "company": "الشركة"
+    },
+    "eyebrow": {
+      "legal": "قانوني",
+      "care": "خدمة العملاء",
+      "help": "مركز المساعدة",
+      "company": "قصتنا"
+    },
+    "meta": {
+      "lastUpdated": "آخر تحديث: {date}",
+      "readTime": "مدة القراءة: {minutes} د",
+      "alsoIn": "متاحة أيضًا باللغات:",
+      "englishOnly": "هذه الصفحة متاحة حاليًا باللغة الإنجليزية فقط."
+    },
+    "languages": {
+      "en": "English",
+      "ar": "العربية",
+      "ru": "Русский"
+    },
+    "toc": {
+      "title": "في هذه الصفحة",
+      "sections": "الأقسام: {count}",
+      "backToTop": "العودة إلى الأعلى"
+    },
+    "care": {
+      "eyebrow": "خدمة العملاء",
+      "title": "لديك سؤال عن طلب أو ترخيص؟",
+      "whatsapp": "واتساب",
+      "whatsappHint": "أسرع رد",
+      "call": "اتصل بنا",
+      "email": "راسلنا بالبريد",
+      "all": "جميع طرق التواصل"
+    },
+    "related": {
+      "title": "صفحات ذات صلة"
+    },
+    "band": {
+      "eyebrow": "هل لديك سؤال آخر؟",
+      "title": "فريقنا هنا لمساعدتك.",
+      "body": "الترخيص أو الطلبات أو التوصيل أو الإرجاع: نرد على كل رسالة.",
+      "contact": "تواصل معنا",
+      "faq": "تصفح الأسئلة الشائعة"
+    },
+    "faq": {
+      "searchLabel": "ابحث في الأسئلة",
+      "searchPlaceholder": "ابحث في الأسئلة، مثل: تجديد الترخيص",
+      "questionCount": "{count, plural, zero {لا توجد أسئلة} one {سؤال واحد} two {سؤالان} few {# أسئلة} many {# سؤالًا} other {# سؤال}}",
+      "noResults": "لا توجد أسئلة تطابق بحثك.",
+      "clear": "مسح البحث",
+      "talkEyebrow": "تحدث إلينا",
+      "talkTitle": "لم تجد إجابتك؟",
+      "talkBody": "فريقنا خبير في التراخيص ومعدات الصيد.",
+      "talkWhatsapp": "راسلنا عبر واتساب",
+      "talkAll": "جميع طرق التواصل",
+      "policies": "السياسات",
+      "resultsCount": "{count, plural, zero {لا توجد أسئلة مطابقة} one {سؤال واحد يطابق} two {سؤالان يطابقان} few {# أسئلة تطابق} many {# سؤالًا يطابق} other {# سؤال يطابق}}",
+      "searchSummary": "{results} «{query}»",
+      "noResultsFor": "لا توجد أسئلة تطابق «{query}»",
+      "showResults": "عرض النتائج"
+    },
+    "contact": {
+      "whatsappTitle": "واتساب",
+      "whatsappBody": "الصور وأسئلة المنتجات وتحديثات الطلبات.",
+      "whatsappCta": "ابدأ محادثة",
+      "fastest": "الأسرع",
+      "callTitle": "اتصل بنا",
+      "callBody": "تحدث إلى فريقنا خلال ساعات العمل.",
+      "callCta": "اتصل الآن",
+      "emailTitle": "البريد الإلكتروني",
+      "emailBody": "المستندات والفواتير والطلبات التفصيلية.",
+      "emailCta": "أرسل بريدًا",
+      "visitTitle": "زر صالة العرض",
+      "visitBody": "شاهد المنتجات وجرّبها بنفسك.",
+      "visitCta": "احصل على الاتجاهات",
+      "showroom": "صالة العرض",
+      "mapTitle": "خريطة موقع صالة العرض",
+      "b2bTitle": "استفسارات الأعمال والجملة",
+      "b2bBody": "تحصل الأندية وميادين الرماية والموزعون على عروض أسعار وجهة تواصل مخصصة.",
+      "b2bCta": "افتح حساب أعمال",
+      "quickEyebrow": "إجابات سريعة",
+      "quickTitle": "ربما تجد إجابتك هنا",
+      "quickCta": "زر مركز المساعدة",
+      "help": {
+        "eyebrow": "احصل على المساعدة",
+        "title": "ما موضوع رسالتك؟",
+        "body": "اختر الموضوع الأقرب، وسنفتح لك رسالة بريد تتضمن البيانات التي يحتاجها فريقنا، لنجيبك من أول رد.",
+        "note": "لا ترسل أبدًا كلمات المرور أو أرقام البطاقات الكاملة عبر البريد الإلكتروني.",
+        "channelsTitle": "طرق أخرى للتواصل معنا",
+        "general": {
+          "title": "سؤال عام",
+          "body": "نصيحة حول منتج، أو أسئلة عن الترخيص، أو التخطيط لزيارة صالة العرض.",
+          "cta": "أرسل سؤالًا بالبريد",
+          "link": "تصفح مركز المساعدة",
+          "subject": "استفسار عام",
+          "template": "مرحبًا فريق Wildridge Hunting،\n\nسؤالي:\n[اكتب ما تحتاج إلى المساعدة فيه]\n\nاسم المنتج أو رابطه (إن وُجد):\n\nالاسم: {name}\nالهاتف (اختياري):\n\nشكرًا لكم."
+        },
+        "order": {
+          "title": "الطلبات والمدفوعات",
+          "body": "تتبّع الطلب، أو الدفع، أو التوصيل، أو الإرجاع، أو منتج تالف.",
+          "cta": "راسلنا بشأن طلب",
+          "link": "عرض طلباتي",
+          "signIn": "سجّل الدخول لعرض طلباتك",
+          "subject": "مساعدة بخصوص طلب",
+          "template": "مرحبًا فريق Wildridge Hunting،\n\nرقم الطلب:\nالبريد الإلكتروني المستخدم في الطلب: {email}\n\nماذا حدث:\n[مثلًا: تأخر التوصيل، أو مشكلة في الدفع، أو منتج خاطئ أو تالف]\n\nما الذي تريد منا فعله:\n[مثلًا: تتبّع الطلب، أو ردّ المبلغ، أو الاستبدال]\n\nإذا وصلك منتج تالف أو خاطئ، يُرجى إرفاق صور بهذه الرسالة.\n\nالاسم: {name}\nالهاتف:"
+        },
+        "account": {
+          "title": "الحساب وحسابات الأعمال",
+          "body": "تسجيل الدخول، أو تأكيد البريد الإلكتروني، أو التحقق من الهوية، أو حساب الأعمال.",
+          "cta": "راسلنا بشأن حسابي",
+          "link": "الانتقال إلى حسابي",
+          "signIn": "سجّل الدخول إلى حسابك",
+          "subject": "مساعدة بخصوص الحساب",
+          "template": "مرحبًا فريق Wildridge Hunting،\n\nالبريد الإلكتروني للحساب: {email}\nالموضوع:\n[تسجيل الدخول، أو تأكيد البريد، أو التحقق من الهوية، أو حساب الأعمال، أو المستندات]\n\nماذا حدث:\n[صف المشكلة وأي رسالة ظهرت لك على الشاشة]\n\nاسم المنشأة (لحسابات الأعمال فقط):\n\nالاسم: {name}\nالهاتف:"
+        }
+      },
+      "accountRequest": {
+        "title": "هل أنت عميل لدينا؟",
+        "body": "أرسل طلبًا من حسابك وتابع حالته هناك.",
+        "cta": "أرسل طلبًا"
+      }
+    },
+    "about": {
+      "visitEyebrow": "نحن بانتظارك",
+      "visitTitle": "شاهِد المنتجات وجرّبها واسألنا عن أي شيء.",
+      "contactCta": "تواصل معنا",
+      "photoPrevious": "الصورة السابقة",
+      "photoNext": "الصورة التالية",
+      "photoLabel": "صورة"
+    },
+    "stores": {
+      "mainShowroom": "صالة العرض الرئيسية",
+      "openNow": "مفتوح الآن",
+      "closedNow": "مغلق الآن",
+      "until": "حتى {time}",
+      "opensToday": "يفتح الساعة {time}",
+      "opensOn": "يفتح {day} الساعة {time}",
+      "closed": "مغلق",
+      "hoursTitle": "ساعات العمل",
+      "empty": "قائمة فروعنا قيد التحديث. تواصل معنا لمعرفة الاتجاهات.",
+      "allStores": "عرض جميع الفروع"
+    }
+  },
+  "newsletter": {
+    "success": "تم تسجيلك في القائمة. ستصلك أحدث المنتجات إلى بريدك أولاً.",
+    "errors": {
+      "INVALID_EMAIL": "أدخل بريداً إلكترونياً صحيحاً.",
+      "INTERNAL_ERROR": "تعذّر تسجيلك الآن. حاول مرة أخرى بعد قليل."
+    }
+  },
+  "demo": {
+    "banner": "نسخة تجريبية للعرض. لا طلبات أو مدفوعات أو رسائل بريد حقيقية. تُعاد تغييرات الزوار إلى وضعها الأصلي بانتظام.",
+    "emailNote": "نسخة تجريبية: رسائل البريد الإلكتروني محاكاة ولا تصل فعلياً.",
+    "access": {
+      "hint": "تستكشف الموقع؟ استخدم حساباً تجريبياً جاهزاً.",
+      "customer": "عميل تجريبي",
+      "business": "شركة تجريبية",
+      "divider": "أو تابع بالبريد الإلكتروني",
+      "error": "تعذّر إنشاء حساب تجريبي. حاول مرة أخرى.",
+      "rateLimited": "تم إنشاء عدد كبير من الحسابات التجريبية من اتصالك. حاول لاحقًا."
+    }
+  }
+}

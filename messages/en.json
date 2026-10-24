@@ -1,0 +1,2436 @@
+{
+  "nav": {
+    "shop_all": "Shop All",
+    "rifles_pistols": "Rifles & Pistols",
+    "optics": "Optics",
+    "ammo": "Ammo",
+    "accessories": "Accessories",
+    "b2b": "B2B Wholesale",
+    "account": "Account",
+    "cart": "Cart",
+    "search": "Search",
+    "aria_home": "Wildridge Hunting — home",
+    "aria_cart": "Cart — {count} items",
+    "aria_open_menu": "Open menu",
+    "lang_label": "Language",
+    "lang_en": "English",
+    "lang_ar": "Arabic",
+    "lang_ru": "Russian",
+    "dropdown_air_rifles": "Air Rifles",
+    "dropdown_pcp_rifles": "PCP Rifles",
+    "dropdown_co2_pistols": "CO2 Pistols",
+    "dropdown_scopes": "Scopes & Optics",
+    "dropdown_cases": "Cases & Bags",
+    "dropdown_spare_parts": "Spare Parts",
+    "dropdown_knives": "Knives",
+    "shop_all_rifles": "Shop All Rifles & Pistols",
+    "shop_all_optics": "Shop All Optics",
+    "shop_all_accessories": "Shop All Accessories",
+    "group_rifles": "Rifles & Pistols",
+    "group_optics": "Optics",
+    "group_accessories": "Accessories",
+    "wishlist": "Wishlist",
+    "aria_quote": "Quote request, {count} items",
+    "shop_mode_label": "Shopping as",
+    "shop_mode_business": "Business",
+    "shop_mode_personal": "Personal",
+    "loading": "Loading…"
+  },
+  "home": {
+    "announcement_shipping": "Free UAE shipping on orders over {amount}",
+    "announcement_dealer": "Hunting gear, air rifles and optics",
+    "hero_eyebrow": "Outfitted for the field.",
+    "hero_heading": "Precision.\nNo compromise.",
+    "hero_cta_primary": "Shop Rifles",
+    "hero_cta_secondary": "Shop Optics",
+    "hero_image_alt": "Hunter in the field at dawn",
+    "featured_eyebrow": "Hand-picked",
+    "featured_label": "Field Tested. New Arrivals.",
+    "see_all": "View All →",
+    "collection_tile_1_eyebrow": "Precision Shooting",
+    "collection_tile_2_eyebrow": "Crystal Clear",
+    "collection_tile_3_eyebrow": "Field Ready",
+    "collection_tile_4_eyebrow": "Every Calibre",
+    "collection_rifles": "Rifles",
+    "collection_optics": "Optics",
+    "collection_accessories": "Accessories",
+    "collection_ammo": "Ammo",
+    "collection_shop_now": "Shop Now",
+    "brand_eyebrow": "Behind the name",
+    "brand_heading": "For the love\nof the hunt",
+    "brand_body": "From the dunes of the Empty Quarter to the mountains of Central Asia — we equip hunters who demand precision, reliability, and equipment that performs when it matters most.",
+    "brand_cta": "Our Story",
+    "newsletter_heading": "Gear up.\nHead out.\nRepeat.",
+    "newsletter_body": "New arrivals, exclusive dealer offers, and field-tested gear insights — delivered to your inbox. No noise, just signal.",
+    "newsletter_legal_prefix": "By subscribing you accept our",
+    "newsletter_legal_link": "privacy policy",
+    "newsletter_legal_suffix": "Unsubscribe anytime.",
+    "desert_heading": "Into the Field",
+    "showcase_eyebrow": "Built for precision",
+    "showcase_heading": "Engineered\nconfidence.",
+    "showcase_body": "Every rifle in our catalog is hand-selected for accuracy, reliability, and field performance. From the range to the wilderness — built to perform when it matters most.",
+    "showcase_cta_rifles": "Explore Rifle Models",
+    "showcase_cta_about": "What is Wildridge Hunting?",
+    "showcase_image_alt": "Precision rifle",
+    "popup_dismiss": "No thanks"
+  },
+  "footer": {
+    "newsletter_label": "Field updates & new arrivals",
+    "copyright": "© {year} Wildridge Hunting. All rights reserved.",
+    "legal": "Hunting gear, air rifles and optics",
+    "location": "UAE",
+    "shop_label": "Shop",
+    "support_label": "Support",
+    "company_label": "Company",
+    "link_rifles": "Rifles",
+    "link_optics": "Optics",
+    "link_ammo": "Ammunition",
+    "link_accessories": "Accessories",
+    "link_b2b": "B2B & Wholesale",
+    "link_shipping": "Shipping & Delivery",
+    "link_returns": "Returns & Exchanges",
+    "link_size_guide": "Size & Fit Guide",
+    "link_warranty": "Warranty",
+    "link_faq": "FAQ",
+    "link_about": "About Us",
+    "link_contact": "Contact",
+    "link_stores": "Our stores",
+    "link_privacy": "Privacy Policy",
+    "link_terms": "Terms of Service",
+    "link_login": "Customer Login",
+    "aria_instagram": "Follow us on Instagram",
+    "aria_whatsapp": "Contact us on WhatsApp",
+    "aria_youtube": "Watch us on YouTube",
+    "aria_nav": "Footer navigation"
+  },
+  "common": {
+    "subscribe": "Subscribe",
+    "email_placeholder": "Enter your email"
+  },
+  "product": {
+    "add_to_cart": "Add to Cart",
+    "add_to_quote": "Add to Quote",
+    "out_of_stock": "Out of Stock",
+    "id_required": "ID Verification Required"
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is empty",
+    "emptyCta": "Continue Shopping",
+    "subtotal": "Subtotal",
+    "checkout": "Proceed to Checkout",
+    "remove": "Remove item",
+    "unavailable": "No longer available. Remove it to check out.",
+    "outOfStock": "Out of stock. Remove it to check out.",
+    "blockedNote": "Remove the items marked above to check out.",
+    "taxAtCheckout": "Prices include VAT. Shipping is calculated at checkout.",
+    "addedToCart": "Added to cart",
+    "addForFreeShipping": "Add <amt></amt> for free shipping",
+    "freeShippingUnlocked": "Free shipping unlocked",
+    "errors": {
+      "VALIDATION_ERROR": "Invalid request. Please try again.",
+      "PRODUCT_NOT_FOUND": "This product is no longer available.",
+      "ADDON_NOT_FOUND": "One or more add-ons could not be found.",
+      "ADDON_NOT_LINKED": "This add-on is not available for the selected product.",
+      "OUT_OF_STOCK": "This product is out of stock.",
+      "INSUFFICIENT_STOCK": "Not enough stock available for the requested quantity.",
+      "ADDON_INSUFFICIENT_STOCK": "Not enough stock for one of the selected add-ons. Please reduce the quantity.",
+      "CART_ITEM_NOT_FOUND": "Cart item not found.",
+      "INTERNAL_ERROR": "Something went wrong. Please try again.",
+      "B2B_QUOTE_ONLY": "Your account is set up for quotes only. Please request a quote instead."
+    },
+    "itemCount": "{count, plural, =1 {# item} other {# items}}",
+    "pointsEarn": "Earn <b>{points}</b> points with this order"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "breadcrumb": "Checkout",
+    "orderSummary": "Order summary",
+    "summaryShow": "Show order summary",
+    "summaryHide": "Hide order summary",
+    "subtotal": "Subtotal",
+    "discount": "Discount",
+    "shipping": {
+      "placeholder": "Choose a delivery method"
+    },
+    "total": "Total",
+    "vatNote": "Prices include VAT",
+    "vatIncluded": "Includes VAT ({rate}%)",
+    "unitEach": "<price></price> each",
+    "idRequiredNote": "One or more items in your order require ID verification before shipping.",
+    "freeShipping": "Free",
+    "items": "{count} items",
+    "steps": {
+      "payment": "Payment",
+      "label": "Checkout steps",
+      "cart": "Cart",
+      "details": "Details"
+    },
+    "uaePass": {
+      "cta": "Continue with UAE PASS",
+      "connecting": "Connecting…",
+      "comingSoon": "UAE PASS — Coming Soon",
+      "divider": "or continue with email",
+      "error": {
+        "denied": "User cancelled the login",
+        "accountError": "Could not create your account. Please try again.",
+        "generic": "UAE PASS is unavailable. Please use email to sign in."
+      }
+    },
+    "verify": {
+      "credential": {
+        "eyebrow": "Identity credential",
+        "status": "Active",
+        "holder": "Holder",
+        "method": "Method",
+        "verified": "Verified",
+        "validUntil": "Valid until",
+        "reference": "Credential reference",
+        "methodUaePass": "UAE PASS",
+        "methodManual": "Document review"
+      },
+      "methodSelector": {
+        "title": "Verify your identity to continue",
+        "subtitle": "One or more items in your cart require ID verification before purchase.",
+        "uaePass": {
+          "title": "Verify with UAE PASS",
+          "subtitle": "For UAE residents and citizens. Instant verification.",
+          "badge": "Fastest",
+          "cta": "Continue with UAE PASS",
+          "comingSoon": "Coming soon"
+        },
+        "manual": {
+          "title": "Upload documents",
+          "subtitle": "Three documents — identity, address, and a photo. Review takes 24–48 hours.",
+          "cta": "Upload documents"
+        },
+        "errors": {
+          "generic": "Something went wrong. Please try again."
+        }
+      },
+      "manualForm": {
+        "heading": "Upload your documents",
+        "headingHint": "Three documents. Our compliance team reviews them within 24–48 hours.",
+        "typePlaceholder": "Select a document type",
+        "identity": {
+          "label": "Proof of identity",
+          "typeLabel": "Document type",
+          "hint": "Emirates ID or passport. JPEG, PNG, or PDF. Max 5 MB.",
+          "numberLabel": "ID / passport number",
+          "numberPlaceholder": "As printed on the document"
+        },
+        "proofOfAddress": {
+          "label": "Proof of address",
+          "typeLabel": "Document type",
+          "hint": "Issued within the last 3 months where applicable. JPEG, PNG, or PDF. Max 5 MB.",
+          "addressLabel": "Address on the document",
+          "addressPlaceholder": "The full address exactly as shown"
+        },
+        "photo": {
+          "label": "A photo of you",
+          "hint": "A clear, recent photo of your face in good light. We match it against your ID."
+        },
+        "fileUpload": {
+          "dropOrClick": "Drop file here or click to upload",
+          "remove": "Remove",
+          "tooLarge": "File exceeds the 5 MB limit.",
+          "invalidType": "Only JPEG, PNG, or PDF files are allowed."
+        },
+        "documentTypes": {
+          "EMIRATES_ID": "Emirates ID",
+          "PASSPORT": "Passport",
+          "DRIVING_LICENSE": "Driving License",
+          "UTILITY_BILL": "Utility bill",
+          "TENANCY_CONTRACT": "Tenancy contract",
+          "RESIDENCE_VISA": "Residence visa",
+          "BANK_STATEMENT": "Bank statement",
+          "SELFIE": "Photo"
+        },
+        "notesLabel": "Additional notes (optional)",
+        "notesPlaceholder": "Anything we should know about your submission",
+        "notesCharCount": "{count} / 500",
+        "submit": "Submit for review",
+        "uploading": "Uploading documents…",
+        "removeFile": "Remove",
+        "instructions": {
+          "heading": "Before you upload"
+        },
+        "acknowledgment": {
+          "heading": "Acknowledgment",
+          "consentLabel": "I have read and agree to the above."
+        }
+      },
+      "approved": {
+        "title": "Identity verified",
+        "body": "Verified on {verifiedDate}. Valid until {expiryDate}.",
+        "renewNotice": "Your verification expires soon.",
+        "renewCta": "Renew now"
+      },
+      "pending": {
+        "title": "Documents under review",
+        "body": "Our compliance team is reviewing your submission. This typically takes 24–48 hours. We'll email you when a decision is made.",
+        "submittedAt": "Submitted on {date}"
+      },
+      "rejected": {
+        "title": "Verification was not approved",
+        "reasonLabel": "Reason from our team",
+        "body": "Please review the reason above and submit again with the correct documents.",
+        "ctaContact": "Contact support",
+        "reviewedOn": "Reviewed on {date}"
+      },
+      "expired": {
+        "title": "Verification has expired",
+        "body": "Please re-verify your identity to continue purchasing restricted items.",
+        "expiredOn": "Expired on {date}"
+      },
+      "errors": {
+        "submitFailed": "Could not submit your documents. Please try again.",
+        "identityRequired": "Please upload proof of identity.",
+        "identityTypeRequired": "Select which identity document you're uploading.",
+        "proofOfAddressRequired": "Please upload proof of address.",
+        "proofOfAddressTypeRequired": "Select which proof of address you're uploading.",
+        "photoRequired": "Please upload a photo of yourself.",
+        "idNumberRequired": "Enter the ID or passport number.",
+        "addressRequired": "Enter the address shown on your document.",
+        "alreadyUnderReview": "You already have a submission under review.",
+        "sessionExpired": "Your session expired. Please sign in again and try once more.",
+        "DEMO_UPLOADS_DISABLED": "File uploads are turned off in this demo. Nothing was submitted."
+      },
+      "required": {
+        "title": "ID Verification Required",
+        "subtitle": "Your cart contains regulated items. Please upload a valid Emirates ID or passport before proceeding to payment.",
+        "cta": "Verify Now",
+        "or": "or sign in with",
+        "uaePass": "UAE PASS"
+      },
+      "uaePass": {
+        "verified": "Identity verified via UAE PASS"
+      },
+      "resubmit": "Re-submit",
+      "reverify": "Re-verify"
+    },
+    "address": {
+      "placeholder": "Select your shipping address",
+      "fullName": "Full Name",
+      "phone": "Phone Number",
+      "emirate": "Emirate",
+      "country": "Country",
+      "line1": "Address Line 1",
+      "line2": "Address Line 2",
+      "optional": "optional",
+      "save": "Save Address",
+      "cancel": "Cancel",
+      "change": "Change address",
+      "addNew": "Add new address",
+      "useThis": "Use this address"
+    },
+    "payment": {
+      "placeholder": "Enter your payment details",
+      "cardNumber": "Card Number",
+      "expiry": "Expiry",
+      "cvv": "CVV",
+      "nameOnCard": "Name on Card",
+      "payNow": "Place Order",
+      "secure": "256-bit SSL — Secured by N-Genius",
+      "lockedAddress": "Complete your delivery address first",
+      "lockedVerify": "Complete ID verification to unlock payment"
+    },
+    "returnToCart": "Return to cart",
+    "contact": {
+      "title": "Contact",
+      "signedInAs": "Signed in as <email></email>",
+      "optInLabel": "Sign me up to receive email updates and news",
+      "optional": "optional"
+    },
+    "billing": {
+      "title": "Delivery address",
+      "requiredHelper": "Required fields",
+      "defaultBadge": "Default",
+      "fullName": "Full name",
+      "phone": "Phone number",
+      "emirate": "Emirate",
+      "emiratePlaceholder": "Select emirate",
+      "country": "Country / Region",
+      "line1": "Street address",
+      "line2": "Apartment, suite, unit, etc.",
+      "city": "Town / City",
+      "postalCode": "Postal code",
+      "optional": "optional",
+      "save": "Save address",
+      "cancel": "Cancel",
+      "change": "Change address",
+      "addNew": "Add new address",
+      "invoiceNote": "Also used as the billing address on your invoice.",
+      "useThis": "Use this address",
+      "shipToDifferent": "Ship to a different address",
+      "editAddress": "Edit",
+      "deleteAddress": "Delete",
+      "confirmDelete": "Tap again to confirm",
+      "setAsDefault": "Set as default",
+      "saving": "Saving…",
+      "deleting": "Deleting…",
+      "errors": {
+        "UNAUTHORIZED": "Please sign in again.",
+        "VALIDATION_ERROR": "Please check your details and try again.",
+        "ADDRESS_NOT_FOUND": "Address not found.",
+        "ADDRESS_NOT_OWNED": "Address not found.",
+        "CANNOT_DELETE_LAST_DEFAULT": "You can't delete your only address.",
+        "INTERNAL_ERROR": "Something went wrong. Please try again."
+      },
+      "countryPlaceholder": "Select a country",
+      "subdivisionEmirate": "Emirate",
+      "subdivisionRegion": "Region",
+      "subdivisionState": "State",
+      "subdivisionGeneric": "State / Province / Region",
+      "subdivisionPlaceholder": "Select an option",
+      "fieldErrors": {
+        "fullNameShort": "Enter your full name (at least 2 characters)",
+        "fullNameLong": "Full name is too long",
+        "countryInvalid": "Select a country we ship to",
+        "phoneRequired": "Enter your phone number",
+        "phoneInvalid": "Enter a valid phone number for the selected country",
+        "line1Short": "Enter your street address (at least 5 characters)",
+        "line1Long": "Street address is too long",
+        "line2Long": "Address line 2 is too long",
+        "cityShort": "Enter your town or city (at least 2 characters)",
+        "cityLong": "Town / city is too long",
+        "subdivisionRequired": "Select or enter your region",
+        "subdivisionInvalid": "Select a valid option for the chosen country",
+        "postalLong": "Postal code is too long",
+        "labelLong": "Label is too long"
+      }
+    },
+    "verification": {
+      "title": "Identity verification",
+      "approved": {
+        "body": "You're cleared to purchase regulated items."
+      },
+      "pending": {
+        "title": "Documents under review",
+        "body": "Our compliance team is reviewing your submission. This typically takes 24–48 hours. We'll email you when a decision is made."
+      },
+      "rejected": {
+        "title": "Verification was not approved",
+        "body": "Please review the reason below and submit again with the correct documents.",
+        "reasonLabel": "Reason from our team",
+        "cta": "Re-submit documents"
+      },
+      "expired": {
+        "title": "Verification has expired",
+        "body": "Please re-verify your identity to continue purchasing restricted items.",
+        "cta": "Re-verify identity"
+      },
+      "required": {
+        "title": "Identity verification required",
+        "body": "One or more items in your order are regulated. Upload your Emirates ID or passport from your account page. Review takes 1–2 business days and you'll be notified by email.",
+        "cta": "Verify in my account"
+      }
+    },
+    "paymentForm": {
+      "title": "Payment",
+      "secureNote": "All transactions are secure and encrypted.",
+      "payWithCard": "Pay with Card",
+      "cardNextNote": "You'll enter your card on the secure payment page next.",
+      "demoNote": "Demo checkout. No card is charged.",
+      "secureProvider": "256-bit SSL — Secured by N-Genius"
+    },
+    "promo": {
+      "title": "Promo code",
+      "placeholder": "Enter code",
+      "apply": "Apply",
+      "applying": "Applying…",
+      "applied": "Applied",
+      "remove": "Remove",
+      "youSaved": "You saved",
+      "freeShippingApplied": "Free shipping applied",
+      "freeShippingNotEligible": "Free shipping isn't available for this delivery method.",
+      "reward": {
+        "label": "Reward available",
+        "freeShipping": "Free shipping",
+        "discount": "Save <amt></amt>",
+        "apply": "Apply"
+      },
+      "errors": {
+        "notFound": "Invalid coupon code.",
+        "inactive": "This coupon is no longer active.",
+        "notStarted": "This coupon isn't active yet.",
+        "expired": "This coupon has expired.",
+        "roleNotAllowed": "This coupon isn't available for your account.",
+        "minOrderNotMet": "Your order doesn't meet this coupon's minimum.",
+        "usageLimitReached": "This coupon has reached its usage limit.",
+        "emptyCart": "Your cart is empty.",
+        "unauthenticated": "Please sign in to use a coupon.",
+        "generic": "This code can't be applied.",
+        "freeShippingQuoteRequired": "Free shipping can't be used for this destination — shipping is quoted manually. Remove the code to continue."
+      }
+    },
+    "terms": {
+      "privacyBody": "Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <link>privacy policy</link>.",
+      "agreeBody": "I have read and agree to the website <link>terms and conditions</link>",
+      "placeOrder": "Place Order",
+      "required": "Accept the terms and conditions to place your order.",
+      "addressRequired": "Choose a delivery address."
+    },
+    "orderSummaryPanel": {
+      "shippingMethod": "Delivery method",
+      "enterAddressNote": "Enter your address to view shipping options.",
+      "shippingToBeQuoted": "To be quoted"
+    },
+    "heldOrder": {
+      "placeOrder": "Request shipping quote",
+      "noChargeNote": "We'll price shipping to your address and email you the quote. Nothing is charged until you approve it.",
+      "noteTitle": "Shipping is quoted for this destination",
+      "provisionalTotal": "Provisional total",
+      "provisionalTotalNote": "Shipping added after quote · nothing charged yet."
+    },
+    "shippingSection": {
+      "title": "Delivery method",
+      "resolving": "Updating delivery options…",
+      "quoteNote": "Shipping for this address will be calculated after checkout and confirmed before payment.",
+      "unavailableNote": "We don't currently ship to this address. Please choose a different delivery address.",
+      "error": "Couldn't load delivery options. Please try again."
+    },
+    "addForFreeShipping": "Add <amt></amt> for free shipping",
+    "freeShippingUnlocked": "You've unlocked free shipping",
+    "placingOrder": "Placing order...",
+    "orderErrors": {
+      "unauthorized": "Please sign in to place an order.",
+      "emptyCart": "Your cart is empty.",
+      "verificationRequired": "ID verification is required for this order.",
+      "addressNotFound": "Please select a valid shipping address.",
+      "insufficientStock": "One or more items are out of stock. Please update your cart.",
+      "paymentFailed": "We couldn't initialize payment. Please try again.",
+      "generic": "Something went wrong. Please try again.",
+      "couponNotApplicable": "This coupon is no longer valid. Please remove it and try again.",
+      "noAddress": "Please add or select a delivery address before placing your order.",
+      "couponFreeShippingQuoteRequired": "Free shipping coupons can't be used for destinations that need a shipping quote. Please remove the code.",
+      "pointsNotAvailable": "Points can't be used when shipping is quoted separately. Remove them to continue.",
+      "pointsInvalid": "The points no longer fit this order. Please review them and try again.",
+      "pointsInsufficient": "Your points balance has changed. Please review your points and try again.",
+      "pointsRateChanged": "The value of points has changed. Your points were removed; apply them again to see the new amount."
+    },
+    "success": {
+      "title": "Thank you. Your order is confirmed.",
+      "titleFailed": "Your payment didn't go through",
+      "subtitle": "We've emailed your receipt to {email}.",
+      "subtitleFailed": "Your order is saved and nothing was charged. Try again with the same card or a different one.",
+      "orderNumber": "Order Number",
+      "orderDate": "Order Date",
+      "items": "Items",
+      "shippingTo": "Shipping To",
+      "continueShopping": "Continue Shopping",
+      "tryAgain": "Try Payment Again",
+      "contactSupport": "Contact Support",
+      "subtotal": "Subtotal",
+      "addons": "Add-ons",
+      "shipping": "Shipping",
+      "shippingMethod": "Shipping method",
+      "total": "Total",
+      "viewOrder": "View Order",
+      "discount": "Discount",
+      "freeShipping": "Free shipping applied",
+      "confirmingTitle": "Confirming your payment",
+      "confirmingBody": "This usually takes a few seconds. Please keep this page open.",
+      "points": "Points",
+      "orderLabel": "Order",
+      "stepPlaced": "Placed",
+      "stepPaid": "Paid",
+      "stepShipped": "Shipped",
+      "stepDelivered": "Delivered",
+      "delivery": "Delivery",
+      "nextTitle": "What happens next",
+      "next1": "We prepare your order and email you when it ships.",
+      "next2": "You'll get the carrier and tracking details by email.",
+      "next3Id": "Bring your Emirates ID. Regulated items are handed over only after an ID check.",
+      "helpPrompt": "Questions about this order?",
+      "saveReceipt": "Save receipt",
+      "stillStuck": "Still need help?",
+      "orderSummary": "Order summary",
+      "toPay": "To pay"
+    },
+    "pay": {
+      "secureHeading": "Secure payment",
+      "sandboxChip": "Sandbox mode",
+      "payee": "Paying",
+      "sandboxTitle": "Sandbox payment — no money moves",
+      "sandboxBody": "Card details are checked in your browser and are never sent to our servers or stored.",
+      "payingFor": "Order {orderNumber}",
+      "payingForQuote": "from quote {quoteNumber}",
+      "cardHeading": "Card details",
+      "cardNumber": "Card number",
+      "nameOnCard": "Name on card",
+      "expiry": "Expiry (MM / YY)",
+      "cvc": "CVC",
+      "billingAddress": "Billing address",
+      "billingSet": "Set at checkout",
+      "payNow": "Pay {total}",
+      "submitting": "Processing…",
+      "noChargeNote": "Nothing is charged until you press pay.",
+      "dontClose": "Don't close this page or press back.",
+      "summaryHeading": "Your order",
+      "addons": "Add-ons",
+      "shipping": "Shipping",
+      "discount": "Discount",
+      "total": "Total",
+      "afterTitle": "After you pay",
+      "afterStep1": "We confirm your payment and update your order.",
+      "afterStep2": "Our team prepares your items and the licence paperwork.",
+      "afterStep3": "You'll get an email as soon as your order ships.",
+      "testCardsTitle": "Sandbox test cards",
+      "testCardSuccess": "Payment approved",
+      "testCardDeclined": "Payment declined",
+      "declinedTitle": "Payment declined",
+      "declinedBody": "Nothing was charged and your order is unchanged.",
+      "contactTeam": "Contact our team to arrange payment",
+      "cardNumberError": "Enter a valid card number.",
+      "expiryError": "Enter a valid expiry date.",
+      "cvcError": "Enter a valid security code.",
+      "nameError": "Enter the name as it appears on the card.",
+      "errors": {
+        "UNAUTHENTICATED": "Please sign in to continue.",
+        "ORDER_NOT_FOUND": "We couldn't find that order.",
+        "INVALID_STATE": "This order can no longer be paid here.",
+        "NOT_MOCK": "Sandbox payment isn't available.",
+        "VALIDATION_ERROR": "Please check your card details and try again.",
+        "INTERNAL_ERROR": "Something went wrong. Please try again."
+      }
+    },
+    "pointsEarnLabel": "Points you'll earn",
+    "pointsEarnNote": "Added when your order is delivered",
+    "pointsUnit": "points",
+    "points": {
+      "title": "Loyalty points",
+      "balance": "Your balance: <b>{points}</b> points, worth <amt></amt>",
+      "pointsCount": "{points} points",
+      "applied": "Applied",
+      "youSaved": "You saved",
+      "remove": "Remove",
+      "placeholder": "Points",
+      "apply": "Apply",
+      "useMax": "Use max",
+      "range": "Between {min} and {max} points",
+      "rate": "{points} points = <amt></amt> · up to {share}% of your items",
+      "belowMinimum": "Your balance: {points} points. You can spend points from {min}.",
+      "orderTooSmall": "Points can be spent on items worth <amt></amt> or more.",
+      "quoteRequired": "Points can't be used when shipping is quoted separately.",
+      "errors": {
+        "range": "Enter between {min} and {max} points."
+      }
+    },
+    "pointsLine": "Points",
+    "receipt": {
+      "title": "Receipt",
+      "taxInvoice": "Tax invoice",
+      "docTitle": "{title} {orderNumber}",
+      "orderNumber": "Order number",
+      "orderDate": "Order date",
+      "paidOn": "Paid on",
+      "payment": "Payment",
+      "billTo": "Bill to",
+      "shipTo": "Ship to",
+      "item": "Item",
+      "qty": "Qty",
+      "unitPrice": "Unit price",
+      "amount": "Amount",
+      "refunds": "Refunds",
+      "refundLine": "Refunded {date}",
+      "settlementLine": "Payment {reference} · {date}",
+      "paymentCard": "Card",
+      "paymentOffline": "Offline payment",
+      "trn": "TRN",
+      "tradeLicence": "Trade licence",
+      "taxInvoiceAlt": "فاتورة ضريبية",
+      "unitExVat": "Unit price excl. VAT",
+      "exVat": "Excl. VAT",
+      "vatRate": "VAT {rate}%",
+      "inclVat": "Incl. VAT",
+      "totalExVat": "Total excl. VAT",
+      "vatAt": "VAT at {rate}%",
+      "totalInclVat": "Total incl. VAT",
+      "amountsInAed": "All amounts in AED.",
+      "issued": "This document was issued electronically and is valid without a signature.",
+      "thanks": "Thank you for shopping with {store}.",
+      "save": "Save as PDF",
+      "print": "Print",
+      "back": "Back to order",
+      "saveHint": "In the print window, choose \"Save as PDF\" to keep a copy."
+    }
+  },
+  "account": {
+    "verification": {
+      "title": "Identity verification",
+      "subtitle": "Some products require verified identity before purchase. Verify once and you're covered for 2 years.",
+      "manualReviewNotice": "Your UAE PASS account doesn't include the Emirates ID details we need to verify you automatically. Please upload your documents below instead.",
+      "documents": {
+        "heading": "Your documents",
+        "identity": "Identity document",
+        "proofOfAddress": "Proof of address",
+        "photo": "Photo",
+        "enlargeHint": "Click to enlarge",
+        "zoomHint": "Scroll or pinch to zoom",
+        "resetZoom": "Reset zoom",
+        "openPdf": "Open document",
+        "unavailable": "Unavailable",
+        "previousHeading": "Previous documents",
+        "previousHint": "Replaced when our team asked for new documents. Kept on file for our records."
+      },
+      "submittedDetails": {
+        "heading": "Your submitted details",
+        "idLabel": "ID / passport number",
+        "addressLabel": "Address",
+        "hint": "As provided by you at submission. If these need correcting, contact support and we'll send you a request to update them.",
+        "submittedLabel": "Submitted on",
+        "declarationLabel": "Declaration accepted on"
+      },
+      "request": {
+        "heading": "Action required",
+        "body": "Our team needs more from you before we can verify your identity.",
+        "messageLabel": "Message from our team",
+        "requestedOn": "Requested {date}",
+        "bodyDetails": "Our team needs you to correct the details you declared before we can verify your identity.",
+        "detailsCta": "Update your details"
+      },
+      "provide": {
+        "heading": "Upload what we asked for",
+        "submit": "Submit documents",
+        "submitting": "Submitting…",
+        "fileRequired": "Please upload a file for this document.",
+        "errors": {
+          "UNAUTHENTICATED": "You must be signed in to upload documents.",
+          "NO_REQUEST": "There is no open document request on your account.",
+          "NO_FILES_PROVIDED": "Every requested document must include a file.",
+          "FILE_TOO_LARGE": "One of your files exceeds the 5 MB size limit.",
+          "INVALID_FILE_TYPE": "One of your files has an unsupported type. Allowed: JPEG, PNG, PDF.",
+          "VALIDATION_ERROR": "Please check the form and try again.",
+          "STORAGE_ERROR": "Failed to upload documents. Please try again.",
+          "INTERNAL_ERROR": "Something went wrong. Please try again.",
+          "DEMO_UPLOADS_DISABLED": "File uploads are turned off in this demo. Nothing was submitted."
+        },
+        "acknowledgmentRequired": "You must accept the acknowledgment to continue."
+      },
+      "details": {
+        "pageTitle": "Update your declared details",
+        "subtitle": "Make the changes our team asked for.",
+        "messageLabel": "Message from our team",
+        "previousValue": "Was {value}",
+        "submit": "Submit for review",
+        "submitting": "Submitting…",
+        "fields": {
+          "declaredIdNumber": {
+            "label": "ID / passport number"
+          },
+          "declaredAddress": {
+            "label": "Address"
+          }
+        },
+        "acknowledgment": {
+          "heading": "Acknowledgment",
+          "consentLabel": "I have read and agree to the above."
+        },
+        "validation": {
+          "idRequired": "ID number is required.",
+          "addressRequired": "Address is required.",
+          "noChanges": "Change at least one detail before submitting.",
+          "acknowledgmentRequired": "You must accept the acknowledgment to continue."
+        },
+        "errors": {
+          "UNAUTHENTICATED": "You must be signed in to update your details.",
+          "NO_REQUEST": "There is no open request to update your details.",
+          "NO_CHANGES": "Change at least one detail before submitting.",
+          "VALIDATION_ERROR": "Please check the form and try again.",
+          "INTERNAL_ERROR": "Something went wrong. Please try again."
+        }
+      }
+    },
+    "b2b": {
+      "pageTitle": "B2B Trade Account",
+      "subtitle": "Your wholesale trade account details and verification documents.",
+      "pending": {
+        "heading": "Application Under Review",
+        "body": "Your application has been received and is being reviewed by our compliance team. This typically takes 1–2 business days. We'll email you once a decision has been made.",
+        "submittedOn": "Submitted on"
+      },
+      "approved": {
+        "heading": "Trade Account Approved",
+        "body": "Your B2B trade account is active. You now have access to wholesale pricing and priority fulfillment.",
+        "approvedOn": "Approved on",
+        "ctaShop": "Shop Now"
+      },
+      "rejected": {
+        "heading": "Application Not Approved",
+        "body": "Unfortunately your application wasn't approved. You can review the reason above and submit a new application with the corrected details, or contact our team if you have questions.",
+        "reasonLabel": "Reason from our team",
+        "ctaReapply": "Submit a new application",
+        "ctaContact": "Contact Support"
+      },
+      "suspended": {
+        "heading": "Account Suspended",
+        "body": "Your trade account has been suspended. Please contact our team for more information.",
+        "ctaContact": "Contact Support",
+        "reasonLabel": "Reason from our team"
+      },
+      "request": {
+        "heading": "Action required",
+        "body": "Our team has asked you to provide additional documents for your trade account.",
+        "messageLabel": "Message from our team",
+        "requestedOn": "Requested {date}",
+        "cta": "Upload documents",
+        "bodyDetails": "Our team has asked you to update your business details.",
+        "ctaDetails": "Update details"
+      },
+      "provide": {
+        "pageTitle": "Provide documents",
+        "subtitle": "Upload the documents our team asked for.",
+        "messageLabel": "Message from our team",
+        "documents": {
+          "typeLabel": "Document type",
+          "rowLabel": "Document {index}",
+          "numberLabel": "Document number",
+          "numberPlaceholder": "As printed on the document",
+          "nameLabel": "Document name",
+          "namePlaceholder": "e.g. Chamber of Commerce certificate",
+          "fileLabel": "File",
+          "fileHint": "JPEG, PNG, or PDF. Max 5 MB.",
+          "remove": "Remove document {index}",
+          "add": "Add another document",
+          "count": "{used} of {max} documents"
+        },
+        "types": {
+          "TRADE_LICENSE": "Trade license",
+          "VAT_CERTIFICATE": "VAT certificate",
+          "COMPANY_ID": "Company ID",
+          "OTHER": "Other"
+        },
+        "fileUpload": {
+          "dropOrClick": "Drop file here or click to upload",
+          "remove": "Remove",
+          "tooLarge": "File exceeds the 5 MB limit.",
+          "invalidType": "Only JPEG, PNG, or PDF files are allowed."
+        },
+        "acknowledgment": {
+          "heading": "Acknowledgment",
+          "consentLabel": "I have read and agree to the above."
+        },
+        "submit": "Submit documents",
+        "submitting": "Submitting…",
+        "validation": {
+          "fileRequired": "Please upload a file for this document.",
+          "nameRequired": "Give this document a name.",
+          "acknowledgmentRequired": "You must accept the acknowledgment to continue.",
+          "missingType": "Add your {type} before submitting."
+        },
+        "errors": {
+          "UNAUTHENTICATED": "You must be signed in to upload documents.",
+          "NO_ACCOUNT": "No B2B account found.",
+          "NO_REQUEST": "There is no open document request on your account.",
+          "NO_FILES_PROVIDED": "Every document must include a file.",
+          "TOO_MANY_FILES": "You can upload up to 8 documents.",
+          "FILE_TOO_LARGE": "One of your files exceeds the 5 MB size limit.",
+          "INVALID_FILE_TYPE": "One of your files has an unsupported type. Allowed: JPEG, PNG, PDF.",
+          "VALIDATION_ERROR": "Please check the form and try again.",
+          "STORAGE_ERROR": "Failed to upload documents. Please try again.",
+          "INTERNAL_ERROR": "Something went wrong. Please try again.",
+          "REQUEST_MISMATCH": "Your upload doesn't match the documents our team requested. Refresh the page and try again.",
+          "DEMO_UPLOADS_DISABLED": "File uploads are turned off in this demo. Nothing was submitted."
+        }
+      },
+      "details": {
+        "pageTitle": "Update your business details",
+        "subtitle": "Make the changes our team asked for.",
+        "consequence": "Submitting returns your account to review. Wholesale pricing pauses until it's approved again.",
+        "previousValue": "Was {value}",
+        "submit": "Submit for review",
+        "messageLabel": "Message from our team",
+        "fields": {
+          "companyNameEn": {
+            "label": "Company Name (English)",
+            "placeholder": "As registered on your trade license"
+          },
+          "tradeLicenseNo": {
+            "label": "Trade License Number",
+            "placeholder": "e.g. CN-1234567"
+          },
+          "contactName": {
+            "label": "Contact Full Name",
+            "placeholder": "Primary contact for this account"
+          },
+          "contactPhone": {
+            "label": "Contact Phone",
+            "placeholder": "+971 XX XXX XXXX"
+          },
+          "companyNameAr": {
+            "label": "Company Name (Arabic)",
+            "placeholder": "اسم الشركة بالعربية",
+            "optional": "optional"
+          },
+          "vatNumber": {
+            "label": "VAT Registration Number",
+            "placeholder": "15-digit TRN",
+            "optional": "optional"
+          }
+        },
+        "documents": {
+          "rowLabel": "Trade license document",
+          "instruction": "You changed the license number, so we need the matching license document.",
+          "fileLabel": "File",
+          "fileHint": "JPEG, PNG, or PDF. Max 5 MB."
+        },
+        "fileUpload": {
+          "dropOrClick": "Drop file here or click to upload",
+          "remove": "Remove",
+          "tooLarge": "File exceeds the 5 MB limit.",
+          "invalidType": "Only JPEG, PNG, or PDF files are allowed."
+        },
+        "acknowledgment": {
+          "heading": "Acknowledgment",
+          "consentLabel": "I have read and agree to the above."
+        },
+        "submitting": "Submitting…",
+        "validation": {
+          "companyNameEnRequired": "Company name is required.",
+          "tradeLicenseNoRequired": "Trade license number is required.",
+          "contactNameRequired": "Contact name is required.",
+          "contactPhoneRequired": "Contact phone is required.",
+          "contactPhoneInvalid": "Please enter a valid UAE phone number.",
+          "acknowledgmentRequired": "You must accept the acknowledgment to continue.",
+          "fileRequired": "Please upload a file for this document.",
+          "noChanges": "Change at least one detail before submitting."
+        },
+        "errors": {
+          "UNAUTHENTICATED": "You must be signed in to update your business details.",
+          "NO_ACCOUNT": "No B2B account found.",
+          "NO_REQUEST": "There is no open request to update your details.",
+          "MISSING_LICENSE_DOCUMENT": "You changed the license number, so a matching license document is required.",
+          "DUPLICATE_LICENSE": "A B2B account with this trade license number already exists.",
+          "VALIDATION_ERROR": "Please check the form and try again.",
+          "STORAGE_ERROR": "Failed to upload documents. Please try again.",
+          "INTERNAL_ERROR": "Something went wrong. Please try again.",
+          "FILE_TOO_LARGE": "One of your files exceeds the 5 MB size limit.",
+          "INVALID_FILE_TYPE": "One of your files has an unsupported type. Allowed: JPEG, PNG, PDF.",
+          "NO_CHANGES": "Change at least one detail before submitting.",
+          "DEMO_UPLOADS_DISABLED": "File uploads are turned off in this demo. Nothing was submitted."
+        }
+      },
+      "credential": {
+        "eyebrow": "Trade Account",
+        "status": "Active",
+        "company": "Company",
+        "contact": "Contact",
+        "approvedOn": "Approved on",
+        "validUntil": "Valid until",
+        "reference": "Account reference"
+      },
+      "documents": {
+        "currentHeading": "Your documents",
+        "previousHeading": "Previous documents",
+        "previousHint": "Replaced when you last renewed. Kept on file for our records.",
+        "tradeLicense": "Trade license",
+        "vatCertificate": "VAT certificate",
+        "companyId": "Company ID",
+        "other": "Other document",
+        "enlargeHint": "Click to enlarge",
+        "zoomHint": "Scroll or pinch to zoom",
+        "resetZoom": "Reset zoom",
+        "openPdf": "Open document",
+        "unavailable": "Unavailable"
+      },
+      "businessDetails": {
+        "heading": "Your business details",
+        "tradeLicenseLabel": "Trade license no",
+        "vatLabel": "VAT number",
+        "companyLabel": "Company name",
+        "contactNameLabel": "Contact name",
+        "contactPhoneLabel": "Contact phone",
+        "hint": "As provided by you at submission. If these need correcting, contact support and we'll send you a request to update them."
+      },
+      "expired": {
+        "heading": "Trade Account Expired",
+        "body": "Your trade account has expired. Renew it to regain wholesale pricing and priority fulfillment.",
+        "ctaRenew": "Renew Trade Account"
+      },
+      "renew": {
+        "pageTitle": "Renew Your Trade Account",
+        "subtitle": "Upload updated documents to renew your wholesale trade account.",
+        "licenseLabel": "Trade license no",
+        "licenseLocked": "This number is on file and can't be changed here. Contact support if it needs to be updated.",
+        "instructions": {
+          "heading": "Before you upload"
+        },
+        "checklist": {
+          "heading": "Documents to prepare",
+          "required": "Required",
+          "recommended": "Recommended",
+          "footnote": "Anything not listed above can be added as an additional document below."
+        },
+        "documents": {
+          "typeLabel": "Document type",
+          "rowLabel": "Document {index}",
+          "required": "Required",
+          "numberLabel": "Document number",
+          "numberPlaceholder": "As printed on the document",
+          "nameLabel": "Document name",
+          "namePlaceholder": "e.g. Chamber of Commerce certificate",
+          "fileLabel": "File",
+          "fileHint": "JPEG, PNG, or PDF. Max 5 MB.",
+          "remove": "Remove document {index}",
+          "add": "Add another document",
+          "count": "{used} of {max} documents"
+        },
+        "types": {
+          "TRADE_LICENSE": "Trade license",
+          "VAT_CERTIFICATE": "VAT certificate",
+          "COMPANY_ID": "Company ID",
+          "OTHER": "Other"
+        },
+        "fileUpload": {
+          "dropOrClick": "Drop file here or click to upload",
+          "remove": "Remove",
+          "tooLarge": "File exceeds the 5 MB limit.",
+          "invalidType": "Only JPEG, PNG, or PDF files are allowed."
+        },
+        "acknowledgment": {
+          "heading": "Acknowledgment",
+          "consentLabel": "I have read and agree to the above."
+        },
+        "submit": "Submit renewal",
+        "submitting": "Submitting…",
+        "validation": {
+          "fileRequired": "Please upload a file for this document.",
+          "nameRequired": "Give this document a name.",
+          "acknowledgmentRequired": "You must accept the acknowledgment to continue."
+        },
+        "errors": {
+          "UNAUTHENTICATED": "You must be signed in to request a B2B renewal.",
+          "NO_ACCOUNT": "No B2B account found.",
+          "NOT_ELIGIBLE": "Your B2B account is not eligible for renewal.",
+          "NO_FILES_PROVIDED": "Every document must include a file.",
+          "TOO_MANY_FILES": "You can upload up to 8 documents.",
+          "MISSING_REQUIRED_DOCUMENT": "A required document is missing. Please upload every document listed as required.",
+          "FILE_TOO_LARGE": "One of your files exceeds the 5 MB size limit.",
+          "INVALID_FILE_TYPE": "One of your files has an unsupported type. Allowed: JPEG, PNG, PDF.",
+          "VALIDATION_ERROR": "Please check the form and try again.",
+          "STORAGE_ERROR": "Failed to upload documents. Please try again.",
+          "INTERNAL_ERROR": "Something went wrong. Please try again.",
+          "DEMO_UPLOADS_DISABLED": "File uploads are turned off in this demo. Nothing was submitted."
+        }
+      }
+    },
+    "nav": {
+      "title": "My Account",
+      "overview": "Overview",
+      "orders": "Orders",
+      "quotes": "Quotes",
+      "wishlist": "Wishlist",
+      "addresses": "Addresses",
+      "verification": "Verification",
+      "b2b": "Business Account",
+      "loyalty": "Loyalty",
+      "coupons": "Coupons",
+      "settings": "Settings",
+      "logout": "Sign Out",
+      "needsAttention": "needs attention",
+      "support": "Help & support"
+    },
+    "quotes": {
+      "title": "Quote Requests",
+      "subtitle": "Track your submitted quote requests and pricing responses.",
+      "empty": "You haven't requested any quotes yet.",
+      "emptyCta": "Browse products",
+      "inactiveNotice": "Your trade account isn't active, so new quote requests are unavailable.",
+      "inactiveCta": "View business account",
+      "itemCount": "{count, plural, =1 {# item} other {# items}}",
+      "quoteNumber": "Quote number",
+      "placedUnder": "Business identity",
+      "legalEntity": "Legal entity",
+      "tradeLicense": "Trade licence",
+      "vatNumber": "VAT number",
+      "backToQuotes": "Back to quotes",
+      "cancel": "Cancel",
+      "items": "Items",
+      "customerNote": "Your note",
+      "shippingCost": "Shipping",
+      "shippingTo": "Shipping to",
+      "total": "Total",
+      "staffNote": "Note from Our Team",
+      "awaitingPricing": "Our team is preparing your pricing. We'll email you when it's ready.",
+      "quotedTotal": "Quoted total",
+      "acceptCta": "Accept quote",
+      "acceptConfirmTitle": "Accept this quote?",
+      "acceptConfirmBody": "You're accepting this quote at {total}. This confirms your intent to purchase and can't be undone.",
+      "cancelQuoteCta": "Cancel this quote",
+      "requestContactCta": "Request contact",
+      "requestContact": {
+        "title": "Request contact",
+        "intro": "Pick what this is about, then add any detail. Our team will follow up directly.",
+        "reasonLabel": "What's this about?",
+        "reasons": {
+          "PRICING": "Pricing",
+          "SHIPPING": "Shipping",
+          "QUANTITIES": "Quantities",
+          "PAYMENT_TERMS": "Payment terms",
+          "OTHER": "Something else"
+        },
+        "messageLabel": "Message",
+        "messagePlaceholder": "Add any detail you'd like our team to know.",
+        "starters": {
+          "PRICING": "Could we revisit the pricing on this quote? ",
+          "SHIPPING": "Could we revisit the shipping on this quote? ",
+          "QUANTITIES": "Could we revisit the quantities on this quote? ",
+          "PAYMENT_TERMS": "Could we discuss payment terms for this quote? ",
+          "OTHER": ""
+        },
+        "send": "Send request"
+      },
+      "cancelConfirmTitle": "Cancel this quote?",
+      "cancelConfirmBody": "This withdraws your quote request. This cannot be undone.",
+      "acceptedAdvisory": "You've accepted this quote. Our team will contact you shortly to arrange payment and delivery.",
+      "consentTermsHeading": "Terms & conditions",
+      "consentRulesHeading": "Rules",
+      "consentCheckbox": "I have read and agree to the Terms & Conditions and Rules. I understand acceptance is binding.",
+      "whatNextHeading": "What happens next",
+      "whatNextBody": "Once you accept, our team is notified and will contact you to finalize the order and payment.",
+      "consentUnavailable": "This quote isn't ready to accept online yet. Please contact our team and we'll help you complete it.",
+      "timeline": "Status history",
+      "pricing": "Pricing",
+      "finalizeCta": "Finalize your order",
+      "convertedToOrder": "Converted to order {orderNumber}",
+      "errors": {
+        "UNAUTHENTICATED": "Please sign in again to continue.",
+        "NOT_B2B": "This action is available to approved business accounts.",
+        "NOT_OWNER": "Quote not found.",
+        "NOT_ELIGIBLE": "Contact requests are no longer available for this quote.",
+        "B2B_EXPIRED": "Your trade account has expired. Renew it to continue.",
+        "QUOTE_NOT_QUOTED": "This quote can no longer be accepted.",
+        "QUOTE_CHANGED": "This quote was updated. Please review the new total before accepting.",
+        "TERMS_UNAVAILABLE": "This quote can't be accepted online right now. Please contact our team.",
+        "NOT_CANCELABLE": "This quote can no longer be cancelled.",
+        "VALIDATION_ERROR": "Please check your details and try again.",
+        "INTERNAL_ERROR": "Something went wrong. Please try again.",
+        "ALREADY_OPEN": "You already have an open request about this quote. You can follow it in Help & support."
+      },
+      "finalize": {
+        "heading": "Finalize your order",
+        "subheading": "Review your order before placing it.",
+        "shippingAddressHeading": "Shipping address",
+        "addressLockedNote": "This address was used to price your quote and can't be changed here. Contact us if it needs to change.",
+        "paymentHeading": "Payment",
+        "itemsHeading": "Items in this order",
+        "goodsSubtotal": "Items",
+        "shippingLine": "Shipping",
+        "vatInclLine": "Includes {rate}% VAT",
+        "total": "Total",
+        "arrangePaymentCta": "Arrange payment with our team",
+        "arrangePaymentNote": "We'll contact you to arrange payment and delivery. Your order is placed now and held for you.",
+        "verifyFirstNote": "Complete identity verification above before finalizing.",
+        "expiredTitle": "Trade account expired",
+        "expiredBody": "Your business account has expired. Renew it to finalize this order.",
+        "expiredCta": "Go to business account",
+        "arrangePaymentConfirmTitle": "Place this order?",
+        "arrangePaymentConfirmBody": "This places your order for {total} and our team will contact you to arrange payment. This can't be undone.",
+        "cancel": "Cancel",
+        "errors": {
+          "UNAUTHENTICATED": "Please sign in again to continue.",
+          "NOT_B2B": "This action is available to approved business accounts.",
+          "NOT_OWNER": "Quote not found.",
+          "B2B_EXPIRED": "Your trade account has expired. Renew it to finalize.",
+          "INVALID_STATUS": "This quote can no longer be finalized.",
+          "ALREADY_CONVERTED": "This quote has already been converted to an order.",
+          "QUOTE_MISSING_SHIPPING": "Shipping details are missing on this quote. Please contact us to continue.",
+          "ID_VERIFICATION_REQUIRED": "Identity verification is required before finalizing.",
+          "VALIDATION_ERROR": "Please check your details and try again.",
+          "INTERNAL_ERROR": "Something went wrong. Please try again.",
+          "QUOTE_TOTAL_MISMATCH": "This quote's totals don't match. Please contact our team before continuing."
+        },
+        "addonSubtotal": "Add-ons",
+        "shippingPendingTitle": "Shipping not priced yet",
+        "shippingPendingCta": "Back to quote"
+      },
+      "status": {
+        "NEW": "Submitted",
+        "CONTACTED": "In discussion",
+        "QUOTED": "Quoted",
+        "CLOSED": "Closed",
+        "CANCELLED": "Cancelled",
+        "ACCEPTED": "Accepted"
+      },
+      "goodsSubtotal": "Goods",
+      "addonsSubtotal": "Add-ons",
+      "statusConverted": "Converted",
+      "cancelledAdvisory": "This quote request was cancelled. No order was placed. If you'd like to start again, or this wasn't intended, our team can help.",
+      "closedAdvisory": "This quote request is closed. No order was placed. If you still need these items, or have a question about this request, our team can help.",
+      "requestedQuantity": "Requested {count}",
+      "confirmedQuantity": "Confirmed {count}"
+    },
+    "overview": {
+      "greeting": "Welcome back, {name}",
+      "statOrders": "Orders",
+      "statWishlist": "Wishlist",
+      "statPoints": "Points",
+      "activity": "Activity",
+      "recentOrderTitle": "Recent Order",
+      "viewAllOrders": "View all orders",
+      "noOrders": "You haven't placed any orders yet.",
+      "startShopping": "Start shopping",
+      "sublabelOrders": "View order history",
+      "sublabelWishlist": "Saved items",
+      "sublabelPoints": "Your loyalty points"
+    },
+    "status": {
+      "title": "Account Status",
+      "accountType": "Account Type",
+      "typeB2C": "Personal",
+      "typeB2B": "Business",
+      "verificationLabel": "Identity Verification",
+      "vNOT_REQUIRED": "Not required",
+      "vPENDING": "Under review",
+      "vAPPROVED": "Verified",
+      "vREJECTED": "Action needed",
+      "vEXPIRED": "Expired",
+      "b2bLabel": "Business Status",
+      "bPENDING": "Under review",
+      "bAPPROVED": "Approved",
+      "bREJECTED": "Action needed",
+      "bSUSPENDED": "Suspended",
+      "bEXPIRED": "Expired",
+      "memberSince": "Member since",
+      "verifiedOn": "Verified on"
+    },
+    "settings": {
+      "title": "Settings",
+      "subtitle": "Manage your profile and password.",
+      "profileSection": "Profile",
+      "profileSectionHint": "Update your personal details.",
+      "name": "Full name",
+      "phone": "Phone number",
+      "phoneOptional": "optional",
+      "email": "Email",
+      "emailReadonly": "Email cannot be changed.",
+      "language": "Language",
+      "languageHint": "Also used for emails we send you.",
+      "saveChanges": "Save changes",
+      "profileSaved": "Profile updated.",
+      "passwordSection": "Password",
+      "passwordSectionHint": "Choose a strong password you don't use elsewhere.",
+      "currentPassword": "Current password",
+      "newPassword": "New password",
+      "confirmPassword": "Confirm new password",
+      "updatePassword": "Update password",
+      "passwordChanged": "Password updated.",
+      "uaePass": {
+        "title": "UAE PASS",
+        "hint": "Sign in with your national digital identity.",
+        "linkTitle": "Link your UAE PASS account",
+        "linkBody": "Sign in without a password. Emirates ID holders are automatically verified for restricted items.",
+        "linkCta": "Continue with UAE PASS",
+        "comingSoon": "Coming soon",
+        "linkedTitle": "UAE PASS is linked to this account",
+        "linkedBody": "You can now sign in with UAE PASS.",
+        "linkedBadge": "Linked",
+        "errors": {
+          "denied": "The linking request was cancelled.",
+          "uuidTaken": "This UAE PASS account is already linked to a different account.",
+          "sessionExpired": "Your session expired. Please sign in again and try once more.",
+          "generic": "Something went wrong while linking, please try again later!"
+        },
+        "notices": {
+          "linked": "UAE PASS is now linked to your account.",
+          "linkedVerified": "UAE PASS is linked and your identity is verified."
+        }
+      },
+      "errors": {
+        "sessionExpired": "Your session expired. Please sign in again and try once more.",
+        "invalidInput": "Please check the details you entered.",
+        "incorrectPassword": "Current password is incorrect.",
+        "samePassword": "New password must be different from your current one.",
+        "noPasswordSet": "No password is set on this account.",
+        "passwordWeak": "Password must be at least 8 characters and include a letter and a digit.",
+        "passwordsDoNotMatch": "Passwords do not match.",
+        "generic": "Something went wrong. Please try again."
+      }
+    },
+    "addresses": {
+      "title": "Addresses",
+      "subtitle": "Manage your saved delivery addresses.",
+      "addAddress": "Add address",
+      "empty": "You haven't saved any addresses yet.",
+      "emptyCta": "Add your first address",
+      "defaultBadge": "Default",
+      "edit": "Edit",
+      "delete": "Delete",
+      "setAsDefault": "Set as default",
+      "addedOn": "Added {date}",
+      "addTitle": "Add a new address",
+      "editTitle": "Edit address",
+      "fullName": "Full name",
+      "phone": "Phone number",
+      "emirate": "Emirate",
+      "emiratePlaceholder": "Select emirate",
+      "line1": "Street address",
+      "line2": "Apartment, suite, unit, etc.",
+      "city": "Town / City",
+      "postalCode": "Postal code",
+      "label": "Address label",
+      "labelHint": "e.g. Home, Office",
+      "country": "Country / Region",
+      "countryPlaceholder": "Select a country",
+      "optional": "optional",
+      "save": "Save address",
+      "cancel": "Cancel",
+      "saving": "Saving…",
+      "deleting": "Deleting…",
+      "deleteTitle": "Delete address?",
+      "deleteMessage": "This address will be permanently removed.",
+      "confirmDelete": "Delete",
+      "addressSaved": "Address saved.",
+      "addressDeleted": "Address removed.",
+      "defaultUpdated": "Default address updated.",
+      "errors": {
+        "UNAUTHORIZED": "Please sign in again.",
+        "VALIDATION_ERROR": "Please check your details and try again.",
+        "ADDRESS_NOT_FOUND": "Address not found.",
+        "ADDRESS_NOT_OWNED": "Address not found.",
+        "CANNOT_DELETE_LAST_DEFAULT": "You can't delete your only address.",
+        "INTERNAL_ERROR": "Something went wrong. Please try again."
+      }
+    },
+    "orders": {
+      "title": "Orders",
+      "subtitle": "View your order history and track current orders.",
+      "empty": "You haven't placed any orders yet.",
+      "emptyCta": "Start shopping",
+      "itemCount": "{count, plural, =1 {# item} other {# items}}",
+      "orderNumber": "Order number",
+      "orderDate": "Order date",
+      "viewOrder": "View order",
+      "backToOrders": "Back to orders",
+      "items": "Items",
+      "subtotal": "Subtotal",
+      "addons": "Add-ons",
+      "shipping": "Shipping",
+      "discount": "Discount",
+      "freeShipping": "Free shipping applied",
+      "vatInclLine": "Includes {rate}% VAT",
+      "total": "Total",
+      "shippingTo": "Shipping to",
+      "shippingMethod": "Shipping method",
+      "estimatedDelivery": "Estimated delivery",
+      "customerNote": "Order note",
+      "trackingTitle": "Tracking",
+      "trackingNumber": "Tracking Number",
+      "trackingUrl": "Tracking Link",
+      "trackPackage": "Track Package",
+      "serial": "Serial",
+      "lot": "Lot",
+      "carrier": "Carrier",
+      "parcels": "{count, plural, =1 {# parcel} other {# parcels}}",
+      "deliveredOn": "Delivered on",
+      "shipmentNote": "Note from the store",
+      "quoteRequestTitle": "Quote request",
+      "viewQuoteRequest": "View quote request",
+      "status": {
+        "PENDING": "Pending",
+        "PAYMENT_PENDING": "Awaiting payment",
+        "AWAITING_MANUAL_PAYMENT": "Awaiting payment arrangement",
+        "AWAITING_SHIPPING_QUOTE": "Awaiting Shipping Quote",
+        "AWAITING_QUOTE_APPROVAL": "Awaiting Quote Approval",
+        "PAYMENT_FAILED": "Payment failed",
+        "PAID": "Paid",
+        "CONFIRMED": "Confirmed",
+        "PROCESSING": "Processing",
+        "READY_TO_SHIP": "Ready to ship",
+        "SHIPPED": "Shipped",
+        "DELIVERED": "Delivered",
+        "CANCELLED": "Cancelled",
+        "REFUNDED": "Refunded",
+        "PARTIALLY_REFUNDED": "Partially refunded",
+        "RETURNED": "Returned"
+      },
+      "quote": {
+        "awaitingQuoteTitle": "We're pricing your shipping",
+        "awaitingQuoteBody": "Our team is calculating shipping to your address. We'll email you the quote — nothing is charged until you approve it.",
+        "quotedTitle": "Your shipping quote is ready",
+        "quotedBody": "Review the total below. You'll only be charged once you approve.",
+        "shippingToBeQuoted": "To be quoted",
+        "provisionalTotal": "Provisional total",
+        "quotedShipping": "Shipping (quoted)",
+        "approvePay": "Approve & pay",
+        "approveConfirmTitle": "Approve this quote?",
+        "approveConfirmTotalLabel": "Total to pay",
+        "approveConfirmVatNote": "VAT included",
+        "approveConfirmBody": "You'll be taken to our secure payment page to enter your card details. Nothing is charged until you complete payment there.",
+        "approveConfirmCta": "Continue to payment",
+        "approveConfirmBack": "Go back",
+        "declineCancel": "Decline & cancel order",
+        "declineConfirmTitle": "Decline this quote?",
+        "declineConfirmBody": "Your order will be cancelled and the items released. This can't be undone.",
+        "declineReasonLabel": "Reason (optional)",
+        "declineConfirm": "Decline & cancel",
+        "declineBack": "Keep my order",
+        "errors": {
+          "QUOTE_CHANGED": "The quote was updated. Please review the new total before approving.",
+          "INVALID_STATUS": "This order is no longer awaiting approval.",
+          "COUPON_NOT_APPLICABLE": "Your coupon is no longer valid. Please contact support.",
+          "PAYMENT_INIT_FAILED": "Payment couldn't be started. Please try again.",
+          "NOT_FOUND": "Order not found.",
+          "UNAUTHENTICATED": "Please sign in again.",
+          "VALIDATION_ERROR": "Please check your message and try again.",
+          "INTERNAL_ERROR": "Something went wrong. Please try again."
+        }
+      },
+      "payment": {
+        "pendingTitle": "Payment not completed",
+        "pendingBody": "Your payment wasn't completed and nothing has been charged. You can continue to the secure payment page whenever you're ready.",
+        "failedTitle": "Payment declined",
+        "failedBody": "Your bank declined the payment and nothing was charged. You can try again with the same card or a different one.",
+        "payNow": "Pay now",
+        "errors": {
+          "UNAUTHENTICATED": "Please sign in again.",
+          "NOT_FOUND": "Order not found.",
+          "VALIDATION_ERROR": "We couldn't verify this order. Please refresh and try again.",
+          "INVALID_STATUS": "This order is no longer awaiting payment.",
+          "TOTAL_CHANGED": "The order total has changed. Please refresh and review the new total.",
+          "RETRY_IN_PROGRESS": "Another payment attempt is being processed. Please wait a moment and try again.",
+          "ITEM_UNAVAILABLE": "An item in this order is no longer available, so it can't be paid. Please contact us or place a new order.",
+          "PAYMENT_INIT_FAILED": "Payment couldn't be started. Please try again.",
+          "INTERNAL_ERROR": "Something went wrong. Please try again.",
+          "POINTS_INSUFFICIENT_BALANCE": "You no longer have enough points for this order. Please place a new order."
+        }
+      },
+      "contact": {
+        "cardTitle": "Awaiting your payment",
+        "cardBody": "We're holding this order until your transfer reaches us. If anything is unclear or you need different arrangements, send us a message.",
+        "cta": "Request contact",
+        "title": "Request contact about this order",
+        "intro": "Tell us what you need and our team will get back to you.",
+        "messageLabel": "Message",
+        "messagePlaceholder": "Describe what you need help with",
+        "send": "Send",
+        "cancel": "Cancel",
+        "errors": {
+          "UNAUTHENTICATED": "Please sign in again.",
+          "VALIDATION_ERROR": "Please enter a message before sending.",
+          "NOT_OWNER": "Order not found.",
+          "NOT_ELIGIBLE": "Contact requests aren't available for this order anymore.",
+          "INTERNAL_ERROR": "Something went wrong. Please try again.",
+          "ALREADY_OPEN": "You already have an open request about this order. You can follow it in Help & support."
+        }
+      },
+      "delivery": {
+        "cardTitle": "Has your order arrived?",
+        "cardBody": "Let us know once your parcel has reached you. If anything is missing or damaged, contact us instead.",
+        "cta": "Confirm delivery",
+        "confirmTitle": "Confirm you received this order?",
+        "confirmBody": "Only confirm once every item has reached you. This can't be undone.",
+        "confirmCta": "Yes, I received it",
+        "confirmBack": "Not yet",
+        "errors": {
+          "UNAUTHENTICATED": "Please sign in again.",
+          "VALIDATION_ERROR": "We couldn't verify this order. Please refresh and try again.",
+          "NOT_OWNER": "Order not found.",
+          "INVALID_STATUS": "This order is no longer awaiting delivery confirmation.",
+          "INTERNAL_ERROR": "Something went wrong. Please try again."
+        }
+      },
+      "loyaltyPointsPending": "Loyalty points: <b>{points}</b> when this order is delivered",
+      "loyaltyPointsEarned": "Points earned: <b>{points}</b>",
+      "points": "Points",
+      "refund": {
+        "title": "Refund",
+        "due": "Refund due",
+        "line": "Refunded {amount} on {date}",
+        "pending": "We'll email you when your refund is sent.",
+        "method": {
+          "ORIGINAL_PAYMENT": "Original payment method",
+          "BANK_TRANSFER": "Bank transfer",
+          "CASH": "Cash",
+          "CHEQUE": "Cheque",
+          "CARD_TERMINAL": "Card terminal",
+          "OTHER": "Other"
+        }
+      }
+    },
+    "loyalty": {
+      "title": "Loyalty",
+      "subtitle": "Your points balance and history.",
+      "balanceLabel": "Points balance",
+      "pointsUnit": "points",
+      "earnRate": "Points per AED 1 spent: {rate}",
+      "earnRules": "Some products earn a set number of points, extra points for a limited time, or none. Points are added when your order is delivered. Discounts reduce the points earned; shipping and VAT don't count.",
+      "balanceWorth": "Worth <amt></amt> at checkout",
+      "spendRule": "Spending points at checkout: <amt></amt> off for every {points} · minimum {min} · up to {share}% of your items",
+      "earningPaused": "Earning points is paused for now.",
+      "pending": "Pending: <b>{points}</b> points from {orders, plural, one {# order} other {# orders}} awaiting delivery",
+      "empty": "No loyalty activity yet.",
+      "forOrder": "Order {orderNumber}",
+      "balanceAfter": "Balance: {balance}",
+      "type": {
+        "EARNED": "Earned",
+        "REDEEMED": "Redeemed",
+        "ADJUSTED": "Adjusted by the store",
+        "EXPIRED": "Expired",
+        "REFUNDED": "Returned",
+        "REVERSED": "Reversed after a return"
+      }
+    },
+    "wishlist": {
+      "title": "Wishlist",
+      "subtitle": "Items you've saved for later.",
+      "empty": "Your wishlist is empty.",
+      "emptyCta": "Browse the shop",
+      "removed": "Removed from wishlist."
+    },
+    "coupons": {
+      "title": "My Coupons",
+      "subtitle": "Your active personal reward coupons.",
+      "codeLabel": "Code",
+      "freeShipping": "Free Shipping",
+      "expires": "Expires {date}",
+      "noExpiry": "No expiry",
+      "minOrder": "Min. order {amount}",
+      "empty": "You don't have any active coupons yet."
+    },
+    "history": {
+      "heading": "History",
+      "messageLabel": "Message from our team",
+      "reasonLabel": "Reason from our team",
+      "kinds": {
+        "submitted": "Submitted",
+        "renewalSubmitted": "Renewal submitted",
+        "documentsRequested": "Documents requested",
+        "detailsRequested": "Details update requested",
+        "documentsProvided": "Documents provided",
+        "detailsUpdated": "Details updated",
+        "approved": "Approved",
+        "rejected": "Not approved",
+        "suspended": "Suspended",
+        "expired": "Expired"
+      }
+    },
+    "support": {
+      "eyebrow": "Customer care",
+      "title": "Help & support",
+      "intro": "Reach us directly, or send a request and track it here.",
+      "channels": {
+        "whatsapp": "WhatsApp",
+        "whatsappHint": "Fastest reply",
+        "call": "Call us",
+        "email": "Email us",
+        "emailHint": "Opens your email with a short form to fill in"
+      },
+      "links": {
+        "faq": "Browse the FAQ",
+        "contact": "Contact page"
+      },
+      "email": {
+        "subject": "Help request from {name}",
+        "body": "Hello Wildridge Hunting team,\n\nName: {name}\nAccount email: {email}\nOrder or quote number (if any): \nTopic (order, delivery, payment, account, product, other): \n\nWhat happened:\n\n\nWhat I need from you:\n\n\nPlease don't include passwords or card numbers."
+      },
+      "form": {
+        "title": "Send a request",
+        "topicLabel": "What is it about?",
+        "topics": {
+          "ORDER": "An order",
+          "QUOTE": "A quote",
+          "ACCOUNT": "Account & verification",
+          "BUSINESS": "Business account",
+          "PRODUCT": "A product",
+          "OTHER": "Something else"
+        },
+        "orderLabel": "Which order?",
+        "quoteLabel": "Which quote?",
+        "recordPlaceholder": "Choose one",
+        "subjectLabel": "Subject",
+        "subjectPlaceholder": "A short summary",
+        "messageLabel": "Your message",
+        "messagePlaceholder": "Tell us what happened and what you need.",
+        "note": "Never send passwords or card numbers.",
+        "submit": "Send request",
+        "sending": "Sending…",
+        "sentTitle": "Request sent",
+        "sentBody": "We'll reply by email, and you can follow the status below.",
+        "sentRef": "Your reference",
+        "sendAnother": "Send another request"
+      },
+      "errors": {
+        "UNAUTHENTICATED": "Your session has ended. Sign in again to send a request.",
+        "VALIDATION_ERROR": "Check the highlighted fields and try again.",
+        "RECORD_REQUIRED": "Choose the order or quote this is about.",
+        "NOT_OWNER": "We couldn't find that record in your account.",
+        "TOPIC_UNAVAILABLE": "That topic isn't available for your account. Choose another.",
+        "ALREADY_OPEN": "You already have an open request about this. We'll reply to it soon.",
+        "RATE_LIMITED": "You've sent several requests today. To reach us sooner, call or message us on WhatsApp.",
+        "INTERNAL_ERROR": "Something went wrong. Try again in a moment.",
+        "subjectInvalid": "Enter a subject of 3 to 120 characters.",
+        "messageInvalid": "Enter a message of 10 to 2,000 characters."
+      },
+      "list": {
+        "title": "Your requests",
+        "empty": "No requests yet. When you send one, its status appears here.",
+        "opened": "Opened {date}",
+        "aboutOrder": "About order",
+        "aboutQuote": "About quote",
+        "linked": {
+          "order": "Order",
+          "quote": "Quote",
+          "b2b": "Business account",
+          "verification": "Verification"
+        },
+        "showMessage": "Your message",
+        "waitingHint": "We've contacted you by email or phone."
+      },
+      "status": {
+        "OPEN": "Received",
+        "IN_PROGRESS": "In progress",
+        "WAITING_ON_CUSTOMER": "Waiting for you",
+        "RESOLVED": "Resolved",
+        "CLOSED": "Closed"
+      },
+      "needHelp": "Need help?"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Sign In",
+      "subtitle": "Welcome back to your account",
+      "email": {
+        "label": "Email Address",
+        "placeholder": "you@example.com"
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Your password"
+      },
+      "submitButton": "Sign In",
+      "submitting": "Signing in…",
+      "noAccount": "Don't have an account?",
+      "registerLink": "Create one",
+      "forgotPassword": "Forgot password?",
+      "error": {
+        "invalidCredentials": "Invalid email or password.",
+        "inactiveAccount": "Your account has been deactivated. Please contact support.",
+        "emailNotVerified": "Confirm your email address before signing in. Check your inbox for the link we sent.",
+        "validation": "Please check your details and try again.",
+        "generic": "Something went wrong. Please try again."
+      },
+      "resend": {
+        "button": "Send a new link",
+        "sending": "Sending…",
+        "sent": "If your details are correct, a new link is on its way. It works for 24 hours."
+      },
+      "validation": {
+        "emailRequired": "Email address is required.",
+        "emailInvalid": "Please enter a valid email address.",
+        "passwordRequired": "Password is required."
+      },
+      "success": {
+        "registered": "Account created. Please sign in."
+      },
+      "brandHeadline": "Welcome back to the hunt.",
+      "brandSupporting": "Your gear. Your orders. Your account."
+    },
+    "register": {
+      "title": "Create Account",
+      "subtitle": "Join the Wildridge Hunting community",
+      "name": {
+        "label": "Full Name",
+        "placeholder": "Your full name"
+      },
+      "email": {
+        "label": "Email Address",
+        "placeholder": "you@example.com"
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Min. 8 characters",
+        "hint": "Must contain at least one letter and one digit"
+      },
+      "confirmPassword": {
+        "label": "Confirm Password",
+        "placeholder": "Repeat your password",
+        "mismatch": "Passwords do not match."
+      },
+      "terms": {
+        "label": "I agree to the Terms of Service",
+        "required": "You must accept the terms to continue."
+      },
+      "submitButton": "Create Account",
+      "submitting": "Creating account…",
+      "haveAccount": "Already have an account?",
+      "loginLink": "Sign in",
+      "error": {
+        "emailTaken": "An account with this email already exists.",
+        "validation": "Please check your details and try again.",
+        "generic": "Something went wrong. Please try again."
+      },
+      "validation": {
+        "nameRequired": "Full name is required.",
+        "nameTooLong": "Name must be 100 characters or fewer.",
+        "emailRequired": "Email address is required.",
+        "emailInvalid": "Please enter a valid email address.",
+        "passwordRequired": "Password is required.",
+        "passwordTooShort": "Password must be at least 8 characters.",
+        "passwordWeak": "Password must contain at least one letter and one digit.",
+        "confirmPasswordRequired": "Please confirm your password."
+      },
+      "brandHeadline": "Join the hunt.",
+      "brandSupporting": "Access exclusive deals, order history, and a seamless checkout experience."
+    },
+    "b2bRegister": {
+      "title": "Apply for B2B Account",
+      "subtitle": "Wholesale access for licensed dealers and retailers",
+      "instructions": {
+        "heading": "Before you upload"
+      },
+      "checklist": {
+        "heading": "Documents to prepare",
+        "required": "Required",
+        "recommended": "Recommended",
+        "footnote": "Anything not listed above can be added as an additional document below."
+      },
+      "sections": {
+        "company": "Company Information",
+        "documents": "Documents",
+        "contact": "Contact Person"
+      },
+      "fields": {
+        "companyNameEn": {
+          "label": "Company Name (English)",
+          "placeholder": "As registered on your trade license"
+        },
+        "companyNameAr": {
+          "label": "Company Name (Arabic)",
+          "placeholder": "اسم الشركة بالعربية",
+          "optional": "optional"
+        },
+        "tradeLicenseNo": {
+          "label": "Trade License Number",
+          "placeholder": "e.g. CN-1234567"
+        },
+        "vatNumber": {
+          "label": "VAT Registration Number",
+          "placeholder": "15-digit TRN",
+          "optional": "optional"
+        },
+        "contactName": {
+          "label": "Contact Full Name",
+          "placeholder": "Primary contact for this account"
+        },
+        "contactPhone": {
+          "label": "Contact Phone",
+          "placeholder": "+971 XX XXX XXXX"
+        }
+      },
+      "documents": {
+        "typeLabel": "Document type",
+        "rowLabel": "Document {index}",
+        "required": "Required",
+        "numberLabel": "Document number",
+        "numberPlaceholder": "As printed on the document",
+        "nameLabel": "Document name",
+        "namePlaceholder": "e.g. Chamber of Commerce certificate",
+        "fileLabel": "File",
+        "fileHint": "JPEG, PNG, or PDF. Max 5 MB.",
+        "remove": "Remove document {index}",
+        "add": "Add another document",
+        "count": "{used} of {max} documents"
+      },
+      "types": {
+        "TRADE_LICENSE": "Trade license",
+        "VAT_CERTIFICATE": "VAT certificate",
+        "COMPANY_ID": "Company ID",
+        "OTHER": "Other"
+      },
+      "fileUpload": {
+        "dropOrClick": "Drop file here or click to upload",
+        "remove": "Remove",
+        "fileSize": "{size} KB",
+        "tooLarge": "File exceeds the 5 MB limit.",
+        "invalidType": "Only JPEG, PNG, or PDF files are allowed."
+      },
+      "acknowledgment": {
+        "heading": "Acknowledgment",
+        "consentLabel": "I have read and agree to the above."
+      },
+      "submitButton": "Submit Application",
+      "submitting": "Submitting…",
+      "validation": {
+        "companyNameEnRequired": "Company name is required.",
+        "tradeLicenseNoRequired": "Trade license number is required.",
+        "contactNameRequired": "Contact name is required.",
+        "contactPhoneRequired": "Contact phone is required.",
+        "contactPhoneInvalid": "Please enter a valid UAE phone number.",
+        "acknowledgmentRequired": "You must accept the acknowledgment to continue.",
+        "fileRequired": "Please upload a file for this document.",
+        "nameRequired": "Give this document a name.",
+        "vatNumberRequired": "VAT registration number is required."
+      },
+      "errors": {
+        "UNAUTHENTICATED": "You must be signed in to apply for a B2B account.",
+        "ALREADY_APPLIED": "You have already submitted a B2B application.",
+        "DUPLICATE_LICENSE": "A B2B account with this trade license number already exists.",
+        "NO_FILES_PROVIDED": "Every document must include a file.",
+        "TOO_MANY_FILES": "You can upload up to 8 documents.",
+        "MISSING_REQUIRED_DOCUMENT": "A required document is missing. Please upload every document listed as required.",
+        "FILE_TOO_LARGE": "One of your files exceeds the 5 MB size limit.",
+        "INVALID_FILE_TYPE": "One of your files has an unsupported type. Allowed: JPEG, PNG, PDF.",
+        "VALIDATION_ERROR": "Please check the form and try again.",
+        "STORAGE_ERROR": "Failed to upload documents. Please try again.",
+        "INTERNAL_ERROR": "Something went wrong. Please try again.",
+        "DEMO_UPLOADS_DISABLED": "File uploads are turned off in this demo. Nothing was submitted."
+      }
+    },
+    "logout": "Sign Out",
+    "account": "My Account",
+    "myAccount": "My Account",
+    "myOrders": "My Orders",
+    "quotes": "My Quotes",
+    "wishlist": "Wishlist",
+    "signIn": "Sign In",
+    "uaePass": {
+      "cta": {
+        "signIn": "Sign in with UAE PASS",
+        "signUp": "Sign up with UAE PASS"
+      },
+      "comingSoon": "Coming soon",
+      "connecting": "Connecting…",
+      "createAccount": "Create Account",
+      "divider": {
+        "signIn": "or sign in with email",
+        "signUp": "or sign up with email",
+        "continue": "or continue with email"
+      },
+      "whatIs": "What is UAE PASS?",
+      "tooltip": "UAE PASS is a single trusted digital identity for all citizens, residents and visitors",
+      "errors": {
+        "loginCancelled": "User cancelled the login",
+        "dataSharingExited": "You have exited the notification request. Please restart the process",
+        "dataSharingError": "There was an error while fetching your documents from UAE PASS. Please restart the process",
+        "existingAccount": "An account with this email already exists. Please sign in with your password, then link UAE PASS from your account settings.",
+        "generic": "Something went wrong during the login, please try again later!"
+      }
+    },
+    "passwordReset": {
+      "request": {
+        "email": {
+          "label": "Email Address",
+          "placeholder": "you@example.com"
+        },
+        "loginLink": "Sign in",
+        "validation": {
+          "emailRequired": "Email address is required.",
+          "emailInvalid": "Please enter a valid email address."
+        },
+        "error": {
+          "validation": "Please check your details and try again.",
+          "generic": "Something went wrong. Please try again."
+        },
+        "title": "Forgot Password",
+        "subtitle": "Enter your email and we'll send you a link to set a new password.",
+        "submitButton": "Send Reset Link",
+        "submitting": "Sending…",
+        "rememberedPrompt": "Remembered it?",
+        "sent": {
+          "eyebrow": "Link sent",
+          "title": "Check Your Email",
+          "subtitle": "If an account exists for that address, a reset link is on its way.",
+          "notice": "The link expires in 30 minutes and can be used once.",
+          "backToLogin": "Back to sign in"
+        }
+      },
+      "reset": {
+        "password": {
+          "placeholder": "Min. 8 characters",
+          "hint": "Must contain at least one letter and one digit",
+          "label": "New Password"
+        },
+        "confirmPassword": {
+          "label": "Confirm Password",
+          "placeholder": "Repeat your password",
+          "mismatch": "Passwords do not match."
+        },
+        "success": {
+          "signInLink": "Sign In",
+          "title": "Password Updated",
+          "subtitle": "You can now sign in with your new password.",
+          "notice": "You've been signed out on other devices for security."
+        },
+        "validation": {
+          "passwordRequired": "Password is required.",
+          "passwordTooShort": "Password must be at least 8 characters.",
+          "passwordWeak": "Password must contain at least one letter and one digit.",
+          "confirmPasswordRequired": "Please confirm your password."
+        },
+        "error": {
+          "inactiveAccount": "Your account has been deactivated. Please contact support.",
+          "validation": "Please check your details and try again.",
+          "generic": "Something went wrong. Please try again.",
+          "invalidToken": "This link is invalid or has expired. Request a new one."
+        },
+        "title": "Set a New Password",
+        "subtitle": "Choose a password for your account.",
+        "submitButton": "Set Password",
+        "submitting": "Setting password…",
+        "requestNewLink": "Request a new link",
+        "backToLogin": "Back to sign in",
+        "missingToken": {
+          "eyebrow": "Link not valid",
+          "title": "Link Not Valid",
+          "subtitle": "This reset link is incomplete. Request a new one to continue.",
+          "button": "Request New Link"
+        }
+      }
+    },
+    "emailVerification": {
+      "sent": {
+        "eyebrow": "Account created",
+        "title": "Check your inbox",
+        "subtitle": "We've sent a link to confirm your email address.",
+        "notice": "It works for 24 hours. You can sign in once your email is confirmed.",
+        "backToLogin": "Back to sign in"
+      },
+      "confirm": {
+        "title": "Confirm your email",
+        "subtitle": "One step left. Confirm this email address to activate your account.",
+        "submitButton": "Confirm email",
+        "submitting": "Confirming…"
+      },
+      "success": {
+        "title": "Email confirmed",
+        "subtitle": "Your account is active. Sign in to continue.",
+        "signInLink": "Sign in"
+      },
+      "missingToken": {
+        "eyebrow": "Link incomplete",
+        "title": "This link is incomplete",
+        "subtitle": "Open the link from your email again, or sign in to get a new one.",
+        "button": "Go to sign in"
+      },
+      "error": {
+        "invalidToken": "This link has expired or was already used. If you've already confirmed your email, sign in. Otherwise, sign in to get a new link.",
+        "validation": "Something is wrong with this link. Open it from your email again.",
+        "generic": "Something went wrong. Please try again."
+      }
+    },
+    "uaePassLink": {
+      "choice": {
+        "title": "Link Your UAE PASS",
+        "subtitle": "We couldn't find a Wildridge Hunting account linked to this UAE PASS profile.",
+        "existingNotice": "An account with that email already exists. Sign in to link it.",
+        "question": "Do you already have a Wildridge Hunting account?",
+        "notice": "This is a one-time step. After linking, signing in with UAE PASS will be instant.",
+        "hasAccount": "Yes, I have an account",
+        "noAccount": "No, create a new account",
+        "creating": "Creating your account…"
+      },
+      "credentials": {
+        "title": "Sign In to Link",
+        "subtitle": "Enter your Wildridge Hunting details to link this account with UAE PASS.",
+        "submitButton": "Link Account",
+        "submitting": "Linking…",
+        "back": "Go back"
+      },
+      "error": {
+        "credentials": "We couldn't match those details. Please check them and try again.",
+        "inactiveAccount": "Your account has been deactivated. Please contact support.",
+        "noPassword": "This account signs in with UAE PASS. Reset your password to continue, or go back and create a new account.",
+        "alreadyLinked": "This account is already linked to a different UAE PASS profile.",
+        "tooManyAttempts": "Too many attempts. Please start again from sign in.",
+        "validation": "Please check your details and try again.",
+        "generic": "Something went wrong. Please try again."
+      },
+      "expired": {
+        "eyebrow": "Session expired",
+        "title": "Linking Session Expired",
+        "subtitle": "This linking session is no longer valid. Sign in with UAE PASS again to continue.",
+        "button": "Back to sign in"
+      },
+      "noEmail": {
+        "title": "UAE PASS Profile Has No Email",
+        "subtitle": "We can't create an account without an email address. Sign in with your existing account instead."
+      }
+    }
+  },
+  "b2b": {
+    "landing": {
+      "headline": "Wholesale & B2B",
+      "subtitle": "Wholesale pricing, dedicated account management, and a streamlined quote-request workflow for licensed dealers and retailers across the Gulf.",
+      "cta": "Apply Now",
+      "features": {
+        "pricing": {
+          "title": "Volume Pricing",
+          "body": "Tiered wholesale rates across the full catalog. The more you order, the more you save."
+        },
+        "support": {
+          "title": "Dedicated Support",
+          "body": "A dedicated account manager for onboarding, reorders, and priority handling."
+        },
+        "quotes": {
+          "title": "Streamlined Quotes",
+          "body": "Submit quote requests directly from product pages. Get a response within one business day."
+        }
+      },
+      "requirements": {
+        "heading": "Requirements",
+        "items": [
+          "Valid UAE trade license",
+          "UAE-registered company",
+          "Authorized signatory on record",
+          "5,000 AED minimum first order"
+        ]
+      },
+      "statusCta": "View B2B Account",
+      "checkStatus": "Already applied?",
+      "hero": {
+        "eyebrow": "For dealers, ranges & outfitters",
+        "headline": "Stocked for the trade.",
+        "subtitle": "Wholesale pricing, quote-based ordering, and a dedicated line to our team — built for businesses moving real volume across the Gulf.",
+        "footer": "Wildridge Hunting · Trade Programme · UAE"
+      },
+      "panel": {
+        "wordmark": "Wildridge Hunting",
+        "title": "Apply for Trade Access",
+        "steps": {
+          "heading": "How it works",
+          "items": [
+            {
+              "number": "01",
+              "text": "Create Account"
+            },
+            {
+              "number": "02",
+              "text": "Submit your documents"
+            },
+            {
+              "number": "03",
+              "text": "Compliance reviews within 1–2 business days"
+            },
+            {
+              "number": "04",
+              "text": "Get approved and start ordering at trade rates"
+            }
+          ]
+        },
+        "whoCanApply": {
+          "heading": "Who can apply",
+          "items": [
+            "Licensed firearm dealers",
+            "Hunting equipment retailers",
+            "Outfitters & shooting ranges"
+          ]
+        },
+        "benefits": {
+          "heading": "What you get",
+          "items": [
+            "Wholesale pricing tiers",
+            "Priority fulfillment",
+            "Dedicated account manager"
+          ]
+        },
+        "documentsPopover": {
+          "title": "Required documents",
+          "note": "All documents must be current and clearly legible. PDF, JPG, or PNG up to 5 MB each."
+        },
+        "ctaApply": "Apply Now",
+        "ctaViewApplication": "View Application",
+        "signInLink": "Already a dealer? Sign in"
+      }
+    }
+  },
+  "shop": {
+    "all_products": "All Products",
+    "description_heading": "Description",
+    "zoom_hint": "Scroll or pinch to zoom",
+    "zoom_reset": "Reset zoom",
+    "addons_hint": "Added in the same quantity. You can change it in your cart.",
+    "addons_show_more": "Show {count} more",
+    "addons_show_less": "Show fewer",
+    "addon_eyebrow": "Accessory",
+    "addon_add": "Add to this item",
+    "addon_remove": "Remove",
+    "addon_view_product": "View product",
+    "quickview_error": "We couldn't load this product. Try again.",
+    "close": "Close",
+    "vat_included": "VAT included",
+    "help_prompt": "Questions about this product?",
+    "help_link": "Contact our team",
+    "delivery_heading": "Delivery and returns",
+    "delivery_body": "Delivery times, costs and return conditions are set out in our policies.",
+    "delivery_shipping_link": "Shipping policy",
+    "delivery_returns_link": "Returns policy",
+    "gallery_open": "View full screen",
+    "filter_label": "Filter",
+    "sort_label": "Sort by",
+    "sort_newest": "Newest",
+    "sort_price_asc": "Price: Low to High",
+    "sort_price_desc": "Price: High to Low",
+    "sort_featured": "Featured",
+    "filter_brand": "Brand",
+    "filter_action": "Action Type",
+    "filter_caliber": "Caliber",
+    "filter_price": "Price Range",
+    "filter_clear": "Clear filters",
+    "in_stock_only": "In stock only",
+    "results_count": "{count} products",
+    "no_results": "No products found",
+    "no_results_hint": "Try adjusting your filters",
+    "pagination_prev": "Previous",
+    "pagination_next": "Next",
+    "page_of": "Page {page} of {total}",
+    "quick_add": "Quick Add",
+    "view_details": "View Details",
+    "stock_status": {
+      "in_stock": "In stock",
+      "low_stock": "Low stock",
+      "out_of_stock": "Out of stock",
+      "not_enough_for_qty": "Not enough for this quantity"
+    },
+    "availability": "Availability",
+    "free_shipping": "Free shipping",
+    "specs_label": "Specifications",
+    "addons_label": "Accessories",
+    "reviews_label": "Reviews",
+    "review_count": "{count} reviews",
+    "no_reviews": "No reviews yet",
+    "verified_purchase": "Verified Purchase",
+    "id_notice": {
+      "title": "ID verification required",
+      "body": "Sold only to verified customers. Verify once with UAE PASS or Emirates ID and you're covered for 2 years.",
+      "body_without_uaepass": "Sold only to verified customers. Verify once with your Emirates ID and you're covered for 2 years.",
+      "link": "How verification works",
+      "faq_query": "verification"
+    },
+    "category_all": "All Categories",
+    "back_to_shop": "Back to Shop",
+    "badge_low_stock": "Low Stock",
+    "badge_out_of_stock": "Out of Stock",
+    "badge_id_required": "ID Required",
+    "badge_sale": "Sale",
+    "badge_new": "New Arrival",
+    "badge_in_stock": "In Stock",
+    "badge_points_boost": "{multiplier}× points",
+    "points_earn": "Earn <b>{points}</b> points with this purchase",
+    "points_boost_until": "{multiplier}× points until {date}.",
+    "points_on_delivery": "Added when your order is delivered.",
+    "active_filters": "Active Filters",
+    "clear_all": "Clear All",
+    "brand": "Brand",
+    "caliber": "Caliber",
+    "price_range": "Price Range",
+    "price_from": "From",
+    "price_to": "To",
+    "in_stock": "In Stock",
+    "requires_id": "Requires ID / Permit",
+    "no_id_required": "No ID Required",
+    "new_arrivals": "New Arrivals",
+    "new_arrivals_only": "New arrivals only",
+    "pagination_nav": "Pagination",
+    "search_placeholder": "Search — rifle, caliber, brand…",
+    "gallery_prev": "Previous image",
+    "gallery_next": "Next image",
+    "gallery_thumb": "View image",
+    "total_label": "Total",
+    "view_product": "View Product",
+    "notify_me": "Notify Me",
+    "min_price": "Min Price",
+    "max_price": "Max Price",
+    "action_type": "Action Type",
+    "action_spring": "Spring",
+    "action_pcp": "PCP",
+    "action_co2": "CO2",
+    "action_gas_ram": "Gas Ram",
+    "action_multi_pump": "Multi-Pump",
+    "add_to_cart": "Add to Cart",
+    "add_to_quote": "Request Quote",
+    "contact_for_pricing": "Contact for Pricing",
+    "out_of_stock": "Out of Stock",
+    "trust_dealer": "Outfitted for the field",
+    "trust_shipping": "Free UAE shipping over {amount}",
+    "trust_authentic": "Guaranteed authentic products",
+    "shop_all_rifles": "Rifles & Pistols",
+    "shop_all_optics": "Optics",
+    "shop_all_accessories": "Accessories",
+    "qty_label": "Qty",
+    "b2b_nudge_prefix": "Buying in bulk?",
+    "b2b_nudge_link": "B2B Wholesale",
+    "b2b_nudge_suffix": " pricing is available for orders like this.",
+    "wishlist_add": "Add to wishlist",
+    "wishlist_remove": "Remove from wishlist",
+    "wishlist_sign_in": "Sign in to save items to your wishlist.",
+    "wishlist_errors": {
+      "UNAUTHORIZED": "Please sign in to save items.",
+      "PRODUCT_NOT_FOUND": "This product is no longer available.",
+      "INTERNAL_ERROR": "Something went wrong. Please try again."
+    },
+    "brand_search": "Find a brand",
+    "brand_show_all": "Show all {count}",
+    "brand_show_less": "Show fewer",
+    "brand_no_match": "No brand matches your search",
+    "filters_title": "Filters",
+    "show_results": "{count, plural, =0 {No products} one {Show # product} other {Show # products}}",
+    "search_brands_categories": "Brands and categories",
+    "search_products": "Products",
+    "search_kind_brand": "Brand",
+    "search_kind_category": "Category",
+    "search_see_all": "{count, plural, one {See # result for “{query}”} other {See all # results for “{query}”}}",
+    "search_keyboard_hint": "↑↓ to move · Enter to open",
+    "search_recent": "Recent searches",
+    "search_recent_clear": "Clear",
+    "search_no_match": "No matches for “{query}”",
+    "search_no_match_hint": "Check the spelling, or search by brand, caliber or product type.",
+    "search_browse_all": "Browse all products",
+    "search_suggestions_label": "Search suggestions",
+    "search_clear": "Clear search",
+    "search_close": "Close search",
+    "more_in_category": "More in {category}"
+  },
+  "quote": {
+    "title": "Your Quote Request",
+    "empty": "You haven't added anything to quote yet.",
+    "empty_cta": "Browse Products",
+    "line_count": "{count} items",
+    "qty_label": "Qty",
+    "note_label": "Note to our team (optional)",
+    "note_placeholder": "Anything we should know about this request?",
+    "submit": "Submit Quote Request",
+    "submitting": "Submitting…",
+    "success_title": "Quote request sent",
+    "success_body": "We've received request {quoteNumber}. Our team will reply with pricing shortly.",
+    "success_cta": "View your quotes",
+    "confirm_modal": {
+      "title": "Confirm your quote request",
+      "add_more_items": "Add more items",
+      "ship_to_label": "Ship to",
+      "ship_to_required_tag": "Required",
+      "ship_to_note": "We quote shipping to this address, so your total is final.",
+      "add_new_address": "Add new address",
+      "select_address_prompt": "Select a shipping address to continue.",
+      "submit_cta": "Submit request",
+      "cancel_cta": "Cancel"
+    },
+    "errors": {
+      "UNAUTHENTICATED": "Please sign in to request a quote.",
+      "NOT_B2B": "Quote requests are available to approved business accounts.",
+      "NO_B2B_ACCOUNT": "Your business account isn't approved yet.",
+      "B2B_EXPIRED": "Your trade account has expired. Renew it to request quotes.",
+      "EMPTY_QUOTE": "Add at least one product to your quote.",
+      "VALIDATION_ERROR": "Please review your quote and try again.",
+      "PRODUCT_NOT_FOUND": "One or more products are no longer available.",
+      "ADDON_NOT_LINKED": "An add-on selection is invalid.",
+      "ADDRESS_NOT_FOUND": "Address not found.",
+      "INTERNAL_ERROR": "Something went wrong. Please try again."
+    }
+  },
+  "errorPage": {
+    "error": {
+      "eyebrow": "Error",
+      "title": "This page couldn't load",
+      "body": "Something went wrong on our side. Try again, or go back to the homepage.",
+      "retry": "Try again",
+      "home": "Back to home",
+      "reference": "If this keeps happening, contact us and quote reference <ref>{digest}</ref>."
+    },
+    "notFound": {
+      "eyebrow": "404",
+      "title": "Page not found",
+      "body": "The page you're looking for doesn't exist or has moved.",
+      "home": "Back to home",
+      "shop": "Browse the shop"
+    }
+  },
+  "email": {
+    "greeting": "Hi {name},",
+    "sections": {
+      "orderSummary": "ORDER SUMMARY",
+      "shippingTo": "SHIPPING TO",
+      "needHelp": "NEED HELP?"
+    },
+    "support": "Contact us at {contacts}",
+    "ladder": {
+      "subtotal": "Subtotal",
+      "addons": "Add-ons",
+      "shipping": "Shipping",
+      "quotedSeparately": "Quoted separately",
+      "discount": "Discount",
+      "total": "TOTAL",
+      "includesVat": "Includes VAT ({rate}%)",
+      "points": "Points",
+      "serial": "Serial",
+      "lot": "Lot"
+    },
+    "cta": {
+      "fallback": "Trouble with the button? Copy this link:"
+    },
+    "notes": {
+      "customerOrder": "You're receiving this because you placed an order with Wildridge Hunting.",
+      "customerQuote": "You're receiving this because you requested a quote from Wildridge Hunting.",
+      "customerB2B": "You're receiving this because you applied for a business account with Wildridge Hunting."
+    }
+  },
+  "pages": {
+    "breadcrumb": {
+      "home": "Home",
+      "legal": "Legal",
+      "care": "Customer care",
+      "help": "Help",
+      "company": "Company"
+    },
+    "eyebrow": {
+      "legal": "Legal",
+      "care": "Customer care",
+      "help": "Help centre",
+      "company": "Our story"
+    },
+    "meta": {
+      "lastUpdated": "Last updated {date}",
+      "readTime": "{minutes} min read",
+      "alsoIn": "Also in",
+      "englishOnly": "This page is currently available in English only."
+    },
+    "languages": {
+      "en": "English",
+      "ar": "العربية",
+      "ru": "Русский"
+    },
+    "toc": {
+      "title": "On this page",
+      "sections": "{count} sections",
+      "backToTop": "Back to top"
+    },
+    "care": {
+      "eyebrow": "Customer care",
+      "title": "Questions about an order or your licence?",
+      "whatsapp": "WhatsApp",
+      "whatsappHint": "Fastest reply",
+      "call": "Call us",
+      "email": "Email us",
+      "all": "All contact options"
+    },
+    "related": {
+      "title": "Related pages"
+    },
+    "band": {
+      "eyebrow": "Still have a question?",
+      "title": "Our team is here to help.",
+      "body": "Licensing, orders, delivery or returns: we answer every message.",
+      "contact": "Contact us",
+      "faq": "Browse FAQs"
+    },
+    "faq": {
+      "searchLabel": "Search questions",
+      "searchPlaceholder": "Search questions, for example: licence renewal",
+      "questionCount": "{count, plural, one {# question} other {# questions}}",
+      "noResults": "No questions match your search.",
+      "clear": "Clear search",
+      "talkEyebrow": "Talk to us",
+      "talkTitle": "Didn't find your answer?",
+      "talkBody": "Our team knows licensing and hunting gear inside out.",
+      "talkWhatsapp": "WhatsApp us",
+      "talkAll": "All contact options",
+      "policies": "Policies",
+      "resultsCount": "{count, plural, one {# question matches} other {# questions match}}",
+      "searchSummary": "{results} “{query}”",
+      "noResultsFor": "No questions match “{query}”",
+      "showResults": "Show results"
+    },
+    "contact": {
+      "whatsappTitle": "WhatsApp",
+      "whatsappBody": "Photos, product questions and order updates.",
+      "whatsappCta": "Start a chat",
+      "fastest": "Fastest",
+      "callTitle": "Call us",
+      "callBody": "Speak to our team during opening hours.",
+      "callCta": "Call now",
+      "emailTitle": "Email",
+      "emailBody": "Documents, invoices and detailed requests.",
+      "emailCta": "Send an email",
+      "visitTitle": "Visit the showroom",
+      "visitBody": "See and handle products in person.",
+      "visitCta": "Get directions",
+      "showroom": "Showroom",
+      "mapTitle": "Map showing our showroom",
+      "b2bTitle": "Business and wholesale enquiries",
+      "b2bBody": "Clubs, ranges and resellers get quotes and a dedicated contact.",
+      "b2bCta": "Open a B2B account",
+      "quickEyebrow": "Quick answers",
+      "quickTitle": "Maybe it's already answered",
+      "quickCta": "Visit the help centre",
+      "help": {
+        "eyebrow": "Get help",
+        "title": "What is your message about?",
+        "body": "Choose the closest topic. We open an email with the details our team needs, so we can answer in one reply.",
+        "note": "Never send passwords or full card numbers by email.",
+        "channelsTitle": "Other ways to reach us",
+        "general": {
+          "title": "General question",
+          "body": "Product advice, licensing questions or planning a showroom visit.",
+          "cta": "Email a question",
+          "link": "Browse the help centre",
+          "subject": "General enquiry",
+          "template": "Hello Wildridge Hunting team,\n\nMy question:\n[Tell us what you need help with]\n\nProduct name or link (if any):\n\nName: {name}\nPhone (optional):\n\nThank you."
+        },
+        "order": {
+          "title": "Orders and payments",
+          "body": "Tracking, payment, delivery, returns or a damaged item.",
+          "cta": "Email about an order",
+          "link": "View my orders",
+          "signIn": "Sign in to see your orders",
+          "subject": "Order help",
+          "template": "Hello Wildridge Hunting team,\n\nOrder number:\nEmail used for the order: {email}\n\nWhat happened:\n[For example: a delivery delay, a payment problem, or a wrong or damaged item]\n\nWhat you would like us to do:\n[For example: track it, refund it or exchange it]\n\nIf an item arrived damaged or wrong, please attach photos to this email.\n\nName: {name}\nPhone:"
+        },
+        "account": {
+          "title": "Account and business",
+          "body": "Sign-in, email confirmation, identity verification or your business account.",
+          "cta": "Email about my account",
+          "link": "Go to my account",
+          "signIn": "Sign in to your account",
+          "subject": "Account help",
+          "template": "Hello Wildridge Hunting team,\n\nAccount email: {email}\nTopic:\n[Sign-in, email confirmation, identity verification, business account or documents]\n\nWhat happened:\n[Describe the problem and any message you saw on screen]\n\nCompany name (business accounts only):\n\nName: {name}\nPhone:"
+        }
+      },
+      "accountRequest": {
+        "title": "Already a customer?",
+        "body": "Send a request from your account and follow its status there.",
+        "cta": "Send a request"
+      }
+    },
+    "about": {
+      "visitEyebrow": "Ready when you are",
+      "visitTitle": "See it, handle it, ask us anything.",
+      "contactCta": "Contact us",
+      "photoPrevious": "Previous photo",
+      "photoNext": "Next photo",
+      "photoLabel": "Photo"
+    },
+    "stores": {
+      "mainShowroom": "Main showroom",
+      "openNow": "Open now",
+      "closedNow": "Closed now",
+      "until": "until {time}",
+      "opensToday": "opens at {time}",
+      "opensOn": "opens {day} at {time}",
+      "closed": "Closed",
+      "hoursTitle": "Opening hours",
+      "empty": "Our store list is being updated. Contact us for directions.",
+      "allStores": "See all stores"
+    }
+  },
+  "newsletter": {
+    "success": "You're on the list. New arrivals will come to your inbox first.",
+    "errors": {
+      "INVALID_EMAIL": "Enter a valid email address.",
+      "INTERNAL_ERROR": "We couldn't sign you up just now. Try again in a moment."
+    }
+  },
+  "demo": {
+    "banner": "Portfolio demo. No real orders, payments or emails. Visitor changes are reset regularly.",
+    "emailNote": "Demo: emails are simulated and never delivered.",
+    "access": {
+      "hint": "Exploring? Use a ready-made demo account.",
+      "customer": "Demo customer",
+      "business": "Demo business",
+      "divider": "or continue with email",
+      "error": "We couldn't create a demo account. Please try again.",
+      "rateLimited": "Too many demo accounts were created from your connection. Try again later."
+    }
+  }
+}

@@ -1,0 +1,12 @@
+ALTER TYPE "TicketCategory" ADD VALUE IF NOT EXISTS 'B2B';
+ALTER TYPE "TicketCategory" ADD VALUE IF NOT EXISTS 'VERIFICATION';
+ALTER TABLE "Ticket" ADD COLUMN IF NOT EXISTS "b2bAccountId" TEXT;
+ALTER TABLE "Ticket" ADD COLUMN IF NOT EXISTS "verificationEventId" TEXT;
+ALTER TABLE "Ticket" DROP CONSTRAINT IF EXISTS "Ticket_b2bAccountId_fkey";
+ALTER TABLE "Ticket" ADD CONSTRAINT "Ticket_b2bAccountId_fkey" FOREIGN KEY ("b2bAccountId") REFERENCES "B2BAccount"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE "Ticket" DROP CONSTRAINT IF EXISTS "Ticket_verificationEventId_fkey";
+ALTER TABLE "Ticket" ADD CONSTRAINT "Ticket_verificationEventId_fkey" FOREIGN KEY ("verificationEventId") REFERENCES "VerificationEvent"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+CREATE INDEX IF NOT EXISTS "Ticket_b2bAccountId_idx" ON "Ticket"("b2bAccountId");
+CREATE INDEX IF NOT EXISTS "Ticket_verificationEventId_idx" ON "Ticket"("verificationEventId");
+ALTER TABLE "Ticket" DROP CONSTRAINT IF EXISTS "Ticket_single_link_check";
+ALTER TABLE "Ticket" ADD CONSTRAINT "Ticket_single_link_check" CHECK (num_nonnulls("orderId", "quoteRequestId", "b2bAccountId", "verificationEventId") <= 1);

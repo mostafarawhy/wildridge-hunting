@@ -1,0 +1,99 @@
+"use client";
+
+import { useState, Suspense } from "react";
+import { SearchIcon } from "@/components/ui";
+import NavSearch from "./NavSearch";
+import { useTranslations } from "next-intl";
+import LanguageSwitcher from "@/components/home/LanguageSwitcher";
+import WishlistNavIcon from "@/components/wishlist/WishlistNavIcon";
+import AccountMenu from "@/components/auth/AccountMenu";
+import LoginModalController from "@/components/auth/LoginModalController";
+import RegisterModalController from "@/components/auth/RegisterModalController";
+import CartIconBadge from "@/components/cart/CartIconBadge";
+import CartDrawer from "@/components/cart/CartDrawer";
+import QuoteIconBadge from "@/components/quote/QuoteIconBadge";
+import QuoteDrawer from "@/components/quote/QuoteDrawer";
+import type { ShopMode } from "@/lib/utils/shop-mode";
+import type { CustomerAddressProjection } from "@/lib/db/queries/account";
+
+interface SessionUser {
+  id: string;
+  name: string | null;
+  email: string;
+}
+
+interface NavbarClientProps {
+  locale: string;
+  sessionUser: SessionUser | null;
+  canUseBusinessMode: boolean;
+  shopMode: ShopMode;
+  addresses: CustomerAddressProjection[];
+  serviceableCountries: { code: string; name: string }[];
+}
+
+export default function NavbarClient({
+  locale,
+  sessionUser,
+  canUseBusinessMode,
+  shopMode,
+  addresses,
+  serviceableCountries,
+}: NavbarClientProps) {
+  const tNav = useTranslations("nav");
+  const [searchOpen, setSearchOpen] = useState(false);
+
+  const isBusinessMode = canUseBusinessMode && shopMode === "BUSINESS";
+
+  return (
+    <>
+      <button
+        type="button"
+        aria-label={tNav("search")}
+        aria-expanded={searchOpen}
+        onClick={() => setSearchOpen((prev) => !prev)}
+        className="cursor-pointer transition-opacity duration-150 hover:opacity-70"
+        style={{ color: "var(--color-content-primary)" }}
+      >
+        <SearchIcon />
+      </button>
+
+      <div className="hidden sm:flex">
+        <LanguageSwitcher />
+      </div>
+
+      <AccountMenu
+        session={sessionUser}
+        canUseBusinessMode={canUseBusinessMode}
+        shopMode={shopMode}
+      />
+
+      <div className="hidden sm:flex">
+        <WishlistNavIcon />
+      </div>
+
+      {isBusinessMode ? <QuoteIconBadge /> : <CartIconBadge />}
+
+      <Suspense fallback={null}>
+        <LoginModalController signedIn={sessionUser !== null} />
+      </Suspense>
+      <Suspense fallback={null}>
+        <RegisterModalController />
+      </Suspense>
+
+      <NavSearch
+        isOpen={searchOpen}
+        onClose={() => setSearchOpen(false)}
+        locale={locale}
+      />
+
+      {isBusinessMode ? (
+        <QuoteDrawer
+          addresses={addresses}
+          serviceableCountries={serviceableCountries}
+        />
+      ) : (
+        <CartDrawer />
+      )}
+    </>
+  );
+}
