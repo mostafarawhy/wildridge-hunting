@@ -26,7 +26,7 @@ export default function AnnouncementBarView({
       <div className="hidden lg:block flex-1" />
       <p
         className="text-eyebrow tracking-widest uppercase text-center"
-        style={{ color: "var(--color-content-tertiary)" }}
+        style={{ color: "var(--color-content-secondary)" }}
       >
         {shippingText && (
           <>

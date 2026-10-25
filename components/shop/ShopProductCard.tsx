@@ -71,7 +71,7 @@ export default function ShopProductCard(props: ShopProductCardFullProps) {
     ? "var(--color-content-tertiary)"
     : isLowStock
       ? "var(--color-action-primary)"
-      : "var(--color-accent)";
+      : "var(--color-accent-text)";
 
   return (
     <article
@@ -309,7 +309,7 @@ export default function ShopProductCard(props: ShopProductCardFullProps) {
           {isBusinessMode ? (
             <span
               style={{
-                color: "var(--color-accent)",
+                color: "var(--color-accent-text)",
                 fontWeight: "var(--font-medium)",
                 fontSize: "var(--text-body)",
               }}
@@ -321,7 +321,7 @@ export default function ShopProductCard(props: ShopProductCardFullProps) {
               <span
                 style={{
                   color: inStock
-                    ? "var(--color-accent)"
+                    ? "var(--color-accent-text)"
                     : "var(--color-content-tertiary)",
                   fontWeight: "var(--font-medium)",
                   fontSize: "var(--text-body)",

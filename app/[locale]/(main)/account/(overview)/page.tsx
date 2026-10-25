@@ -300,7 +300,7 @@ if (session?.user?.principal !== "customer") {
             style={{
               fontSize: "var(--text-ui)",
               fontWeight: "var(--font-bold)",
-              color: "var(--color-accent)",
+              color: "var(--color-accent-text)",
               letterSpacing: "var(--tracking-tight)",
             }}
           >

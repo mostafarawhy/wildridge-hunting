@@ -75,6 +75,7 @@
   --color-action-danger-hover: #7f1618;
 
   --color-accent: var(--primitive-gold);
+  --color-accent-text: var(--color-accent);
   --color-accent-dark: var(--primitive-gold-dark);
   --color-accent-subtle-bg: var(--primitive-gold-subtle);
 

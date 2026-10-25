@@ -31,6 +31,7 @@
   --color-action-ghost-fg: var(--primitive-light-gray);
   --color-action-ghost-hover-bg: var(--primitive-dark-gray);
   --color-accent: var(--primitive-gold);
+  --color-accent-text: #8A6420;
   --color-accent-dark: var(--primitive-gold-dark);
   --color-accent-subtle-bg: var(--primitive-gold-subtle);
   --color-success: var(--primitive-green);

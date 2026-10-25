@@ -387,7 +387,7 @@ export default function QuickViewModal({
                   {isBusinessMode ? (
                     <span
                       style={{
-                        color: "var(--color-accent)",
+                        color: "var(--color-accent-text)",
                         fontWeight: "var(--font-semibold)",
                         fontSize: "var(--text-display-sm)",
                       }}

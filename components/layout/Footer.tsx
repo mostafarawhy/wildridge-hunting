@@ -99,7 +99,7 @@ export default async function Footer() {
               {profile.addressLine && (
                 <span
                   className="text-label"
-                  style={{ color: "var(--color-content-tertiary)" }}
+                  style={{ color: "var(--color-content-secondary)" }}
                 >
                   {profile.addressLine}
                 </span>
@@ -143,7 +143,7 @@ export default async function Footer() {
               <h2
                 className="text-eyebrow tracking-widest uppercase mb-4"
                 style={{
-                  color: "var(--color-content-tertiary)",
+                  color: "var(--color-content-secondary)",
                   fontWeight: "var(--font-semibold)",
                 }}
               >
@@ -169,7 +169,7 @@ export default async function Footer() {
         <div style={{ borderTop: "1px solid var(--color-border-subtle)" }}>
           <div
             className="mx-auto max-w-[1440px] px-6 lg:px-10 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-label"
-            style={{ color: "var(--color-content-tertiary)" }}
+            style={{ color: "var(--color-content-secondary)" }}
           >
             <p>{tFooter("copyright", { year: new Date().getFullYear() })}</p>
             <p className="flex items-center gap-2">

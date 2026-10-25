@@ -36,7 +36,7 @@ export default function ProductBadges({
           className="text-eyebrow tracking-widest uppercase px-2 py-1"
           style={{
             border: "1px solid var(--color-accent)",
-            color: "var(--color-accent)",
+            color: "var(--color-accent-text)",
             borderRadius: "var(--radius-xs)",
           }}
         >

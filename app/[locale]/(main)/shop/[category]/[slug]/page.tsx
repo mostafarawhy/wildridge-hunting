@@ -333,7 +333,7 @@ export default async function ProductDetailPage({ params }: Props) {
               <p
                 className="text-body-lg"
                 style={{
-                  color: "var(--color-accent)",
+                  color: "var(--color-accent-text)",
                   fontWeight: "var(--font-semibold)",
                 }}
               >
