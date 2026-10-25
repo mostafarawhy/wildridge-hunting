@@ -750,3 +750,12 @@ html[dir="rtl"] .brand-wordmark--checkout {
   .card-hover-overlay { display: none; }
   .card-touch-action { display: flex; }
 }
+
+@media (pointer: coarse) {
+  :root:not([data-surface="admin"]) :is(input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"], [type="hidden"]), select, textarea) {
+    font-size: max(16px, 1em) !important;
+  }
+}
+:root:not([data-surface="admin"]) {
+  -webkit-tap-highlight-color: transparent;
+}
