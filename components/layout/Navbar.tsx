@@ -168,10 +168,9 @@ export default async function Navbar({ locale }: NavbarProps) {
       }}
     >
       <nav
-        className="mx-auto flex h-14 lg:h-[75px] max-w-[1440px] items-center px-2 lg:px-10"
+        className="mx-auto flex h-14 lg:h-[75px] max-w-[1440px] items-center px-4 lg:px-10"
         aria-label="Main navigation"
       >
-        <MobileNavController items={navItems} sessionUser={sessionUser} />
         <Link
           href="/"
           className="flex shrink-0 items-center gap-[10px]"
@@ -213,7 +212,7 @@ export default async function Navbar({ locale }: NavbarProps) {
           )}
         </ul>
 
-        <div className="flex shrink-0 items-center gap-5 ms-auto lg:ms-0">
+        <div className="flex shrink-0 items-center gap-1 ms-auto lg:ms-0 lg:gap-5">
           <NavbarClient
             locale={locale}
             sessionUser={sessionUser}
@@ -223,6 +222,7 @@ export default async function Navbar({ locale }: NavbarProps) {
             serviceableCountries={initialServiceableCountries}
           />
           <LanguageSheet />
+          <MobileNavController items={navItems} sessionUser={sessionUser} />
         </div>
       </nav>
 

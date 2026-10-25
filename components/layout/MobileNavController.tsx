@@ -29,7 +29,7 @@ export default function MobileNavController({ items, sessionUser }: Props) {
         aria-label={tNav("aria_open_menu")}
         aria-expanded={open}
         onClick={() => setOpen(true)}
-        className="lg:hidden transition-opacity duration-150 hover:opacity-70"
+        className="lg:hidden flex h-11 w-11 -me-2 items-center justify-center transition-opacity duration-150 active:opacity-60 [@media(hover:hover)]:hover:opacity-70"
         style={{ color: "var(--color-content-primary)" }}
       >
         <HamburgerIcon />
