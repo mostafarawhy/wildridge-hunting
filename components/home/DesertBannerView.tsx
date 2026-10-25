@@ -17,8 +17,7 @@ export default function DesertBannerView({
 }: DesertBannerViewProps) {
   return (
     <section
-      className="relative w-full overflow-hidden"
-      style={{ minHeight: "650px" }}
+      className="relative w-full overflow-hidden min-h-[440px] lg:min-h-[650px]"
       aria-label="Into the field"
     >
       <div
@@ -81,11 +80,11 @@ export default function DesertBannerView({
       )}
 
       <div
-        className="absolute top-0 left-0 right-0 h-[60px]"
+        className="absolute top-0 left-0 right-0 h-12 lg:h-[60px]"
         style={{ backgroundColor: "rgba(0,0,0,0.90)", zIndex: 2 }}
       />
       <div
-        className="absolute bottom-0 left-0 right-0 h-[60px]"
+        className="absolute bottom-0 left-0 right-0 h-12 lg:h-[60px]"
         style={{ backgroundColor: "rgba(0,0,0,0.90)", zIndex: 2 }}
       />
 
@@ -103,7 +102,7 @@ export default function DesertBannerView({
         style={{ zIndex: 3 }}
       >
         <h2
-          className="text-display font-bold uppercase leading-[1] tracking-tight lg:text-display"
+          className="max-lg:text-[2rem] text-display font-bold uppercase leading-[1] tracking-tight lg:text-display"
           style={{
             color: "var(--color-content-primary)",
             textShadow: "0 2px 40px rgba(0,0,0,0.6)",
