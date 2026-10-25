@@ -17,4 +17,8 @@ export const BRAND = {
   emailLogo: { src: "/images/brand/logo-email.png", width: 111, height: 128 },
 } as const;
 
-export const BRAND_COLORS = { primary: "#2F5D3A", surfaceDark: "#1C211D" } as const;
+export const BRAND_COLORS = {
+  primary: "#2F5D3A",
+  surfaceDark: "#1C211D",
+  navbar: "#1A1D1A",
+} as const;

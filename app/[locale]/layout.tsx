@@ -1,5 +1,5 @@
-import { BRAND } from "@/lib/config/brand";
-import type { Metadata } from "next";
+import { BRAND, BRAND_COLORS } from "@/lib/config/brand";
+import type { Metadata, Viewport } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { notFound } from "next/navigation";
@@ -16,6 +16,16 @@ export const metadata: Metadata = {
     template: `%s | ${BRAND.name}`,
   },
   description: BRAND.description,
+  manifest: "/site.webmanifest",
+  appleWebApp: {
+    capable: true,
+    title: BRAND.name,
+    statusBarStyle: "black",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: BRAND_COLORS.navbar,
 };
 
 const LOCALES = ["en", "ar", "ru"] as const;
