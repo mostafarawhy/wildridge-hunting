@@ -1,4 +1,5 @@
 import { cache } from "react";
+import { BRAND } from "@/lib/config/brand";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -42,7 +43,7 @@ const loadProduct = cache(getProductBySlug);
 const META_DESCRIPTION_MAX = 155;
 
 function toMetaDescription(raw: string): string {
-  const collapsed = raw.replace(/\s+/g, " ").trim();
+  const collapsed = raw.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
   if (collapsed.length <= META_DESCRIPTION_MAX) return collapsed;
   const cut = collapsed.slice(0, META_DESCRIPTION_MAX);
   if (collapsed[META_DESCRIPTION_MAX] === " ") return cut.trim();
@@ -83,11 +84,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         ? product.descriptionRu
         : product.descriptionEn;
 
-  const descriptionSource =
-    metaDescription || localizedDescription || product.descriptionEn;
-  const description = descriptionSource
-    ? toMetaDescription(descriptionSource)
-    : "";
+  const description =
+    toMetaDescription(metaDescription ?? "") ||
+    toMetaDescription(localizedDescription ?? "") ||
+    toMetaDescription(product.descriptionEn ?? "") ||
+    BRAND.description;
 
   const title = metaTitle || name;
   const imageKey = product.images[0]?.storageKey;
