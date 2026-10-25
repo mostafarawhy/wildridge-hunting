@@ -6,7 +6,11 @@ import BrandMark from "@/components/ui/BrandMark";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { useSignOut } from "@/hooks/useSignOut";
-import LanguageSwitcher from "@/components/home/LanguageSwitcher";
+import {
+  IconOrders,
+  IconWishlist,
+  IconLoyalty,
+} from "@/components/ui/icons";
 import type { NavItem } from "./nav-types";
 
 interface SessionUser {
@@ -28,6 +32,7 @@ export default function MobileMenu({
   const tAuth = useTranslations("auth");
   const tNav = useTranslations("nav");
   const tShop = useTranslations("shop");
+  const tAccountNav = useTranslations("account.nav");
   const signOut = useSignOut();
   const [openHref, setOpenHref] = useState<string | null>(null);
 
@@ -81,6 +86,101 @@ export default function MobileMenu({
             <path d="m6 6 12 12" />
           </svg>
         </button>
+      </div>
+
+      <div className="px-6 py-4" style={{ borderBottom: "1px solid var(--color-border-subtle)" }}>
+        {sessionUser ? (
+          <>
+            <div className="flex items-center justify-between gap-4 mb-3">
+              {sessionUser.name ? (
+                <p
+                  className="text-body truncate"
+                  style={{ color: "var(--color-content-secondary)" }}
+                >
+                  {sessionUser.name}
+                </p>
+              ) : (
+                <span />
+              )}
+              <Link
+                href="/account"
+                onClick={onClose}
+                className="shrink-0 text-body transition-opacity hover:opacity-70"
+                style={{ color: "var(--color-brand-on-dark)" }}
+              >
+                {tAuth("account")}
+              </Link>
+            </div>
+            <div className="grid grid-cols-3 gap-2">
+              {[
+                {
+                  href: "/account/orders" as const,
+                  label: tAccountNav("orders"),
+                  icon: <IconOrders size={20} />,
+                },
+                {
+                  href: "/account/wishlist" as const,
+                  label: tAccountNav("wishlist"),
+                  icon: <IconWishlist size={20} />,
+                },
+                {
+                  href: "/account/loyalty" as const,
+                  label: tAccountNav("loyalty"),
+                  icon: <IconLoyalty size={20} />,
+                },
+              ].map((tile) => (
+                <Link
+                  key={tile.href}
+                  href={tile.href}
+                  onClick={onClose}
+                  className="flex min-h-16 flex-col items-center justify-center gap-1 rounded-[10px] text-label transition-opacity hover:opacity-80"
+                  style={{
+                    backgroundColor: "var(--color-surface-overlay)",
+                    color: "var(--color-content-primary)",
+                  }}
+                >
+                  {tile.icon}
+                  <span>{tile.label}</span>
+                </Link>
+              ))}
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="grid grid-cols-2 gap-2">
+              <Link
+                href="/auth/login"
+                onClick={onClose}
+                className="flex items-center justify-center w-full h-11 text-body font-bold tracking-widest uppercase transition-opacity hover:opacity-80"
+                style={{
+                  border: "1px solid var(--color-brand-on-dark)",
+                  color: "var(--color-brand-on-dark)",
+                }}
+              >
+                {tAuth("signIn")}
+              </Link>
+              <Link
+                href="/auth/register"
+                onClick={onClose}
+                className="flex items-center justify-center w-full h-11 text-body font-bold tracking-widest uppercase transition-opacity hover:opacity-80"
+                style={{
+                  backgroundColor: "var(--color-action-primary)",
+                  color: "var(--color-action-primary-fg)",
+                }}
+              >
+                {tAuth("register.title")}
+              </Link>
+            </div>
+            <Link
+              href="/account/wishlist"
+              onClick={onClose}
+              className="mt-2 flex h-11 items-center text-body transition-opacity hover:opacity-70"
+              style={{ color: "var(--color-content-secondary)" }}
+            >
+              {tNav("wishlist")}
+            </Link>
+          </>
+        )}
       </div>
 
       <ul className="flex flex-col" role="list">
@@ -179,77 +279,26 @@ export default function MobileMenu({
         })}
       </ul>
 
-      <div
-        className="mt-auto px-6 py-6 space-y-4"
-        style={{ borderTop: "1px solid var(--color-border-default)" }}
-      >
-        <Link
-          href="/account/wishlist"
-          onClick={onClose}
-          className="flex items-center gap-2 text-body py-2 transition-opacity hover:opacity-70"
-          style={{ color: "var(--color-content-secondary)" }}
+      {sessionUser && (
+        <div
+          className="mt-auto px-6 py-6 space-y-4"
+          style={{
+            borderTop: "1px solid var(--color-border-default)",
+            paddingBottom: "calc(1.5rem + env(safe-area-inset-bottom))",
+          }}
         >
-          {tNav("wishlist")}
-        </Link>
-        {sessionUser ? (
-          <>
-            {sessionUser.name && (
-              <p
-                className="text-body-sm mb-4"
-                style={{ color: "var(--color-content-tertiary)" }}
-              >
-                {sessionUser.name}
-              </p>
-            )}
-            <Link
-              href="/account"
-              onClick={onClose}
-              className="flex items-center gap-2 text-body py-2 transition-opacity hover:opacity-70"
-              style={{ color: "var(--color-content-secondary)" }}
-            >
-              {tAuth("account")}
-            </Link>
-            <div>
-              <button
-                type="button"
-                onClick={() => {
-                  void signOut();
-                }}
-                className="flex items-center gap-2 text-body py-2 transition-opacity hover:opacity-70 w-full text-start"
-                style={{ color: "var(--color-content-secondary)" }}
-              >
-                {tAuth("logout")}
-              </button>
-            </div>
-          </>
-        ) : (
-          <>
-            <Link
-              href="/auth/login"
-              onClick={onClose}
-              className="flex items-center justify-center w-full h-11 text-body font-bold tracking-widest uppercase transition-opacity hover:opacity-80"
-              style={{
-                border: "1px solid var(--color-brand-on-dark)",
-                color: "var(--color-brand-on-dark)",
-              }}
-            >
-              {tAuth("signIn")}
-            </Link>
-            <Link
-              href="/auth/register"
-              onClick={onClose}
-              className="flex items-center justify-center w-full h-11 text-body font-bold tracking-widest uppercase transition-opacity hover:opacity-80"
-              style={{
-                backgroundColor: "var(--color-action-primary)",
-                color: "var(--color-action-primary-fg)",
-              }}
-            >
-              {tAuth("register.title")}
-            </Link>
-          </>
-        )}
-        <LanguageSwitcher variant="inline" onSelect={onClose} />
-      </div>
+          <button
+            type="button"
+            onClick={() => {
+              void signOut();
+            }}
+            className="flex h-11 w-full items-center text-body text-start transition-opacity hover:opacity-70"
+            style={{ color: "var(--color-content-secondary)" }}
+          >
+            {tAuth("logout")}
+          </button>
+        </div>
+      )}
     </nav>
   );
 }
