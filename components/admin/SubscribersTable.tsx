@@ -3,6 +3,7 @@
 import DataTable from "@/components/admin/DataTable";
 import SubscriberRowActions from "@/components/admin/SubscriberRowActions";
 import { formatDisplayDate } from "@/lib/utils/date";
+import { isDemoMode } from "@/lib/config/demo";
 import {
   KLAVIYO_STATUS_LABELS,
   klaviyoStatusOf,
@@ -34,7 +35,9 @@ function klaviyoCell(
   if (status === "FAILED") {
     return { text: KLAVIYO_STATUS_LABELS.FAILED, title: row.klaviyoError ?? undefined };
   }
-  if (status === "WAITING" && !configured) return { text: "Not connected" };
+  if (status === "WAITING" && !configured) {
+    return { text: isDemoMode() ? "Off in demo" : "Not connected" };
+  }
   return { text: KLAVIYO_STATUS_LABELS[status] };
 }
 

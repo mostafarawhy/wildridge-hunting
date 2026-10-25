@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { db } from "@/lib/db/client";
 import { requireStaffAction } from "@/lib/auth-staff";
+import { isDemoMode } from "@/lib/config/demo";
 import {
   buildSubscriberWhere,
   KLAVIYO_PENDING_WHERE,
@@ -223,7 +224,9 @@ export async function sendWaitingSubscribersToKlaviyoAction(): Promise<SendWaiti
   if (!isKlaviyoConfigured()) {
     return {
       success: false,
-      error: "Klaviyo isn't connected.",
+      error: isDemoMode()
+        ? "Klaviyo sync is off in this demo."
+        : "Klaviyo isn't connected.",
       errorCode: "NOT_CONFIGURED",
     };
   }

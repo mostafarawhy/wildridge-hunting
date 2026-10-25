@@ -1,4 +1,5 @@
 import StatsCard from "@/components/admin/StatsCard";
+import { isDemoMode } from "@/lib/config/demo";
 
 interface Props {
   subscribed: number;
@@ -40,7 +41,9 @@ export default function SubscriberSummaryTiles({
         hint={
           klaviyoConfigured
             ? "Not sent to Klaviyo yet"
-            : "Klaviyo isn't connected"
+            : isDemoMode()
+              ? "Klaviyo sync is off in this demo"
+              : "Klaviyo isn't connected"
         }
       />
       <StatsCard
