@@ -2,7 +2,7 @@
   "projectConfig": {
     "home_page": {
       "desert": {
-        "photo": "home/9acaeada-76c4-4ea7-8ad3-f3bd1e11a971.jpg",
+        "photo": "home/fda675b0-8367-4c6b-a5b4-92bd4d600521.jpg",
         "text": {
           "ar": {
             "heading": "تجربة الصيد في الأدغال"
@@ -14,7 +14,7 @@
             "heading": "Охотничий опыт в джунглях"
           }
         },
-        "video": "home/d8c1ad9c-d63b-4fb4-a96a-28535833e942.mp4"
+        "video": "home/9089dbd8-08cc-4e3e-a7cb-402e4bef4b09.mp4"
       },
       "hero": {
         "photo": "home/6e7854bb-194a-4a33-bee7-e79e3dd07e9b.jpg",
@@ -413,8 +413,8 @@
     "ctaAr": "جرّب حساباً تجريبياً",
     "ctaRu": "Открыть демо-аккаунт",
     "linkUrl": "/?auth=login",
-    "imageFilename": "Gemini_Generated_Image_jvaofljvaofljvao.jpeg",
-    "storageKey": "banners/BNR-HOME-POPUP/4d818071-4722-41c2-a5ea-f212a3322249.jpg",
+    "imageFilename": "Gemini_Generated_Image_jvaofljvaofljvao (1).jpeg",
+    "storageKey": "banners/BNR-HOME-POPUP/70f22119-e2ca-4f65-9aa1-50602541b941.jpg",
     "isActive": true,
     "displayOrder": 0,
     "startsAt": null,
