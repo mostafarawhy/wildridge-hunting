@@ -71,14 +71,14 @@ export default async function Footer() {
           borderTop: "1px solid var(--color-border-default)",
         }}
       >
-        <div className="mx-auto max-w-[1440px] px-6 lg:px-10 pt-12 pb-10 grid grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] gap-10">
+        <div className="mx-auto max-w-[1440px] px-6 lg:px-10 pt-10 pb-8 lg:pt-12 lg:pb-10 grid grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] gap-8 lg:gap-10">
           <div className="col-span-2 lg:col-span-1 flex flex-col items-start gap-4">
             <Link
               href="/"
               className="flex items-center gap-[10px]"
               aria-label={tNav("aria_home")}
             >
-              <BrandMark size={120} />
+              <BrandMark size={120} className="h-16 w-auto lg:h-[120px]" />
               <span
                 dir="ltr"
                 className="brand-wordmark brand-wordmark--nav"
@@ -123,8 +123,8 @@ export default async function Footer() {
                     aria-label={social.ariaLabel}
                     className="flex items-center justify-center transition-opacity duration-150 hover:opacity-70"
                     style={{
-                      width: "36px",
-                      height: "36px",
+                      width: "44px",
+                      height: "44px",
                       borderRadius: "50%",
                       backgroundColor: "var(--color-border-subtle)",
                       color: "var(--color-accent)",
@@ -138,8 +138,62 @@ export default async function Footer() {
             )}
           </div>
 
+          <div className="col-span-2 lg:hidden">
+            {columns.map((col, index) => (
+              <details
+                key={col.key}
+                name="footer-links"
+                className="group"
+                style={{
+                  borderTop: "1px solid var(--color-border-subtle)",
+                  ...(index === columns.length - 1
+                    ? { borderBottom: "1px solid var(--color-border-subtle)" }
+                    : {}),
+                }}
+              >
+                <summary
+                  className="flex h-12 cursor-pointer list-none items-center justify-between text-eyebrow tracking-widest uppercase [&::-webkit-details-marker]:hidden"
+                  style={{
+                    color: "var(--color-content-secondary)",
+                    fontWeight: "var(--font-semibold)",
+                  }}
+                >
+                  <span>{col.heading}</span>
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                    className="transition-transform duration-150 group-open:rotate-180"
+                  >
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </summary>
+                <nav aria-label={col.heading}>
+                  <ul className="flex flex-col gap-3 pb-4" role="list">
+                    {col.links.map((link) => (
+                      <li key={link.href}>
+                        <Link
+                          href={link.href}
+                          className="text-body text-[var(--color-content-secondary)] transition-colors duration-150 hover:text-[var(--color-content-primary)]"
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+              </details>
+            ))}
+          </div>
+
           {columns.map((col) => (
-            <nav key={col.key} aria-label={col.heading}>
+            <nav key={col.key} aria-label={col.heading} className="hidden lg:block">
               <h2
                 className="text-eyebrow tracking-widest uppercase mb-4"
                 style={{
@@ -154,8 +208,7 @@ export default async function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-body-sm transition-colors duration-150 hover:text-[var(--color-content-primary)]"
-                      style={{ color: "var(--color-content-secondary)" }}
+                      className="text-body-sm text-[var(--color-content-secondary)] transition-colors duration-150 hover:text-[var(--color-content-primary)]"
                     >
                       {link.label}
                     </Link>
