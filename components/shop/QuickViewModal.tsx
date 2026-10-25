@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
+import { m, useReducedMotion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { getImageUrl } from "@/lib/utils/images";
@@ -27,6 +28,7 @@ import type { ProductListItem, ProductDetail } from "@/types/shop";
 import WishlistButton from "@/components/wishlist/WishlistButton";
 import { useQuoteStore } from "@/lib/stores/quote-store";
 import { brandName } from "@/lib/utils/brand";
+import { useSwipeToClose } from "@/hooks/useSwipeToClose";
 
 interface QuickViewModalProps {
   product: ProductListItem | null;
@@ -70,6 +72,8 @@ export default function QuickViewModal({
   const [openedAt] = useState(() => new Date());
   const [cartError, setCartError] = useState<string | null>(null);
   const isWide = useSyncExternalStore(subscribeWide, getWide, getWideServer);
+  const reduceMotion = useReducedMotion();
+  const swipe = useSwipeToClose(onClose);
 
   const setCart = useCartStore((s) => s.setCart);
   const openDrawer = useCartStore((s) => s.openDrawer);
@@ -267,33 +271,60 @@ export default function QuickViewModal({
     openQuoteDrawer();
   }
 
+  const sheetMotion = isWide
+    ? { initial: false as const }
+    : reduceMotion
+      ? { initial: { opacity: 0 }, animate: { opacity: 1 } }
+      : { initial: { y: "100%" }, animate: { y: 0 } };
+
   return createPortal(
     <div
       ref={overlayRef}
-      className="fixed inset-0 flex items-center justify-center p-4"
+      className="fixed inset-0 flex items-end justify-center p-0 lg:items-center lg:p-4"
       style={{ backgroundColor: "rgba(0,0,0,0.6)", zIndex: "var(--z-modal)" }}
       onClick={(e) => {
         if (e.target === overlayRef.current) onClose();
       }}
     >
-      <div
-        className="relative w-full max-w-4xl flex flex-col lg:flex-row overflow-hidden"
-        style={{
-          backgroundColor: "var(--primitive-white)",
-          borderRadius: "var(--radius-card)",
-          boxShadow: "var(--shadow-modal)",
-          maxHeight: "90vh",
+      <m.div
+        className="w-full max-w-4xl"
+        {...sheetMotion}
+        transition={{
+          duration: reduceMotion ? 0.15 : 0.3,
+          ease: [0.32, 0.72, 0, 1] as const,
         }}
       >
+      <div
+        ref={swipe.panelRef}
+        className="relative w-full flex flex-col lg:flex-row overflow-hidden rounded-t-[18px] max-h-[88dvh] lg:rounded-[var(--radius-card)] lg:max-h-[90vh]"
+        style={{
+          backgroundColor: "var(--primitive-white)",
+          boxShadow: "var(--shadow-modal)",
+        }}
+      >
+        <div
+          {...swipe.handlers}
+          aria-hidden="true"
+          className="lg:hidden flex shrink-0 justify-center pt-2 pb-3"
+          style={{ touchAction: "none" }}
+        >
+          <div
+            style={{
+              width: "36px",
+              height: "4px",
+              borderRadius: "2px",
+              backgroundColor: "var(--color-border-default)",
+            }}
+          />
+        </div>
+
         <button
           type="button"
           onClick={onClose}
           aria-label={t("close")}
-          className="absolute top-4 flex items-center justify-center cursor-pointer z-10 transition-colors"
+          className="absolute top-2 w-11 h-11 lg:top-4 lg:w-9 lg:h-9 flex items-center justify-center cursor-pointer z-10 transition-colors"
           style={{
             insetInlineEnd: "1rem",
-            width: "36px",
-            height: "36px",
             borderRadius: "50%",
             backgroundColor: "var(--color-shop-divider)",
             color: "var(--primitive-black)",
@@ -321,6 +352,7 @@ export default function QuickViewModal({
           </svg>
         </button>
 
+        <div className="flex flex-col flex-1 min-h-0 overflow-y-auto lg:contents">
         <div
           className="lg:w-[45%] flex-shrink-0 flex flex-col gap-3 p-6 lg:max-h-[90vh] lg:overflow-y-auto"
           style={{
@@ -336,11 +368,8 @@ export default function QuickViewModal({
           {isWide && addonsBlock}
         </div>
 
-        <div
-          className="flex-1 flex flex-col min-h-0"
-          style={{ maxHeight: "90vh" }}
-        >
-          <div className="flex-1 min-h-0 overflow-y-auto flex flex-col gap-5 p-7">
+        <div className="flex-none lg:flex-1 flex flex-col lg:min-h-0 lg:max-h-[90vh]">
+          <div className="lg:flex-1 lg:min-h-0 lg:overflow-y-auto flex flex-col gap-5 p-7">
           {error && (
             <p style={{ color: "var(--color-error)" }}>
               {t("quickview_error")}
@@ -373,7 +402,9 @@ export default function QuickViewModal({
                 >
                   {productName}
                 </h2>
-                <WishlistButton sku={product.sku} size={20} />
+                <div className="max-lg:[&_button]:h-11 max-lg:[&_button]:w-11">
+                  <WishlistButton sku={product.sku} size={20} />
+                </div>
               </div>
 
               <ProductBadges
@@ -501,7 +532,7 @@ export default function QuickViewModal({
 
           {detail && (
             <div
-              className="flex-shrink-0 flex flex-col gap-3 px-7 py-4"
+              className="flex-shrink-0 flex flex-col gap-3 px-4 pt-4 pb-[calc(1rem+env(safe-area-inset-bottom))] sticky bottom-0 lg:static lg:px-7 lg:py-4"
               style={{
                 borderTop: "1px solid var(--color-shop-divider)",
                 backgroundColor: "var(--primitive-white)",
@@ -509,7 +540,7 @@ export default function QuickViewModal({
             >
                 {isBusinessMode ? (
                   <div className="flex flex-col gap-3">
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-4 max-lg:[&_input]:h-11">
                       <span
                         className="text-eyebrow tracking-widest uppercase"
                         style={{ color: "var(--color-content-tertiary)" }}
@@ -537,7 +568,7 @@ export default function QuickViewModal({
                 ) : (
                   <>
                     {inStock && (
-                      <div className="flex items-center gap-4">
+                      <div className="flex items-center gap-4 max-lg:[&_button]:h-11 max-lg:[&_button]:w-11">
                         <QuantitySelector
                           value={qty}
                           onChange={setQty}
@@ -583,7 +614,7 @@ export default function QuickViewModal({
                 <Link
                   href={`/shop/${product.categorySlug}/${product.slugEn}`}
                   onClick={onClose}
-                  className="self-center text-body-sm underline"
+                  className="self-center text-body-sm underline max-lg:py-3"
                   style={{ color: "var(--primitive-black)" }}
                 >
                   {t("view_details")}
@@ -591,7 +622,9 @@ export default function QuickViewModal({
             </div>
           )}
         </div>
+        </div>
       </div>
+      </m.div>
     </div>,
     document.body,
   );
