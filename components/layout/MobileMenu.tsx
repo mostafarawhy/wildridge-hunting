@@ -229,8 +229,8 @@ export default function MobileMenu({
               onClick={onClose}
               className="flex items-center justify-center w-full h-11 text-body font-bold tracking-widest uppercase transition-opacity hover:opacity-80"
               style={{
-                border: "1px solid var(--color-action-secondary-border)",
-                color: "var(--color-action-secondary-fg)",
+                border: "1px solid var(--color-brand-on-dark)",
+                color: "var(--color-brand-on-dark)",
               }}
             >
               {tAuth("signIn")}
@@ -244,7 +244,7 @@ export default function MobileMenu({
                 color: "var(--color-action-primary-fg)",
               }}
             >
-              {tAuth("register")}
+              {tAuth("register.title")}
             </Link>
           </>
         )}
