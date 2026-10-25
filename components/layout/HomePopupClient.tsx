@@ -74,6 +74,18 @@ export default function HomePopupClient({
 
   useEffect(() => {
     if (!eligible || hasSeen(seenValue)) return;
+
+    if (window.matchMedia("(max-width: 1023.98px)").matches) {
+      function onScroll() {
+        if (window.scrollY <= window.innerHeight * 0.8) return;
+        window.removeEventListener("scroll", onScroll);
+        if (!hasSeen(seenValue)) setOpen(true);
+      }
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+      return () => window.removeEventListener("scroll", onScroll);
+    }
+
     const timer = setTimeout(() => {
       if (!hasSeen(seenValue)) setOpen(true);
     }, DELAY_MS);
