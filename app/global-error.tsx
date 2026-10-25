@@ -1,6 +1,7 @@
 "use client";
 
 import "./globals.css";
+import "./brand.css";
 import { usePathname } from "next/navigation";
 import Button from "@/components/ui/Button";
 import PageStatus from "@/components/layout/PageStatus";
@@ -45,7 +46,7 @@ export default function GlobalError({
   const copy = COPY[locale];
 
   return (
-    <html lang={locale} dir={copy.dir}>
+    <html lang={locale} dir={copy.dir} data-surface={segment === "admin" ? "admin" : "storefront"}>
       <body
         style={{
           margin: 0,
