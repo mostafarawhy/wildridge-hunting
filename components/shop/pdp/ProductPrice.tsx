@@ -12,10 +12,10 @@ export default function ProductPrice({
   return (
     <div className="flex items-baseline gap-3">
       <span
+        className="whitespace-nowrap text-[length:var(--text-heading)] lg:text-[length:var(--text-display-sm)]"
         style={{
           color: "var(--primitive-black)",
           fontWeight: "var(--font-bold)",
-          fontSize: "var(--text-display-sm)",
         }}
       >
         {formatAED(price)}

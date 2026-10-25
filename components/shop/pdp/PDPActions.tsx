@@ -359,6 +359,7 @@ export default function PDPActions({
               fullWidth
               size="lg"
               variant="primary"
+              className="whitespace-nowrap"
               disabled={!inStock || isPending}
               loading={isPending}
               onClick={handleAddToCart}
@@ -366,8 +367,14 @@ export default function PDPActions({
               {inStock ? (
                 <>
                   {t("add_to_cart")}
-                  <span aria-hidden="true" style={{ marginInline: "0.5em" }}>·</span>
-                  <span dir="ltr" className="tabular-nums">
+                  <span
+                    aria-hidden="true"
+                    className="hidden sm:inline"
+                    style={{ marginInline: "0.5em" }}
+                  >
+                    ·
+                  </span>
+                  <span dir="ltr" className="hidden sm:inline tabular-nums">
                     {formatAED(total)}
                   </span>
                 </>
