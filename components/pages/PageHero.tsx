@@ -106,6 +106,7 @@ export async function PageHero({
         alt=""
         fill
         priority
+        fetchPriority="high"
         sizes="100vw"
         className="object-cover"
         style={{ objectPosition: focalPosition(bannerFocus) }}

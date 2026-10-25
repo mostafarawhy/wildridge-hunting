@@ -68,6 +68,7 @@ function HeroSkeleton({
         alt=""
         fill
         priority
+        fetchPriority="high"
         sizes="100vw"
         className="object-cover"
         style={{ objectPosition: focalPosition(focus ?? { x: 50, y: 50 }) }}

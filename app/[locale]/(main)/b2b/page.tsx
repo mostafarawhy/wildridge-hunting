@@ -62,6 +62,7 @@ export default async function B2BLandingPage({ params }: Props) {
             alt=""
             fill
             priority
+            fetchPriority="high"
             sizes="(min-width: 1024px) 45vw, 100vw"
             className="object-cover object-center"
           />

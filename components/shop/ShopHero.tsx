@@ -25,6 +25,7 @@ export default function ShopHero({ imageSrc, focus, children }: ShopHeroProps) {
         className="object-cover"
         style={{ opacity: 1, objectPosition: focalPosition(focus ?? { x: 50, y: 70 }) }}
         priority
+        fetchPriority="high"
         aria-hidden="true"
       />
       <div
