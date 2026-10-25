@@ -27,16 +27,13 @@ export default function CollectionTilesView({
       style={{ backgroundColor: "var(--color-surface-base)" }}
       aria-label="Shop by collection"
     >
-      <div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
-        style={{ minHeight: "520px" }}
-      >
+      <div className="grid grid-cols-2 gap-2 p-3 lg:grid-cols-4 lg:gap-0 lg:p-0 lg:min-h-[520px]">
         {tiles.map((tile, index) => (
           <Fragment key={index}>
             {link({
               href: tile.href,
-              className: "group relative overflow-hidden",
-              style: { minHeight: "420px" },
+              className:
+                "group relative overflow-hidden aspect-[4/5] max-lg:rounded-[10px] lg:aspect-auto lg:min-h-[420px]",
               children: (
                 <>
                   <div
@@ -47,7 +44,7 @@ export default function CollectionTilesView({
                       src={tile.photoUrl}
                       alt=""
                       fill
-                      sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                      sizes="(min-width: 1024px) 25vw, 50vw"
                       className="object-cover"
                       style={{ objectPosition: "center" }}
                       unoptimized={isPreviewSrc(tile.photoUrl)}
@@ -71,7 +68,7 @@ export default function CollectionTilesView({
                     />
                   )}
 
-                  <div className="absolute bottom-0 start-0 end-0 p-8 lg:p-10">
+                  <div className="absolute bottom-0 start-0 end-0 p-4 lg:p-10">
                     <p
                       className="mb-2 text-eyebrow uppercase"
                       style={{ color: "var(--color-content-secondary)" }}
@@ -79,13 +76,13 @@ export default function CollectionTilesView({
                       {tile.eyebrow}
                     </p>
                     <h3
-                      className="mb-5 text-heading font-bold uppercase lg:text-heading-desktop"
+                      className="mb-5 max-lg:text-[1.125rem] max-lg:mb-2 text-heading font-bold uppercase lg:text-heading-desktop"
                       style={{ color: "var(--color-content-primary)" }}
                     >
                       {tile.title}
                     </h3>
                     <span
-                      className="inline-flex items-center gap-2 text-body uppercase font-medium"
+                      className="inline-flex items-center gap-2 text-label lg:text-body uppercase font-medium"
                       style={{
                         color: "var(--color-content-primary)",
                         borderBottom: "1px solid currentColor",
