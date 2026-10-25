@@ -32,8 +32,7 @@ export default function BrandStoryView({
 }: BrandStoryViewProps) {
   return (
     <section
-      className="relative w-full overflow-hidden"
-      style={{ minHeight: "550px" }}
+      className="relative w-full overflow-hidden min-h-[480px] lg:min-h-[550px]"
       aria-label="Brand story"
     >
       <div
@@ -111,7 +110,7 @@ export default function BrandStoryView({
       />
 
       <div
-        className="absolute bottom-0 start-0 end-0 px-8 pb-20 lg:px-16 lg:pb-24"
+        className="absolute bottom-0 start-0 end-0 px-6 pb-12 lg:px-16 lg:pb-24"
         style={{ zIndex: 3 }}
       >
         <div className="mx-auto max-w-[1440px] flex flex-col items-start gap-5 lg:max-w-[560px] lg:mx-0">
@@ -147,7 +146,7 @@ export default function BrandStoryView({
           {link({
             href: buttonHref,
             className:
-              "mt-2 inline-flex h-10 items-center px-7 text-label uppercase font-medium tracking-widest transition-opacity duration-150 hover:opacity-80",
+              "mt-2 inline-flex h-12 lg:h-10 items-center px-7 text-label uppercase font-medium tracking-widest transition-opacity duration-150 hover:opacity-80",
             style: {
               backgroundColor: "var(--color-action-primary)",
               color: "var(--color-action-primary-fg)",

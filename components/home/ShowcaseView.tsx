@@ -35,7 +35,7 @@ export default function ShowcaseView({
       aria-label="Product showcase"
     >
       <div className="mx-auto max-w-[1440px] px-6 lg:px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 lg:gap-20 py-16 lg:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-6 lg:gap-20 py-12 lg:py-24">
           <div className="relative w-full" style={{ aspectRatio: "16/9" }}>
             <FadeImage
               src={photoUrl}
@@ -58,7 +58,7 @@ export default function ShowcaseView({
             </p>
 
             <h2
-              className="mb-6 text-display-sm font-bold uppercase leading-[1.05] tracking-tight lg:text-display-sm-desktop"
+              className="mb-4 lg:mb-6 text-display-sm font-bold uppercase leading-[1.05] tracking-tight lg:text-display-sm-desktop"
               style={{
                 color: "var(--color-content-inverse)",
                 whiteSpace: "pre-line",
@@ -68,7 +68,7 @@ export default function ShowcaseView({
             </h2>
 
             <p
-              className="mb-10 max-w-[420px] text-body leading-relaxed tracking-wide"
+              className="mb-8 lg:mb-10 max-w-[420px] text-body leading-relaxed tracking-wide"
               style={{ color: "var(--color-content-tertiary)" }}
             >
               {body}
@@ -78,7 +78,7 @@ export default function ShowcaseView({
               {link({
                 href: primaryHref,
                 className:
-                  "inline-flex h-11 items-center px-8 text-label tracking-widest uppercase font-medium transition-opacity duration-150 hover:opacity-80",
+                  "inline-flex h-12 lg:h-11 items-center px-8 text-label tracking-widest uppercase font-medium transition-opacity duration-150 hover:opacity-80",
                 style: {
                   backgroundColor: "var(--color-action-primary)",
                   color: "var(--color-action-primary-fg)",
