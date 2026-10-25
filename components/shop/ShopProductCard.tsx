@@ -381,9 +381,11 @@ export default function ShopProductCard(props: ShopProductCardFullProps) {
             <>
               <span
                 style={{
-                  color: inStock
-                    ? "var(--color-accent-text)"
-                    : "var(--color-content-tertiary)",
+                  color: !inStock
+                    ? "var(--color-content-tertiary)"
+                    : compareAtPrice && compareAtPrice > price
+                      ? "var(--color-action-primary)"
+                      : "var(--primitive-black)",
                   fontWeight: "var(--font-medium)",
                   fontSize: "var(--text-body)",
                 }}
