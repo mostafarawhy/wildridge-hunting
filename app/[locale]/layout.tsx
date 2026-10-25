@@ -26,6 +26,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: BRAND_COLORS.navbar,
+  viewportFit: "cover",
 };
 
 const LOCALES = ["en", "ar", "ru"] as const;

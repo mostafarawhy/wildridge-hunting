@@ -34,7 +34,11 @@
     "shop_mode_label": "Shopping as",
     "shop_mode_business": "Business",
     "shop_mode_personal": "Personal",
-    "loading": "Loading…"
+    "loading": "Loading…",
+    "tab_home": "Home",
+    "tab_shop": "Shop",
+    "tab_quote": "Quote",
+    "aria_tabbar": "Quick navigation"
   },
   "home": {
     "announcement_shipping": "Free UAE shipping on orders over {amount}",

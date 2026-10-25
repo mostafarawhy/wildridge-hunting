@@ -34,7 +34,11 @@
     "shop_mode_label": "Режим покупок",
     "shop_mode_business": "Бизнес",
     "shop_mode_personal": "Личный",
-    "loading": "Загрузка…"
+    "loading": "Загрузка…",
+    "tab_home": "Главная",
+    "tab_shop": "Каталог",
+    "tab_quote": "Запрос",
+    "aria_tabbar": "Быстрая навигация"
   },
   "home": {
     "announcement_shipping": "Бесплатная доставка по ОАЭ при заказе от {amount}",

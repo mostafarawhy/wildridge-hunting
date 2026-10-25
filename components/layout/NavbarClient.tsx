@@ -1,8 +1,10 @@
 "use client";
 
-import { useState, Suspense } from "react";
+import { Suspense } from "react";
 import { SearchIcon } from "@/components/ui";
 import NavSearch from "./NavSearch";
+import MobileTabBar from "./MobileTabBar";
+import { useSearchStore } from "@/lib/stores/search-store";
 import { useTranslations } from "next-intl";
 import LanguageSwitcher from "@/components/home/LanguageSwitcher";
 import WishlistNavIcon from "@/components/wishlist/WishlistNavIcon";
@@ -40,7 +42,9 @@ export default function NavbarClient({
   serviceableCountries,
 }: NavbarClientProps) {
   const tNav = useTranslations("nav");
-  const [searchOpen, setSearchOpen] = useState(false);
+  const searchOpen = useSearchStore((s) => s.open);
+  const setSearchOpen = useSearchStore((s) => s.setOpen);
+  const toggleSearch = useSearchStore((s) => s.toggle);
 
   const isBusinessMode = canUseBusinessMode && shopMode === "BUSINESS";
 
@@ -50,7 +54,7 @@ export default function NavbarClient({
         type="button"
         aria-label={tNav("search")}
         aria-expanded={searchOpen}
-        onClick={() => setSearchOpen((prev) => !prev)}
+        onClick={toggleSearch}
         className="cursor-pointer transition-opacity duration-150 hover:opacity-70 p-[11px] -m-[11px]"
         style={{ color: "var(--color-content-primary)" }}
       >
@@ -79,6 +83,11 @@ export default function NavbarClient({
       <Suspense fallback={null}>
         <RegisterModalController />
       </Suspense>
+
+      <MobileTabBar
+        signedIn={sessionUser !== null}
+        isBusinessMode={isBusinessMode}
+      />
 
       <NavSearch
         isOpen={searchOpen}

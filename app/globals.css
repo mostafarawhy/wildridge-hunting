@@ -725,3 +725,9 @@ html[dir="rtl"] .brand-wordmark--checkout {
     overflow-y: auto;
   }
 }
+
+@media (max-width: 1023.98px) {
+  body:has([data-mobile-tabbar]) {
+    padding-bottom: calc(64px + env(safe-area-inset-bottom));
+  }
+}

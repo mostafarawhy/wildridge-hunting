@@ -34,7 +34,11 @@
     "shop_mode_label": "التسوق بصفة",
     "shop_mode_business": "أعمال",
     "shop_mode_personal": "شخصي",
-    "loading": "جارٍ التحميل…"
+    "loading": "جارٍ التحميل…",
+    "tab_home": "الرئيسية",
+    "tab_shop": "المتجر",
+    "tab_quote": "عرض سعر",
+    "aria_tabbar": "تنقل سريع"
   },
   "home": {
     "announcement_shipping": "شحن مجاني داخل الإمارات للطلبات التي تتجاوز {amount}",
