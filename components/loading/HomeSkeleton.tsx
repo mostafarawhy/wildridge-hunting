@@ -6,12 +6,8 @@ const VISIBLE = 4;
 function HeroSkeleton() {
   return (
     <section
-      className="relative w-full overflow-hidden"
-      style={{
-        height: "calc(100svh - 112px)",
-        minHeight: "560px",
-        backgroundColor: "var(--color-surface-sunken)",
-      }}
+      className="relative w-full overflow-hidden h-[calc(100svh-140px)] min-h-[440px] lg:h-[calc(100svh-112px)] lg:min-h-[560px]"
+      style={{ backgroundColor: "var(--color-surface-sunken)" }}
     >
       <div
         className="absolute inset-0"

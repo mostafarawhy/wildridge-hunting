@@ -27,12 +27,8 @@ export default function HeroView({
 }: HeroViewProps) {
   return (
     <section
-      className="relative w-full overflow-hidden"
-      style={{
-        height: "calc(100svh - 112px)",
-        minHeight: "560px",
-        backgroundColor: "var(--color-surface-sunken)",
-      }}
+      className="relative w-full overflow-hidden h-[calc(100svh-140px)] min-h-[440px] lg:h-[calc(100svh-112px)] lg:min-h-[560px]"
+      style={{ backgroundColor: "var(--color-surface-sunken)" }}
       aria-label="Hero"
     >
       <div
@@ -69,7 +65,7 @@ export default function HeroView({
       />
 
       <div
-        className="absolute bottom-0 start-0 end-0 px-6 pb-12 lg:px-16 lg:pb-16"
+        className="absolute bottom-0 start-0 end-0 px-5 pb-8 lg:px-16 lg:pb-16"
         style={{ zIndex: 2 }}
       >
         <div className="mx-auto max-w-[1440px]">
@@ -81,7 +77,7 @@ export default function HeroView({
           </p>
 
           <h1
-            className="mb-8 text-display font-bold uppercase lg:text-display"
+            className="mb-6 max-lg:text-[2.25rem] max-lg:leading-[1.05] text-display font-bold uppercase lg:mb-8 lg:text-display"
             style={{
               color: "var(--color-content-primary)",
               whiteSpace: "pre-line",
@@ -94,7 +90,7 @@ export default function HeroView({
             {link({
               href: primaryHref,
               className:
-                "flex h-11 items-center px-7 text-body uppercase font-medium transition-colors duration-150",
+                "flex h-12 lg:h-11 items-center px-7 text-body uppercase font-medium transition-colors duration-150",
               style: {
                 backgroundColor: "var(--color-action-primary)",
                 color: "var(--color-action-primary-fg)",
