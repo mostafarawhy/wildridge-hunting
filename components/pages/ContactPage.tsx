@@ -380,12 +380,11 @@ export async function ContactPage({ locale }: { locale: Locale }) {
           </div>
           <Link
             href="/account/support"
-            className="flex items-center justify-center transition-colors hover:bg-[var(--color-action-primary)] hover:text-white"
+            className="flex items-center justify-center transition-colors text-[color:var(--color-action-primary)] hover:bg-[var(--color-action-primary)] hover:text-white"
             style={{
               height: "48px",
               paddingInline: "24px",
               border: `1px solid ${red}`,
-              color: red,
               fontSize: "13px",
               fontWeight: 700,
               textTransform: "uppercase",
