@@ -56,7 +56,8 @@ export default async function AdminDashboardPage() {
             display: "flex",
             alignItems: "flex-start",
             justifyContent: "space-between",
-            gap: "1rem",
+            flexWrap: "wrap",
+            gap: "0.5rem 1rem",
             marginBottom: "0.75rem",
           }}
         >
@@ -131,11 +132,8 @@ export default async function AdminDashboardPage() {
       </div>
 
       <div
-        style={{
-          display: "grid",
-          gap: "1rem",
-          gridTemplateColumns: "repeat(auto-fit, minmax(170px, 1fr))",
-        }}
+        className="grid grid-cols-2 lg:grid-cols-[repeat(auto-fit,minmax(170px,1fr))]"
+        style={{ gap: "1rem" }}
       >
         <KpiCard
           label="Orders"

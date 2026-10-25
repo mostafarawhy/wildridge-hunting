@@ -26,7 +26,9 @@ export default function DataTable<T>({
         backgroundColor: "#ffffff",
         border: "1px solid var(--color-shop-divider)",
         borderRadius: "0",
-        overflow: "hidden",
+        overflowX: "auto",
+        overflowY: "hidden",
+        overscrollBehaviorX: "contain",
       }}
     >
       <table style={{ width: "100%", borderCollapse: "collapse" }}>
