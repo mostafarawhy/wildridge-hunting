@@ -76,7 +76,9 @@
     "showcase_cta_rifles": "Explore Rifle Models",
     "showcase_cta_about": "What is Wildridge Hunting?",
     "showcase_image_alt": "Precision rifle",
-    "popup_dismiss": "No thanks"
+    "popup_dismiss": "No thanks",
+    "video_pause": "Pause video",
+    "video_play": "Play video"
   },
   "footer": {
     "newsletter_label": "Field updates & new arrivals",

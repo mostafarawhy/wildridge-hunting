@@ -8,12 +8,16 @@ interface DesertBannerViewProps {
   heading: string;
   photoUrl: string | null;
   videoUrl: string | null;
+  pauseLabel?: string;
+  playLabel?: string;
 }
 
 export default function DesertBannerView({
   heading,
   photoUrl,
   videoUrl,
+  pauseLabel,
+  playLabel,
 }: DesertBannerViewProps) {
   return (
     <section
@@ -50,6 +54,9 @@ export default function DesertBannerView({
           muted
           loop
           playsInline
+          pauseLabel={pauseLabel}
+          playLabel={playLabel}
+          controlClassName="bottom-0.5 end-4 lg:bottom-2 lg:end-10"
         />
       ) : videoUrl !== null ? (
         <InViewVideo
@@ -60,6 +67,9 @@ export default function DesertBannerView({
           muted
           loop
           playsInline
+          pauseLabel={pauseLabel}
+          playLabel={playLabel}
+          controlClassName="bottom-0.5 end-4 lg:bottom-2 lg:end-10"
         />
       ) : (
         <div

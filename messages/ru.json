@@ -76,7 +76,9 @@
     "showcase_cta_rifles": "Изучить модели винтовок",
     "showcase_cta_about": "Что такое Wildridge Hunting?",
     "showcase_image_alt": "Высокоточная винтовка",
-    "popup_dismiss": "Нет, спасибо"
+    "popup_dismiss": "Нет, спасибо",
+    "video_pause": "Приостановить видео",
+    "video_play": "Воспроизвести видео"
   },
   "footer": {
     "newsletter_label": "Полевые обновления и новые поступления",

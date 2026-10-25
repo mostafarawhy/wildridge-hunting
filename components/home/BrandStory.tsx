@@ -1,11 +1,12 @@
 import { Link } from "@/i18n/navigation";
-import { getLocale } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { getHomePage } from "@/lib/db/queries/home-page";
 import { resolveStory, storyPhotoUrl, storyVideoUrl } from "@/lib/settings/home-page";
 import BrandStoryView from "./BrandStoryView";
 
 export default async function BrandStory() {
   const locale = await getLocale();
+  const t = await getTranslations("home");
   const { value } = await getHomePage();
   const { text } = resolveStory(value, locale);
 
@@ -18,6 +19,8 @@ export default async function BrandStory() {
       buttonHref={value.story.buttonHref}
       photoUrl={storyPhotoUrl(value)}
       videoUrl={storyVideoUrl(value)}
+      pauseLabel={t("video_pause")}
+      playLabel={t("video_play")}
       link={(p) => (
         <Link
           href={p.href}

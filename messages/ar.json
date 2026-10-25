@@ -76,7 +76,9 @@
     "showcase_cta_rifles": "استكشف موديلات البنادق",
     "showcase_cta_about": "ما هو Wildridge Hunting؟",
     "showcase_image_alt": "بندقية دقيقة",
-    "popup_dismiss": "لا، شكراً"
+    "popup_dismiss": "لا، شكراً",
+    "video_pause": "إيقاف الفيديو مؤقتًا",
+    "video_play": "تشغيل الفيديو"
   },
   "footer": {
     "newsletter_label": "تحديثات الميدان والوصولات الجديدة",

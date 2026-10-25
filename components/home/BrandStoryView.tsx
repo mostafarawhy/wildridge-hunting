@@ -14,6 +14,8 @@ interface BrandStoryViewProps {
   photoUrl: string | null;
   videoUrl: string | null;
   link: LinkSlot;
+  pauseLabel?: string;
+  playLabel?: string;
 }
 
 export default function BrandStoryView({
@@ -25,6 +27,8 @@ export default function BrandStoryView({
   photoUrl,
   videoUrl,
   link,
+  pauseLabel,
+  playLabel,
 }: BrandStoryViewProps) {
   return (
     <section
@@ -62,6 +66,9 @@ export default function BrandStoryView({
           muted
           loop
           playsInline
+          pauseLabel={pauseLabel}
+          playLabel={playLabel}
+          controlClassName="top-4 end-4 lg:end-10"
         />
       ) : videoUrl !== null ? (
         <InViewVideo
@@ -72,6 +79,9 @@ export default function BrandStoryView({
           muted
           loop
           playsInline
+          pauseLabel={pauseLabel}
+          playLabel={playLabel}
+          controlClassName="top-4 end-4 lg:end-10"
         />
       ) : (
         <div
