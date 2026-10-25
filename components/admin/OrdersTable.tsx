@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { startNavigationProgress } from "@/components/loading/NavigationProgress";
 import DataTable from "@/components/admin/DataTable";
@@ -30,6 +31,16 @@ const REFUND_CHIP: Record<
   PARTIAL: { backgroundColor: "#dbeafe", color: "#1e40af" },
   REFUNDED: { backgroundColor: "#dcfce7", color: "#166534" },
 };
+
+const RELATIVE = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
+
+function relativeDate(iso: string): string {
+  const minutes = Math.round((new Date(iso).getTime() - Date.now()) / 60000);
+  const abs = Math.abs(minutes);
+  if (abs < 60) return RELATIVE.format(minutes, "minute");
+  if (abs < 60 * 24) return RELATIVE.format(Math.round(minutes / 60), "hour");
+  return RELATIVE.format(Math.round(minutes / (60 * 24)), "day");
+}
 
 export default function OrdersTable({
   rows,
@@ -67,6 +78,109 @@ export default function OrdersTable({
 
   return (
     <>
+    <div className="lg:hidden">
+      {rows.length === 0 ? (
+        <div
+          style={{
+            backgroundColor: "#ffffff",
+            border: "1px solid var(--color-shop-divider)",
+            padding: "2rem 1rem",
+            textAlign: "center",
+            fontSize: "var(--text-body)",
+            color: "#6b6b6b",
+          }}
+        >
+          {filtered ? "No orders match these filters." : "No orders yet."}
+        </div>
+      ) : (
+        <div
+          style={{
+            backgroundColor: "#ffffff",
+            border: "1px solid var(--color-shop-divider)",
+          }}
+        >
+          {rows.map((row, i) => {
+            const href = `/admin/orders/${row.id}`;
+            return (
+              <Link
+                key={row.id}
+                href={href}
+                onClick={() => startNavigationProgress(href)}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.75rem",
+                  minHeight: "64px",
+                  padding: "0.75rem 1rem",
+                  textDecoration: "none",
+                  borderTop:
+                    i > 0 ? "1px solid var(--color-shop-divider)" : undefined,
+                }}
+              >
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      gap: "0.75rem",
+                      fontSize: "var(--text-body)",
+                      color: "#0b0b0b",
+                    }}
+                  >
+                    <span dir="ltr" style={{ fontFamily: "monospace" }}>
+                      {row.orderNumber}
+                    </span>
+                    <span style={{ fontWeight: "var(--font-semibold)" }}>
+                      {formatAED(row.totalAed, "en")}
+                    </span>
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      gap: "0.75rem",
+                      marginTop: "0.375rem",
+                    }}
+                  >
+                    <span
+                      suppressHydrationWarning
+                      style={{
+                        minWidth: 0,
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                        whiteSpace: "nowrap",
+                        fontSize: "var(--text-body-sm)",
+                        color: "#6b6b6b",
+                      }}
+                    >
+                      {row.customerName} · {relativeDate(row.createdAt)}
+                    </span>
+                    <OrderStatusPill status={row.status} />
+                  </div>
+                </div>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="#6b6b6b"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                  style={{ flexShrink: 0 }}
+                >
+                  <path d="M6 3l5 5-5 5" />
+                </svg>
+              </Link>
+            );
+          })}
+        </div>
+      )}
+    </div>
+
+    <div className="hidden lg:block">
     {selectable && (
       <OrderBulkBar
         selectedIds={selected}
@@ -252,6 +366,7 @@ export default function OrdersTable({
         },
       ]}
     />
+    </div>
     </>
   );
 }

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { startNavigationProgress } from "@/components/loading/NavigationProgress";
 import Select from "@/components/ui/Select";
+import BottomSheet from "@/components/ui/BottomSheet";
 import { ORDER_STATUS_LABELS } from "@/lib/utils/order-status";
 import { dubaiRecentDays } from "@/lib/utils/date";
 import type { AdminOrderFilters, OrderStatus } from "@/lib/db/queries/order";
@@ -39,6 +40,16 @@ export default function OrderFilterBar({ filters }: Props) {
   const [searchValue, setSearchValue] = useState(filters.search ?? "");
   const [fromValue, setFromValue] = useState(filters.from ?? "");
   const [toValue, setToValue] = useState(filters.to ?? "");
+  const [sheetOpen, setSheetOpen] = useState(false);
+  const [draft, setDraft] = useState({
+    status: "ALL",
+    payment: "ALL",
+    source: "ALL",
+    refund: "ALL",
+    sort: "newest",
+    from: "",
+    to: "",
+  });
 
   const activeStatus = filters.status ?? "ALL";
   const activePayment = filters.payment ?? "ALL";
@@ -120,6 +131,43 @@ export default function OrderFilterBar({ filters }: Props) {
     !!fromValue ||
     !!toValue;
 
+  const sheetFilterCount =
+    (activeStatus !== "ALL" ? 1 : 0) +
+    (activePayment !== "ALL" ? 1 : 0) +
+    (activeSource !== "ALL" ? 1 : 0) +
+    (activeRefund !== "ALL" ? 1 : 0) +
+    (fromValue ? 1 : 0) +
+    (toValue ? 1 : 0);
+
+  function openSheet() {
+    setDraft({
+      status: activeStatus,
+      payment: activePayment,
+      source: activeSource,
+      refund: activeRefund,
+      sort: activeSort,
+      from: fromValue,
+      to: toValue,
+    });
+    setSheetOpen(true);
+  }
+
+  function applySheet() {
+    setFromValue(draft.from);
+    setToValue(draft.to);
+    setSheetOpen(false);
+    pushParams({
+      status: draft.status,
+      payment: draft.payment,
+      source: draft.source,
+      refund: draft.refund,
+      sort: draft.sort,
+      from: draft.from,
+      to: draft.to,
+      q: searchValue.trim(),
+    });
+  }
+
   const btnBase: React.CSSProperties = {
     display: "inline-flex",
     alignItems: "center",
@@ -142,9 +190,65 @@ export default function OrderFilterBar({ filters }: Props) {
   };
 
   return (
+    <>
     <div
+      className="lg:hidden"
       style={{
         display: "flex",
+        gap: "0.5rem",
+        padding: "0.75rem",
+        marginBottom: "1rem",
+        backgroundColor: "#ffffff",
+        border: "1px solid var(--color-shop-divider)",
+      }}
+    >
+      <input
+        id="order-filter-search-m"
+        type="text"
+        dir="ltr"
+        aria-label="Search orders"
+        enterKeyHint="search"
+        value={searchValue}
+        onChange={(e) => setSearchValue(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") pushParams({ q: searchValue.trim() });
+        }}
+        placeholder="Order #, customer, email…"
+        style={{ ...inputStyle, flex: 1, minWidth: 0, minHeight: "44px" }}
+      />
+      <button
+        type="button"
+        onClick={openSheet}
+        style={{
+          ...btnBase,
+          height: "44px",
+          gap: "0.5rem",
+          flexShrink: 0,
+          backgroundColor: "#0b0b0b",
+          color: "#ffffff",
+        }}
+      >
+        Filters
+        {sheetFilterCount > 0 && (
+          <span
+            style={{
+              minWidth: "1.25rem",
+              padding: "0 0.375rem",
+              lineHeight: "1.25rem",
+              backgroundColor: "#ffffff",
+              color: "#0b0b0b",
+              fontSize: "var(--text-body-sm)",
+            }}
+          >
+            {sheetFilterCount}
+          </span>
+        )}
+      </button>
+    </div>
+
+    <div
+      className="hidden lg:flex"
+      style={{
         alignItems: "flex-end",
         gap: "0.75rem",
         flexWrap: "wrap",
@@ -334,5 +438,145 @@ export default function OrderFilterBar({ filters }: Props) {
         </button>
       )}
     </div>
+
+    <BottomSheet
+      open={sheetOpen}
+      onClose={() => setSheetOpen(false)}
+      ariaLabel="Order filters"
+      title="Filters"
+      closeLabel="Close"
+      footer={
+        <div style={{ display: "flex", gap: "0.75rem" }}>
+          <button
+            type="button"
+            onClick={() => {
+              setSheetOpen(false);
+              handleClear();
+            }}
+            style={{
+              ...btnBase,
+              height: "44px",
+              backgroundColor: "transparent",
+              color: "#0b0b0b",
+              textDecoration: "underline",
+              textUnderlineOffset: "3px",
+            }}
+          >
+            Clear
+          </button>
+          <button
+            type="button"
+            onClick={applySheet}
+            style={{
+              ...btnBase,
+              height: "44px",
+              flex: 1,
+              backgroundColor: "#0b0b0b",
+              color: "#ffffff",
+            }}
+          >
+            Apply
+          </button>
+        </div>
+      }
+    >
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "1rem",
+          padding: "0.5rem 1rem 1rem",
+        }}
+      >
+        <Select
+          label="Status"
+          id="order-sheet-status"
+          value={draft.status}
+          style={{ minHeight: "44px" }}
+          onChange={(e) => setDraft((d) => ({ ...d, status: e.target.value }))}
+        >
+          <option value="ALL">All</option>
+          {STATUS_OPTIONS.map((s) => (
+            <option key={s} value={s}>
+              {ORDER_STATUS_LABELS[s]}
+            </option>
+          ))}
+        </Select>
+        <Select
+          label="Payment"
+          id="order-sheet-payment"
+          value={draft.payment}
+          style={{ minHeight: "44px" }}
+          onChange={(e) => setDraft((d) => ({ ...d, payment: e.target.value }))}
+        >
+          <option value="ALL">All</option>
+          <option value="ONLINE">Card</option>
+          <option value="OFFLINE">Offline</option>
+        </Select>
+        <Select
+          label="Source"
+          id="order-sheet-source"
+          value={draft.source}
+          style={{ minHeight: "44px" }}
+          onChange={(e) => setDraft((d) => ({ ...d, source: e.target.value }))}
+        >
+          <option value="ALL">All</option>
+          <option value="CHECKOUT">Checkout</option>
+          <option value="QUOTE">From a quote</option>
+        </Select>
+        <Select
+          label="Refund"
+          id="order-sheet-refund"
+          value={draft.refund}
+          style={{ minHeight: "44px" }}
+          onChange={(e) => setDraft((d) => ({ ...d, refund: e.target.value }))}
+        >
+          <option value="ALL">All</option>
+          <option value="OWED">Owed</option>
+          <option value="PARTIAL">Partly refunded</option>
+          <option value="REFUNDED">Refunded</option>
+          <option value="NONE">No refund</option>
+        </Select>
+        <Select
+          label="Sort"
+          id="order-sheet-sort"
+          value={draft.sort}
+          style={{ minHeight: "44px" }}
+          onChange={(e) => setDraft((d) => ({ ...d, sort: e.target.value }))}
+        >
+          <option value="newest">Newest first</option>
+          <option value="oldest">Oldest first</option>
+          <option value="total_desc">Total, high to low</option>
+          <option value="total_asc">Total, low to high</option>
+        </Select>
+        <div>
+          <label htmlFor="order-sheet-from" style={labelStyle}>
+            Placed from
+          </label>
+          <input
+            id="order-sheet-from"
+            type="date"
+            dir="ltr"
+            value={draft.from}
+            onChange={(e) => setDraft((d) => ({ ...d, from: e.target.value }))}
+            style={{ ...inputStyle, minHeight: "44px" }}
+          />
+        </div>
+        <div>
+          <label htmlFor="order-sheet-to" style={labelStyle}>
+            Placed to
+          </label>
+          <input
+            id="order-sheet-to"
+            type="date"
+            dir="ltr"
+            value={draft.to}
+            onChange={(e) => setDraft((d) => ({ ...d, to: e.target.value }))}
+            style={{ ...inputStyle, minHeight: "44px" }}
+          />
+        </div>
+      </div>
+    </BottomSheet>
+    </>
   );
 }
