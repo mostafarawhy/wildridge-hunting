@@ -27,9 +27,8 @@ export default async function AdminProtectedLayout({
 
   return (
     <div
+      className="flex flex-col lg:flex-row"
       style={{
-        display: "flex",
-        flexDirection: "row",
         minHeight: "100vh",
         backgroundColor: "var(--color-shop-bg)",
       }}
@@ -44,10 +43,10 @@ export default async function AdminProtectedLayout({
         }}
       />
       <main
+        className="p-4 sm:p-6 lg:p-8"
         style={{
           flex: 1,
           minWidth: 0,
-          padding: "2rem",
         }}
       >
         <ToastProvider>{children}</ToastProvider>

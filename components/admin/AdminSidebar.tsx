@@ -376,14 +376,37 @@ export default function AdminSidebar({
         className="flex lg:hidden"
         style={{
           alignItems: "center",
-          justifyContent: "space-between",
-          padding: "0.75rem 1rem",
+          gap: "0.75rem",
+          position: "sticky",
+          top: 0,
+          zIndex: "var(--z-sticky)",
+          height: "56px",
+          padding: "0 1rem 0 0.5rem",
           backgroundColor: "#ffffff",
           border: "1px solid var(--color-shop-divider)",
-          marginBottom: "1rem",
         }}
       >
-        <div>
+        <button
+          aria-label="Open admin navigation"
+          aria-expanded={drawerOpen}
+          onClick={() => setDrawerOpen(true)}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            width: "44px",
+            height: "44px",
+            flexShrink: 0,
+            backgroundColor: "#0b0b0b",
+            border: "none",
+            borderRadius: "0",
+            cursor: "pointer",
+            color: "#ffffff",
+          }}
+        >
+          <IconMenu />
+        </button>
+        <div style={{ minWidth: 0 }}>
           <p
             style={{
               fontSize: "var(--text-eyebrow)",
@@ -406,25 +429,6 @@ export default function AdminSidebar({
             {activeLink?.label ?? "Dashboard"}
           </p>
         </div>
-        <button
-          aria-label="Open admin navigation"
-          aria-expanded={drawerOpen}
-          onClick={() => setDrawerOpen(true)}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            width: "2.25rem",
-            height: "2.25rem",
-            backgroundColor: "#0b0b0b",
-            border: "none",
-            borderRadius: "0",
-            cursor: "pointer",
-            color: "#ffffff",
-          }}
-        >
-          <IconMenu />
-        </button>
       </div>
 
       {drawerOpen && (
@@ -473,8 +477,8 @@ export default function AdminSidebar({
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  width: "2rem",
-                  height: "2rem",
+                  width: "44px",
+                  height: "44px",
                   flexShrink: 0,
                   backgroundColor: "#0b0b0b",
                   border: "none",
