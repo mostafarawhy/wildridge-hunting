@@ -249,3 +249,59 @@ export function StarOutlineIcon({ size = 16 }: { size?: number }) {
     </svg>
   );
 }
+
+export function IconOrders({ size = 14 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 14 14"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M1 3.5h12v8a1 1 0 01-1 1H2a1 1 0 01-1-1V3.5z" />
+      <path d="M1 3.5L2 1h10l1 2.5" />
+      <path d="M5 6.5h4" />
+    </svg>
+  );
+}
+
+export function IconWishlist({ size = 14 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 14 14"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M7 12S1 8.5 1 4.5a3 3 0 016-1 3 3 0 016 1C13 8.5 7 12 7 12z" />
+    </svg>
+  );
+}
+
+export function IconLoyalty({ size = 14 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 14 14"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <polygon points="7,1 8.8,5.2 13.5,5.5 10,8.5 11,13 7,10.5 3,13 4,8.5 0.5,5.5 5.2,5.2" />
+    </svg>
+  );
+}
