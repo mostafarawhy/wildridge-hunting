@@ -28,7 +28,7 @@ export default function FeaturedSectionView({
       aria-label="Featured products"
     >
       <div className="mx-auto max-w-[1440px] px-6 lg:px-10">
-        <div className="mb-12 flex items-end justify-between">
+        <div className="mb-6 flex items-end justify-between gap-4 lg:mb-12">
           <div>
             <p
               className="mb-2 text-eyebrow uppercase"
@@ -37,7 +37,7 @@ export default function FeaturedSectionView({
               {eyebrow}
             </p>
             <h2
-              className="text-heading font-bold uppercase lg:text-heading-desktop"
+              className="max-lg:text-[1.5rem] text-heading font-bold uppercase lg:text-heading-desktop"
               style={{ color: "var(--color-content-inverse)" }}
             >
               {heading}
@@ -46,7 +46,7 @@ export default function FeaturedSectionView({
           {link({
             href: "/shop",
             className:
-              "hidden text-body uppercase transition-opacity duration-150 hover:opacity-60 lg:block",
+              "shrink-0 whitespace-nowrap text-body uppercase transition-opacity duration-150 hover:opacity-60",
             style: { color: "var(--color-content-inverse)" },
             children: seeAllLabel,
           })}
@@ -57,15 +57,6 @@ export default function FeaturedSectionView({
           locale={locale}
           isBusinessMode={isBusinessMode}
         />
-
-        <div className="mt-12 text-center lg:hidden">
-          {link({
-            href: "/shop",
-            className: "text-body uppercase",
-            style: { color: "var(--color-content-inverse)" },
-            children: seeAllLabel,
-          })}
-        </div>
       </div>
     </section>
   );
