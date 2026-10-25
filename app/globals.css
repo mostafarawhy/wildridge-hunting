@@ -473,9 +473,16 @@ html[dir="rtl"] label {
 }
 
 .brand-wordmark--nav {
-  font-size: 0.9375rem;
+  font-size: 0.8125rem;
   font-weight: var(--font-bold);
-  letter-spacing: 0.3em;
+  letter-spacing: 0.22em;
+}
+
+@media (min-width: 1024px) {
+  .brand-wordmark--nav {
+    font-size: 0.9375rem;
+    letter-spacing: 0.3em;
+  }
 }
 
 .brand-wordmark--checkout {
@@ -492,7 +499,13 @@ html[dir="rtl"] .brand-wordmark {
 }
 
 html[dir="rtl"] .brand-wordmark--nav {
-  letter-spacing: 0.3em !important;
+  letter-spacing: 0.22em !important;
+}
+
+@media (min-width: 1024px) {
+  html[dir="rtl"] .brand-wordmark--nav {
+    letter-spacing: 0.3em !important;
+  }
 }
 
 html[dir="rtl"] .brand-wordmark--checkout {

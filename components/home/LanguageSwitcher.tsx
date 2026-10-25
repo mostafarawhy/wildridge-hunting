@@ -16,14 +16,25 @@ interface LanguageSwitcherProps {
   onSelect?: () => void;
 }
 
+export function useSwitchLocale() {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  return function switchLocale(code: string) {
+    const segments = pathname.split("/");
+    segments[1] = code;
+    startNavigationProgress(segments.join("/"));
+    router.push(segments.join("/"), { scroll: false });
+  };
+}
+
 export default function LanguageSwitcher({
   variant = "dropdown",
   onSelect,
 }: LanguageSwitcherProps = {}) {
   const t = useTranslations("nav");
   const locale = useLocale();
-  const router = useRouter();
-  const pathname = usePathname();
+  const switchLocaleTo = useSwitchLocale();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -38,11 +49,7 @@ export default function LanguageSwitcher({
   }, []);
 
   function switchLocale(code: string) {
-    const segments = pathname.split("/");
-    segments[1] = code;
-    startNavigationProgress(segments.join("/"));
-    router.push(segments.join("/"), { scroll: false });
-
+    switchLocaleTo(code);
     setOpen(false);
   }
 

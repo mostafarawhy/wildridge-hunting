@@ -4,6 +4,8 @@ import BrandMark from "@/components/ui/BrandMark";
 import { getTranslations } from "next-intl/server";
 import NavbarClient from "./NavbarClient";
 import MobileNavController from "./MobileNavController";
+import LanguageSheet from "./LanguageSheet";
+import StickyHeader from "./StickyHeader";
 import type { NavItem } from "./nav-types";
 import NavDropdown from "./NavDropdown";
 import { getCategoryTree } from "@/lib/db/queries/categories";
@@ -157,7 +159,7 @@ export default async function Navbar({ locale }: NavbarProps) {
   navItems.push({ label: tNav("b2b"), href: "/b2b" });
 
   return (
-    <header
+    <StickyHeader
       className="sticky top-0 w-full relative"
       style={{
         backgroundColor: "var(--color-surface-sunken)",
@@ -166,15 +168,16 @@ export default async function Navbar({ locale }: NavbarProps) {
       }}
     >
       <nav
-        className="mx-auto flex h-[75px] max-w-[1440px] items-center px-6 lg:px-10"
+        className="mx-auto flex h-14 lg:h-[75px] max-w-[1440px] items-center px-2 lg:px-10"
         aria-label="Main navigation"
       >
+        <MobileNavController items={navItems} sessionUser={sessionUser} />
         <Link
           href="/"
           className="flex shrink-0 items-center gap-[10px]"
           aria-label={tNav("aria_home")}
         >
-          <BrandMark size={64} priority />
+          <BrandMark size={64} priority className="h-9 w-auto lg:h-16" />
           <span
             dir="ltr"
             className="brand-wordmark brand-wordmark--nav"
@@ -219,7 +222,7 @@ export default async function Navbar({ locale }: NavbarProps) {
             addresses={initialAddresses}
             serviceableCountries={initialServiceableCountries}
           />
-          <MobileNavController items={navItems} sessionUser={sessionUser} />
+          <LanguageSheet />
         </div>
       </nav>
 
@@ -231,6 +234,6 @@ export default async function Navbar({ locale }: NavbarProps) {
         initialSkus={wishlistSkus}
         isAuthenticated={!!sessionUser}
       />
-    </header>
+    </StickyHeader>
   );
 }

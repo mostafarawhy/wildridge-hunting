@@ -50,32 +50,38 @@ export default function NavbarClient({
 
   return (
     <>
-      <button
-        type="button"
-        aria-label={tNav("search")}
-        aria-expanded={searchOpen}
-        onClick={toggleSearch}
-        className="cursor-pointer transition-opacity duration-150 hover:opacity-70 p-[11px] -m-[11px]"
-        style={{ color: "var(--color-content-primary)" }}
-      >
-        <SearchIcon />
-      </button>
+      <div className="hidden lg:flex">
+        <button
+          type="button"
+          aria-label={tNav("search")}
+          aria-expanded={searchOpen}
+          onClick={toggleSearch}
+          className="cursor-pointer transition-opacity duration-150 hover:opacity-70 p-[11px] -m-[11px]"
+          style={{ color: "var(--color-content-primary)" }}
+        >
+          <SearchIcon />
+        </button>
+      </div>
 
-      <div className="hidden sm:flex">
+      <div className="hidden lg:flex">
         <LanguageSwitcher />
       </div>
 
-      <AccountMenu
-        session={sessionUser}
-        canUseBusinessMode={canUseBusinessMode}
-        shopMode={shopMode}
-      />
+      <div className="hidden lg:flex">
+        <AccountMenu
+          session={sessionUser}
+          canUseBusinessMode={canUseBusinessMode}
+          shopMode={shopMode}
+        />
+      </div>
 
-      <div className="hidden sm:flex">
+      <div className="hidden lg:flex">
         <WishlistNavIcon />
       </div>
 
-      {isBusinessMode ? <QuoteIconBadge /> : <CartIconBadge />}
+      <div className="hidden lg:flex">
+        {isBusinessMode ? <QuoteIconBadge /> : <CartIconBadge />}
+      </div>
 
       <Suspense fallback={null}>
         <LoginModalController signedIn={sessionUser !== null} />
