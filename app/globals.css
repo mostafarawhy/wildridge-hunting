@@ -744,3 +744,9 @@ html[dir="rtl"] .brand-wordmark--checkout {
     padding-bottom: calc(64px + env(safe-area-inset-bottom));
   }
 }
+
+.card-touch-action { display: none; }
+@media (hover: none) {
+  .card-hover-overlay { display: none; }
+  .card-touch-action { display: flex; }
+}

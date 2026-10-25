@@ -84,9 +84,8 @@ export default function ShopProductCard(props: ShopProductCardFullProps) {
       }}
     >
       <div
-        className="relative w-full"
+        className="relative w-full aspect-square sm:aspect-[3/2]"
         style={{
-          aspectRatio: "3 / 2",
           backgroundColor: "var(--primitive-white)",
         }}
       >
@@ -183,14 +182,76 @@ export default function ShopProductCard(props: ShopProductCardFullProps) {
         )}
 
         <div
-          className="absolute bottom-3 z-10"
-          style={{ insetInlineEnd: "0.75rem" }}
+          className="absolute z-10 flex items-center justify-center"
+          style={{
+            bottom: "8px",
+            insetInlineEnd: "8px",
+            width: "38px",
+            height: "38px",
+            backgroundColor: "var(--primitive-white)",
+            border: "1px solid var(--color-shop-divider)",
+            borderRadius: "50%",
+          }}
         >
           <WishlistButton sku={sku} size={18} />
         </div>
 
+        {inStock && onQuickView && (
+          <button
+            type="button"
+            aria-label={t("quick_add")}
+            onClick={() => onQuickView(props)}
+            disabled={isLoadingQuickView}
+            className="card-touch-action absolute z-10 items-center justify-center cursor-pointer active:opacity-80 disabled:opacity-70"
+            style={{
+              bottom: "8px",
+              insetInlineStart: "8px",
+              width: "38px",
+              height: "38px",
+              backgroundColor: "var(--color-action-primary)",
+              color: "var(--primitive-white)",
+              borderRadius: "50%",
+              border: "none",
+            }}
+          >
+            {isLoadingQuickView ? (
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                className="animate-spin"
+                aria-hidden="true"
+              >
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="8" cy="21" r="1" />
+                <circle cx="19" cy="21" r="1" />
+                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                <path d="M12 6v5M9.5 8.5h5" />
+              </svg>
+            )}
+          </button>
+        )}
+
         <div
-          className="absolute inset-0 flex items-center justify-center gap-3
+          className="card-hover-overlay absolute inset-0 flex items-center justify-center gap-3
              opacity-0 group-hover:opacity-100 transition-opacity duration-200
              pointer-events-none group-hover:pointer-events-auto"
           style={{
@@ -285,9 +346,9 @@ export default function ShopProductCard(props: ShopProductCardFullProps) {
         </div>
       </div>
 
-      <Link href={pdpHref} className="flex flex-col gap-1 px-5 pt-4 pb-5">
+      <Link href={pdpHref} className="flex flex-col gap-1 px-3 pt-3 pb-4 sm:px-5 sm:pt-4 sm:pb-5">
         <p
-          className="text-body leading-snug"
+          className="text-body leading-snug line-clamp-2"
           style={{
             color: "var(--primitive-black)",
             fontWeight: "var(--font-medium)",
