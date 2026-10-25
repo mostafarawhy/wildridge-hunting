@@ -149,26 +149,37 @@ export default function FeaturedProductsClient({
               </svg>
             </button>
 
-            <div className="flex gap-2">
+            <div className="flex">
               {Array.from({ length: maxIndex + 1 }).map((_, i) => (
                 <button
                   key={i}
                   type="button"
                   onClick={() => scrollTo(i)}
-                  className="transition-all duration-200"
+                  className="flex items-center justify-center"
                   style={{
-                    width: activeIndex === i ? "24px" : "8px",
-                    height: "8px",
-                    borderRadius: "4px",
-                    backgroundColor:
-                      activeIndex === i
-                        ? "var(--color-accent)"
-                        : "var(--primitive-light-gray)",
+                    width: "24px",
+                    height: "24px",
+                    padding: 0,
+                    backgroundColor: "transparent",
                     border: "none",
                   }}
                   aria-label={`${i + 1} / ${maxIndex + 1}`}
                   aria-current={activeIndex === i ? "true" : undefined}
-                />
+                >
+                  <span
+                    className="transition-all duration-200"
+                    style={{
+                      display: "block",
+                      width: activeIndex === i ? "24px" : "8px",
+                      height: "8px",
+                      borderRadius: "4px",
+                      backgroundColor:
+                        activeIndex === i
+                          ? "var(--color-accent)"
+                          : "var(--primitive-light-gray)",
+                    }}
+                  />
+                </button>
               ))}
             </div>
 

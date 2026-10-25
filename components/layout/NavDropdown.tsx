@@ -103,7 +103,13 @@ export default function NavDropdown({
           ref={buttonRef}
           type="button"
           className="flex items-center ps-1"
-          style={{ color: "var(--color-content-secondary)" }}
+          style={{
+            color: "var(--color-content-secondary)",
+            paddingBlock: "16px",
+            marginBlock: "-16px",
+            paddingInlineEnd: "28px",
+            marginInlineEnd: "-28px",
+          }}
           aria-expanded={open}
           aria-controls={panelId}
           aria-label={label}

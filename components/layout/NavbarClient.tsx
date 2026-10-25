@@ -51,7 +51,7 @@ export default function NavbarClient({
         aria-label={tNav("search")}
         aria-expanded={searchOpen}
         onClick={() => setSearchOpen((prev) => !prev)}
-        className="cursor-pointer transition-opacity duration-150 hover:opacity-70"
+        className="cursor-pointer transition-opacity duration-150 hover:opacity-70 p-[11px] -m-[11px]"
         style={{ color: "var(--color-content-primary)" }}
       >
         <SearchIcon />
