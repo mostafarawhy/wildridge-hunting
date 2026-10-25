@@ -115,6 +115,8 @@
   },
   "cart": {
     "title": "Your Cart",
+    "decrease": "Decrease quantity",
+    "increase": "Increase quantity",
     "empty": "Your cart is empty",
     "emptyCta": "Continue Shopping",
     "subtotal": "Subtotal",
@@ -2128,6 +2130,7 @@
     "gallery_prev": "Previous image",
     "gallery_next": "Next image",
     "gallery_thumb": "View image",
+    "back": "Go back",
     "total_label": "Total",
     "view_product": "View Product",
     "notify_me": "Notify Me",

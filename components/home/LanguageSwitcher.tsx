@@ -83,7 +83,7 @@ export default function LanguageSwitcher({
     <div ref={ref} className="relative">
       <button
         type="button"
-        aria-label={t("lang_label")}
+        aria-label={`${t("lang_label")}: ${current?.short}`}
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
         className="cursor-pointer flex items-center gap-1.5 transition-opacity duration-150 hover:opacity-70"

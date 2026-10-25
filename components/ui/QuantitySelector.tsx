@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 interface QuantitySelectorProps {
   value: number;
   onChange: (value: number) => void;
@@ -15,6 +17,8 @@ export default function QuantitySelector({
   max,
   mode = "stepper",
 }: QuantitySelectorProps) {
+  const t = useTranslations("cart");
+
   if (mode === "input") {
     return (
       <input
@@ -57,6 +61,7 @@ export default function QuantitySelector({
     >
       <button
         type="button"
+        aria-label={t("decrease")}
         onClick={() => onChange(Math.max(min, value - 1))}
         disabled={value <= min}
         className="w-9 h-9 flex items-center justify-center cursor-pointer disabled:opacity-30"
@@ -89,6 +94,7 @@ export default function QuantitySelector({
       </span>
       <button
         type="button"
+        aria-label={t("increase")}
         onClick={() =>
           onChange(max !== undefined ? Math.min(max, value + 1) : value + 1)
         }

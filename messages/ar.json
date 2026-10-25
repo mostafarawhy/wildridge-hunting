@@ -115,6 +115,8 @@
   },
   "cart": {
     "title": "سلة التسوق",
+    "decrease": "تقليل الكمية",
+    "increase": "زيادة الكمية",
     "empty": "سلتك فارغة",
     "emptyCta": "متابعة التسوق",
     "subtotal": "المجموع الجزئي",
@@ -2128,6 +2130,7 @@
     "gallery_prev": "الصورة السابقة",
     "gallery_next": "الصورة التالية",
     "gallery_thumb": "عرض الصورة",
+    "back": "رجوع",
     "total_label": "الإجمالي",
     "view_product": "عرض المنتج",
     "notify_me": "أشعرني",

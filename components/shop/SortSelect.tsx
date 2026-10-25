@@ -45,6 +45,7 @@ function SortSelectInner({ defaultSort = "featured" }: SortSelectProps) {
   return (
     <div className="relative inline-flex items-center">
       <select
+        aria-label={t("sort_label")}
         value={current}
         onChange={(e) => handleChange(e.target.value as SortValue)}
         className="appearance-none cursor-pointer pe-8 ps-0 h-9 transition-colors text-body-sm"

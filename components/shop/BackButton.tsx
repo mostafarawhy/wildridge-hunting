@@ -1,14 +1,17 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { startNavigationProgress } from "@/components/loading/NavigationProgress";
 
 export default function BackButton() {
   const router = useRouter();
+  const t = useTranslations("shop");
 
   return (
     <button
       type="button"
+      aria-label={t("back")}
       onClick={() => { startNavigationProgress(); router.back(); }}
       className="flex items-center justify-center flex-shrink-0 cursor-pointer transition-colors"
       style={{
