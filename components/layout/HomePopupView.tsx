@@ -86,7 +86,8 @@ export default function HomePopupView({
             src={imageUrl}
             alt=""
             fill
-            sizes="(min-width: 640px) 350px, 400px"
+            sizes="(min-width: 792px) 350px, (min-width: 640px) calc((100vw - 2rem) * 0.46), (min-width: 432px) 400px, calc(100vw - 2rem)"
+            loading="eager"
             className="object-cover"
             unoptimized={unoptimized}
           />

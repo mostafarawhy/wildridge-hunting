@@ -204,7 +204,7 @@ function GalleryViewer({
             alt={images[index]?.alt ?? productName}
             fill
             className="object-contain"
-            sizes="90vw"
+            sizes="calc(100vw - 8rem)"
             fade={false}
             tone="dark"
             draggable={false}
@@ -331,7 +331,11 @@ export default function PDPGallery({
           key={active}
           src={images[active]?.src ?? ""}
           alt={images[active]?.alt ?? productName}
-          sizes="(max-width: 1024px) 100vw, 55vw"
+          sizes={
+            isModal
+              ? "(min-width: 1024px) 290px, (min-width: 928px) 783px, calc(100vw - 9rem - 1px)"
+              : "(min-width: 1024px) calc(55vw - 8rem - 1px), calc(100vw - 7rem - 1px)"
+          }
           containerStyle={{ position: "absolute", inset: 0 }}
         />
 
