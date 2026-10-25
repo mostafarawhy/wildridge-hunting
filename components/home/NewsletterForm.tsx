@@ -209,17 +209,16 @@ export default function NewsletterForm({
 
   return (
     <form onSubmit={handleSubmit} noValidate className="relative">
-      <div className="flex">
+      <div className="flex flex-col gap-2 sm:flex-row sm:gap-0">
         <input
           type="email"
           name="email"
           required
           autoComplete="email"
           placeholder={tCommon("email_placeholder")}
-          className="flex-1 h-12 px-4 text-body-sm tracking-wide bg-transparent outline-none min-w-0"
+          className="sm:flex-1 h-12 px-4 text-body-sm tracking-wide bg-transparent outline-none min-w-0 sm:[border-inline-end:none]"
           style={{
             border: "1px solid var(--color-border-default)",
-            borderInlineEnd: "none",
             color: "var(--color-content-primary)",
           }}
           aria-label={tCommon("email_placeholder")}
@@ -227,7 +226,7 @@ export default function NewsletterForm({
         <button
           type="submit"
           disabled={pending}
-          className="h-12 px-7 text-label tracking-widest uppercase font-medium shrink-0 transition-opacity duration-150 hover:opacity-85"
+          className="h-12 w-full sm:w-auto px-7 text-label tracking-widest uppercase font-medium shrink-0 transition-opacity duration-150 hover:opacity-85"
           style={{
             backgroundColor: "var(--color-action-primary)",
             color: "var(--color-action-primary-fg)",

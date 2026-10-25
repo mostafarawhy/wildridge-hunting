@@ -69,14 +69,8 @@ export default function NewsletterBandView({
 }: NewsletterBandViewProps) {
   return (
     <section className="w-full" aria-label="Newsletter signup">
-      <div
-        className="grid grid-cols-1 lg:grid-cols-2"
-        style={{ minHeight: "560px" }}
-      >
-        <div
-          className="relative flex flex-col items-start justify-end p-10 lg:p-16"
-          style={{ minHeight: "360px" }}
-        >
+      <div className="grid grid-cols-1 lg:grid-cols-2 lg:min-h-[560px]">
+        <div className="relative flex flex-col items-start justify-end p-6 lg:p-16 min-h-[320px] lg:min-h-[360px]">
           <Image
             src={photoUrl}
             alt=""
@@ -106,14 +100,17 @@ export default function NewsletterBandView({
             </h2>
 
             {socials.length > 0 && (
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3">
                 {socials.map((s) => (
                   <a
                     key={s.key}
                     href={s.href}
                     aria-label={s.ariaLabel}
-                    className="transition-opacity duration-150 hover:opacity-60"
-                    style={{ color: "var(--color-content-secondary)" }}
+                    className="flex h-11 w-11 items-center justify-center rounded-full transition-opacity duration-150 hover:opacity-60"
+                    style={{
+                      color: "var(--color-content-secondary)",
+                      backgroundColor: "var(--color-border-subtle)",
+                    }}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -126,7 +123,7 @@ export default function NewsletterBandView({
         </div>
 
         <div
-          className="flex flex-col justify-center px-10 py-14 lg:px-16"
+          className="flex flex-col justify-center px-6 py-10 lg:px-16 lg:py-14"
           style={{ backgroundColor: "var(--color-surface-sunken)" }}
         >
           <p
@@ -141,14 +138,14 @@ export default function NewsletterBandView({
 
             <p
               className="text-label tracking-wide"
-              style={{ color: "var(--color-content-tertiary)" }}
+              style={{ color: "var(--color-content-secondary)" }}
             >
               {legalPrefix}{" "}
               {link({
                 href: "/privacy",
                 className:
                   "underline underline-offset-2 transition-opacity duration-150 hover:opacity-70",
-                style: { color: "var(--color-content-tertiary)" },
+                style: { color: "var(--color-content-secondary)" },
                 children: legalLinkLabel,
               })}
               {". "}
