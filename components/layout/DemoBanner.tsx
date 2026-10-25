@@ -1,6 +1,11 @@
 import { isDemoMode } from "@/lib/config/demo";
 
-export default function DemoBanner({ message }: { message: string }) {
+interface DemoBannerProps {
+  message: string;
+  shortMessage?: string;
+}
+
+export default function DemoBanner({ message, shortMessage }: DemoBannerProps) {
   if (!isDemoMode()) return null;
 
   return (
@@ -15,7 +20,14 @@ export default function DemoBanner({ message }: { message: string }) {
         padding: "0.375rem 1rem",
       }}
     >
-      {message}
+      {shortMessage ? (
+        <>
+          <span className="sm:hidden">{shortMessage}</span>
+          <span className="hidden sm:inline">{message}</span>
+        </>
+      ) : (
+        message
+      )}
     </div>
   );
 }

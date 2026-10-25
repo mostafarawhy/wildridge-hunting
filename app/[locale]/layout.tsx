@@ -74,7 +74,10 @@ export default async function LocaleLayout({
             <Suspense fallback={null}>
               <NavigationProgress />
             </Suspense>
-            <DemoBanner message={tDemo("banner")} />
+            <DemoBanner
+              message={tDemo("banner")}
+              shortMessage={tDemo("bannerShort")}
+            />
             {children}
           </MotionProvider>
         </NextIntlClientProvider>

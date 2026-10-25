@@ -2430,6 +2430,7 @@
   },
   "demo": {
     "banner": "Portfolio demo. No real orders, payments or emails. Visitor changes are reset regularly.",
+    "bannerShort": "Portfolio demo. No real orders or payments.",
     "emailNote": "Demo: emails are simulated and never delivered.",
     "access": {
       "hint": "Exploring? Use a ready-made demo account.",
