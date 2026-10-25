@@ -67,7 +67,10 @@ export default function LanguageSheet() {
         title={t("lang_label")}
         closeLabel={tShop("close")}
       >
-        <ul role="list">
+        <ul
+          role="list"
+          className="px-2 pb-[calc(0.75rem+env(safe-area-inset-bottom))]"
+        >
           {LOCALES.map((l) => {
             const selected = l.code === locale;
             return (
@@ -79,29 +82,29 @@ export default function LanguageSheet() {
                     switchLocale(l.code);
                     setOpen(false);
                   }}
-                  className="flex w-full items-center justify-between gap-3 px-4 text-start cursor-pointer transition-colors duration-150 active:bg-[var(--color-surface-overlay)] [@media(hover:hover)]:hover:bg-[var(--color-surface-overlay)]"
-                  style={{ minHeight: "56px" }}
+                  className="flex w-full items-center justify-between gap-3 px-4 text-start cursor-pointer rounded-[10px] transition-colors duration-150 active:bg-[color-mix(in_srgb,var(--primitive-black)_6%,transparent)] [@media(hover:hover)]:hover:bg-[color-mix(in_srgb,var(--primitive-black)_6%,transparent)]"
+                  style={{
+                    minHeight: "56px",
+                    ...(selected
+                      ? {
+                          backgroundColor:
+                            "color-mix(in srgb, var(--color-action-primary) 10%, transparent)",
+                        }
+                      : {}),
+                  }}
                 >
-                  <span className="flex flex-col">
-                    <span
-                      lang={l.code === "en" ? undefined : l.code}
-                      dir={l.code === "ar" ? "rtl" : undefined}
-                      className="text-body-lg"
-                      style={{
-                        color: "var(--color-content-primary)",
-                        fontWeight: selected
-                          ? "var(--font-semibold)"
-                          : "var(--font-normal)",
-                      }}
-                    >
-                      {l.native}
-                    </span>
-                    <span
-                      className="text-body-sm"
-                      style={{ color: "var(--color-content-tertiary)" }}
-                    >
-                      {t(`lang_${l.code}` as Parameters<typeof t>[0])}
-                    </span>
+                  <span
+                    lang={l.code === "en" ? undefined : l.code}
+                    dir={l.code === "ar" ? "rtl" : undefined}
+                    className="text-body-lg"
+                    style={{
+                      color: "var(--primitive-black)",
+                      fontWeight: selected
+                        ? "var(--font-semibold)"
+                        : "var(--font-normal)",
+                    }}
+                  >
+                    {l.native}
                   </span>
                   {selected && (
                     <svg
