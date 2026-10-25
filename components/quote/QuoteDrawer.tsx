@@ -59,7 +59,7 @@ export default function QuoteDrawer({
           <button
             type="button"
             onClick={closeDrawer}
-            aria-label="Close quote drawer"
+            aria-label={t("close_aria")}
             className="flex items-center justify-center w-8 h-8 cursor-pointer transition-opacity hover:opacity-50"
             style={{
               background: "none",

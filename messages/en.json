@@ -120,6 +120,7 @@
     "id_required": "ID Verification Required"
   },
   "cart": {
+    "close_aria": "Close cart",
     "title": "Your Cart",
     "decrease": "Decrease quantity",
     "increase": "Increase quantity",
@@ -2193,6 +2194,7 @@
     "more_in_category": "More in {category}"
   },
   "quote": {
+    "close_aria": "Close quote list",
     "title": "Your Quote Request",
     "empty": "You haven't added anything to quote yet.",
     "empty_cta": "Browse Products",
