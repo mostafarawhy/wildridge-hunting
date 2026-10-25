@@ -3,7 +3,7 @@
 import { useRef, useEffect, useCallback, useState } from "react";
 import { useSearchParams, usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import AccountMenuButton from "./AccountMenuButton";
 import LoggedInMenu from "./LoggedInMenu";
 import type { ShopMode } from "@/lib/utils/shop-mode";
@@ -97,7 +97,7 @@ export default function AccountMenu({
 
       <AnimatePresence>
         {open && (
-          <motion.div
+          <m.div
             id="account-dropdown-panel"
             key="account-dropdown"
             role="menu"
@@ -124,7 +124,7 @@ export default function AccountMenu({
               canUseBusinessMode={canUseBusinessMode}
               shopMode={shopMode}
             />
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </div>

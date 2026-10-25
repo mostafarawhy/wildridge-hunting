@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, ReactNode, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 
 interface DrawerProps {
   open: boolean;
@@ -115,7 +115,7 @@ function DrawerInner({
     <AnimatePresence>
       {open && (
         <>
-          <motion.div
+          <m.div
             key="drawer-backdrop"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -130,7 +130,7 @@ function DrawerInner({
               zIndex: 390,
             }}
           />
-          <motion.div
+          <m.div
             key="drawer-panel"
             ref={panelRef}
             role="dialog"
@@ -156,7 +156,7 @@ function DrawerInner({
             }}
           >
             {children}
-          </motion.div>
+          </m.div>
         </>
       )}
     </AnimatePresence>

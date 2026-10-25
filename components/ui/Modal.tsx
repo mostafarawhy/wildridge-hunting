@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useSyncExternalStore, ReactNode } from "react";
 import { createPortal } from "react-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 
 interface ModalProps {
   open: boolean;
@@ -123,7 +123,7 @@ function ModalInner({
     <AnimatePresence>
       {open && (
         <>
-          <motion.div
+          <m.div
             key="modal-backdrop"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -139,7 +139,7 @@ function ModalInner({
             aria-hidden="true"
           />
 
-          <motion.div
+          <m.div
             key="modal-container"
             role="dialog"
             aria-modal="true"
@@ -199,7 +199,7 @@ function ModalInner({
 
               {children}
             </div>
-          </motion.div>
+          </m.div>
         </>
       )}
     </AnimatePresence>

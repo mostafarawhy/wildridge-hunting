@@ -10,7 +10,7 @@ import {
   useSyncExternalStore,
 } from "react";
 import { createPortal } from "react-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 
 type ToastType = "success" | "error" | "info";
 
@@ -72,7 +72,7 @@ function ToastItem({
   }, [toast.id, onDismiss]);
 
   return (
-    <motion.div
+    <m.div
       layout
       initial={{ opacity: 0, y: -8 }}
       animate={{ opacity: 1, y: 0 }}
@@ -154,7 +154,7 @@ function ToastItem({
           <path d="M1 1l8 8M9 1l-8 8" />
         </svg>
       </button>
-    </motion.div>
+    </m.div>
   );
 }
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { StarOutlineIcon } from "@/components/ui/icons";
@@ -142,7 +142,7 @@ export default function CartSummary({ cart, locale, surface }: CartSummaryProps)
           )}
           {freeShippingEligible && (
             <div style={{ position: "relative", overflow: "visible" }}>
-              <motion.div
+              <m.div
                 key={justUnlocked && visible && !prefersReduced ? "burst" : "static"}
                 initial={
                   !justUnlocked || !visible || prefersReduced
@@ -154,7 +154,7 @@ export default function CartSummary({ cart, locale, surface }: CartSummaryProps)
                 className="flex items-center gap-1.5 text-body-sm font-medium"
                 style={{ color: "var(--color-positive)" }}
               >
-                <motion.svg
+                <m.svg
                   width="14"
                   height="14"
                   viewBox="0 0 14 14"
@@ -162,7 +162,7 @@ export default function CartSummary({ cart, locale, surface }: CartSummaryProps)
                   aria-hidden="true"
                   style={{ flexShrink: 0 }}
                 >
-                  <motion.path
+                  <m.path
                     d="M2 7L5.5 10.5L12 3.5"
                     stroke="var(--color-positive)"
                     strokeWidth="1.75"
@@ -176,14 +176,14 @@ export default function CartSummary({ cart, locale, surface }: CartSummaryProps)
                     animate={{ pathLength: 1 }}
                     transition={{ duration: 0.32, ease: "easeInOut", delay: 0.06 }}
                   />
-                </motion.svg>
+                </m.svg>
                 <span>{t("freeShippingUnlocked")}</span>
-              </motion.div>
+              </m.div>
 
               {justUnlocked && visible &&
                 !prefersReduced &&
                 BURST_OFFSETS.map((off, i) => (
-                  <motion.span
+                  <m.span
                     key={i}
                     aria-hidden="true"
                     initial={{ opacity: 0.9, scale: 1, x: 0, y: 0 }}

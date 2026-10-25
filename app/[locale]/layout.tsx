@@ -8,6 +8,7 @@ import { getMessages, getTranslations } from "next-intl/server";
 import DemoBanner from "@/components/layout/DemoBanner";
 import { Suspense } from "react";
 import NavigationProgress from "@/components/loading/NavigationProgress";
+import MotionProvider from "@/components/ui/MotionProvider";
 
 export const metadata: Metadata = {
   title: {
@@ -58,11 +59,13 @@ export default async function LocaleLayout({
     >
       <body className="min-h-dvh flex flex-col">
         <NextIntlClientProvider locale={safeLocale} messages={messages}>
-          <Suspense fallback={null}>
-            <NavigationProgress />
-          </Suspense>
-          <DemoBanner message={tDemo("banner")} />
-          {children}
+          <MotionProvider>
+            <Suspense fallback={null}>
+              <NavigationProgress />
+            </Suspense>
+            <DemoBanner message={tDemo("banner")} />
+            {children}
+          </MotionProvider>
         </NextIntlClientProvider>
       </body>
     </html>

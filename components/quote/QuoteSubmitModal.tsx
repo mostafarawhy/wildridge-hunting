@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import { useQuoteStore } from "@/lib/stores/quote-store";
@@ -151,7 +151,7 @@ export default function QuoteSubmitModal({
       <div style={{ overflow: "hidden" }}>
       <AnimatePresence mode="wait" initial={false}>
         {step === "add-address" ? (
-          <motion.div
+          <m.div
             key="add-address"
             initial={{ x: direction * 40, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -169,9 +169,9 @@ export default function QuoteSubmitModal({
                 setStep("confirm");
               }}
             />
-          </motion.div>
+          </m.div>
         ) : step === "success" ? (
-          <motion.div
+          <m.div
             key="success"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -194,9 +194,9 @@ export default function QuoteSubmitModal({
               {t("success_body", { quoteNumber: quoteNumber ?? "" })}
             </p>
             <DemoEmailNote />
-          </motion.div>
+          </m.div>
         ) : (
-          <motion.div
+          <m.div
             key="confirm"
             initial={{ x: direction * 40, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -455,7 +455,7 @@ export default function QuoteSubmitModal({
               {t("confirm_modal.cancel_cta")}
             </Button>
           </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
       </div>

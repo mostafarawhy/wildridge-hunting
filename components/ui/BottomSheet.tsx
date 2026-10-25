@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, ReactNode, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, m, useReducedMotion } from "framer-motion";
 
 interface BottomSheetProps {
   open: boolean;
@@ -108,7 +108,7 @@ function BottomSheetInner({
     <AnimatePresence>
       {open && (
         <>
-          <motion.div
+          <m.div
             key="sheet-backdrop"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -123,7 +123,7 @@ function BottomSheetInner({
               zIndex: 390,
             }}
           />
-          <motion.div
+          <m.div
             key="sheet-panel"
             ref={panelRef}
             role="dialog"
@@ -200,7 +200,7 @@ function BottomSheetInner({
                 {footer}
               </div>
             )}
-          </motion.div>
+          </m.div>
         </>
       )}
     </AnimatePresence>
