@@ -2,14 +2,22 @@
 
 import DemoAccessButtons from "@/components/auth/DemoAccessButtons";
 import { useCallback, useEffect } from "react";
+import dynamic from "next/dynamic";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import Modal from "@/components/ui/Modal";
-import LoginFormCompact from "@/components/auth/LoginFormCompact";
 import { isUaePassEnabled } from "@/lib/env.client";
 import UaePassButton from "@/components/auth/UaePassButton";
 import { safeRelativePath } from "@/lib/utils/safe-redirect";
 import { startNavigationProgress } from "@/components/loading/NavigationProgress";
+
+const LoginFormCompact = dynamic(
+  () => import("@/components/auth/LoginFormCompact"),
+  {
+    ssr: false,
+    loading: () => <div aria-busy="true" style={{ minHeight: 280 }} />,
+  },
+);
 
 export default function LoginModalController({ signedIn }: { signedIn: boolean }) {
   const t = useTranslations("auth.login");

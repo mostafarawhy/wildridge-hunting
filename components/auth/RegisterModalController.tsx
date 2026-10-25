@@ -1,12 +1,20 @@
 "use client";
 
 import { useCallback } from "react";
+import dynamic from "next/dynamic";
 import { useSearchParams, usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import Modal from "@/components/ui/Modal";
-import RegisterFormCompact from "@/components/auth/RegisterFormCompact";
 import { isUaePassEnabled } from "@/lib/env.client";
 import UaePassButton from "@/components/auth/UaePassButton";
+
+const RegisterFormCompact = dynamic(
+  () => import("@/components/auth/RegisterFormCompact"),
+  {
+    ssr: false,
+    loading: () => <div aria-busy="true" style={{ minHeight: 420 }} />,
+  },
+);
 
 export default function RegisterModalController() {
   const t = useTranslations("auth.register");

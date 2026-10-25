@@ -1,16 +1,20 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import { useQuoteStore } from "@/lib/stores/quote-store";
 import Drawer from "@/components/ui/Drawer";
 import QuoteItemRow from "./QuoteItemRow";
 import QuoteSummary from "./QuoteSummary";
-import QuoteSubmitModal from "./QuoteSubmitModal";
 import Button from "@/components/ui/Button";
 import type { CustomerAddressProjection } from "@/lib/db/queries/account";
 import { startNavigationProgress } from "@/components/loading/NavigationProgress";
+
+const QuoteSubmitModal = dynamic(() => import("./QuoteSubmitModal"), {
+  ssr: false,
+});
 
 interface QuoteDrawerProps {
   addresses: CustomerAddressProjection[];
@@ -29,6 +33,7 @@ export default function QuoteDrawer({
   const lines = useQuoteStore((s) => s.lines);
   const [note, setNote] = useState("");
   const [submitModalOpen, setSubmitModalOpen] = useState(false);
+  const [submitLoaded, setSubmitLoaded] = useState(false);
 
   return (
     <>
@@ -104,21 +109,24 @@ export default function QuoteDrawer({
             <QuoteSummary
               onOpenSubmit={() => {
                 closeDrawer();
+                setSubmitLoaded(true);
                 setSubmitModalOpen(true);
               }}
             />
           </>
         )}
       </Drawer>
-      <QuoteSubmitModal
-        open={submitModalOpen}
-        onClose={() => setSubmitModalOpen(false)}
-        locale={locale}
-        initialAddresses={addresses}
-        serviceableCountries={serviceableCountries}
-        note={note}
-        onNoteChange={setNote}
-      />
+      {submitLoaded && (
+        <QuoteSubmitModal
+          open={submitModalOpen}
+          onClose={() => setSubmitModalOpen(false)}
+          locale={locale}
+          initialAddresses={addresses}
+          serviceableCountries={serviceableCountries}
+          note={note}
+          onNoteChange={setNote}
+        />
+      )}
     </>
   );
 }
