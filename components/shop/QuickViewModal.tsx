@@ -73,7 +73,8 @@ export default function QuickViewModal({
   const [cartError, setCartError] = useState<string | null>(null);
   const isWide = useSyncExternalStore(subscribeWide, getWide, getWideServer);
   const reduceMotion = useReducedMotion();
-  const swipe = useSwipeToClose(onClose);
+  const swipePanelRef = useRef<HTMLDivElement>(null);
+  const swipeHandlers = useSwipeToClose(swipePanelRef, onClose);
 
   const setCart = useCartStore((s) => s.setCart);
   const openDrawer = useCartStore((s) => s.openDrawer);
@@ -295,7 +296,7 @@ export default function QuickViewModal({
         }}
       >
       <div
-        ref={swipe.panelRef}
+        ref={swipePanelRef}
         className="relative w-full flex flex-col lg:flex-row overflow-hidden rounded-t-[18px] max-h-[88dvh] lg:rounded-[var(--radius-card)] lg:max-h-[90vh]"
         style={{
           backgroundColor: "var(--primitive-white)",
@@ -303,7 +304,7 @@ export default function QuickViewModal({
         }}
       >
         <div
-          {...swipe.handlers}
+          {...swipeHandlers}
           aria-hidden="true"
           className="lg:hidden flex shrink-0 justify-center pt-2 pb-3"
           style={{ touchAction: "none" }}

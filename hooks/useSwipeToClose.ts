@@ -1,13 +1,15 @@
 "use client";
 
-import { useRef, useCallback } from "react";
+import { useRef, useCallback, type RefObject } from "react";
 
 const CLOSE_DISTANCE = 80;
 const CLOSE_VELOCITY = 0.5;
 const STALE_MS = 100;
 
-export function useSwipeToClose(onClose: () => void) {
-  const panelRef = useRef<HTMLDivElement>(null);
+export function useSwipeToClose(
+  panelRef: RefObject<HTMLDivElement | null>,
+  onClose: () => void,
+) {
   const startY = useRef<number | null>(null);
   const lastY = useRef(0);
   const lastTime = useRef(0);
@@ -21,7 +23,7 @@ export function useSwipeToClose(onClose: () => void) {
     velocity.current = 0;
     if (panelRef.current) panelRef.current.style.transition = "none";
     e.currentTarget.setPointerCapture(e.pointerId);
-  }, []);
+  }, [panelRef]);
 
   const onPointerMove = useCallback((e: React.PointerEvent<HTMLElement>) => {
     if (startY.current === null) return;
@@ -33,7 +35,7 @@ export function useSwipeToClose(onClose: () => void) {
     if (panelRef.current) {
       panelRef.current.style.transform = `translateY(${dy}px)`;
     }
-  }, []);
+  }, [panelRef]);
 
   const finish = useCallback(
     (e: React.PointerEvent<HTMLElement>) => {
@@ -54,16 +56,13 @@ export function useSwipeToClose(onClose: () => void) {
       el.style.transition = reduced ? "none" : "transform 200ms ease-out";
       el.style.transform = "translateY(0)";
     },
-    [onClose],
+    [onClose, panelRef],
   );
 
   return {
-    panelRef,
-    handlers: {
-      onPointerDown,
-      onPointerMove,
-      onPointerUp: finish,
-      onPointerCancel: finish,
-    },
+    onPointerDown,
+    onPointerMove,
+    onPointerUp: finish,
+    onPointerCancel: finish,
   };
 }

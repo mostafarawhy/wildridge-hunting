@@ -41,7 +41,8 @@ function BottomSheetInner({
   const panelRef = useRef<HTMLDivElement>(null);
   const previouslyFocusedRef = useRef<HTMLElement | null>(null);
   const reduceMotion = useReducedMotion();
-  const swipe = useSwipeToClose(onClose);
+  const swipePanelRef = useRef<HTMLDivElement>(null);
+  const swipeHandlers = useSwipeToClose(swipePanelRef, onClose);
 
   useEffect(() => {
     if (!open) return;
@@ -139,28 +140,26 @@ function BottomSheetInner({
               position: "fixed",
               bottom: 0,
               insetInline: 0,
-              maxHeight: "85dvh",
-              borderStartStartRadius: "14px",
-              borderStartEndRadius: "14px",
-              backgroundColor: "var(--color-auth-input-bg)",
               color: "var(--primitive-black)",
               display: "flex",
               flexDirection: "column",
               zIndex: 400,
-              overflow: "hidden",
             }}
           >
             <div
-              ref={swipe.panelRef}
+              ref={swipePanelRef}
               style={{
                 display: "flex",
                 flexDirection: "column",
-                flex: 1,
-                minHeight: 0,
+                maxHeight: "85dvh",
+                borderStartStartRadius: "14px",
+                borderStartEndRadius: "14px",
+                backgroundColor: "var(--color-auth-input-bg)",
+                overflow: "hidden",
               }}
             >
             <div
-              {...swipe.handlers}
+              {...swipeHandlers}
               style={{ touchAction: "none", flexShrink: 0 }}
             >
             <div
