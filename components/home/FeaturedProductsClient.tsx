@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import QuickViewModal from "@/components/shop/QuickViewModal";
 import ShopProductCard from "@/components/shop/ShopProductCard";
@@ -55,20 +55,52 @@ export default function FeaturedProductsClient({
   );
   const [quickViewError, setQuickViewError] = useState(false);
   const [loadingCardSku, setLoadingCardSku] = useState<string | null>(null);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [scrollIndex, setScrollIndex] = useState(0);
+  const [visible, setVisible] = useState(VISIBLE);
+  const frameRef = useRef(0);
 
-  const hasSlider = items.length > VISIBLE;
-  const maxIndex = Math.max(0, items.length - VISIBLE);
+  const hasSlider = items.length > visible;
+  const maxIndex = Math.max(0, items.length - visible);
+  const activeIndex = Math.min(scrollIndex, maxIndex);
+
+  const measure = useCallback(() => {
+    const track = trackRef.current;
+    if (!track || track.children.length < 2) return;
+    const first = track.children[0] as HTMLElement;
+    const second = track.children[1] as HTMLElement;
+    const step = Math.abs(second.offsetLeft - first.offsetLeft);
+    if (step === 0) return;
+    const count = Math.max(1, Math.round(track.clientWidth / step));
+    setVisible(count);
+    const index = Math.round(Math.abs(track.scrollLeft) / step);
+    setScrollIndex(Math.max(0, Math.min(index, track.children.length - 1)));
+  }, []);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(track);
+    return () => {
+      observer.disconnect();
+      cancelAnimationFrame(frameRef.current);
+    };
+  }, [measure]);
+
+  function handleScroll() {
+    cancelAnimationFrame(frameRef.current);
+    frameRef.current = requestAnimationFrame(measure);
+  }
 
   function scrollTo(index: number) {
+    const track = trackRef.current;
+    if (!track) return;
     const clamped = Math.max(0, Math.min(index, maxIndex));
-    setActiveIndex(clamped);
-    if (trackRef.current) {
-      const cardWidth = trackRef.current.scrollWidth / items.length;
-      trackRef.current.style.transform = `translateX(${
-        document.dir === "rtl" ? "" : "-"
-      }${clamped * cardWidth}px)`;
-    }
+    const first = track.children[0] as HTMLElement | undefined;
+    const target = track.children[clamped] as HTMLElement | undefined;
+    if (!first || !target) return;
+    track.scrollTo({ left: target.offsetLeft - first.offsetLeft });
   }
 
   async function handleQuickView(item: ProductListItem) {
@@ -99,19 +131,16 @@ export default function FeaturedProductsClient({
 
   return (
     <>
-      <div className="relative overflow-hidden">
+      <div className="relative">
         <div
           ref={trackRef}
-          className="flex gap-6 lg:gap-8 transition-transform duration-500 ease-out"
-          style={{ willChange: "transform" }}
+          onScroll={handleScroll}
+          className="flex gap-6 lg:gap-8 overflow-x-auto [scroll-snap-type:x_mandatory] [overscroll-behavior-x:contain] scroll-smooth motion-reduce:scroll-auto -mx-6 px-6 scroll-px-6 lg:mx-0 lg:px-0 lg:scroll-px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {items.map((item) => (
             <div
               key={item.sku}
-              className="flex flex-col flex-shrink-0"
-              style={{
-                width: `calc((100% - ${(VISIBLE - 1) * 32}px) / ${VISIBLE})`,
-              }}
+              className="flex flex-col flex-shrink-0 [scroll-snap-align:start] w-[62%] sm:w-[40%] lg:w-[calc((100%-96px)/4)]"
             >
               <ShopProductCard
                 {...toListItem(item)}
@@ -124,12 +153,12 @@ export default function FeaturedProductsClient({
         </div>
 
         {hasSlider && (
-          <div className="flex items-center justify-center gap-4 mt-10 ">
+          <div className="flex items-center justify-center gap-4 mt-6 lg:mt-10">
             <button
               type="button"
               onClick={() => scrollTo(activeIndex - 1)}
               disabled={activeIndex === 0}
-              className="w-10 h-10 flex items-center justify-center transition-opacity disabled:opacity-30 flip-rtl cursor-pointer"
+              className="hidden lg:flex w-10 h-10 items-center justify-center transition-opacity disabled:opacity-30 flip-rtl cursor-pointer"
               style={{
                 border: "1px solid var(--color-content-inverse)",
                 borderRadius: "50%",
@@ -187,7 +216,7 @@ export default function FeaturedProductsClient({
               type="button"
               onClick={() => scrollTo(activeIndex + 1)}
               disabled={activeIndex === maxIndex}
-              className="w-10 h-10 flex items-center justify-center transition-opacity disabled:opacity-30 flip-rtl cursor-pointer"
+              className="hidden lg:flex w-10 h-10 items-center justify-center transition-opacity disabled:opacity-30 flip-rtl cursor-pointer"
               style={{
                 border: "1px solid var(--color-content-inverse)",
                 borderRadius: "50%",
