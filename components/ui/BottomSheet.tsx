@@ -3,6 +3,7 @@
 import { useEffect, useRef, ReactNode, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, m, useReducedMotion } from "framer-motion";
+import { useSwipeToClose } from "@/hooks/useSwipeToClose";
 
 interface BottomSheetProps {
   open: boolean;
@@ -40,6 +41,7 @@ function BottomSheetInner({
   const panelRef = useRef<HTMLDivElement>(null);
   const previouslyFocusedRef = useRef<HTMLElement | null>(null);
   const reduceMotion = useReducedMotion();
+  const swipe = useSwipeToClose(onClose);
 
   useEffect(() => {
     if (!open) return;
@@ -149,19 +151,32 @@ function BottomSheetInner({
             }}
           >
             <div
+              ref={swipe.panelRef}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                flex: 1,
+                minHeight: 0,
+              }}
+            >
+            <div
+              {...swipe.handlers}
+              style={{ touchAction: "none", flexShrink: 0 }}
+            >
+            <div
               aria-hidden="true"
               style={{
                 width: "36px",
                 height: "4px",
                 marginTop: "8px",
                 marginInline: "auto",
-                backgroundColor: "var(--color-shop-divider)",
-                flexShrink: 0,
+                borderRadius: "2px",
+                backgroundColor: "var(--color-border-default)",
               }}
             />
             <div
               className="flex items-center justify-between"
-              style={{ padding: "0.75rem 1rem", flexShrink: 0 }}
+              style={{ padding: "0.75rem 1rem" }}
             >
               <span className="text-body font-semibold">{title}</span>
               <button
@@ -187,6 +202,7 @@ function BottomSheetInner({
                 </svg>
               </button>
             </div>
+            </div>
             <div style={{ flex: 1, overflowY: "auto" }}>{children}</div>
             {footer && (
               <div
@@ -200,6 +216,7 @@ function BottomSheetInner({
                 {footer}
               </div>
             )}
+            </div>
           </m.div>
         </>
       )}
