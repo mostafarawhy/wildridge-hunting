@@ -50,13 +50,20 @@ export default function ReceiptToolbar({ orderId, autoPrint }: Props) {
           <button
             type="button"
             onClick={() => window.print()}
-            className="h-11 px-6 bg-[var(--color-action-primary)] hover:bg-[var(--color-action-primary-hover)] text-white text-[0.75rem] font-bold tracking-[0.2em] uppercase rtl:tracking-normal rtl:normal-case rtl:text-[0.875rem] transition-colors"
+            className="hidden sm:inline-block h-11 px-6 bg-[var(--color-action-primary)] hover:bg-[var(--color-action-primary-hover)] text-white text-[0.75rem] font-bold tracking-[0.2em] uppercase rtl:tracking-normal rtl:normal-case rtl:text-[0.875rem] transition-colors"
           >
             {t("save")}
           </button>
         </div>
       </div>
-      <p className="text-[0.75rem] text-neutral-600 text-end">
+      <button
+        type="button"
+        onClick={() => window.print()}
+        className="sm:hidden w-full h-11 bg-[var(--color-action-primary)] hover:bg-[var(--color-action-primary-hover)] text-white text-[0.75rem] font-bold tracking-[0.2em] uppercase rtl:tracking-normal rtl:normal-case rtl:text-[0.875rem] transition-colors"
+      >
+        {t("save")}
+      </button>
+      <p className="text-[0.75rem] text-neutral-600 text-center sm:text-end">
         {t("saveHint")}
       </p>
     </div>

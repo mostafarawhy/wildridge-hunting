@@ -120,18 +120,18 @@ export default async function ReceiptDocument({ order, store, locale }: Props) {
       <tbody className="block print:table-row-group">
         <tr className="block print:table-row">
           <td className="block print:table-cell">
-    <div className="py-10 px-4 print:p-0">
-      <div className="bg-white text-[#0b0b0b] mx-auto w-full max-w-[210mm] px-[14mm] pb-[14mm] shadow-[0_1px_3px_rgba(0,0,0,0.08)] print:max-w-none print:px-[14mm] print:pb-0 print:shadow-none">
+    <div className="py-4 px-3 sm:py-10 sm:px-4 print:p-0">
+      <div className="bg-white text-[#0b0b0b] mx-auto w-full max-w-[210mm] px-5 pb-6 sm:px-[14mm] sm:pb-[14mm] shadow-[0_1px_3px_rgba(0,0,0,0.08)] print:max-w-none print:px-[14mm] print:pb-0 print:shadow-none">
         <div className="h-1 bg-[var(--color-action-primary)] [print-color-adjust:exact] [-webkit-print-color-adjust:exact] mb-6" />
 
-        <div className="flex justify-between items-start gap-6 mb-6">
+        <div className="flex flex-col gap-4 mb-6 sm:flex-row sm:justify-between sm:items-start sm:gap-6 print:flex-row print:justify-between print:items-start print:gap-6">
           <div>
             <Link
               href="/"
-              className="inline-flex items-center gap-4 group"
+              className="inline-flex items-center gap-3 sm:gap-4 group"
               aria-label={tNav("aria_home")}
             >
-              <BrandMark size={104} priority />
+              <BrandMark size={104} priority className="h-14 w-auto sm:h-[104px] print:h-[104px]" />
               <span
                 dir="ltr"
                 className="brand-wordmark brand-wordmark--checkout text-[var(--primitive-black)]"
@@ -166,8 +166,8 @@ export default async function ReceiptDocument({ order, store, locale }: Props) {
               )}
             </div>
           </div>
-          <div className="text-end">
-            <p className="text-[1.5rem] font-bold text-neutral-900">{title}</p>
+          <div className="text-start border-t border-[var(--color-shop-divider)] pt-3 sm:text-end sm:border-t-0 sm:pt-0 print:text-end print:border-t-0 print:pt-0">
+            <p className="text-[1.25rem] sm:text-[1.5rem] print:text-[1.5rem] font-bold text-neutral-900">{title}</p>
             {store.taxInvoice && (
               <p className="text-[0.875rem] text-neutral-700">
                 {t("taxInvoiceAlt")}
@@ -210,7 +210,7 @@ export default async function ReceiptDocument({ order, store, locale }: Props) {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-6 mb-6">
+        <div className="grid grid-cols-1 gap-4 mb-6 sm:grid-cols-2 sm:gap-6 print:grid-cols-2 print:gap-6">
           <div>
             <p className={EYEBROW + " mb-1.5"}>{t("billTo")}</p>
             {buyerName && (
@@ -242,7 +242,97 @@ export default async function ReceiptDocument({ order, store, locale }: Props) {
           </div>
         </div>
 
-        <div className="overflow-x-auto print:overflow-visible">
+        <div className="sm:hidden print:hidden border-t border-neutral-900 text-[0.8125rem]">
+          {taxRows
+            ? taxRows.map((row) => (
+                <div
+                  key={row.key}
+                  className={
+                    "py-2.5 border-b border-[var(--color-shop-divider)]" +
+                    (row.indent ? " ps-3" : "")
+                  }
+                >
+                  <div className="flex justify-between items-baseline gap-3">
+                    <span
+                      className={
+                        row.indent || row.quantity === null
+                          ? "text-neutral-700"
+                          : "font-semibold"
+                      }
+                    >
+                      {row.label}
+                    </span>
+                    <span className="tabular-nums shrink-0" dir="ltr">
+                      {formatFils(row.grossFils, locale)}
+                    </span>
+                  </div>
+                  <div className="flex justify-between gap-3 text-[0.6875rem] text-neutral-500">
+                    <span>
+                      {row.quantity !== null && (
+                        <>
+                          {t("qty")}{" "}
+                          <span dir="ltr" className="tabular-nums">
+                            {row.quantity}
+                          </span>
+                          {" · "}
+                        </>
+                      )}
+                      {t("exVat")}{" "}
+                      <span dir="ltr" className="tabular-nums">
+                        {formatFils(row.netFils, locale)}
+                      </span>
+                    </span>
+                    <span className="shrink-0">
+                      {t("vatRate", { rate: effectiveRate })}{" "}
+                      <span dir="ltr" className="tabular-nums">
+                        {formatFils(row.vatFils, locale)}
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              ))
+            : productItems
+                .flatMap((product) => [
+                  product,
+                  ...addonItems.filter((a) => a.parentOrderItemId === product.id),
+                ])
+                .map((item) => (
+                  <div
+                    key={item.id}
+                    className={
+                      "py-2.5 border-b border-[var(--color-shop-divider)]" +
+                      (item.itemType === "ADDON" ? " ps-3" : "")
+                    }
+                  >
+                    <div className="flex justify-between items-baseline gap-3">
+                      <span
+                        className={
+                          item.itemType === "ADDON"
+                            ? "text-neutral-700"
+                            : "font-semibold"
+                        }
+                      >
+                        {item.itemType === "ADDON" ? `+ ${item.name}` : item.name}
+                      </span>
+                      <span className="tabular-nums shrink-0" dir="ltr">
+                        {formatAED(item.lineTotalAed, locale)}
+                      </span>
+                    </div>
+                    <div className="text-[0.6875rem] text-neutral-500">
+                      {t("qty")}{" "}
+                      <span dir="ltr" className="tabular-nums">
+                        {item.quantity}
+                      </span>
+                      {" · "}
+                      {t("unitPrice")}{" "}
+                      <span dir="ltr" className="tabular-nums">
+                        {formatAED(item.unitPriceAed, locale)}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+        </div>
+        <div className="hidden sm:block overflow-x-auto print:block print:overflow-visible">
         {taxRows ? (
           <table className="w-full min-w-[560px] print:min-w-0 border-collapse text-[0.8125rem]">
             <thead className="[display:table-header-group]">
@@ -344,7 +434,7 @@ export default async function ReceiptDocument({ order, store, locale }: Props) {
         </div>
 
         {taxRows ? (
-          <div className="ms-auto w-full max-w-[300px] mt-4 break-inside-avoid">
+          <div className="ms-auto w-full max-w-none sm:max-w-[300px] print:max-w-[300px] mt-4 break-inside-avoid">
             <div className="space-y-2">
               <div className="flex justify-between items-center">
                 <span className="text-[0.8125rem] text-neutral-700">
@@ -371,7 +461,7 @@ export default async function ReceiptDocument({ order, store, locale }: Props) {
             </div>
           </div>
         ) : (
-        <div className="ms-auto w-full max-w-[300px] mt-4 break-inside-avoid">
+        <div className="ms-auto w-full max-w-none sm:max-w-[300px] print:max-w-[300px] mt-4 break-inside-avoid">
           <div className="space-y-2">
             <div className="flex justify-between items-center">
               <span className="text-[0.8125rem] text-neutral-700">
@@ -488,7 +578,7 @@ export default async function ReceiptDocument({ order, store, locale }: Props) {
         </div>
         )}
 
-        <div className="ms-auto w-full max-w-[300px] mt-4 break-inside-avoid space-y-1 text-neutral-600 text-[0.75rem]">
+        <div className="ms-auto w-full max-w-none sm:max-w-[300px] print:max-w-[300px] mt-4 break-inside-avoid space-y-1 text-neutral-600 text-[0.75rem]">
           {order.paymentProvider === "NGENIUS" && order.paidAt && (
             <div className="flex justify-between items-center gap-3">
               <span>
