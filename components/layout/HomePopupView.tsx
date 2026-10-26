@@ -2,11 +2,8 @@
 
 import type { ReactNode, Ref } from "react";
 import FadeImage from "@/components/ui/FadeImage";
-import {
-  popupButtonColors,
-  type HomePopupButtonColor,
-  type HomePopupTheme,
-} from "@/lib/utils/home-popup";
+import { popupButtonColors } from "@/lib/utils/home-popup-shared";
+import type { HomePopupButtonColor, HomePopupTheme } from "@/lib/utils/home-popup";
 
 export const popupCtaClass =
   "inline-flex h-12 w-full sm:w-auto items-center justify-center px-8 mt-7 text-body-sm uppercase tracking-widest font-bold transition-opacity duration-150 hover:opacity-85";

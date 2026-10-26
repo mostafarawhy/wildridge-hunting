@@ -7,6 +7,4 @@ export const focalPointSchema = z.object({
 
 export type FocalPoint = z.infer<typeof focalPointSchema>;
 
-export function focalPosition(p: FocalPoint): string {
-  return `${p.x}% ${p.y}%`;
-}
+export { focalPosition } from "./focal-position";

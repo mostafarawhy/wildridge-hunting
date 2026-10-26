@@ -1,4 +1,5 @@
-import { focalPosition, type FocalPoint } from "@/lib/utils/focal-point";
+import { focalPosition } from "@/lib/utils/focal-position";
+import type { FocalPoint } from "@/lib/utils/focal-point";
 
 interface MegaPanelPhotoProps {
   imageUrl: string;
