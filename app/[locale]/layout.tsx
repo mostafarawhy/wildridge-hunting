@@ -8,6 +8,7 @@ import DemoBanner from "@/components/layout/DemoBanner";
 import { Suspense } from "react";
 import NavigationProgress from "@/components/loading/NavigationProgress";
 import MotionProvider from "@/components/ui/MotionProvider";
+import { pickMessages, SHELL_MESSAGE_PATHS } from "@/lib/client-messages";
 
 export const metadata: Metadata = {
   title: {
@@ -56,9 +57,7 @@ export default async function LocaleLayout({
   const dir = DIR_MAP[safeLocale];
   const allMessages = await getMessages();
   const tDemo = await getTranslations({ locale: safeLocale, namespace: "demo" });
-  const messages = Object.fromEntries(
-    Object.entries(allMessages).filter(([namespace]) => namespace !== "email"),
-  );
+  const messages = pickMessages(allMessages, SHELL_MESSAGE_PATHS);
 
   return (
     <html
