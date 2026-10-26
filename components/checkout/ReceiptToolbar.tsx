@@ -16,7 +16,18 @@ export default function ReceiptToolbar({ orderId, autoPrint }: Props) {
   useEffect(() => {
     if (!autoPrint || printed.current) return;
     printed.current = true;
-    document.fonts.ready.then(() => window.print());
+    const images = Array.from(document.images).map((img) =>
+      img.complete
+        ? img.decode().catch(() => undefined)
+        : new Promise<void>((resolve) => {
+            img.addEventListener("load", () => resolve(), { once: true });
+            img.addEventListener("error", () => resolve(), { once: true });
+          }),
+    );
+    const timeout = new Promise<void>((resolve) => setTimeout(resolve, 4000));
+    Promise.race([Promise.all([document.fonts.ready, ...images]), timeout]).then(
+      () => window.print(),
+    );
   }, [autoPrint]);
 
   return (

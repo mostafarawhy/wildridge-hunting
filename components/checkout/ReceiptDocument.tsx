@@ -131,7 +131,7 @@ export default async function ReceiptDocument({ order, store, locale }: Props) {
               className="inline-flex items-center gap-4 group"
               aria-label={tNav("aria_home")}
             >
-              <BrandMark size={104} />
+              <BrandMark size={104} priority />
               <span
                 dir="ltr"
                 className="brand-wordmark brand-wordmark--checkout text-[var(--primitive-black)]"
