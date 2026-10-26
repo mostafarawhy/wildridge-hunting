@@ -73,11 +73,11 @@ export function DualRangeSlider({
         }
         .range::-webkit-slider-runnable-track {
           background: transparent;
-          height: 16px;
+          height: 24px;
         }
         .range::-moz-range-track {
           background: transparent;
-          height: 16px;
+          height: 24px;
         }
         .range::-webkit-slider-thumb {
           -webkit-appearance: none;
@@ -85,6 +85,7 @@ export function DualRangeSlider({
           box-sizing: border-box;
           width: 16px;
           height: 16px;
+          margin-top: 4px;
           border-radius: 50%;
           background: var(--primitive-white);
           border: 2px solid var(--color-action-primary);
@@ -103,7 +104,7 @@ export function DualRangeSlider({
         }
       `}</style>
 
-      <div className="relative" style={{ height: "16px" }}>
+      <div className="relative" style={{ height: "24px" }}>
         <div
           className="absolute"
           style={{
