@@ -1,7 +1,6 @@
 import { BRAND, BRAND_COLORS } from "@/lib/config/brand";
 import type { Metadata, Viewport } from "next";
 import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
@@ -66,7 +65,7 @@ export default async function LocaleLayout({
       lang={safeLocale}
       dir={dir}
       data-surface="storefront"
-      className={`${GeistSans.variable} ${GeistMono.variable} antialiased`}
+      className={`${GeistSans.variable} antialiased`}
     >
       <body className="min-h-dvh flex flex-col">
         <NextIntlClientProvider locale={safeLocale} messages={messages}>

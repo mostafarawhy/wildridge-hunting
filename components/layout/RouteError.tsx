@@ -51,7 +51,7 @@ export default function RouteError({
                 <bdi
                   dir="ltr"
                   style={{
-                    fontFamily: "var(--font-geist-mono)",
+                    fontFamily: "var(--font-mono)",
                     color: "var(--color-auth-label-text)",
                   }}
                 >
