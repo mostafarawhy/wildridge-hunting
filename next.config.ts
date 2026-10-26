@@ -28,6 +28,7 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  htmlLimitedBots: /.*/,
   experimental: {
     serverActions: {
       bodySizeLimit: "6mb",
