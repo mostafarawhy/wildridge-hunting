@@ -91,7 +91,13 @@ export default function NavbarClient({
       </Suspense>
 
       <MobileTabBar
-        signedIn={sessionUser !== null}
+        session={
+          sessionUser
+            ? { name: sessionUser.name, email: sessionUser.email }
+            : null
+        }
+        canUseBusinessMode={canUseBusinessMode}
+        shopMode={shopMode}
         isBusinessMode={isBusinessMode}
       />
 

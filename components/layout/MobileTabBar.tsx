@@ -1,26 +1,38 @@
 "use client";
 
-import { useSyncExternalStore, type ReactNode } from "react";
+import { useState, useSyncExternalStore, type ReactNode } from "react";
 import { createPortal } from "react-dom";
+import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { useCartStore } from "@/lib/stores/cart-store";
 import { useQuoteStore, selectQuoteCount } from "@/lib/stores/quote-store";
 import { useSearchStore } from "@/lib/stores/search-store";
+import { useAuthBusyStore } from "@/lib/stores/auth-busy-store";
+import { BRAND } from "@/lib/config/brand";
+import BottomSheet from "@/components/ui/BottomSheet";
+import LoggedInMenu from "@/components/auth/LoggedInMenu";
+import type { ShopMode } from "@/lib/utils/shop-mode";
 
 interface MobileTabBarProps {
-  signedIn: boolean;
+  session: { name: string | null; email: string } | null;
+  canUseBusinessMode: boolean;
+  shopMode: ShopMode;
   isBusinessMode: boolean;
 }
 
 const subscribe = () => () => {};
 
 export default function MobileTabBar({
-  signedIn,
+  session,
+  canUseBusinessMode,
+  shopMode,
   isBusinessMode,
 }: MobileTabBarProps) {
   const t = useTranslations("nav");
+  const tAuth = useTranslations("auth");
+  const tShop = useTranslations("shop");
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const mounted = useSyncExternalStore(
@@ -34,6 +46,8 @@ export default function MobileTabBar({
   const cartCount = useCartStore((s) => s.cart?.totals.itemCount ?? 0);
   const openQuote = useQuoteStore((s) => s.openDrawer);
   const quoteCount = useQuoteStore(selectQuoteCount);
+  const pending = useAuthBusyStore((st) => st.pending);
+  const [accountOpen, setAccountOpen] = useState(false);
 
   const segments = pathname.split("/").filter(Boolean);
   const isProductPage = segments.length === 3 && segments[0] === "shop";
@@ -41,6 +55,9 @@ export default function MobileTabBar({
 
   const homeActive = pathname === "/";
   const shopActive = pathname.startsWith("/shop");
+  const accountActive = pathname.startsWith("/account") || accountOpen;
+  const busy =
+    (pending === "sign-in" && !session) || (pending === "sign-out" && !!session);
 
   function handleGuestClick() {
     const params = new URLSearchParams(searchParams.toString());
@@ -49,6 +66,7 @@ export default function MobileTabBar({
   }
 
   return createPortal(
+    <>
     <nav
       aria-label={t("aria_tabbar")}
       data-mobile-tabbar
@@ -95,15 +113,49 @@ export default function MobileTabBar({
         <Label>{t("search")}</Label>
       </button>
 
-      {signedIn ? (
-        <Link
-          href="/account"
+      {busy ? (
+        <button
+          type="button"
+          disabled
+          aria-busy="true"
           className={cellClass}
           style={cellStyle(false)}
         >
-          <AccountIcon />
+          <span
+            aria-hidden="true"
+            className="btn-spinner"
+            style={{
+              display: "inline-block",
+              width: "20px",
+              height: "20px",
+              border: "2px solid currentColor",
+              borderTopColor: "transparent",
+              borderRadius: "50%",
+              marginInlineEnd: 0,
+              flexShrink: 0,
+            }}
+          />
           <Label>{t("account")}</Label>
-        </Link>
+        </button>
+      ) : session ? (
+        <button
+          type="button"
+          aria-label={`${tAuth("account")}, ${session.name ?? session.email}`}
+          aria-haspopup="dialog"
+          aria-expanded={accountOpen}
+          onClick={() => setAccountOpen(true)}
+          className={cellClass}
+          style={cellStyle(accountActive)}
+        >
+          <Image
+            src={BRAND.accountAvatar}
+            width={26}
+            height={26}
+            alt=""
+            style={{ objectFit: "contain", display: "block" }}
+          />
+          <Label>{t("account")}</Label>
+        </button>
       ) : (
         <button
           type="button"
@@ -145,7 +197,25 @@ export default function MobileTabBar({
           <Label>{t("cart")}</Label>
         </button>
       )}
-    </nav>,
+    </nav>
+    {session && (
+      <BottomSheet
+        open={accountOpen}
+        onClose={() => setAccountOpen(false)}
+        ariaLabel={tAuth("account")}
+        title={tAuth("account")}
+        closeLabel={tShop("close")}
+      >
+        <LoggedInMenu
+          session={session}
+          onItemClick={() => setAccountOpen(false)}
+          canUseBusinessMode={canUseBusinessMode}
+          shopMode={shopMode}
+          touch
+        />
+      </BottomSheet>
+    )}
+    </>,
     document.body,
   );
 }
