@@ -68,6 +68,7 @@ export default function MobileMenu({
         <button
           type="button"
           aria-label={tShop("close")}
+          data-autofocus
           onClick={onClose}
           className="-me-3 flex h-11 w-11 items-center justify-center transition-opacity hover:opacity-70"
           style={{ color: "var(--color-content-primary)" }}

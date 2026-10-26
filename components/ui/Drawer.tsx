@@ -102,11 +102,13 @@ function DrawerInner({
   useEffect(() => {
     if (!open) return;
     const raf = requestAnimationFrame(() => {
-      panelRef.current
-        ?.querySelector<HTMLElement>(
+      const panel = panelRef.current;
+      (
+        panel?.querySelector<HTMLElement>("[data-autofocus]") ??
+        panel?.querySelector<HTMLElement>(
           'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])',
         )
-        ?.focus();
+      )?.focus();
     });
     return () => cancelAnimationFrame(raf);
   }, [open]);
