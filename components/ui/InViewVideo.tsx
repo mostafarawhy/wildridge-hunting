@@ -31,6 +31,7 @@ export default function InViewVideo({
   pauseLabel,
   playLabel,
   controlClassName,
+  poster,
   ...videoProps
 }: InViewVideoProps) {
   const ref = useRef<HTMLVideoElement>(null);
@@ -43,6 +44,7 @@ export default function InViewVideo({
     getServerReducedMotion,
   );
   const [userPaused, setUserPaused] = useState<boolean | null>(null);
+  const [posterReady, setPosterReady] = useState(false);
   const paused = userPaused ?? reducedMotion;
 
   useEffect(() => {
@@ -64,6 +66,22 @@ export default function InViewVideo({
     return () => observer.disconnect();
   }, [hasControls]);
 
+  useEffect(() => {
+    const video = ref.current;
+    if (!video) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setPosterReady(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "100% 0px" },
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
   function toggle() {
     const next = !paused;
     userPausedRef.current = next;
@@ -75,7 +93,7 @@ export default function InViewVideo({
   }
 
   const video = (
-    <video {...videoProps} ref={ref} muted loop playsInline preload="none" />
+    <video {...videoProps} poster={posterReady ? poster : undefined} ref={ref} muted loop playsInline preload="none" />
   );
   if (!hasControls) return video;
 
