@@ -3,7 +3,6 @@
 import { useEffect, useRef, type CSSProperties, type ReactNode } from "react";
 
 const HIDE_AFTER = 56;
-const HIDE_OFFSET = 56;
 const DELTA = 8;
 
 interface StickyHeaderProps {
@@ -34,10 +33,26 @@ export default function StickyHeader({
       el.style.transition = reduced.matches ? "none" : "top 200ms ease-out";
     }
 
+    function measure() {
+      return el ? Math.ceil(el.getBoundingClientRect().height) : 0;
+    }
+
     function setHidden(next: boolean) {
       if (!el || hidden === next) return;
       hidden = next;
-      el.style.top = next ? `-${HIDE_OFFSET}px` : "0px";
+      const height = measure();
+      el.style.top = next ? `-${height}px` : "0px";
+      document.documentElement.style.setProperty(
+        "--header-offset",
+        next ? "0px" : `${height}px`,
+      );
+    }
+
+    function publishShown() {
+      document.documentElement.style.setProperty(
+        "--header-offset",
+        `${measure()}px`,
+      );
     }
 
     function update() {
@@ -67,9 +82,11 @@ export default function StickyHeader({
 
     function onBreakpoint() {
       if (desktop.matches) setHidden(false);
+      if (!hidden) publishShown();
     }
 
     applyMotion();
+    publishShown();
     window.addEventListener("scroll", onScroll, { passive: true });
     desktop.addEventListener("change", onBreakpoint);
     reduced.addEventListener("change", applyMotion);
@@ -77,6 +94,7 @@ export default function StickyHeader({
       window.removeEventListener("scroll", onScroll);
       desktop.removeEventListener("change", onBreakpoint);
       reduced.removeEventListener("change", applyMotion);
+      document.documentElement.style.removeProperty("--header-offset");
       if (frame) cancelAnimationFrame(frame);
     };
   }, []);
