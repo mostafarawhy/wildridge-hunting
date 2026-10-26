@@ -10,7 +10,7 @@ export interface SortSelectProps {
   defaultSort?: SortValue;
 }
 
-type SortValue = "featured" | "newest" | "price_asc" | "price_desc";
+export type SortValue = "featured" | "newest" | "price_asc" | "price_desc";
 
 const SORT_PARAM = "sort";
 const PAGE_PARAM = "page";
@@ -22,15 +22,14 @@ const SORT_KEYS: Record<SortValue, string> = {
   price_desc: "sort_price_desc",
 };
 
-function SortSelectInner({ defaultSort = "featured" }: SortSelectProps) {
-  const t = useTranslations("shop");
+export function useCatalogSort(defaultSort: SortValue = "featured") {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
   const current = (searchParams.get(SORT_PARAM) as SortValue) ?? defaultSort;
 
-  const handleChange = useCallback(
+  const setSort = useCallback(
     (value: SortValue) => {
       const params = new URLSearchParams(searchParams.toString());
       params.set(SORT_PARAM, value);
@@ -41,6 +40,17 @@ function SortSelectInner({ defaultSort = "featured" }: SortSelectProps) {
     },
     [router, pathname, searchParams],
   );
+
+  const options = (Object.entries(SORT_KEYS) as [SortValue, string][]).map(
+    ([value, labelKey]) => ({ value, labelKey }),
+  );
+
+  return { current, setSort, options };
+}
+
+function SortSelectInner({ defaultSort = "featured" }: SortSelectProps) {
+  const t = useTranslations("shop");
+  const { current, setSort: handleChange } = useCatalogSort(defaultSort);
 
   return (
     <div className="relative inline-flex items-center">
