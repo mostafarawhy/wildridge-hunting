@@ -69,7 +69,7 @@ export default function MobileMenu({
           type="button"
           aria-label={tShop("close")}
           onClick={onClose}
-          className="transition-opacity hover:opacity-70"
+          className="-me-3 flex h-11 w-11 items-center justify-center transition-opacity hover:opacity-70"
           style={{ color: "var(--color-content-primary)" }}
         >
           <svg
@@ -174,18 +174,7 @@ export default function MobileMenu({
           </>
         ) : (
           <>
-            <div className="grid grid-cols-2 gap-2">
-              <Link
-                href="/auth/login"
-                onClick={onClose}
-                className="flex items-center justify-center w-full h-11 text-body font-bold tracking-widest uppercase transition-opacity hover:opacity-80"
-                style={{
-                  border: "1px solid var(--color-brand-on-dark)",
-                  color: "var(--color-brand-on-dark)",
-                }}
-              >
-                {tAuth("signIn")}
-              </Link>
+            <div className="flex flex-col gap-2">
               <Link
                 href="/auth/register"
                 onClick={onClose}
@@ -197,13 +186,25 @@ export default function MobileMenu({
               >
                 {tAuth("register.title")}
               </Link>
+              <Link
+                href="/auth/login"
+                onClick={onClose}
+                className="flex items-center justify-center w-full h-11 text-body font-bold tracking-widest uppercase transition-opacity hover:opacity-80"
+                style={{
+                  border: "1px solid var(--color-brand-on-dark)",
+                  color: "var(--color-brand-on-dark)",
+                }}
+              >
+                {tAuth("signIn")}
+              </Link>
             </div>
             <Link
               href="/account/wishlist"
               onClick={onClose}
-              className="mt-2 flex h-11 items-center text-body transition-opacity hover:opacity-70"
+              className="mt-3 flex h-11 items-center gap-3 text-body transition-opacity hover:opacity-70"
               style={{ color: "var(--color-content-secondary)" }}
             >
+              <span aria-hidden="true" style={{ color: "var(--color-brand-on-dark)", display: "inline-flex" }}><IconWishlist size={20} /></span>
               {tNav("wishlist")}
             </Link>
           </>
