@@ -14,6 +14,7 @@ interface LoggedInMenuProps {
   onItemClick: () => void;
   canUseBusinessMode?: boolean;
   shopMode?: ShopMode;
+  touch?: boolean;
 }
 
 const ICON_PROPS = {
@@ -105,6 +106,7 @@ export default function LoggedInMenu({
   onItemClick,
   canUseBusinessMode = false,
   shopMode = "PERSONAL",
+  touch = false,
 }: LoggedInMenuProps) {
   const t = useTranslations("auth");
   const signOut = useSignOut();
@@ -113,6 +115,9 @@ export default function LoggedInMenu({
   const menuItems = canUseBusinessMode
     ? [...baseItems, quotesItem]
     : baseItems;
+  const itemStyle = touch
+    ? { ...rowStyle, padding: "0.875rem 0.75rem" }
+    : rowStyle;
 
   return (
     <div>
@@ -191,7 +196,7 @@ export default function LoggedInMenu({
                 role="menuitem"
                 onClick={onItemClick}
                 className={rowClass}
-                style={rowStyle}
+                style={itemStyle}
               >
                 <span style={{ color: "var(--color-content-tertiary)", display: "flex" }}>
                   <Icon />
@@ -217,7 +222,7 @@ export default function LoggedInMenu({
             }}
             className={`${rowClass} w-full cursor-pointer`}
             style={{
-              ...rowStyle,
+              ...itemStyle,
               textAlign: "start",
               background: "none",
               border: "none",
