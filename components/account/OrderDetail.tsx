@@ -279,13 +279,14 @@ export default function OrderDetail({ projection, locale }: Props) {
             }}
           >
             <h1
+              className="text-[1.375rem] sm:text-[length:var(--text-heading)]"
               style={{
-                fontSize: "var(--text-heading)",
                 fontWeight: "var(--font-bold)",
                 color: "var(--color-action-primary)",
                 letterSpacing: "var(--tracking-tight)",
                 lineHeight: "var(--leading-tight)",
                 margin: 0,
+                whiteSpace: "nowrap",
               }}
             >
               <span dir="ltr">{projection.orderNumber}</span>
@@ -297,8 +298,8 @@ export default function OrderDetail({ projection, locale }: Props) {
           </div>
 
           <div
+            className="hidden sm:flex"
             style={{
-              display: "flex",
               alignItems: "center",
               flexWrap: "wrap",
               gap: "1rem",
@@ -332,6 +333,31 @@ export default function OrderDetail({ projection, locale }: Props) {
         >
           {formatDisplayDate(projection.createdAt, locale)}
         </p>
+
+        <div className="mt-4 grid grid-cols-2 gap-2 sm:hidden [&>*:only-child]:col-span-2">
+          {isPaid && (
+            <Link
+              href={`/receipt/${projection.id}?print=1`}
+              target="_blank"
+              rel="noopener"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                height: "44px",
+                border: "1px solid var(--color-action-primary)",
+                color: "var(--color-action-primary)",
+                letterSpacing: "var(--tracking-widest)",
+                textTransform: "uppercase",
+                fontSize: "var(--text-label)",
+                textDecoration: "none",
+              }}
+            >
+              {tsuccess("saveReceipt")}
+            </Link>
+          )}
+          <AccountHelpLink href={`/account/support?order=${projection.id}`} />
+        </div>
       </div>
 
       {(isAwaitingQuote || isQuoted) && (

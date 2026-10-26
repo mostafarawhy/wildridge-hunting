@@ -229,20 +229,23 @@ export default function QuoteDetail({ projection, locale }: Props) {
             }}
           >
             <h1
+              className="text-[1.375rem] sm:text-[length:var(--text-heading)]"
               style={{
-                fontSize: "var(--text-heading)",
                 fontWeight: "var(--font-bold)",
                 color: "var(--color-action-primary)",
                 letterSpacing: "var(--tracking-tight)",
                 lineHeight: "var(--leading-tight)",
                 margin: 0,
+                whiteSpace: "nowrap",
               }}
             >
               <span dir="ltr">{projection.quoteNumber}</span>
             </h1>
             <QuoteStatusBadge status={projection.status} label={statusLabel} />
           </div>
-          <AccountHelpLink href={`/account/support?quote=${projection.id}`} />
+          <div className="hidden sm:block">
+            <AccountHelpLink href={`/account/support?quote=${projection.id}`} />
+          </div>
         </div>
 
         <p
@@ -254,6 +257,10 @@ export default function QuoteDetail({ projection, locale }: Props) {
         >
           {formatDisplayDate(projection.createdAt, locale)}
         </p>
+
+        <div className="mt-4 grid grid-cols-1 sm:hidden">
+          <AccountHelpLink href={`/account/support?quote=${projection.id}`} />
+        </div>
       </div>
 
       <div style={cardStyle}>
