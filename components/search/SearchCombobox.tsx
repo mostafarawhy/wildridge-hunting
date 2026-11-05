@@ -451,7 +451,7 @@ export default function SearchCombobox({
       className={
         isShop
           ? "w-full h-9 ps-9 pe-8 text-body-sm outline-none transition-colors"
-          : "flex-1 h-10 text-body outline-none bg-transparent"
+          : "flex-1 min-w-0 h-10 text-body outline-none bg-transparent"
       }
       style={
         isShop
@@ -474,7 +474,7 @@ export default function SearchCombobox({
       className={
         isShop
           ? "absolute top-1/2 -translate-y-1/2 transition-opacity hover:opacity-70 cursor-pointer"
-          : "transition-opacity hover:opacity-70"
+          : "transition-opacity hover:opacity-70 max-sm:inline-flex max-sm:shrink-0 max-sm:items-center max-sm:justify-center max-sm:w-11 max-sm:h-11"
       }
       style={
         isShop
@@ -520,7 +520,7 @@ export default function SearchCombobox({
       ) : (
         <form
           role="search"
-          className="flex items-center gap-3 h-[80px] px-6 lg:px-10"
+          className="flex items-center gap-3 h-[80px] px-6 lg:px-10 max-sm:gap-2 max-sm:px-4"
           onSubmit={(e) => {
             e.preventDefault();
             submit();

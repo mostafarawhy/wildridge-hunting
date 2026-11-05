@@ -66,7 +66,7 @@ function NavSearchInner({ isOpen, onClose }: NavSearchDrawerProps) {
             <>
               <button
                 type="submit"
-                className="text-label tracking-widest uppercase transition-opacity hover:opacity-70 h-9 px-4"
+                className="text-label tracking-widest uppercase transition-opacity hover:opacity-70 h-9 px-4 max-sm:hidden"
                 style={{
                   color: "var(--color-action-primary-fg)",
                   backgroundColor: "var(--color-action-primary)",
@@ -79,7 +79,7 @@ function NavSearchInner({ isOpen, onClose }: NavSearchDrawerProps) {
                 type="button"
                 onClick={onClose}
                 aria-label={tShop("search_close")}
-                className="transition-opacity hover:opacity-70"
+                className="transition-opacity hover:opacity-70 max-sm:inline-flex max-sm:shrink-0 max-sm:items-center max-sm:justify-center max-sm:w-11 max-sm:h-11"
                 style={{ color: "var(--color-content-tertiary)" }}
               >
                 <svg width="14" height="14" viewBox="0 0 10 10" fill="none">
