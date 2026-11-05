@@ -57,6 +57,7 @@ export default function ZoomableImage({
           className="object-contain p-8"
           sizes={sizes}
           priority
+          fetchPriority="high"
           draggable={false}
           fade={false}
         />
