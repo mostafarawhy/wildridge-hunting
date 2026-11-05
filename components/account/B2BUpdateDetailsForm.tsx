@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 import Button from "@/components/ui/Button";
 import FileUploadField from "@/components/auth/FileUploadField";
 import { updateB2BDetailsAction } from "@/lib/actions/document-request";
-import { MAX_FILE_SIZE_BYTES } from "@/lib/validations/b2b";
+import { MAX_FILE_SIZE_BYTES } from "@/lib/utils/b2b-limits";
 import type { SettingValue } from "@/lib/settings/keys";
 import { startNavigationProgress } from "@/components/loading/NavigationProgress";
 

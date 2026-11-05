@@ -17,7 +17,7 @@ import type { VerificationActionErrorCode } from "@/lib/actions/verification";
 import {
   ROLE_ALLOWED_TYPES,
   MAX_FILE_SIZE_BYTES,
-} from "@/lib/validations/verification";
+} from "@/lib/utils/verification-limits";
 import type { SettingValue } from "@/lib/settings/keys";
 
 type VerificationContent = SettingValue<"verification_content">["en"];

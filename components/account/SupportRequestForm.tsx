@@ -7,7 +7,7 @@ import Select from "@/components/ui/Select";
 import Input from "@/components/ui/Input";
 import Button from "@/components/ui/Button";
 import { formatShortDate } from "@/lib/utils/date";
-import { SUPPORT_TOPICS, type SupportTopic } from "@/lib/validations/support";
+import { SUPPORT_TOPICS, type SupportTopic } from "@/lib/utils/support-topics";
 import { createSupportRequestAction } from "@/lib/actions/support";
 import DemoEmailNote from "@/components/layout/DemoEmailNote";
 

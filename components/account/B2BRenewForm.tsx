@@ -7,7 +7,7 @@ import Select from "@/components/ui/Select";
 import Button from "@/components/ui/Button";
 import FileUploadField from "@/components/auth/FileUploadField";
 import { requestB2BRenewalAction } from "@/lib/actions/b2b";
-import { MAX_FILE_SIZE_BYTES, MAX_B2B_FILES } from "@/lib/validations/b2b";
+import { MAX_FILE_SIZE_BYTES, MAX_B2B_FILES } from "@/lib/utils/b2b-limits";
 import type { SettingValue } from "@/lib/settings/keys";
 import type { DocumentType } from "@/app/generated/prisma/client";
 import { startNavigationProgress } from "@/components/loading/NavigationProgress";

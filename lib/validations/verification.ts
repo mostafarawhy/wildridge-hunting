@@ -1,38 +1,11 @@
 import { z } from "zod";
-import type {
-  VerificationDocumentRole,
-  VerificationDocumentType,
-} from "@/app/generated/prisma/enums";
+import {
+  ALLOWED_MIME_TYPES,
+  MAX_FILE_SIZE_BYTES,
+  ROLE_ALLOWED_TYPES,
+} from "@/lib/utils/verification-limits";
 
-// ---------------------------------------------------------------------------
-// File validation constants
-// ---------------------------------------------------------------------------
-
-export const MAX_FILE_SIZE_BYTES = 5 * 1024 * 1024; // 5 MB
-export const ALLOWED_MIME_TYPES = [
-  "image/jpeg",
-  "image/png",
-  "application/pdf",
-] as const;
-
-// ---------------------------------------------------------------------------
-// ROLE_ALLOWED_TYPES — valid document types per role
-// ---------------------------------------------------------------------------
-
-export const ROLE_ALLOWED_TYPES = {
-  IDENTITY: ["EMIRATES_ID", "PASSPORT"],
-  PROOF_OF_ADDRESS: [
-    "UTILITY_BILL",
-    "TENANCY_CONTRACT",
-    "RESIDENCE_VISA",
-    "DRIVING_LICENSE",
-    "BANK_STATEMENT",
-  ],
-  PHOTO: ["SELFIE"],
-} as const satisfies Record<
-  VerificationDocumentRole,
-  readonly [VerificationDocumentType, ...VerificationDocumentType[]]
->;
+export { ALLOWED_MIME_TYPES, MAX_FILE_SIZE_BYTES, ROLE_ALLOWED_TYPES };
 
 // ---------------------------------------------------------------------------
 // manualUploadSubmissionSchema

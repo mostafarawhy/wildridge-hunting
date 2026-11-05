@@ -10,7 +10,7 @@ import { provideVerificationDocumentsAction } from "@/lib/actions/verification";
 import {
   ROLE_ALLOWED_TYPES,
   MAX_FILE_SIZE_BYTES,
-} from "@/lib/validations/verification";
+} from "@/lib/utils/verification-limits";
 import type { VerificationDocumentRole } from "@/app/generated/prisma/enums";
 import type { SettingValue } from "@/lib/settings/keys";
 

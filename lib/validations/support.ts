@@ -1,15 +1,9 @@
 import { z } from "zod";
 
-export const SUPPORT_TOPICS = [
-  "ORDER",
-  "QUOTE",
-  "ACCOUNT",
-  "BUSINESS",
-  "PRODUCT",
-  "OTHER",
-] as const;
+import { SUPPORT_TOPICS } from "@/lib/utils/support-topics";
 
-export type SupportTopic = (typeof SUPPORT_TOPICS)[number];
+export { SUPPORT_TOPICS };
+export type { SupportTopic } from "@/lib/utils/support-topics";
 
 export const createSupportRequestSchema = z.object({
   topic: z.enum(SUPPORT_TOPICS),
