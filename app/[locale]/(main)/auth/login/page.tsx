@@ -88,7 +88,7 @@ export default async function LoginPage({
         <p
           style={{
             fontSize: "var(--text-body-sm)",
-            color: "var(--color-auth-input-placeholder)",
+            color: "var(--color-content-tertiary)",
             marginBottom: "2rem",
           }}
         >

@@ -61,7 +61,7 @@ export default function DemoAccessButtons({
       <p
         style={{
           fontSize: "var(--text-body-sm)",
-          color: "var(--color-auth-input-placeholder)",
+          color: "var(--color-content-tertiary)",
           margin: 0,
         }}
       >
@@ -119,7 +119,7 @@ export default function DemoAccessButtons({
         <span
           style={{
             fontSize: "var(--text-body-sm)",
-            color: "var(--color-auth-input-placeholder)",
+            color: "var(--color-content-tertiary)",
             whiteSpace: "nowrap",
           }}
         >

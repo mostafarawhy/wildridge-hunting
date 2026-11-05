@@ -53,7 +53,7 @@ export default async function RegisterPage({ params, searchParams }: Props) {
         <p
           className="text-body-sm"
           style={{
-            color: "var(--color-auth-input-placeholder)",
+            color: "var(--color-content-tertiary)",
             marginBottom: "2rem",
           }}
         >

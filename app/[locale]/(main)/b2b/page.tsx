@@ -100,7 +100,7 @@ export default async function B2BLandingPage({ params }: Props) {
           <div className="flex flex-col justify-between h-full gap-8">
             <div className="flex flex-col gap-7">
               <div className="flex flex-col gap-1.5">
-                <p className="text-[0.625rem] font-black tracking-[0.2em] uppercase text-neutral-400">
+                <p className="text-[0.625rem] font-black tracking-[0.2em] uppercase text-neutral-500">
                   {t("panel.wordmark")}
                 </p>
                 <h2 className="text-[1.625rem] lg:text-[1.875rem] xl:text-[2rem] font-bold tracking-tight leading-tight text-neutral-900">
@@ -142,7 +142,7 @@ export default async function B2BLandingPage({ params }: Props) {
                   className="flex flex-col gap-2.5 p-4"
                   style={{ border: "1px solid var(--color-shop-divider)" }}
                 >
-                  <p className="text-[0.5625rem] font-bold tracking-[0.16em] uppercase text-neutral-400">
+                  <p className="text-[0.5625rem] font-bold tracking-[0.16em] uppercase text-neutral-500">
                     {t("panel.whoCanApply.heading")}
                   </p>
                   <ul className="flex flex-col gap-2">
@@ -162,7 +162,7 @@ export default async function B2BLandingPage({ params }: Props) {
                   className="flex flex-col gap-2.5 p-4"
                   style={{ border: "1px solid var(--color-shop-divider)" }}
                 >
-                  <p className="text-[0.5625rem] font-bold tracking-[0.16em] uppercase text-neutral-400">
+                  <p className="text-[0.5625rem] font-bold tracking-[0.16em] uppercase text-neutral-500">
                     {t("panel.benefits.heading")}
                   </p>
                   <ul className="flex flex-col gap-2">
@@ -205,13 +205,13 @@ export default async function B2BLandingPage({ params }: Props) {
                       className="text-[0.8125rem] text-neutral-700 leading-snug flex flex-wrap items-baseline gap-2"
                     >
                       <span>{tRegister(`types.${type}`)}</span>
-                      <span className="text-[0.625rem] font-bold tracking-[0.14em] uppercase text-neutral-400">
+                      <span className="text-[0.625rem] font-bold tracking-[0.14em] uppercase text-neutral-500">
                         {tRegister("checklist.recommended")}
                       </span>
                     </li>
                   ))}
                 </ul>
-                <p className="text-[0.6875rem] text-neutral-400 leading-relaxed pt-2 border-t border-neutral-100">
+                <p className="text-[0.6875rem] text-neutral-500 leading-relaxed pt-2 border-t border-neutral-100">
                   {t("panel.documentsPopover.note")}
                 </p>
               </div>
