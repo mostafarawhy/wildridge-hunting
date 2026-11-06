@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { startNavigationProgress } from "@/components/loading/NavigationProgress";
 import Select from "@/components/ui/Select";
+import AdminFilterSheet from "@/components/admin/AdminFilterSheet";
 import { dubaiRecentDays } from "@/lib/utils/date";
 import type { AdminCustomerFilters } from "@/lib/db/queries/customer";
 
@@ -36,6 +37,18 @@ export default function CustomerFilterBar({ filters }: Props) {
   const [searchValue, setSearchValue] = useState(filters.search ?? "");
   const [fromValue, setFromValue] = useState(filters.from ?? "");
   const [toValue, setToValue] = useState(filters.to ?? "");
+  const [sheetOpen, setSheetOpen] = useState(false);
+  const [draft, setDraft] = useState({
+    status: "ALL",
+    role: "ALL",
+    verification: "ALL",
+    b2b: "ALL",
+    orders: "ALL",
+    points: "ALL",
+    sort: "newest",
+    from: "",
+    to: "",
+  });
 
   const activeStatus = filters.status ?? "ALL";
   const activeRole = filters.role ?? "ALL";
@@ -124,6 +137,49 @@ export default function CustomerFilterBar({ filters }: Props) {
     !!fromValue ||
     !!toValue;
 
+  const sheetFilterCount =
+    (activeStatus !== "ALL" ? 1 : 0) +
+    (activeRole !== "ALL" ? 1 : 0) +
+    (activeVerification !== "ALL" ? 1 : 0) +
+    (activeB2b !== "ALL" ? 1 : 0) +
+    (activeOrders !== "ALL" ? 1 : 0) +
+    (activePoints !== "ALL" ? 1 : 0) +
+    (fromValue ? 1 : 0) +
+    (toValue ? 1 : 0);
+
+  function openSheet() {
+    setDraft({
+      status: activeStatus,
+      role: activeRole,
+      verification: activeVerification,
+      b2b: activeB2b,
+      orders: activeOrders,
+      points: activePoints,
+      sort: activeSort,
+      from: fromValue,
+      to: toValue,
+    });
+    setSheetOpen(true);
+  }
+
+  function applySheet() {
+    setFromValue(draft.from);
+    setToValue(draft.to);
+    setSheetOpen(false);
+    pushParams({
+      status: draft.status,
+      role: draft.role,
+      verification: draft.verification,
+      b2b: draft.b2b,
+      orders: draft.orders,
+      points: draft.points,
+      sort: draft.sort,
+      from: draft.from,
+      to: draft.to,
+      q: searchValue.trim(),
+    });
+  }
+
   const btnBase: React.CSSProperties = {
     display: "inline-flex",
     alignItems: "center",
@@ -146,9 +202,139 @@ export default function CustomerFilterBar({ filters }: Props) {
   };
 
   return (
+    <>
+    <AdminFilterSheet
+      search={{
+        id: "customer-filter-search-m",
+        label: "Search customers",
+        placeholder: "Name, email or phone…",
+        value: searchValue,
+        onChange: setSearchValue,
+        onSubmit: () => pushParams({ q: searchValue.trim() }),
+      }}
+      activeCount={sheetFilterCount}
+      open={sheetOpen}
+      onOpen={openSheet}
+      onClose={() => setSheetOpen(false)}
+      onApply={applySheet}
+      onClear={handleClear}
+      sheetLabel="Customer filters"
+    >
+      <Select
+        label="Status"
+        id="customer-sheet-status"
+        value={draft.status}
+        style={{ minHeight: "44px" }}
+        onChange={(e) => setDraft((d) => ({ ...d, status: e.target.value }))}
+      >
+        <option value="ALL">All</option>
+        <option value="ACTIVE">Active</option>
+        <option value="SUSPENDED">Suspended</option>
+      </Select>
+      <Select
+        label="Type"
+        id="customer-sheet-role"
+        value={draft.role}
+        style={{ minHeight: "44px" }}
+        onChange={(e) => setDraft((d) => ({ ...d, role: e.target.value }))}
+      >
+        <option value="ALL">All</option>
+        <option value="B2C">B2C</option>
+        <option value="B2B">B2B</option>
+      </Select>
+      <Select
+        label="ID verification"
+        id="customer-sheet-verification"
+        value={draft.verification}
+        style={{ minHeight: "44px" }}
+        onChange={(e) => setDraft((d) => ({ ...d, verification: e.target.value }))}
+      >
+        <option value="ALL">All</option>
+        <option value="NOT_REQUIRED">Not required</option>
+        <option value="PENDING">Pending</option>
+        <option value="APPROVED">Approved</option>
+        <option value="REJECTED">Rejected</option>
+        <option value="EXPIRED">Expired</option>
+      </Select>
+      <Select
+        label="Business account"
+        id="customer-sheet-b2b"
+        value={draft.b2b}
+        style={{ minHeight: "44px" }}
+        onChange={(e) => setDraft((d) => ({ ...d, b2b: e.target.value }))}
+      >
+        <option value="ALL">All</option>
+        <option value="NONE">No account</option>
+        <option value="PENDING">Pending</option>
+        <option value="APPROVED">Approved</option>
+        <option value="EXPIRED">Expired</option>
+        <option value="REJECTED">Rejected</option>
+        <option value="SUSPENDED">Suspended</option>
+      </Select>
+      <Select
+        label="Orders"
+        id="customer-sheet-orders"
+        value={draft.orders}
+        style={{ minHeight: "44px" }}
+        onChange={(e) => setDraft((d) => ({ ...d, orders: e.target.value }))}
+      >
+        <option value="ALL">All</option>
+        <option value="HAS">Has orders</option>
+        <option value="NONE">No orders</option>
+      </Select>
+      <Select
+        label="Points"
+        id="customer-sheet-points"
+        value={draft.points}
+        style={{ minHeight: "44px" }}
+        onChange={(e) => setDraft((d) => ({ ...d, points: e.target.value }))}
+      >
+        <option value="ALL">All</option>
+        <option value="HAS">Has points</option>
+        <option value="NONE">No points</option>
+      </Select>
+      <Select
+        label="Sort"
+        id="customer-sheet-sort"
+        value={draft.sort}
+        style={{ minHeight: "44px" }}
+        onChange={(e) => setDraft((d) => ({ ...d, sort: e.target.value }))}
+      >
+        <option value="newest">Newest first</option>
+        <option value="oldest">Oldest first</option>
+        <option value="name">Name A–Z</option>
+      </Select>
+      <div>
+        <label htmlFor="customer-sheet-from" style={labelStyle}>
+          Joined from
+        </label>
+        <input
+          id="customer-sheet-from"
+          type="date"
+          dir="ltr"
+          value={draft.from}
+          onChange={(e) => setDraft((d) => ({ ...d, from: e.target.value }))}
+          style={{ ...inputStyle, minHeight: "44px" }}
+        />
+      </div>
+      <div>
+        <label htmlFor="customer-sheet-to" style={labelStyle}>
+          Joined to
+        </label>
+        <input
+          id="customer-sheet-to"
+          type="date"
+          dir="ltr"
+          value={draft.to}
+          onChange={(e) => setDraft((d) => ({ ...d, to: e.target.value }))}
+          style={{ ...inputStyle, minHeight: "44px" }}
+        />
+      </div>
+    </AdminFilterSheet>
+
     <div
+      className="hidden lg:flex"
       style={{
-        display: "flex",
         alignItems: "flex-end",
         gap: "0.75rem",
         flexWrap: "wrap",
@@ -365,5 +551,6 @@ export default function CustomerFilterBar({ filters }: Props) {
         </button>
       )}
     </div>
+    </>
   );
 }

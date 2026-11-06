@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { startNavigationProgress } from "@/components/loading/NavigationProgress";
 import Select from "@/components/ui/Select";
+import AdminFilterSheet from "@/components/admin/AdminFilterSheet";
 import { dubaiRecentDays } from "@/lib/utils/date";
 
 interface Props {
@@ -84,6 +85,13 @@ export default function ImportHistoryFilterBar({
   const router = useRouter();
   const [fromValue, setFromValue] = useState(from);
   const [toValue, setToValue] = useState(to);
+  const [sheetOpen, setSheetOpen] = useState(false);
+  const [draft, setDraft] = useState({
+    staff: "ALL",
+    status: "ALL",
+    from: "",
+    to: "",
+  });
 
   function pushParams(next: {
     staff?: string;
@@ -127,10 +135,101 @@ export default function ImportHistoryFilterBar({
   const hasActiveFilters =
     staff !== "ALL" || status !== "ALL" || !!fromValue || !!toValue;
 
+  const sheetFilterCount =
+    (staff !== "ALL" ? 1 : 0) +
+    (status !== "ALL" ? 1 : 0) +
+    (fromValue ? 1 : 0) +
+    (toValue ? 1 : 0);
+
+  function openSheet() {
+    setDraft({
+      staff,
+      status,
+      from: fromValue,
+      to: toValue,
+    });
+    setSheetOpen(true);
+  }
+
+  function applySheet() {
+    setFromValue(draft.from);
+    setToValue(draft.to);
+    setSheetOpen(false);
+    pushParams({
+      staff: draft.staff,
+      status: draft.status,
+      from: draft.from,
+      to: draft.to,
+    });
+  }
+
   return (
+    <>
+    <AdminFilterSheet
+      activeCount={sheetFilterCount}
+      open={sheetOpen}
+      onOpen={openSheet}
+      onClose={() => setSheetOpen(false)}
+      onApply={applySheet}
+      onClear={handleClear}
+      sheetLabel="Import filters"
+    >
+      <Select
+        label="Uploaded by"
+        id="import-sheet-staff"
+        value={draft.staff}
+        style={{ minHeight: "44px" }}
+        onChange={(e) => setDraft((d) => ({ ...d, staff: e.target.value }))}
+      >
+        <option value="ALL">All staff</option>
+        {staffOptions.map((s) => (
+          <option key={s.id} value={s.id}>
+            {s.name}
+          </option>
+        ))}
+      </Select>
+      <Select
+        label="Status"
+        id="import-sheet-status"
+        value={draft.status}
+        style={{ minHeight: "44px" }}
+        onChange={(e) => setDraft((d) => ({ ...d, status: e.target.value }))}
+      >
+        <option value="ALL">All</option>
+        <option value="COMPLETED">Imported</option>
+        <option value="FAILED">Not imported</option>
+      </Select>
+      <div>
+        <label htmlFor="import-sheet-from" style={labelStyle}>
+          From
+        </label>
+        <input
+          id="import-sheet-from"
+          type="date"
+          dir="ltr"
+          value={draft.from}
+          onChange={(e) => setDraft((d) => ({ ...d, from: e.target.value }))}
+          style={{ ...inputStyle, minHeight: "44px" }}
+        />
+      </div>
+      <div>
+        <label htmlFor="import-sheet-to" style={labelStyle}>
+          To
+        </label>
+        <input
+          id="import-sheet-to"
+          type="date"
+          dir="ltr"
+          value={draft.to}
+          onChange={(e) => setDraft((d) => ({ ...d, to: e.target.value }))}
+          style={{ ...inputStyle, minHeight: "44px" }}
+        />
+      </div>
+    </AdminFilterSheet>
+
     <div
+      className="hidden lg:flex"
       style={{
-        display: "flex",
         alignItems: "flex-end",
         gap: "0.75rem",
         flexWrap: "wrap",
@@ -246,5 +345,6 @@ export default function ImportHistoryFilterBar({
         </button>
       )}
     </div>
+    </>
   );
 }

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { startNavigationProgress } from "@/components/loading/NavigationProgress";
 import Select from "@/components/ui/Select";
+import AdminFilterSheet from "@/components/admin/AdminFilterSheet";
 import { dubaiRecentDays } from "@/lib/utils/date";
 import type { SubscriberFilters } from "@/lib/validations/newsletter";
 
@@ -57,6 +58,16 @@ export default function SubscriberFilterBar({ filters }: Props) {
   const [searchValue, setSearchValue] = useState(filters.search ?? "");
   const [fromValue, setFromValue] = useState(filters.from ?? "");
   const [toValue, setToValue] = useState(filters.to ?? "");
+  const [sheetOpen, setSheetOpen] = useState(false);
+  const [draft, setDraft] = useState({
+    status: "ALL",
+    source: "ALL",
+    locale: "ALL",
+    klaviyo: "ALL",
+    sort: "newest",
+    from: "",
+    to: "",
+  });
 
   const activeStatus = filters.status ?? "ALL";
   const activeKlaviyo = filters.klaviyo ?? "ALL";
@@ -133,10 +144,150 @@ export default function SubscriberFilterBar({ filters }: Props) {
     !!fromValue ||
     !!toValue;
 
+  const sheetFilterCount =
+    (activeStatus !== "ALL" ? 1 : 0) +
+    (activeSource !== "ALL" ? 1 : 0) +
+    (activeLocale !== "ALL" ? 1 : 0) +
+    (activeKlaviyo !== "ALL" ? 1 : 0) +
+    (fromValue ? 1 : 0) +
+    (toValue ? 1 : 0);
+
+  function openSheet() {
+    setDraft({
+      status: activeStatus,
+      source: activeSource,
+      locale: activeLocale,
+      klaviyo: activeKlaviyo,
+      sort: activeSort,
+      from: fromValue,
+      to: toValue,
+    });
+    setSheetOpen(true);
+  }
+
+  function applySheet() {
+    setFromValue(draft.from);
+    setToValue(draft.to);
+    setSheetOpen(false);
+    pushParams({
+      status: draft.status,
+      source: draft.source,
+      lang: draft.locale,
+      klaviyo: draft.klaviyo,
+      sort: draft.sort,
+      from: draft.from,
+      to: draft.to,
+      q: searchValue.trim(),
+    });
+  }
+
   return (
+    <>
+    <AdminFilterSheet
+      search={{
+        id: "subscriber-filter-search-m",
+        label: "Search subscribers",
+        placeholder: "Search by email…",
+        value: searchValue,
+        onChange: setSearchValue,
+        onSubmit: () => pushParams({ q: searchValue.trim() }),
+      }}
+      activeCount={sheetFilterCount}
+      open={sheetOpen}
+      onOpen={openSheet}
+      onClose={() => setSheetOpen(false)}
+      onApply={applySheet}
+      onClear={handleClear}
+      sheetLabel="Subscriber filters"
+    >
+      <Select
+        label="Status"
+        id="subscriber-sheet-status"
+        value={draft.status}
+        style={{ minHeight: "44px" }}
+        onChange={(e) => setDraft((d) => ({ ...d, status: e.target.value }))}
+      >
+        <option value="ALL">All</option>
+        <option value="SUBSCRIBED">Subscribed</option>
+        <option value="UNSUBSCRIBED">Unsubscribed</option>
+      </Select>
+      <Select
+        label="Source"
+        id="subscriber-sheet-source"
+        value={draft.source}
+        style={{ minHeight: "44px" }}
+        onChange={(e) => setDraft((d) => ({ ...d, source: e.target.value }))}
+      >
+        <option value="ALL">All</option>
+        <option value="HOME">Homepage</option>
+        <option value="POPUP">Popup</option>
+      </Select>
+      <Select
+        label="Language"
+        id="subscriber-sheet-language"
+        value={draft.locale}
+        style={{ minHeight: "44px" }}
+        onChange={(e) => setDraft((d) => ({ ...d, locale: e.target.value }))}
+      >
+        <option value="ALL">All</option>
+        <option value="en">English</option>
+        <option value="ar">Arabic</option>
+        <option value="ru">Russian</option>
+      </Select>
+      <Select
+        label="Klaviyo"
+        id="subscriber-sheet-klaviyo"
+        value={draft.klaviyo}
+        style={{ minHeight: "44px" }}
+        onChange={(e) => setDraft((d) => ({ ...d, klaviyo: e.target.value }))}
+      >
+        <option value="ALL">All</option>
+        <option value="SENT">Sent</option>
+        <option value="WAITING">Waiting</option>
+        <option value="FAILED">Failed</option>
+      </Select>
+      <Select
+        label="Sort"
+        id="subscriber-sheet-sort"
+        value={draft.sort}
+        style={{ minHeight: "44px" }}
+        onChange={(e) => setDraft((d) => ({ ...d, sort: e.target.value }))}
+      >
+        <option value="newest">Newest first</option>
+        <option value="oldest">Oldest first</option>
+        <option value="email">Email A–Z</option>
+      </Select>
+      <div>
+        <label htmlFor="subscriber-sheet-from" style={labelStyle}>
+          From
+        </label>
+        <input
+          id="subscriber-sheet-from"
+          type="date"
+          dir="ltr"
+          value={draft.from}
+          onChange={(e) => setDraft((d) => ({ ...d, from: e.target.value }))}
+          style={{ ...inputStyle, minHeight: "44px" }}
+        />
+      </div>
+      <div>
+        <label htmlFor="subscriber-sheet-to" style={labelStyle}>
+          To
+        </label>
+        <input
+          id="subscriber-sheet-to"
+          type="date"
+          dir="ltr"
+          value={draft.to}
+          onChange={(e) => setDraft((d) => ({ ...d, to: e.target.value }))}
+          style={{ ...inputStyle, minHeight: "44px" }}
+        />
+      </div>
+    </AdminFilterSheet>
+
     <div
+      className="hidden lg:flex"
       style={{
-        display: "flex",
         alignItems: "flex-end",
         gap: "0.75rem",
         flexWrap: "wrap",
@@ -322,5 +473,6 @@ export default function SubscriberFilterBar({ filters }: Props) {
         </button>
       )}
     </div>
+    </>
   );
 }

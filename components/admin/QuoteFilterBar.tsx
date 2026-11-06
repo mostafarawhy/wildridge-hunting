@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { startNavigationProgress } from "@/components/loading/NavigationProgress";
 import Select from "@/components/ui/Select";
+import AdminFilterSheet from "@/components/admin/AdminFilterSheet";
 import { QUOTE_STATUS_LABELS } from "@/lib/utils/quote-status";
 import { dubaiRecentDays } from "@/lib/utils/date";
 import type { AdminQuoteFilters, QuoteStatus } from "@/lib/db/queries/quote";
@@ -39,6 +40,14 @@ export default function QuoteFilterBar({ filters }: Props) {
   const [searchValue, setSearchValue] = useState(filters.search ?? "");
   const [fromValue, setFromValue] = useState(filters.from ?? "");
   const [toValue, setToValue] = useState(filters.to ?? "");
+  const [sheetOpen, setSheetOpen] = useState(false);
+  const [draft, setDraft] = useState({
+    status: "ALL",
+    priced: "ALL",
+    sort: "newest",
+    from: "",
+    to: "",
+  });
 
   const activeStatus = filters.status ?? "ALL";
   const activePriced = filters.priced ?? "ALL";
@@ -106,6 +115,37 @@ export default function QuoteFilterBar({ filters }: Props) {
     !!fromValue ||
     !!toValue;
 
+  const sheetFilterCount =
+    (activeStatus !== "ALL" ? 1 : 0) +
+    (activePriced !== "ALL" ? 1 : 0) +
+    (fromValue ? 1 : 0) +
+    (toValue ? 1 : 0);
+
+  function openSheet() {
+    setDraft({
+      status: activeStatus,
+      priced: activePriced,
+      sort: activeSort,
+      from: fromValue,
+      to: toValue,
+    });
+    setSheetOpen(true);
+  }
+
+  function applySheet() {
+    setFromValue(draft.from);
+    setToValue(draft.to);
+    setSheetOpen(false);
+    pushParams({
+      status: draft.status,
+      priced: draft.priced,
+      sort: draft.sort,
+      from: draft.from,
+      to: draft.to,
+      q: searchValue.trim(),
+    });
+  }
+
   const btnBase: React.CSSProperties = {
     display: "inline-flex",
     alignItems: "center",
@@ -128,9 +168,92 @@ export default function QuoteFilterBar({ filters }: Props) {
   };
 
   return (
+    <>
+    <AdminFilterSheet
+      search={{
+        id: "quote-filter-search-m",
+        label: "Search quotes",
+        placeholder: "Search by quote #, company, customer or email…",
+        value: searchValue,
+        onChange: setSearchValue,
+        onSubmit: () => pushParams({ q: searchValue.trim() }),
+      }}
+      activeCount={sheetFilterCount}
+      open={sheetOpen}
+      onOpen={openSheet}
+      onClose={() => setSheetOpen(false)}
+      onApply={applySheet}
+      onClear={handleClear}
+      sheetLabel="Quote filters"
+    >
+      <Select
+        label="Status"
+        id="quote-sheet-status"
+        value={draft.status}
+        style={{ minHeight: "44px" }}
+        onChange={(e) => setDraft((d) => ({ ...d, status: e.target.value }))}
+      >
+        <option value="ALL">Any status</option>
+        {STATUS_OPTIONS.map((s) => (
+          <option key={s} value={s}>
+            {QUOTE_STATUS_LABELS[s]}
+          </option>
+        ))}
+      </Select>
+      <Select
+        label="Priced"
+        id="quote-sheet-priced"
+        value={draft.priced}
+        style={{ minHeight: "44px" }}
+        onChange={(e) => setDraft((d) => ({ ...d, priced: e.target.value }))}
+      >
+        <option value="ALL">Any</option>
+        <option value="YES">Priced</option>
+        <option value="NO">Not priced</option>
+      </Select>
+      <Select
+        label="Sort"
+        id="quote-sheet-sort"
+        value={draft.sort}
+        style={{ minHeight: "44px" }}
+        onChange={(e) => setDraft((d) => ({ ...d, sort: e.target.value }))}
+      >
+        <option value="newest">Newest first</option>
+        <option value="oldest">Oldest first</option>
+        <option value="total_desc">Quoted total, high to low</option>
+        <option value="total_asc">Quoted total, low to high</option>
+      </Select>
+      <div>
+        <label htmlFor="quote-sheet-from" style={labelStyle}>
+          From
+        </label>
+        <input
+          id="quote-sheet-from"
+          type="date"
+          dir="ltr"
+          value={draft.from}
+          onChange={(e) => setDraft((d) => ({ ...d, from: e.target.value }))}
+          style={{ ...inputStyle, minHeight: "44px" }}
+        />
+      </div>
+      <div>
+        <label htmlFor="quote-sheet-to" style={labelStyle}>
+          To
+        </label>
+        <input
+          id="quote-sheet-to"
+          type="date"
+          dir="ltr"
+          value={draft.to}
+          onChange={(e) => setDraft((d) => ({ ...d, to: e.target.value }))}
+          style={{ ...inputStyle, minHeight: "44px" }}
+        />
+      </div>
+    </AdminFilterSheet>
+
     <div
+      className="hidden lg:flex"
       style={{
-        display: "flex",
         alignItems: "flex-end",
         gap: "0.75rem",
         flexWrap: "wrap",
@@ -292,5 +415,6 @@ export default function QuoteFilterBar({ filters }: Props) {
         </button>
       )}
     </div>
+    </>
   );
 }

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { startNavigationProgress } from "@/components/loading/NavigationProgress";
 import Select from "@/components/ui/Select";
+import AdminFilterSheet from "@/components/admin/AdminFilterSheet";
 import { EMAIL_DEFAULTS } from "@/lib/email/defaults";
 import { dubaiRecentDays } from "@/lib/utils/date";
 import type { EmailLogFacets } from "@/lib/db/queries/email-log";
@@ -53,6 +54,14 @@ export default function EmailLogFilterBar({
   const [searchValue, setSearchValue] = useState(query);
   const [fromValue, setFromValue] = useState(from);
   const [toValue, setToValue] = useState(to);
+  const defaultRange = dubaiRecentDays(30);
+  const [sheetOpen, setSheetOpen] = useState(false);
+  const [draft, setDraft] = useState({
+    status: "ALL",
+    templateKey: "ALL",
+    from: defaultRange.from,
+    to: defaultRange.to,
+  });
 
   function pushParams(next: {
     status?: string;
@@ -118,6 +127,35 @@ export default function EmailLogFilterBar({
       .map((key) => ({ key, label: key })),
   ];
 
+  const sheetFilterCount =
+    (status !== "ALL" ? 1 : 0) +
+    (templateKey !== "ALL" ? 1 : 0) +
+    (fromValue !== defaultRange.from ? 1 : 0) +
+    (toValue !== defaultRange.to ? 1 : 0);
+
+  function openSheet() {
+    setDraft({
+      status,
+      templateKey,
+      from: fromValue,
+      to: toValue,
+    });
+    setSheetOpen(true);
+  }
+
+  function applySheet() {
+    setFromValue(draft.from);
+    setToValue(draft.to);
+    setSheetOpen(false);
+    pushParams({
+      status: draft.status,
+      templateKey: draft.templateKey,
+      from: draft.from,
+      to: draft.to,
+      q: searchValue.trim(),
+    });
+  }
+
   const btnBase: React.CSSProperties = {
     display: "inline-flex",
     alignItems: "center",
@@ -140,9 +178,81 @@ export default function EmailLogFilterBar({
   };
 
   return (
+    <>
+    <AdminFilterSheet
+      search={{
+        id: "email-log-filter-search-m",
+        label: "Search emails",
+        placeholder: "Search by recipient or subject…",
+        value: searchValue,
+        onChange: setSearchValue,
+        onSubmit: () => pushParams({ q: searchValue.trim() }),
+      }}
+      activeCount={sheetFilterCount}
+      open={sheetOpen}
+      onOpen={openSheet}
+      onClose={() => setSheetOpen(false)}
+      onApply={applySheet}
+      onClear={handleClear}
+      sheetLabel="Email filters"
+    >
+      <Select
+        label="Status"
+        id="email-log-sheet-status"
+        value={draft.status}
+        style={{ minHeight: "44px" }}
+        onChange={(e) => setDraft((d) => ({ ...d, status: e.target.value }))}
+      >
+        <option value="ALL">All Statuses</option>
+        <option value="PENDING">Pending</option>
+        <option value="SENT">Sent</option>
+        <option value="FAILED">Failed</option>
+      </Select>
+      <Select
+        label="Template"
+        id="email-log-sheet-template"
+        value={draft.templateKey}
+        style={{ minHeight: "44px" }}
+        onChange={(e) => setDraft((d) => ({ ...d, templateKey: e.target.value }))}
+      >
+        <option value="ALL">All Templates</option>
+        {templateOptions.map((t) => (
+          <option key={t.key} value={t.key}>
+            {t.label}
+          </option>
+        ))}
+      </Select>
+      <div>
+        <label htmlFor="email-log-sheet-from" style={labelStyle}>
+          From
+        </label>
+        <input
+          id="email-log-sheet-from"
+          type="date"
+          dir="ltr"
+          value={draft.from}
+          onChange={(e) => setDraft((d) => ({ ...d, from: e.target.value }))}
+          style={{ ...inputStyle, minHeight: "44px" }}
+        />
+      </div>
+      <div>
+        <label htmlFor="email-log-sheet-to" style={labelStyle}>
+          To
+        </label>
+        <input
+          id="email-log-sheet-to"
+          type="date"
+          dir="ltr"
+          value={draft.to}
+          onChange={(e) => setDraft((d) => ({ ...d, to: e.target.value }))}
+          style={{ ...inputStyle, minHeight: "44px" }}
+        />
+      </div>
+    </AdminFilterSheet>
+
     <div
+      className="hidden lg:flex"
       style={{
-        display: "flex",
         alignItems: "flex-end",
         gap: "0.75rem",
         flexWrap: "wrap",
@@ -303,5 +413,6 @@ export default function EmailLogFilterBar({
         </button>
       )}
     </div>
+    </>
   );
 }

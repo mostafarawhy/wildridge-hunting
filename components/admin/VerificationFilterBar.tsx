@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { startNavigationProgress } from "@/components/loading/NavigationProgress";
 import Select from "@/components/ui/Select";
+import AdminFilterSheet from "@/components/admin/AdminFilterSheet";
 import { isUaePassEnabled } from "@/lib/env.client";
 
 interface Props {
@@ -45,6 +46,13 @@ export default function VerificationFilterBar({
   const [searchValue, setSearchValue] = useState(search);
   const [fromValue, setFromValue] = useState(from);
   const [toValue, setToValue] = useState(to);
+  const [sheetOpen, setSheetOpen] = useState(false);
+  const [draft, setDraft] = useState({
+    status: "PENDING",
+    provider: "ALL",
+    from: "",
+    to: "",
+  });
 
   function pushParams(next: {
     status?: string;
@@ -91,6 +99,35 @@ export default function VerificationFilterBar({
     !!fromValue ||
     !!toValue;
 
+  const sheetFilterCount =
+    (status !== "PENDING" ? 1 : 0) +
+    (provider !== "ALL" ? 1 : 0) +
+    (fromValue ? 1 : 0) +
+    (toValue ? 1 : 0);
+
+  function openSheet() {
+    setDraft({
+      status,
+      provider,
+      from: fromValue,
+      to: toValue,
+    });
+    setSheetOpen(true);
+  }
+
+  function applySheet() {
+    setFromValue(draft.from);
+    setToValue(draft.to);
+    setSheetOpen(false);
+    pushParams({
+      status: draft.status,
+      provider: draft.provider,
+      from: draft.from,
+      to: draft.to,
+      q: searchValue.trim(),
+    });
+  }
+
   const btnBase: React.CSSProperties = {
     display: "inline-flex",
     alignItems: "center",
@@ -107,9 +144,80 @@ export default function VerificationFilterBar({
   };
 
   return (
+    <>
+    <AdminFilterSheet
+      search={{
+        id: "verification-filter-search-m",
+        label: "Search verifications",
+        placeholder: "Search by name or email…",
+        value: searchValue,
+        onChange: setSearchValue,
+        onSubmit: () => pushParams({ q: searchValue.trim() }),
+      }}
+      activeCount={sheetFilterCount}
+      open={sheetOpen}
+      onOpen={openSheet}
+      onClose={() => setSheetOpen(false)}
+      onApply={applySheet}
+      onClear={handleClear}
+      sheetLabel="Verification filters"
+    >
+      <Select
+        label="Status"
+        id="verification-sheet-status"
+        value={draft.status}
+        style={{ minHeight: "44px" }}
+        onChange={(e) => setDraft((d) => ({ ...d, status: e.target.value }))}
+      >
+        <option value="ALL">All Statuses</option>
+        <option value="PENDING">Pending</option>
+        <option value="APPROVED">Approved</option>
+        <option value="REJECTED">Rejected</option>
+        <option value="EXPIRED">Expired</option>
+        <option value="NOT_REQUIRED">Not Required</option>
+      </Select>
+      <Select
+        label="Provider"
+        id="verification-sheet-provider"
+        value={draft.provider}
+        style={{ minHeight: "44px" }}
+        onChange={(e) => setDraft((d) => ({ ...d, provider: e.target.value }))}
+      >
+        <option value="ALL">All Providers</option>
+        <option value="MANUAL_REVIEW">Manual Review</option>
+        {isUaePassEnabled() && <option value="UAE_PASS">UAE PASS</option>}
+      </Select>
+      <div>
+        <label htmlFor="verification-sheet-from" style={labelStyle}>
+          From
+        </label>
+        <input
+          id="verification-sheet-from"
+          type="date"
+          dir="ltr"
+          value={draft.from}
+          onChange={(e) => setDraft((d) => ({ ...d, from: e.target.value }))}
+          style={{ ...inputStyle, minHeight: "44px" }}
+        />
+      </div>
+      <div>
+        <label htmlFor="verification-sheet-to" style={labelStyle}>
+          To
+        </label>
+        <input
+          id="verification-sheet-to"
+          type="date"
+          dir="ltr"
+          value={draft.to}
+          onChange={(e) => setDraft((d) => ({ ...d, to: e.target.value }))}
+          style={{ ...inputStyle, minHeight: "44px" }}
+        />
+      </div>
+    </AdminFilterSheet>
+
     <div
+      className="hidden lg:flex"
       style={{
-        display: "flex",
         alignItems: "flex-end",
         gap: "0.75rem",
         flexWrap: "wrap",
@@ -224,5 +332,6 @@ export default function VerificationFilterBar({
         </button>
       )}
     </div>
+    </>
   );
 }

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { startNavigationProgress } from "@/components/loading/NavigationProgress";
 import Select from "@/components/ui/Select";
+import AdminFilterSheet from "@/components/admin/AdminFilterSheet";
 import { STAFF_ROLE_LABELS } from "@/lib/utils/staff-permissions";
 import type { StaffRole } from "@/app/generated/prisma/client";
 
@@ -40,6 +41,11 @@ export default function StaffFilterBar({
 }: Props) {
   const router = useRouter();
   const [searchValue, setSearchValue] = useState(query);
+  const [sheetOpen, setSheetOpen] = useState(false);
+  const [draft, setDraft] = useState({
+    role: "ALL",
+    status: "ALL",
+  });
 
   function pushParams(next: { status?: string; role?: string; q?: string }) {
     const params = new URLSearchParams();
@@ -70,6 +76,23 @@ export default function StaffFilterBar({
     activeRole !== "ALL" ||
     searchValue.trim() !== "";
 
+  const sheetFilterCount =
+    (activeRole !== "ALL" ? 1 : 0) + (activeStatus !== "ALL" ? 1 : 0);
+
+  function openSheet() {
+    setDraft({ role: activeRole, status: activeStatus });
+    setSheetOpen(true);
+  }
+
+  function applySheet() {
+    setSheetOpen(false);
+    pushParams({
+      role: draft.role,
+      status: draft.status,
+      q: searchValue.trim(),
+    });
+  }
+
   const btnBase: React.CSSProperties = {
     display: "inline-flex",
     alignItems: "center",
@@ -86,9 +109,54 @@ export default function StaffFilterBar({
   };
 
   return (
+    <>
+    <AdminFilterSheet
+      search={{
+        id: "staff-filter-search-m",
+        label: "Search staff",
+        placeholder: "Search by name or email…",
+        value: searchValue,
+        onChange: setSearchValue,
+        onSubmit: () => pushParams({ q: searchValue.trim() }),
+      }}
+      activeCount={sheetFilterCount}
+      open={sheetOpen}
+      onOpen={openSheet}
+      onClose={() => setSheetOpen(false)}
+      onApply={applySheet}
+      onClear={handleClear}
+      sheetLabel="Staff filters"
+    >
+      <Select
+        label="Role"
+        id="staff-sheet-role"
+        value={draft.role}
+        style={{ minHeight: "44px" }}
+        onChange={(e) => setDraft((d) => ({ ...d, role: e.target.value }))}
+      >
+        <option value="ALL">All Roles</option>
+        {(Object.keys(STAFF_ROLE_LABELS) as StaffRole[]).map((role) => (
+          <option key={role} value={role}>
+            {STAFF_ROLE_LABELS[role]}
+          </option>
+        ))}
+      </Select>
+      <Select
+        label="Status"
+        id="staff-sheet-status"
+        value={draft.status}
+        style={{ minHeight: "44px" }}
+        onChange={(e) => setDraft((d) => ({ ...d, status: e.target.value }))}
+      >
+        <option value="ALL">All</option>
+        <option value="ACTIVE">Active</option>
+        <option value="INACTIVE">Deactivated</option>
+      </Select>
+    </AdminFilterSheet>
+
     <div
+      className="hidden lg:flex"
       style={{
-        display: "flex",
         alignItems: "flex-end",
         gap: "0.75rem",
         flexWrap: "wrap",
@@ -175,5 +243,6 @@ export default function StaffFilterBar({
         </button>
       )}
     </div>
+    </>
   );
 }
