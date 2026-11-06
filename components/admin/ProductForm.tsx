@@ -218,8 +218,6 @@ const cardTitle: React.CSSProperties = {
 };
 
 const grid2: React.CSSProperties = {
-  display: "grid",
-  gridTemplateColumns: "1fr 1fr",
   gap: "1rem",
 };
 
@@ -1270,7 +1268,7 @@ export default function ProductForm({
 
           <div style={card}>
             <p style={cardTitle}>Pricing</p>
-            <div style={grid2}>
+            <div className="grid grid-cols-1 sm:grid-cols-[1fr_1fr]" style={grid2}>
               <Input
                 id="pf-price"
                 label="Price"
@@ -1297,7 +1295,7 @@ export default function ProductForm({
           ) : (
             <div style={card}>
               <p style={cardTitle}>Inventory</p>
-              <div style={grid2}>
+              <div className="grid grid-cols-1 sm:grid-cols-[1fr_1fr]" style={grid2}>
                 <Input
                   id="pf-opening-stock"
                   label="Opening Stock"
@@ -1389,7 +1387,7 @@ export default function ProductForm({
               hint="Saved, but the store doesn't use it yet."
               {...check("b2bAvailable")}
             />
-            <div style={grid2}>
+            <div className="grid grid-cols-1 sm:grid-cols-[1fr_1fr]" style={grid2}>
               <Input
                 id="pf-min-order-qty"
                 label="Min Order Qty"
@@ -1463,7 +1461,7 @@ export default function ProductForm({
               )}
               {(form.loyaltyRule === "BOOSTED" || form.loyaltyRule === "FIXED") && (
                 <>
-                  <div style={grid2}>
+                  <div className="grid grid-cols-1 sm:grid-cols-[1fr_1fr]" style={grid2}>
                     <DateField
                       id="pf-loyalty-starts"
                       label="Starts"

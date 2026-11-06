@@ -88,9 +88,8 @@ export default async function AdminStorePagesPage() {
         ALSO SHOWN ON THESE PAGES, EDITED ELSEWHERE
       </p>
       <div
+        className="grid grid-cols-1 sm:grid-cols-3"
         style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
           gap: "1rem",
         }}
       >

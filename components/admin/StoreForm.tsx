@@ -61,8 +61,6 @@ const cardTitle: React.CSSProperties = {
 };
 
 const grid2: React.CSSProperties = {
-  display: "grid",
-  gridTemplateColumns: "1fr 1fr",
   gap: "1rem",
 };
 
@@ -392,7 +390,7 @@ export default function StoreForm({ mode, initial, labels }: Props) {
           <div style={card}>
             <p style={cardTitle}>Store</p>
             <div style={stack}>
-              <div style={grid2}>
+              <div className="grid grid-cols-1 sm:grid-cols-[1fr_1fr]" style={grid2}>
                 <Input
                   id="sf-name-en"
                   label="Name (English)"
@@ -418,7 +416,7 @@ export default function StoreForm({ mode, initial, labels }: Props) {
                   error={fieldErrors.nameAr}
                 />
               </div>
-              <div style={grid2}>
+              <div className="grid grid-cols-1 sm:grid-cols-[1fr_1fr]" style={grid2}>
                 <Input
                   id="sf-name-ru"
                   label="Name (Russian)"
@@ -462,7 +460,7 @@ export default function StoreForm({ mode, initial, labels }: Props) {
                 error={fieldErrors.addressEn}
                 hint="The street address customers drive to. English is required; others fall back to English."
               />
-              <div style={grid2}>
+              <div className="grid grid-cols-1 sm:grid-cols-[1fr_1fr]" style={grid2}>
                 <Input
                   id="sf-address-ar"
                   label="Address (Arabic)"
@@ -623,7 +621,7 @@ export default function StoreForm({ mode, initial, labels }: Props) {
                       {fieldErrors.hours}
                     </p>
                   )}
-                  <div style={grid2}>
+                  <div className="grid grid-cols-1 sm:grid-cols-[1fr_1fr]" style={grid2}>
                     <Input
                       id="sf-hours-note-en"
                       label="Hours note (English)"
@@ -659,7 +657,7 @@ export default function StoreForm({ mode, initial, labels }: Props) {
           <div style={card}>
             <p style={cardTitle}>Contact</p>
             <div style={stack}>
-              <div style={grid2}>
+              <div className="grid grid-cols-1 sm:grid-cols-[1fr_1fr]" style={grid2}>
                 <Input
                   id="sf-phone"
                   label="Phone"

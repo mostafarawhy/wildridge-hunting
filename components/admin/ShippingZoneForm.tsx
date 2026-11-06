@@ -38,8 +38,6 @@ const cardTitle: React.CSSProperties = {
 };
 
 const grid2: React.CSSProperties = {
-  display: "grid",
-  gridTemplateColumns: "1fr 1fr",
   gap: "1rem",
 };
 
@@ -234,7 +232,7 @@ export default function ShippingZoneForm({ mode, initial }: Props) {
           <div style={card}>
             <p style={cardTitle}>Zone</p>
             <div style={stack}>
-              <div style={grid2}>
+              <div className="grid grid-cols-1 sm:grid-cols-[1fr_1fr]" style={grid2}>
                 <Input
                   id="szf-code"
                   label="Code"
@@ -260,7 +258,7 @@ export default function ShippingZoneForm({ mode, initial }: Props) {
                   error={fieldErrors.displayOrder}
                 />
               </div>
-              <div style={grid2}>
+              <div className="grid grid-cols-1 sm:grid-cols-[1fr_1fr]" style={grid2}>
                 <Input
                   id="szf-name-en"
                   label="Name (English)"

@@ -545,9 +545,8 @@ export default function CouponPageActions({ coupon }: Props) {
               />
 
               <div
+                className="grid grid-cols-1 sm:grid-cols-[1fr_1fr]"
                 style={{
-                  display: "grid",
-                  gridTemplateColumns: "1fr 1fr",
                   gap: "1rem",
                 }}
               >
