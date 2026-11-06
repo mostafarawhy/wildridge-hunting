@@ -11,6 +11,7 @@ import ShippingMethodSection from "@/components/checkout/ShippingMethodSection";
 import VerificationSection from "@/components/checkout/VerificationSection";
 import PaymentSection from "@/components/checkout/PaymentSection";
 import CheckoutSteps from "@/components/checkout/CheckoutSteps";
+import CheckoutBrandBar from "@/components/checkout/CheckoutBrandBar";
 import OrderSummary, { useSummaryTotal } from "@/components/checkout/OrderSummary";
 import SummaryDisclosure from "@/components/checkout/SummaryDisclosure";
 import { formatAED } from "@/lib/utils/currency";
@@ -41,9 +42,10 @@ export default function CheckoutLayout({
   return (
     <CheckoutFormProvider defaultAddressId={seedAddressId} initialMethods={projection.methods} initialSelectedMethodId={projection.selectedMethodId} initialAvailableReward={availableReward} initialQuoteRequired={projection.quoteRequired} initialFreeShippingThresholdAed={projection.freeShippingThresholdAed} pointsBalance={projection.customer.loyaltyPoints} redeemRule={projection.redeemRule} goodsSubtotalAed={projection.cart.totals.subtotalAed}>
       <div className="min-h-dvh bg-white">
+        <CheckoutBrandBar />
         <div className="mx-auto w-full max-w-[1200px] px-6 sm:px-8 lg:px-10 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_400px] lg:gap-16 min-h-dvh">
           <div className="bg-white order-2 lg:order-1 relative">
-            <div className="max-w-[580px] pt-12 lg:pt-16 pb-28">
+            <div className="max-w-[580px] pt-4 lg:pt-16 pb-28">
               <CheckoutHeader />
 
               <CheckoutSteps current="details" />
@@ -70,7 +72,7 @@ export default function CheckoutLayout({
           </div>
 
           <aside className="order-1 lg:order-2 bg-white">
-            <div className="lg:sticky lg:top-8 lg:max-h-[calc(100dvh-4rem)] lg:overflow-y-auto pt-12 lg:pt-16 pb-12 [&::-webkit-scrollbar]:hidden [scrollbar-width:none]">
+            <div className="lg:sticky lg:top-8 lg:max-h-[calc(100dvh-4rem)] lg:overflow-y-auto pt-0 lg:pt-16 pb-0 lg:pb-12 [&::-webkit-scrollbar]:hidden [scrollbar-width:none]">
               <SummaryAside
                 projection={projection}
                 locale={locale}
@@ -111,7 +113,7 @@ function CheckoutHeader() {
   return (
     <Link
       href="/"
-      className="inline-flex items-center gap-4 mb-14 group"
+      className="hidden lg:inline-flex items-center gap-4 mb-14 group"
       aria-label={tNav("aria_home")}
     >
       <BrandMark size={104} />

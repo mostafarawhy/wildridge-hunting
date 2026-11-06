@@ -10,6 +10,7 @@ import { formatAED } from "@/lib/utils/currency";
 import { getImageUrl } from "@/lib/utils/images";
 import { FloatingInput, SectionHeading } from "./FormPrimitives";
 import CheckoutSteps from "./CheckoutSteps";
+import CheckoutBrandBar from "./CheckoutBrandBar";
 import SummaryDisclosure from "./SummaryDisclosure";
 import { submitMockPaymentAction } from "@/lib/actions/mock-payment";
 import type { OrderConfirmationProjection } from "@/lib/db/queries/order";
@@ -124,9 +125,10 @@ export default function MockPaymentForm({ projection, locale }: Props) {
 
   return (
     <div className="min-h-dvh bg-white">
+      <CheckoutBrandBar />
       <div className="mx-auto w-full max-w-[1200px] px-6 sm:px-8 lg:px-10 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_400px] lg:gap-16 min-h-dvh">
         <div className="bg-white order-2 lg:order-1 relative">
-          <div className="max-w-[580px] pt-12 lg:pt-16 pb-28">
+          <div className="max-w-[580px] pt-4 lg:pt-16 pb-28">
             <CheckoutSteps current="payment" />
 
             <div className="mb-10 border border-neutral-200">
@@ -173,6 +175,35 @@ export default function MockPaymentForm({ projection, locale }: Props) {
               <p className="text-[0.75rem] text-neutral-700 leading-relaxed mt-1">
                 {t("sandboxBody")}
               </p>
+              <div className="mt-4 pt-4 border-t border-neutral-200">
+                <p className={CAPS_LABEL + " block mb-3"}>
+                  {t("testCardsTitle")}
+                </p>
+                <div className="flex flex-col gap-2">
+                  <div className="flex justify-between items-center">
+                    <span
+                      className="text-[0.8125rem] text-neutral-700 tabular-nums"
+                      dir="ltr"
+                    >
+                      4111 1111 1111 1111
+                    </span>
+                    <span className="text-[0.75rem] text-neutral-500">
+                      {t("testCardSuccess")}
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span
+                      className="text-[0.8125rem] text-neutral-700 tabular-nums"
+                      dir="ltr"
+                    >
+                      4000 0000 0000 0002
+                    </span>
+                    <span className="text-[0.75rem] text-neutral-500">
+                      {t("testCardDeclined")}
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {declined && (
@@ -312,7 +343,7 @@ export default function MockPaymentForm({ projection, locale }: Props) {
         </div>
 
         <aside className="order-1 lg:order-2 bg-white">
-          <div className="lg:sticky lg:top-8 lg:max-h-[calc(100dvh-4rem)] lg:overflow-y-auto pt-12 lg:pt-16 pb-12 [&::-webkit-scrollbar]:hidden [scrollbar-width:none]">
+          <div className="lg:sticky lg:top-8 lg:max-h-[calc(100dvh-4rem)] lg:overflow-y-auto pt-0 lg:pt-16 pb-0 lg:pb-12 [&::-webkit-scrollbar]:hidden [scrollbar-width:none]">
             <SummaryDisclosure totalLabel={formatAED(projection.totalAed, locale)}>
             <div className="border border-[var(--color-shop-divider)] border-t-[3px] border-t-[var(--color-action-primary)] bg-white">
               <div className="px-6 py-6 divide-y divide-neutral-100">
@@ -495,36 +526,6 @@ export default function MockPaymentForm({ projection, locale }: Props) {
                     ),
                   )}
                 </ol>
-              </div>
-
-              <div className="px-6 py-5 border-t border-neutral-200">
-                <p className={CAPS_LABEL + " block mb-3"}>
-                  {t("testCardsTitle")}
-                </p>
-                <div className="flex flex-col gap-2">
-                  <div className="flex justify-between items-center">
-                    <span
-                      className="text-[0.8125rem] text-neutral-700 tabular-nums"
-                      dir="ltr"
-                    >
-                      4111 1111 1111 1111
-                    </span>
-                    <span className="text-[0.75rem] text-neutral-500">
-                      {t("testCardSuccess")}
-                    </span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span
-                      className="text-[0.8125rem] text-neutral-700 tabular-nums"
-                      dir="ltr"
-                    >
-                      4000 0000 0000 0002
-                    </span>
-                    <span className="text-[0.75rem] text-neutral-500">
-                      {t("testCardDeclined")}
-                    </span>
-                  </div>
-                </div>
               </div>
             </div>
             </SummaryDisclosure>
