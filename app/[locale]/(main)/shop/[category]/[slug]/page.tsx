@@ -94,7 +94,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const imageKey = product.images[0]?.storageKey;
 
   return {
-    title,
+    title: metaTitle ? { absolute: metaTitle } : name,
     ...(description ? { description } : {}),
     openGraph: {
       title,

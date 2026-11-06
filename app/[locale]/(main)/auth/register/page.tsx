@@ -1,5 +1,6 @@
 import { BRAND } from "@/lib/config/brand";
 import DemoAccessButtons from "@/components/auth/DemoAccessButtons";
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import RegisterFormCompact from "@/components/auth/RegisterFormCompact";
@@ -10,6 +11,12 @@ import { ensureLocale } from "@/lib/utils/safe-redirect";
 interface Props {
   params: Promise<{ locale: string }>;
   searchParams: Promise<{ callbackUrl?: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "auth.register" });
+  return { title: t("title") };
 }
 
 export default async function RegisterPage({ params, searchParams }: Props) {

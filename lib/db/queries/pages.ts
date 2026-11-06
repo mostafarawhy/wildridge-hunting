@@ -77,7 +77,7 @@ export async function pageMetadata(key: PageKey, locale: Locale): Promise<Metada
   if (!page) return {};
 
   return {
-    title: page.metaTitle || page.title,
+    title: page.metaTitle ? { absolute: page.metaTitle } : page.title,
     description: page.metaDescription || undefined,
   };
 }

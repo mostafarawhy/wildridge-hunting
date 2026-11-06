@@ -1,4 +1,6 @@
 import { BRAND } from "@/lib/config/brand";
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import VerifyEmailForm from "@/components/auth/VerifyEmailForm";
 import { ensureLocale } from "@/lib/utils/safe-redirect";
 
@@ -9,6 +11,17 @@ interface VerifyEmailPageProps {
     sent?: string;
     callbackUrl?: string;
   }>;
+}
+
+export async function generateMetadata({
+  params,
+}: VerifyEmailPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({
+    locale,
+    namespace: "auth.emailVerification",
+  });
+  return { title: t("confirm.title") };
 }
 
 export default async function VerifyEmailPage({

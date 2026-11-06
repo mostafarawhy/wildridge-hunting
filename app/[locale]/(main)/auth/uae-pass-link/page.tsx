@@ -1,10 +1,21 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { getTranslations } from "next-intl/server";
 import { BRAND } from "@/lib/config/brand";
 import { isUaePassEnabled } from "@/lib/env.client";
 import UaePassLinkForm from "@/components/auth/UaePassLinkForm";
 
 interface UaePassLinkPageProps {
+  params: Promise<{ locale: string }>;
   searchParams: Promise<{ token?: string; notice?: string }>;
+}
+
+export async function generateMetadata({
+  params,
+}: UaePassLinkPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "auth.uaePassLink" });
+  return { title: t("choice.title") };
 }
 
 export default async function UaePassLinkPage({

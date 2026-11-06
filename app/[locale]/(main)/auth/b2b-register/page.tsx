@@ -1,4 +1,5 @@
 import { BRAND } from "@/lib/config/brand";
+import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { auth } from "@/auth";
@@ -8,6 +9,12 @@ import B2BRegisterForm from "@/components/auth/B2BRegisterForm";
 
 interface Props {
   params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "auth.b2bRegister" });
+  return { title: t("title") };
 }
 
 export default async function B2BRegisterPage({ params }: Props) {

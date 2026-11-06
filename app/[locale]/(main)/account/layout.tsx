@@ -3,7 +3,8 @@ import { auth } from "@/lib/auth";
 import { getAccountNavData } from "@/lib/db/queries/account";
 import AccountSidebar from "@/components/account/AccountSidebar";
 import ExtraMessages from "@/components/layout/ExtraMessages";
-import { getMessages } from "next-intl/server";
+import type { Metadata } from "next";
+import { getMessages, getTranslations } from "next-intl/server";
 import { ACCOUNT_MESSAGE_PATHS, pickMessages } from "@/lib/client-messages";
 
 export const dynamic = "force-dynamic";
@@ -11,6 +12,12 @@ export const dynamic = "force-dynamic";
 interface Props {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "account.nav" });
+  return { title: t("title") };
 }
 
 export default async function AccountLayout({ children, params }: Props) {

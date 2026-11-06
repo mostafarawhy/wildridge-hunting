@@ -1,5 +1,7 @@
 import { Suspense } from "react";
+import type { Metadata } from "next";
 import { redirect } from "next/navigation";
+import { getTranslations } from "next-intl/server";
 import { auth } from "@/auth";
 import { getCheckoutProjection } from "@/lib/db/queries/checkout";
 import { getBestAvailableReward } from "@/lib/db/queries/coupon";
@@ -9,6 +11,12 @@ import CheckoutSkeleton from "@/components/loading/CheckoutSkeleton";
 
 interface Props {
   params: Promise<{ locale: "en" | "ar" | "ru" }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "checkout" });
+  return { title: t("title") };
 }
 
 export default function CheckoutPage({ params }: Props) {

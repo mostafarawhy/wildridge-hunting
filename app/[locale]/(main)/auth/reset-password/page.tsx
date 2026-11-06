@@ -1,4 +1,6 @@
 import { BRAND } from "@/lib/config/brand";
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { redirect } from "@/i18n/navigation";
 import { auth } from "@/auth";
 import ResetPasswordForm from "@/components/auth/ResetPasswordForm";
@@ -6,6 +8,17 @@ import ResetPasswordForm from "@/components/auth/ResetPasswordForm";
 interface ResetPasswordPageProps {
   params: Promise<{ locale: string }>;
   searchParams: Promise<{ token?: string }>;
+}
+
+export async function generateMetadata({
+  params,
+}: ResetPasswordPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({
+    locale,
+    namespace: "auth.passwordReset.reset",
+  });
+  return { title: t("title") };
 }
 
 export default async function ResetPasswordPage({

@@ -7,6 +7,10 @@ import DemoBanner from "@/components/layout/DemoBanner";
 import MotionProvider from "@/components/ui/MotionProvider";
 
 export const metadata: Metadata = {
+  title: {
+    default: `${BRAND.name} Admin`,
+    template: `%s | ${BRAND.name} Admin`,
+  },
   manifest: "/admin.webmanifest",
   appleWebApp: {
     capable: true,

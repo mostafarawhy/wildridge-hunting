@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
+import { getTranslations } from "next-intl/server";
 import { auth } from "@/lib/auth";
 import {
   getOrderForConfirmation,
@@ -11,6 +13,12 @@ import OrderConfirmation from "@/components/checkout/OrderConfirmation";
 interface Props {
   params: Promise<{ locale: "en" | "ar" | "ru" }>;
   searchParams: Promise<{ orderId?: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "checkout.success" });
+  return { title: t("title") };
 }
 
 export default async function CheckoutSuccessPage({

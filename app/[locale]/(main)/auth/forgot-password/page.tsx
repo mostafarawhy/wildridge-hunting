@@ -1,10 +1,23 @@
 import { BRAND } from "@/lib/config/brand";
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { redirect } from "@/i18n/navigation";
 import { auth } from "@/auth";
 import ForgotPasswordForm from "@/components/auth/ForgotPasswordForm";
 
 interface ForgotPasswordPageProps {
   params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({
+  params,
+}: ForgotPasswordPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({
+    locale,
+    namespace: "auth.passwordReset.request",
+  });
+  return { title: t("title") };
 }
 
 export default async function ForgotPasswordPage({

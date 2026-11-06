@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
+import { getTranslations } from "next-intl/server";
 import { auth } from "@/auth";
 import { getOrderForConfirmation } from "@/lib/db/queries/order";
 import { getPaymentProvider } from "@/lib/services/payment";
@@ -7,6 +9,12 @@ import MockPaymentForm from "@/components/checkout/MockPaymentForm";
 interface Props {
   params: Promise<{ locale: "en" | "ar" | "ru" }>;
   searchParams: Promise<{ orderId?: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "checkout.pay" });
+  return { title: t("secureHeading") };
 }
 
 export default async function MockPaymentPage({ params, searchParams }: Props) {
