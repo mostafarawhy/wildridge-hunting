@@ -256,6 +256,8 @@ export default function AdminSidebar({
     .flatMap((g) => g.links)
     .find((l) => isActive(l.href));
 
+  const backLink = activeLink && pathname !== activeLink.href ? activeLink : null;
+
   const renderIdentity = () => (
     <div
       style={{ padding: "1rem", borderBottom: "1px solid var(--color-shop-divider)" }}
@@ -406,29 +408,85 @@ export default function AdminSidebar({
         >
           <IconMenu />
         </button>
-        <div style={{ minWidth: 0 }}>
-          <p
+        {backLink ? (
+          <Link
+            href={backLink.href}
+            aria-label={`Back to ${backLink.label}`}
             style={{
-              fontSize: "var(--text-eyebrow)",
-              fontWeight: "var(--font-bold)",
-              letterSpacing: "var(--tracking-widest)",
-              textTransform: "uppercase",
-              color: "#6b6b6b",
-              marginBottom: "0.125rem",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              minWidth: 0,
+              minHeight: "44px",
+              textDecoration: "none",
             }}
           >
-            {STAFF_ROLE_LABELS[staffRole]}
-          </p>
-          <p
-            style={{
-              fontSize: "var(--text-body)",
-              fontWeight: "var(--font-semibold)",
-              color: "#0b0b0b",
-            }}
-          >
-            {activeLink?.label ?? "Dashboard"}
-          </p>
-        </div>
+            <span
+              style={{
+                fontSize: "var(--text-eyebrow)",
+                fontWeight: "var(--font-bold)",
+                letterSpacing: "var(--tracking-widest)",
+                textTransform: "uppercase",
+                color: "#6b6b6b",
+                marginBottom: "0.125rem",
+              }}
+            >
+              {STAFF_ROLE_LABELS[staffRole]}
+            </span>
+            <span
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.25rem",
+                fontSize: "var(--text-body)",
+                fontWeight: "var(--font-semibold)",
+                color: "#0b0b0b",
+              }}
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                aria-hidden="true"
+                style={{ flexShrink: 0, marginInlineStart: "-0.25rem" }}
+              >
+                <path
+                  d="M10 12L6 8L10 4"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              {backLink.label}
+            </span>
+          </Link>
+        ) : (
+          <div style={{ minWidth: 0 }}>
+            <p
+              style={{
+                fontSize: "var(--text-eyebrow)",
+                fontWeight: "var(--font-bold)",
+                letterSpacing: "var(--tracking-widest)",
+                textTransform: "uppercase",
+                color: "#6b6b6b",
+                marginBottom: "0.125rem",
+              }}
+            >
+              {STAFF_ROLE_LABELS[staffRole]}
+            </p>
+            <p
+              style={{
+                fontSize: "var(--text-body)",
+                fontWeight: "var(--font-semibold)",
+                color: "#0b0b0b",
+              }}
+            >
+              {activeLink?.label ?? "Dashboard"}
+            </p>
+          </div>
+        )}
       </div>
 
       {drawerOpen && (
