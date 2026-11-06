@@ -48,6 +48,27 @@ const subStyle: React.CSSProperties = {
   marginTop: "0.375rem",
 };
 
+const chipStyle: React.CSSProperties = {
+  display: "inline-flex",
+  alignItems: "center",
+  gap: "0.5rem",
+  flexShrink: 0,
+  height: "36px",
+  paddingInline: "0.875rem",
+  whiteSpace: "nowrap",
+  scrollSnapAlign: "start",
+  textDecoration: "none",
+  backgroundColor: "#ffffff",
+  border: "1px solid var(--color-shop-divider)",
+  fontSize: "var(--text-body-sm)",
+  color: "#6b6b6b",
+};
+
+const chipValueStyle: React.CSSProperties = {
+  fontWeight: "var(--font-bold)",
+  color: "#0b0b0b",
+};
+
 export default function CustomerSummaryTiles({
   total,
   b2b,
@@ -101,9 +122,41 @@ export default function CustomerSummaryTiles({
   ];
 
   return (
-    <div
+    <>
+    <nav
+      aria-label="Customer views"
+      className="flex lg:hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       style={{
-        display: "grid",
+        gap: "0.5rem",
+        overflowX: "auto",
+        overscrollBehaviorX: "contain",
+        scrollSnapType: "x proximity",
+        marginBottom: "1rem",
+      }}
+    >
+      {tiles.map((tile) => {
+        const chipContent = (
+          <>
+            {tile.label}
+            <span style={chipValueStyle}>
+              {tile.value.toLocaleString("en-US")}
+            </span>
+          </>
+        );
+        return tile.href ? (
+          <Link key={tile.key} href={tile.href} style={chipStyle}>
+            {chipContent}
+          </Link>
+        ) : (
+          <span key={tile.key} style={chipStyle}>
+            {chipContent}
+          </span>
+        );
+      })}
+    </nav>
+    <div
+      className="hidden lg:grid"
+      style={{
         gridTemplateColumns: "repeat(auto-fit, minmax(13rem, 1fr))",
         gap: "1rem",
         marginBottom: "1.5rem",
@@ -132,5 +185,6 @@ export default function CustomerSummaryTiles({
         );
       })}
     </div>
+    </>
   );
 }
