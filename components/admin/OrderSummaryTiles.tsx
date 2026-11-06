@@ -127,9 +127,8 @@ export default function OrderSummaryTiles({
     <>
     <nav
       aria-label="Order views"
-      className="lg:hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      className="flex lg:hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       style={{
-        display: "flex",
         gap: "0.5rem",
         overflowX: "auto",
         overscrollBehaviorX: "contain",

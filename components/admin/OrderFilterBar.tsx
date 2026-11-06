@@ -192,9 +192,8 @@ export default function OrderFilterBar({ filters }: Props) {
   return (
     <>
     <div
-      className="lg:hidden"
+      className="flex lg:hidden"
       style={{
-        display: "flex",
         gap: "0.5rem",
         padding: "0.75rem",
         marginBottom: "1rem",
