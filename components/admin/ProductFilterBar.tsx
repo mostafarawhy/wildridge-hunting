@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { startNavigationProgress } from "@/components/loading/NavigationProgress";
 import Select from "@/components/ui/Select";
+import AdminFilterSheet from "@/components/admin/AdminFilterSheet";
 import { PUBLISH_STATUS_LABELS } from "@/lib/utils/product-status";
 import type { PublishStatus } from "@/app/generated/prisma/client";
 import type {
@@ -136,6 +137,15 @@ export default function ProductFilterBar({
   const [searchValue, setSearchValue] = useState(values.q);
   const [minValue, setMinValue] = useState(values.min);
   const [maxValue, setMaxValue] = useState(values.max);
+  const [sheetOpen, setSheetOpen] = useState(false);
+  const [draft, setDraft] = useState({
+    category: "",
+    brand: "",
+    stock: "",
+    min: "",
+    max: "",
+    sort: "newest",
+  });
   const [moreOpen, setMoreOpen] = useState(
     FLAG_FILTERS.some((f) => values[f.key]),
   );
@@ -250,6 +260,40 @@ export default function ProductFilterBar({
     });
   }
 
+  const sheetFilterCount =
+    (values.category ? 1 : 0) +
+    (values.brand ? 1 : 0) +
+    (values.stock ? 1 : 0) +
+    (minValue.trim() ? 1 : 0) +
+    (maxValue.trim() ? 1 : 0);
+
+  function openSheet() {
+    setDraft({
+      category: values.category,
+      brand: values.brand,
+      stock: values.stock,
+      min: minValue,
+      max: maxValue,
+      sort: values.sort,
+    });
+    setSheetOpen(true);
+  }
+
+  function applySheet() {
+    setMinValue(draft.min);
+    setMaxValue(draft.max);
+    setSheetOpen(false);
+    push({
+      q: searchValue.trim(),
+      category: draft.category,
+      brand: draft.brand,
+      stock: draft.stock as AdminProductStockFilter | "",
+      min: draft.min.trim(),
+      max: draft.max.trim(),
+      sort: draft.sort as AdminProductSort,
+    });
+  }
+
   return (
     <div style={{ marginBottom: "1.5rem" }}>
       <div
@@ -292,9 +336,128 @@ export default function ProductFilterBar({
         })}
       </div>
 
+      <AdminFilterSheet
+        search={{
+          id: "product-filter-search-m",
+          label: "Search products",
+          placeholder: "Search by name, SKU, or brand…",
+          value: searchValue,
+          onChange: setSearchValue,
+          onSubmit: () => push({ q: searchValue.trim() }),
+        }}
+        activeCount={sheetFilterCount}
+        open={sheetOpen}
+        onOpen={openSheet}
+        onClose={() => setSheetOpen(false)}
+        onApply={applySheet}
+        onClear={clearAll}
+        sheetLabel="Product filters"
+      >
+        <Select
+          label="Category"
+          id="product-sheet-category"
+          value={draft.category}
+          style={{ minHeight: "44px" }}
+          onChange={(e) => setDraft((d) => ({ ...d, category: e.target.value }))}
+        >
+          <option value="">All categories</option>
+          {categories.map((c) =>
+            c.children.length === 0 ? (
+              <option key={c.id} value={c.id}>
+                {c.nameEn}
+                {c.isVisible ? "" : " (hidden)"}
+              </option>
+            ) : (
+              <optgroup
+                key={c.id}
+                label={`${c.nameEn}${c.isVisible ? "" : " (hidden)"}`}
+              >
+                <option value={c.id}>All {c.nameEn}</option>
+                {c.children.map((ch) => (
+                  <option key={ch.id} value={ch.id}>
+                    {NBSP2}
+                    {ch.nameEn}
+                    {ch.isVisible ? "" : " (hidden)"}
+                  </option>
+                ))}
+              </optgroup>
+            ),
+          )}
+        </Select>
+        <Select
+          label="Brand"
+          id="product-sheet-brand"
+          value={draft.brand}
+          style={{ minHeight: "44px" }}
+          onChange={(e) => setDraft((d) => ({ ...d, brand: e.target.value }))}
+        >
+          <option value="">All brands</option>
+          {brands.map((b) => (
+            <option key={b.value} value={b.value}>
+              {b.label}
+            </option>
+          ))}
+        </Select>
+        <Select
+          label="Stock"
+          id="product-sheet-stock"
+          value={draft.stock}
+          style={{ minHeight: "44px" }}
+          onChange={(e) => setDraft((d) => ({ ...d, stock: e.target.value }))}
+        >
+          <option value="">Any</option>
+          <option value="in">In stock</option>
+          <option value="low">Low stock</option>
+          <option value="out">Out of stock</option>
+        </Select>
+        <div>
+          <label htmlFor="product-sheet-min" style={labelStyle}>
+            Min price
+          </label>
+          <input
+            id="product-sheet-min"
+            type="number"
+            min={0}
+            inputMode="decimal"
+            dir="ltr"
+            value={draft.min}
+            onChange={(e) => setDraft((d) => ({ ...d, min: e.target.value }))}
+            style={{ ...inputStyle, minHeight: "44px" }}
+          />
+        </div>
+        <div>
+          <label htmlFor="product-sheet-max" style={labelStyle}>
+            Max price
+          </label>
+          <input
+            id="product-sheet-max"
+            type="number"
+            min={0}
+            inputMode="decimal"
+            dir="ltr"
+            value={draft.max}
+            onChange={(e) => setDraft((d) => ({ ...d, max: e.target.value }))}
+            style={{ ...inputStyle, minHeight: "44px" }}
+          />
+        </div>
+        <Select
+          label="Sort"
+          id="product-sheet-sort"
+          value={draft.sort}
+          style={{ minHeight: "44px" }}
+          onChange={(e) => setDraft((d) => ({ ...d, sort: e.target.value }))}
+        >
+          {SORT_OPTIONS.map((o) => (
+            <option key={o.value} value={o.value}>
+              {o.label}
+            </option>
+          ))}
+        </Select>
+      </AdminFilterSheet>
+
       <div
+        className="hidden lg:flex"
         style={{
-          display: "flex",
           flexDirection: "column",
           gap: "1rem",
           padding: "1rem 1.25rem",

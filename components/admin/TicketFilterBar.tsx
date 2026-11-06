@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { startNavigationProgress } from "@/components/loading/NavigationProgress";
 import Select from "@/components/ui/Select";
+import AdminFilterSheet from "@/components/admin/AdminFilterSheet";
 import {
   TICKET_STATUS_LABELS,
   TICKET_PRIORITY_LABELS,
@@ -108,6 +109,18 @@ export default function TicketFilterBar({
   const [searchValue, setSearchValue] = useState(query);
   const [fromValue, setFromValue] = useState(from);
   const [toValue, setToValue] = useState(to);
+  const [sheetOpen, setSheetOpen] = useState(false);
+  const [draft, setDraft] = useState({
+    status: "ACTIVE",
+    priority: "ALL",
+    category: "ALL",
+    link: "ALL",
+    assignee: "ALL",
+    source: "ALL",
+    sort: "priority",
+    from: "",
+    to: "",
+  });
 
   function pushParams(next: {
     status?: string;
@@ -224,6 +237,49 @@ export default function TicketFilterBar({
     !!fromValue ||
     !!toValue;
 
+  const sheetFilterCount =
+    (activeStatus !== "ACTIVE" ? 1 : 0) +
+    (activePriority !== "ALL" ? 1 : 0) +
+    (activeCategory !== "ALL" ? 1 : 0) +
+    (activeLink !== "ALL" ? 1 : 0) +
+    (activeAssignee !== "ALL" ? 1 : 0) +
+    (activeSource !== "ALL" ? 1 : 0) +
+    (fromValue ? 1 : 0) +
+    (toValue ? 1 : 0);
+
+  function openSheet() {
+    setDraft({
+      status: activeStatus,
+      priority: activePriority,
+      category: activeCategory,
+      link: activeLink,
+      assignee: activeAssignee,
+      source: activeSource,
+      sort: activeSort,
+      from: fromValue,
+      to: toValue,
+    });
+    setSheetOpen(true);
+  }
+
+  function applySheet() {
+    setFromValue(draft.from);
+    setToValue(draft.to);
+    setSheetOpen(false);
+    pushParams({
+      status: draft.status,
+      priority: draft.priority,
+      category: draft.category,
+      link: draft.link,
+      assignee: draft.assignee,
+      source: draft.source,
+      sort: draft.sort,
+      from: draft.from,
+      to: draft.to,
+      q: searchValue.trim(),
+    });
+  }
+
   const btnBase: React.CSSProperties = {
     display: "inline-flex",
     alignItems: "center",
@@ -291,9 +347,149 @@ export default function TicketFilterBar({
         })}
       </div>
 
+      <AdminFilterSheet
+        search={{
+          id: "ticket-filter-search-m",
+          label: "Search tickets",
+          placeholder: "Search ticket #, subject, email, order/quote #, company…",
+          value: searchValue,
+          onChange: setSearchValue,
+          onSubmit: () => pushParams({ q: searchValue.trim() }),
+        }}
+        activeCount={sheetFilterCount}
+        open={sheetOpen}
+        onOpen={openSheet}
+        onClose={() => setSheetOpen(false)}
+        onApply={applySheet}
+        onClear={handleClear}
+        sheetLabel="Ticket filters"
+      >
+        <Select
+          label="Status"
+          id="ticket-sheet-status"
+          value={draft.status}
+          style={{ minHeight: "44px" }}
+          onChange={(e) => setDraft((d) => ({ ...d, status: e.target.value }))}
+        >
+          {STATUS_OPTIONS.map((s) => (
+            <option key={s} value={s}>
+              {s === "ACTIVE"
+                ? "Active (excl. closed)"
+                : s === "ALL"
+                  ? "All statuses"
+                  : TICKET_STATUS_LABELS[s as TicketStatus]}
+            </option>
+          ))}
+        </Select>
+        <Select
+          label="Priority"
+          id="ticket-sheet-priority"
+          value={draft.priority}
+          style={{ minHeight: "44px" }}
+          onChange={(e) => setDraft((d) => ({ ...d, priority: e.target.value }))}
+        >
+          {PRIORITY_OPTIONS.map((p) => (
+            <option key={p} value={p}>
+              {p === "ALL" ? "All priorities" : TICKET_PRIORITY_LABELS[p as TicketPriority]}
+            </option>
+          ))}
+        </Select>
+        <Select
+          label="Category"
+          id="ticket-sheet-category"
+          value={draft.category}
+          style={{ minHeight: "44px" }}
+          onChange={(e) => setDraft((d) => ({ ...d, category: e.target.value }))}
+        >
+          {CATEGORY_OPTIONS.map((c) => (
+            <option key={c} value={c}>
+              {c === "ALL" ? "All categories" : TICKET_CATEGORY_LABELS[c as TicketCategory]}
+            </option>
+          ))}
+        </Select>
+        <Select
+          label="Linked to"
+          id="ticket-sheet-link"
+          value={draft.link}
+          style={{ minHeight: "44px" }}
+          onChange={(e) => setDraft((d) => ({ ...d, link: e.target.value }))}
+        >
+          {LINK_OPTIONS.map((opt) => (
+            <option key={opt.value} value={opt.value}>
+              {opt.label}
+            </option>
+          ))}
+        </Select>
+        <Select
+          label="Assignee"
+          id="ticket-sheet-assignee"
+          value={draft.assignee}
+          style={{ minHeight: "44px" }}
+          onChange={(e) => setDraft((d) => ({ ...d, assignee: e.target.value }))}
+        >
+          <option value="ALL">Anyone</option>
+          <option value="unassigned">Unassigned</option>
+          <option value="me">Me</option>
+          {assignableStaff.map((s) => (
+            <option key={s.id} value={s.id}>
+              {s.name}
+            </option>
+          ))}
+        </Select>
+        <Select
+          label="Source"
+          id="ticket-sheet-source"
+          value={draft.source}
+          style={{ minHeight: "44px" }}
+          onChange={(e) => setDraft((d) => ({ ...d, source: e.target.value }))}
+        >
+          <option value="ALL">Any</option>
+          <option value="customer">Customer</option>
+          <option value="staff">Staff</option>
+        </Select>
+        <Select
+          label="Sort"
+          id="ticket-sheet-sort"
+          value={draft.sort}
+          style={{ minHeight: "44px" }}
+          onChange={(e) => setDraft((d) => ({ ...d, sort: e.target.value }))}
+        >
+          <option value="priority">Priority</option>
+          <option value="newest">Newest</option>
+          <option value="oldest">Oldest</option>
+          <option value="updated">Updated</option>
+        </Select>
+        <div>
+          <label htmlFor="ticket-sheet-from" style={labelStyle}>
+            Opened from
+          </label>
+          <input
+            id="ticket-sheet-from"
+            type="date"
+            dir="ltr"
+            value={draft.from}
+            onChange={(e) => setDraft((d) => ({ ...d, from: e.target.value }))}
+            style={{ ...inputStyle, minHeight: "44px" }}
+          />
+        </div>
+        <div>
+          <label htmlFor="ticket-sheet-to" style={labelStyle}>
+            Opened to
+          </label>
+          <input
+            id="ticket-sheet-to"
+            type="date"
+            dir="ltr"
+            value={draft.to}
+            onChange={(e) => setDraft((d) => ({ ...d, to: e.target.value }))}
+            style={{ ...inputStyle, minHeight: "44px" }}
+          />
+        </div>
+      </AdminFilterSheet>
+
       <div
+        className="hidden lg:flex"
         style={{
-          display: "flex",
           alignItems: "flex-end",
           gap: "0.75rem",
           flexWrap: "wrap",

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { startNavigationProgress } from "@/components/loading/NavigationProgress";
 import Select from "@/components/ui/Select";
+import AdminFilterSheet from "@/components/admin/AdminFilterSheet";
 import {
   COUPON_STATUSES,
   COUPON_STATUS_LABELS,
@@ -84,6 +85,11 @@ const blackButton: React.CSSProperties = {
 export default function CouponFilterBar({ values, counts }: Props) {
   const router = useRouter();
   const [searchValue, setSearchValue] = useState(values.q);
+  const [sheetOpen, setSheetOpen] = useState(false);
+  const [draft, setDraft] = useState({
+    type: "",
+    source: "",
+  });
 
   const [prevKey, setPrevKey] = useState(values.q);
   if (prevKey !== values.q) {
@@ -135,6 +141,22 @@ export default function CouponFilterBar({ values, counts }: Props) {
     push({ q: "", type: "", source: "" });
   }
 
+  const sheetFilterCount = (values.type ? 1 : 0) + (values.source ? 1 : 0);
+
+  function openSheet() {
+    setDraft({ type: values.type, source: values.source });
+    setSheetOpen(true);
+  }
+
+  function applySheet() {
+    setSheetOpen(false);
+    push({
+      type: draft.type as CouponType | "",
+      source: draft.source as CouponSourceFilter | "",
+      q: searchValue.trim(),
+    });
+  }
+
   return (
     <div style={{ marginBottom: "1.5rem" }}>
       <div
@@ -177,9 +199,53 @@ export default function CouponFilterBar({ values, counts }: Props) {
         })}
       </div>
 
+      <AdminFilterSheet
+        search={{
+          id: "coupon-filter-search-m",
+          label: "Search coupons",
+          placeholder: "Code or customer email",
+          value: searchValue,
+          onChange: setSearchValue,
+          onSubmit: () => push({ q: searchValue.trim() }),
+        }}
+        activeCount={sheetFilterCount}
+        open={sheetOpen}
+        onOpen={openSheet}
+        onClose={() => setSheetOpen(false)}
+        onApply={applySheet}
+        onClear={clearAll}
+        sheetLabel="Coupon filters"
+      >
+        <Select
+          label="Type"
+          id="coupon-sheet-type"
+          value={draft.type}
+          style={{ minHeight: "44px" }}
+          onChange={(e) => setDraft((d) => ({ ...d, type: e.target.value }))}
+        >
+          <option value="">All types</option>
+          {TYPE_OPTIONS.map((t) => (
+            <option key={t} value={t}>
+              {COUPON_TYPE_LABELS[t]}
+            </option>
+          ))}
+        </Select>
+        <Select
+          label="Source"
+          id="coupon-sheet-source"
+          value={draft.source}
+          style={{ minHeight: "44px" }}
+          onChange={(e) => setDraft((d) => ({ ...d, source: e.target.value }))}
+        >
+          <option value="">All sources</option>
+          <option value="manual">{SOURCE_LABELS.manual}</option>
+          <option value="reward">{SOURCE_LABELS.reward}</option>
+        </Select>
+      </AdminFilterSheet>
+
       <div
+        className="hidden lg:flex"
         style={{
-          display: "flex",
           flexDirection: "column",
           gap: "1rem",
           padding: "1rem 1.25rem",
