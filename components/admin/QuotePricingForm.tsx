@@ -309,15 +309,16 @@ export default function QuotePricingForm({
                       key={addon.id}
                       style={{
                         display: "flex",
+                        flexWrap: "wrap",
                         alignItems: "center",
                         gap: "0.75rem",
                       }}
                     >
                       <p
+                        className="grow basis-full sm:basis-0"
                         style={{
                           fontSize: "var(--text-body-sm)",
                           color: "#6b6b6b",
-                          flex: 1,
                         }}
                       >
                         {addon.name}

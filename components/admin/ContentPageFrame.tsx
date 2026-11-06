@@ -185,6 +185,7 @@ export default function ContentPageFrame({
         <div
           style={{
             display: "flex",
+            flexWrap: "wrap",
             alignItems: "flex-start",
             justifyContent: "space-between",
             gap: "1rem",

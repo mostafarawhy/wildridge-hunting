@@ -543,9 +543,8 @@ export default function StoreForm({ mode, initial, labels }: Props) {
                     {STORE_DAYS.map((day) => (
                       <div
                         key={day}
+                        className="grid grid-cols-2 sm:grid-cols-[7rem_7rem_1fr_1fr]"
                         style={{
-                          display: "grid",
-                          gridTemplateColumns: "7rem 7rem 1fr 1fr",
                           gap: "0.75rem",
                           alignItems: "center",
                         }}

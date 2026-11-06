@@ -36,9 +36,6 @@ const mutedStyle: React.CSSProperties = {
 };
 
 const rowStyle: React.CSSProperties = {
-  display: "grid",
-  gridTemplateColumns: "minmax(0, 10rem) minmax(0, 1fr)",
-  gap: "1rem",
   padding: "0.75rem 0",
 };
 
@@ -102,6 +99,7 @@ function Rows({ rows }: { rows: { label: string; value: React.ReactNode }[] }) {
       {rows.map((row, i) => (
         <div
           key={row.label}
+          className="grid grid-cols-1 gap-[0.25rem] sm:grid-cols-[minmax(0,10rem)_minmax(0,1fr)] sm:gap-[1rem]"
           style={{
             ...rowStyle,
             borderTop: i === 0 ? "none" : "1px solid var(--color-shop-divider)",

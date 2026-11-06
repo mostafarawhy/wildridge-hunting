@@ -689,7 +689,7 @@ export default function SiteBannersEditor({
             point={value.focus.menuPhoto}
             caption="Menu panel"
             aspectRatio="4 / 3"
-            width="280px"
+            width="min(280px, 100%)"
           />
         </div>
         <div data-surface="storefront" style={{ backgroundColor: "var(--color-surface-sunken)", padding: "1.5rem" }}>

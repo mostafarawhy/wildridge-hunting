@@ -168,7 +168,8 @@ function ChangedValue({ before, after }: { before: unknown; after: unknown }) {
   }
   return (
     <div
-      style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}
+      className="grid grid-cols-1 sm:grid-cols-[1fr_1fr]"
+      style={{ gap: "1rem" }}
     >
       <ValueCell label="before">{renderValue(before)}</ValueCell>
       <ValueCell label="after">{renderValue(after)}</ValueCell>
@@ -244,9 +245,8 @@ function CreatedSummary({ diffs }: { diffs: FieldDiff[] }) {
     <div>
       <h4 style={{ margin: 0, ...labelHeading }}>Created with</h4>
       <div
+        className="grid grid-cols-1 sm:grid-cols-[1fr_1fr]"
         style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
           gap: "0.5rem 1rem",
           padding: "0.875rem 1rem",
           marginTop: "0.5rem",
@@ -436,9 +436,8 @@ export default function AuditDiffModal({ row, onClose }: Props) {
               </h3>
 
               <div
+                className="grid grid-cols-1 sm:grid-cols-[1fr_1fr]"
                 style={{
-                  display: "grid",
-                  gridTemplateColumns: "1fr 1fr",
                   gap: "0.5rem 1rem",
                   padding: "0.875rem 1rem",
                   marginTop: "0.875rem",
@@ -502,9 +501,8 @@ export default function AuditDiffModal({ row, onClose }: Props) {
                   <div style={{ marginTop: "1.5rem" }}>
                     <h4 style={{ margin: 0, ...labelHeading }}>Metadata</h4>
                     <div
+                      className="grid grid-cols-1 sm:grid-cols-[1fr_1fr]"
                       style={{
-                        display: "grid",
-                        gridTemplateColumns: "1fr 1fr",
                         gap: "0.5rem 1rem",
                         padding: "0.875rem 1rem",
                         marginTop: "0.5rem",

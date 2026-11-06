@@ -215,6 +215,7 @@ export default function ShippingZoneRatesManager({ zoneId, rates, assignableMeth
                 key={rate.id}
                 style={{
                   display: "flex",
+                  flexWrap: "wrap",
                   alignItems: isEditing ? "flex-start" : "center",
                   justifyContent: "space-between",
                   gap: "1rem",
