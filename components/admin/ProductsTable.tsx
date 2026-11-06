@@ -31,6 +31,7 @@ export default function ProductsTable({ rows }: Props) {
         {
           key: "thumbnail",
           header: "Image",
+          mobile: "head",
           render: (row) => (
             <div
               style={{
@@ -55,6 +56,7 @@ export default function ProductsTable({ rows }: Props) {
         {
           key: "product",
           header: "Product",
+          mobile: "head",
           render: (row) => {
             const flags: string[] = [];
             if (row.requiresIdVerification) flags.push("ID required");

@@ -55,13 +55,15 @@ export default function QuoteRequestsTable({
 
   return (
     <>
-    {selectable && (
-      <QuoteBulkBar
-        selectedIds={selected}
-        canExport={canExport}
-        onClear={() => setSelected([])}
-      />
-    )}
+    <div className="hidden lg:block">
+      {selectable && (
+        <QuoteBulkBar
+          selectedIds={selected}
+          canExport={canExport}
+          onClear={() => setSelected([])}
+        />
+      )}
+    </div>
     <DataTable
       rows={rows}
       getRowKey={(row) => row.id}
@@ -78,6 +80,7 @@ export default function QuoteRequestsTable({
           ? [
               {
                 key: "select",
+                mobile: "hide" as const,
                 header: (
                   <input
                     type="checkbox"
