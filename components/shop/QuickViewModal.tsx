@@ -20,7 +20,7 @@ import {
 } from "@/lib/utils/loyalty-points";
 import ProductDescription from "@/components/shop/pdp/ProductDescription";
 import SpecsTable from "@/components/shop/pdp/SpecsTable";
-import { formatAED, sumMoney, multiplyMoney } from "@/lib/utils/currency";
+import { formatAED, selectionTotal } from "@/lib/utils/currency";
 import { useCartStore } from "@/lib/stores/cart-store";
 import { addToCartAction } from "@/lib/actions/cart";
 
@@ -206,13 +206,10 @@ export default function QuickViewModal({
       </>
     ) : null;
 
-  const total = multiplyMoney(
-    sumMoney([
-      product.price,
-      sumMoney(
-        addons.filter((a) => selectedAddonIds.includes(a.id)).map((a) => a.price),
-      ),
-    ]),
+  const chosenAddons = addons.filter((a) => selectedAddonIds.includes(a.id));
+  const total = selectionTotal(
+    product.price,
+    chosenAddons.map((a) => a.price),
     qty,
   );
 
@@ -241,7 +238,6 @@ export default function QuickViewModal({
 
   function handleAddToQuote() {
     if (!product) return;
-    const chosen = addons.filter((a) => selectedAddonIds.includes(a.id));
     addQuoteLine({
       productSku: product.sku,
       slugEn: product.slugEn,
@@ -254,7 +250,7 @@ export default function QuickViewModal({
       quantity: qty,
       selectedAddons: [],
     });
-    for (const a of chosen) {
+    for (const a of chosenAddons) {
       addQuoteLine({
         productSku: a.id,
         slugEn: a.slugEn,
@@ -569,14 +565,42 @@ export default function QuickViewModal({
                 ) : (
                   <>
                     {inStock && (
-                      <div className="flex items-center gap-4 max-lg:[&_button]:h-11 max-lg:[&_button]:w-11">
+                      <div className="flex items-center justify-between gap-4 max-lg:[&_button]:h-11 max-lg:[&_button]:w-11">
                         <QuantitySelector
                           value={qty}
                           onChange={setQty}
                           min={1}
                           max={availableStock}
                         />
+                        <div className="lg:hidden text-end">
+                          <span
+                            className="block text-eyebrow tracking-widest uppercase"
+                            style={{ color: "var(--color-content-tertiary)" }}
+                          >
+                            {t("total_label")}
+                          </span>
+                          <span
+                            dir="ltr"
+                            aria-live="polite"
+                            className="text-body-lg tabular-nums"
+                            style={{
+                              color: "var(--primitive-black)",
+                              fontWeight: "var(--font-bold)",
+                            }}
+                          >
+                            {formatAED(total)}
+                          </span>
+                        </div>
                       </div>
+                    )}
+
+                    {inStock && chosenAddons.length > 0 && (
+                      <p
+                        className="text-xs lg:hidden"
+                        style={{ color: "var(--color-content-tertiary)" }}
+                      >
+                        {t("includes_addons", { count: chosenAddons.length })}
+                      </p>
                     )}
 
                     {cartError && (
@@ -600,8 +624,14 @@ export default function QuickViewModal({
                         {inStock ? (
                           <>
                             {t("add_to_cart")}
-                            <span aria-hidden="true" style={{ marginInline: "0.5em" }}>·</span>
-                            <span dir="ltr" className="tabular-nums">
+                            <span
+                              aria-hidden="true"
+                              className="hidden lg:inline"
+                              style={{ marginInline: "0.5em" }}
+                            >
+                              ·
+                            </span>
+                            <span dir="ltr" className="hidden lg:inline tabular-nums">
                               {formatAED(total)}
                             </span>
                           </>

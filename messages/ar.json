@@ -2141,6 +2141,7 @@
     "total_label": "الإجمالي",
     "breakdown_line": "{qty} × {name}",
     "addons_count": "{count, plural, zero {لا ملحقات} one {ملحق واحد} two {ملحقان} few {# ملحقات} many {# ملحقًا} other {# ملحق}}",
+    "includes_addons": "يشمل {count, plural, zero {لا ملحقات} one {ملحقًا واحدًا} two {ملحقين} few {# ملحقات} many {# ملحقًا} other {# ملحق}}",
     "view_product": "عرض المنتج",
     "notify_me": "أشعرني",
     "min_price": "أدنى سعر",

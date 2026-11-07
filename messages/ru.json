@@ -2141,6 +2141,7 @@
     "total_label": "Итого",
     "breakdown_line": "{qty} × {name}",
     "addons_count": "{count, plural, one {# аксессуар} few {# аксессуара} many {# аксессуаров} other {# аксессуара}}",
+    "includes_addons": "Включает {count, plural, one {# аксессуар} few {# аксессуара} many {# аксессуаров} other {# аксессуара}}",
     "view_product": "Посмотреть товар",
     "notify_me": "Уведомить меня",
     "min_price": "Мин. цена",
