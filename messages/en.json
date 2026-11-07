@@ -2443,6 +2443,15 @@
       "divider": "or continue with email",
       "error": "We couldn't create a demo account. Please try again.",
       "rateLimited": "Too many demo accounts were created from your connection. Try again later."
+    },
+    "samples": {
+      "title": "Demo",
+      "hint": "Uploads are off in this demo. Attach our sample documents to see the full review flow.",
+      "use": "Use sample documents",
+      "attached": "Sample documents attached",
+      "undo": "Undo",
+      "tag": "Sample",
+      "uploadsOff": "Uploads are off in the demo"
     }
   }
 }

@@ -1,4 +1,5 @@
 import type { StaffRole } from "@/app/generated/prisma/client";
+import type { VerificationDocumentRole } from "@/app/generated/prisma/enums";
 import type { StaffPermission } from "@/lib/utils/staff-permissions";
 
 export function isDemoMode(): boolean {
@@ -43,6 +44,28 @@ export const DEMO_PLACEHOLDER_DOCUMENT = {
   mimeType: "image/png",
   key: "demo/sample-document.png",
 } as const;
+
+export const DEMO_SAMPLES_FIELD = "demoSamples";
+
+export interface DemoSampleDocument {
+  filename: string;
+  storageKey: string;
+  mimeType: string;
+  sizeBytes: number;
+}
+
+export const DEMO_VERIFICATION_SAMPLES = {
+  IDENTITY: { filename: "sample-id.png", storageKey: "seed/sample-id.png", mimeType: "image/png", sizeBytes: 15475 },
+  PROOF_OF_ADDRESS: { filename: "sample-address.png", storageKey: "seed/sample-address.png", mimeType: "image/png", sizeBytes: 18127 },
+  PHOTO: { filename: "sample-photo.png", storageKey: "seed/sample-photo.png", mimeType: "image/png", sizeBytes: 15332 },
+} as const satisfies Record<VerificationDocumentRole, DemoSampleDocument>;
+
+export const DEMO_B2B_SAMPLES = {
+  TRADE_LICENSE: { filename: "sample-trade-licence.png", storageKey: "seed/sample-trade-licence.png", mimeType: "image/png", sizeBytes: 16855 },
+  VAT_CERTIFICATE: { filename: "sample-vat-certificate.png", storageKey: "seed/sample-vat-certificate.png", mimeType: "image/png", sizeBytes: 16807 },
+  COMPANY_ID: { filename: "sample-document.png", storageKey: "seed/sample-document.png", mimeType: "image/png", sizeBytes: 13871 },
+  OTHER: { filename: "sample-document.png", storageKey: "seed/sample-document.png", mimeType: "image/png", sizeBytes: 13871 },
+} as const satisfies Record<"TRADE_LICENSE" | "VAT_CERTIFICATE" | "COMPANY_ID" | "OTHER", DemoSampleDocument>;
 
 export function demoUploadRefusal<T>(): T {
   return {

@@ -1,6 +1,8 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { useTranslations } from "next-intl";
+import { isDemoMode } from "@/lib/config/demo";
 
 interface FileUploadFieldProps {
   id: string;
@@ -17,6 +19,7 @@ interface FileUploadFieldProps {
   removeLabel?: string;
   invalidTypeError?: string;
   tooLargeError?: string;
+  sampleName?: string;
 }
 
 export default function FileUploadField({
@@ -34,7 +37,10 @@ export default function FileUploadField({
   removeLabel = "Remove",
   invalidTypeError = "Only PDF, JPG, or PNG files are allowed.",
   tooLargeError = "File exceeds 10 MB limit.",
+  sampleName,
 }: FileUploadFieldProps) {
+  const t = useTranslations("demo.samples");
+  const demo = isDemoMode();
   const inputRef = useRef<HTMLInputElement>(null);
   const [dragOver, setDragOver] = useState(false);
   const [localError, setLocalError] = useState<string | null>(null);
@@ -129,6 +135,7 @@ export default function FileUploadField({
         type="file"
         accept={accept}
         onChange={handleInputChange}
+        disabled={demo}
         style={{
           position: "absolute",
           opacity: 0,
@@ -195,6 +202,73 @@ export default function FileUploadField({
           >
             {removeLabel}
           </button>
+        </div>
+      ) : sampleName ? (
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            padding: "0.75rem 1rem",
+            backgroundColor: "var(--color-auth-input-bg)",
+            border: displayError
+              ? "1.5px solid var(--color-auth-error-border)"
+              : "1.5px solid var(--color-auth-input-border-focus)",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              minWidth: 0,
+            }}
+          >
+            <span
+              className="text-body-sm font-medium"
+              style={{
+                color: "var(--color-auth-label-text)",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                whiteSpace: "nowrap",
+              }}
+            >
+              {sampleName}
+            </span>
+            <span
+              className="text-body-sm"
+              style={{
+                padding: "0.125rem 0.5rem",
+                marginInlineStart: "0.5rem",
+                background:
+                  "color-mix(in srgb, var(--color-action-primary) 10%, transparent)",
+                color: "var(--color-action-primary)",
+              }}
+            >
+              {t("tag")}
+            </span>
+          </div>
+        </div>
+      ) : demo ? (
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: "1.5rem 1rem",
+            backgroundColor: "var(--color-auth-input-bg)",
+            border: "1.5px dashed var(--color-auth-input-border)",
+          }}
+        >
+          <span
+            className="text-body-sm"
+            style={{
+              color: "var(--color-content-tertiary)",
+              textAlign: "center",
+            }}
+          >
+            {t("uploadsOff")}
+          </span>
         </div>
       ) : (
         <div
