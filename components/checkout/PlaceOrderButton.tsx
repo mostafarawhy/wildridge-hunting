@@ -141,7 +141,7 @@ export default function PlaceOrderButton({
         </button>
 
         <Link
-          href="/cart"
+          href={{ pathname: "/shop", query: { cart: "open" } }}
           className="text-center sm:text-start text-[0.8125rem] underline underline-offset-[3px] text-neutral-700 hover:text-neutral-900 transition-colors"
         >
           ‹ {t("returnToCart")}

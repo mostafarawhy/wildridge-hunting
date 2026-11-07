@@ -50,6 +50,15 @@ const nextConfig: NextConfig = {
         : []),
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/:locale(en|ar|ru)/cart",
+        destination: "/:locale/shop?cart=open",
+        permanent: false,
+      },
+    ];
+  },
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },

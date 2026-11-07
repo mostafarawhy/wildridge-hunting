@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { useCartStore } from "@/lib/stores/cart-store";
 import Drawer from "@/components/ui/Drawer";
@@ -14,9 +15,18 @@ export default function CartDrawer() {
   const locale = useLocale();
   const open = useCartStore((s) => s.open);
   const closeDrawer = useCartStore((s) => s.closeDrawer);
+  const openDrawer = useCartStore((s) => s.openDrawer);
   const cart = useCartStore((s) => s.cart);
   const isEmpty = !cart || cart.items.length === 0;
   const router = useRouter();
+
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    if (url.searchParams.get("cart") !== "open") return;
+    url.searchParams.delete("cart");
+    window.history.replaceState(null, "", url.pathname + url.search + url.hash);
+    openDrawer();
+  }, [openDrawer]);
 
   return (
     <Drawer
@@ -90,7 +100,7 @@ export default function CartDrawer() {
               <CartItemRow key={line.id} line={line} locale={locale} />
             ))}
           </ul>
-          <CartSummary cart={cart} locale={locale} surface="drawer" />
+          <CartSummary cart={cart} locale={locale} />
         </>
       )}
     </Drawer>

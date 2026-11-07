@@ -35,7 +35,7 @@ export default function CheckoutSteps({ current }: Props) {
               )}
               {linked ? (
                 <Link
-                  href="/cart"
+                  href={{ pathname: "/shop", query: { cart: "open" } }}
                   className={
                     EYEBROW + tone + " underline-offset-[3px] hover:underline"
                   }

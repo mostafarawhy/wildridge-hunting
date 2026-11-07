@@ -12,7 +12,7 @@ interface CatalogClientProps {
   isBusinessMode?: boolean;
 }
 
-const MODAL_PARAMS = ["auth", "callbackUrl"];
+const MODAL_PARAMS = ["auth", "callbackUrl", "cart"];
 
 export default function CatalogClient({
   products,

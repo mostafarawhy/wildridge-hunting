@@ -23,10 +23,9 @@ const BURST_OFFSETS = [
 interface CartSummaryProps {
   cart: CartProjection;
   locale: string;
-  surface: "drawer" | "page";
 }
 
-export default function CartSummary({ cart, locale, surface }: CartSummaryProps) {
+export default function CartSummary({ cart, locale }: CartSummaryProps) {
   const t = useTranslations("cart");
   const closeDrawer = useCartStore((s) => s.closeDrawer);
   const isAuthenticated = useCartStore((s) => s.isAuthenticated);
@@ -36,7 +35,7 @@ export default function CartSummary({ cart, locale, surface }: CartSummaryProps)
   const hasBlockedLines = cart.totals.blocked;
   const blocked = isEmpty || isPending || hasBlockedLines;
   const prefersReduced = useReducedMotion() ?? false;
-  const visible = surface === "page" ? true : drawerOpen;
+  const visible = drawerOpen;
 
   const {
     grandTotalAed,
