@@ -353,6 +353,26 @@ export default function PDPActions({
       )}
 
       <div className="flex flex-col gap-3">
+        {inStock && (
+          <div className="flex items-baseline justify-between gap-3 sm:hidden">
+            <span
+              className="text-eyebrow tracking-widest uppercase"
+              style={{ color: "var(--color-content-tertiary)" }}
+            >
+              {t("total_label")}
+            </span>
+            <span
+              dir="ltr"
+              className="text-body-lg tabular-nums"
+              style={{
+                color: "var(--primitive-black)",
+                fontWeight: "var(--font-bold)",
+              }}
+            >
+              {formatAED(total)}
+            </span>
+          </div>
+        )}
         <div ref={ctaRef} className="flex items-center gap-3">
           <div className="flex-1">
             <Button
