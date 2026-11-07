@@ -7,7 +7,12 @@ import { useTranslations } from "next-intl";
 import Select from "@/components/ui/Select";
 import Button from "@/components/ui/Button";
 import FileUploadField from "@/components/auth/FileUploadField";
+import DemoSamplesPanel from "@/components/auth/DemoSamplesPanel";
 import UaePassInfoLink from "@/components/auth/UaePassInfoLink";
+import {
+  DEMO_SAMPLES_FIELD,
+  DEMO_VERIFICATION_SAMPLES,
+} from "@/lib/config/demo";
 import { isUaePassEnabled } from "@/lib/env.client";
 import {
   submitManualVerificationAction,
@@ -96,6 +101,7 @@ function ManualUploadForm({
   const [submitting, setSubmitting] = useState(false);
   const [serverError, setServerError] = useState<string | null>(null);
   const [acknowledged, setAcknowledged] = useState(false);
+  const [useSamples, setUseSamples] = useState(false);
 
   function errorMessage(code: VerificationActionErrorCode): string {
     switch (code) {
@@ -116,13 +122,13 @@ function ManualUploadForm({
 
   function validateClient(): ManualFormErrors {
     const errs: ManualFormErrors = {};
-    if (!identity) errs.identity = t("errors.identityRequired");
+    if (!useSamples && !identity) errs.identity = t("errors.identityRequired");
     if (!identityType) errs.identityType = t("errors.identityTypeRequired");
-    if (!proofOfAddress)
+    if (!useSamples && !proofOfAddress)
       errs.proofOfAddress = t("errors.proofOfAddressRequired");
     if (!proofOfAddressType)
       errs.proofOfAddressType = t("errors.proofOfAddressTypeRequired");
-    if (!photo) errs.photo = t("errors.photoRequired");
+    if (!useSamples && !photo) errs.photo = t("errors.photoRequired");
     if (!declaredIdNumber.trim())
       errs.declaredIdNumber = t("errors.idNumberRequired");
     if (!declaredAddress.trim())
@@ -137,9 +143,7 @@ function ManualUploadForm({
     setErrors(clientErrors);
     if (Object.keys(clientErrors).length > 0) return;
     if (
-      !identity ||
-      !proofOfAddress ||
-      !photo ||
+      (!useSamples && (!identity || !proofOfAddress || !photo)) ||
       !declaredIdNumber.trim() ||
       !declaredAddress.trim()
     )
@@ -148,9 +152,13 @@ function ManualUploadForm({
     setSubmitting(true);
     try {
       const fd = new FormData();
-      fd.append("identity", identity);
-      fd.append("proofOfAddress", proofOfAddress);
-      fd.append("photo", photo);
+      if (useSamples) {
+        fd.append(DEMO_SAMPLES_FIELD, "true");
+      } else {
+        fd.append("identity", identity!);
+        fd.append("proofOfAddress", proofOfAddress!);
+        fd.append("photo", photo!);
+      }
       fd.append("identityType", identityType);
       fd.append("proofOfAddressType", proofOfAddressType);
       fd.append("declaredIdNumber", declaredIdNumber.trim());
@@ -278,6 +286,21 @@ function ManualUploadForm({
         )}
 
         <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+          <DemoSamplesPanel
+            attached={useSamples}
+            onUse={() => {
+              setUseSamples(true);
+              setErrors((p) => ({
+                ...p,
+                identity: undefined,
+                proofOfAddress: undefined,
+                photo: undefined,
+              }));
+            }}
+            onUndo={() => setUseSamples(false)}
+            disabled={submitting}
+          />
+
           <Select
             id="manual-upload-identity-type"
             label={tForm("identity.typeLabel")}
@@ -303,6 +326,7 @@ function ManualUploadForm({
 
           <FileUploadField
             id="manual-upload-identity"
+            sampleName={useSamples ? DEMO_VERIFICATION_SAMPLES.IDENTITY.filename : undefined}
             label={tForm("identity.label")}
             hint={tForm("identity.hint")}
             accept=".jpg,.jpeg,.png,.pdf"
@@ -394,6 +418,7 @@ function ManualUploadForm({
 
           <FileUploadField
             id="manual-upload-proof-of-address"
+            sampleName={useSamples ? DEMO_VERIFICATION_SAMPLES.PROOF_OF_ADDRESS.filename : undefined}
             label={tForm("proofOfAddress.label")}
             hint={tForm("proofOfAddress.hint")}
             accept=".jpg,.jpeg,.png,.pdf"
@@ -461,6 +486,7 @@ function ManualUploadForm({
         <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
           <FileUploadField
             id="manual-upload-photo"
+            sampleName={useSamples ? DEMO_VERIFICATION_SAMPLES.PHOTO.filename : undefined}
             label={tForm("photo.label")}
             hint={tForm("photo.hint")}
             accept=".jpg,.jpeg,.png"

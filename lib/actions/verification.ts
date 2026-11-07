@@ -1,6 +1,11 @@
 "use server";
 
-import { demoUploadRefusal, isDemoMode } from "@/lib/config/demo";
+import {
+  DEMO_SAMPLES_FIELD,
+  DEMO_VERIFICATION_SAMPLES,
+  demoUploadRefusal,
+  isDemoMode,
+} from "@/lib/config/demo";
 import { revalidatePath } from "next/cache";
 import { after } from "next/server";
 
@@ -95,7 +100,8 @@ function sanitizeFilename(index: number, originalName: string): string {
 export async function submitManualVerificationAction(
   formData: FormData,
 ): Promise<VerificationActionResult<{ eventId: string }>> {
-  if (isDemoMode()) return demoUploadRefusal();
+  const useSamples = isDemoMode() && formData instanceof FormData && formData.get(DEMO_SAMPLES_FIELD) === "true";
+  if (isDemoMode() && !useSamples) return demoUploadRefusal();
 
   // 1. Auth
   const session = await auth();
@@ -128,7 +134,7 @@ export async function submitManualVerificationAction(
   ] as const;
 
   const files: File[] = [];
-  for (const slot of slots) {
+  for (const slot of useSamples ? [] : slots) {
     const file = formData.get(slot.formKey);
     if (!(file instanceof File) || file.size === 0) {
       return {
@@ -144,7 +150,7 @@ export async function submitManualVerificationAction(
   const detectedTypes: NonNullable<
     Awaited<ReturnType<typeof detectMimeType>>
   >[] = [];
-  for (let i = 0; i < slots.length; i++) {
+  for (let i = 0; i < files.length; i++) {
     const slot = slots[i];
     const file = files[i];
     if (file.size > MAX_FILE_SIZE_BYTES) {
@@ -254,6 +260,10 @@ export async function submitManualVerificationAction(
   const storageKeys: string[] = [];
   try {
     for (let i = 0; i < slots.length; i++) {
+      if (useSamples) {
+        storageKeys.push(DEMO_VERIFICATION_SAMPLES[slots[i].role].storageKey);
+        continue;
+      }
       const file = files[i];
       const filename = `${slots[i].role}_${sanitizeFilename(i, file.name)}`;
       const path = `${customerId}/${event.id}/${filename}`;
@@ -285,15 +295,20 @@ export async function submitManualVerificationAction(
     await db.$transaction(
       async (tx) => {
         await tx.verificationDocument.createMany({
-          data: slots.map((slot, i) => ({
-            verificationEventId: event.id,
-            role: slot.role,
-            type: types[i],
-            filename: files[i].name,
-            storageKey: storageKeys[i],
-            mimeType: detectedTypes[i],
-            sizeBytes: files[i].size,
-          })),
+          data: slots.map((slot, i) => {
+            const sample = useSamples
+              ? DEMO_VERIFICATION_SAMPLES[slot.role]
+              : null;
+            return {
+              verificationEventId: event.id,
+              role: slot.role,
+              type: types[i],
+              filename: sample?.filename ?? files[i].name,
+              storageKey: storageKeys[i],
+              mimeType: sample?.mimeType ?? detectedTypes[i],
+              sizeBytes: sample?.sizeBytes ?? files[i].size,
+            };
+          }),
         });
 
         await tx.customer.update({
@@ -1470,7 +1485,8 @@ export type ProvideVerificationDocumentsResult<T = void> =
 export async function provideVerificationDocumentsAction(
   formData: unknown,
 ): Promise<ProvideVerificationDocumentsResult<{ eventId: string }>> {
-  if (isDemoMode()) return demoUploadRefusal();
+  const useSamples = isDemoMode() && formData instanceof FormData && formData.get(DEMO_SAMPLES_FIELD) === "true";
+  if (isDemoMode() && !useSamples) return demoUploadRefusal();
 
   if (!(formData instanceof FormData)) {
     return {
@@ -1538,8 +1554,8 @@ export async function provideVerificationDocumentsAction(
   const files: File[] = [];
   const types: string[] = [];
   for (const role of requestedRoles) {
-    const file = formData.get(`doc.${role}.file`);
-    if (!(file instanceof File) || file.size === 0) {
+    const file = useSamples ? null : formData.get(`doc.${role}.file`);
+    if (!useSamples && (!(file instanceof File) || file.size === 0)) {
       return {
         success: false,
         error: "Every requested document must include a file.",
@@ -1560,12 +1576,12 @@ export async function provideVerificationDocumentsAction(
         errorCode: "VALIDATION_ERROR",
       };
     }
-    files.push(file);
+    if (file instanceof File) files.push(file);
     types.push(type);
   }
 
   const detectedTypes: string[] = [];
-  for (let i = 0; i < requestedRoles.length; i++) {
+  for (let i = 0; i < files.length; i++) {
     const role = requestedRoles[i];
     const file = files[i];
     if (file.size > MAX_FILE_SIZE_BYTES) {
@@ -1613,6 +1629,10 @@ export async function provideVerificationDocumentsAction(
   try {
     for (let i = 0; i < requestedRoles.length; i++) {
       const role = requestedRoles[i];
+      if (useSamples) {
+        storageKeys.push(DEMO_VERIFICATION_SAMPLES[role].storageKey);
+        continue;
+      }
       const file = files[i];
       const filename = `${role}_${sanitizeFilename(i, file.name)}`;
       const path = `${customerId}/${eventId}/${submittedAt.getTime()}/${filename}`;
@@ -1670,16 +1690,19 @@ export async function provideVerificationDocumentsAction(
         });
 
         await tx.verificationDocument.createMany({
-          data: requestedRoles.map((role, i) => ({
-            verificationEventId: eventId,
-            role,
-            type: types[i] as VerificationDocumentType,
-            filename: files[i].name,
-            storageKey: storageKeys[i],
-            mimeType: detectedTypes[i],
-            sizeBytes: files[i].size,
-            requestId,
-          })),
+          data: requestedRoles.map((role, i) => {
+            const sample = useSamples ? DEMO_VERIFICATION_SAMPLES[role] : null;
+            return {
+              verificationEventId: eventId,
+              role,
+              type: types[i] as VerificationDocumentType,
+              filename: sample?.filename ?? files[i].name,
+              storageKey: storageKeys[i],
+              mimeType: sample?.mimeType ?? detectedTypes[i],
+              sizeBytes: sample?.sizeBytes ?? files[i].size,
+              requestId,
+            };
+          }),
         });
 
         await tx.verificationDocumentRequest.update({

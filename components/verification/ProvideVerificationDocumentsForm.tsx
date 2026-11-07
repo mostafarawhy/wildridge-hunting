@@ -6,6 +6,11 @@ import { useTranslations } from "next-intl";
 import Select from "@/components/ui/Select";
 import Button from "@/components/ui/Button";
 import FileUploadField from "@/components/auth/FileUploadField";
+import DemoSamplesPanel from "@/components/auth/DemoSamplesPanel";
+import {
+  DEMO_SAMPLES_FIELD,
+  DEMO_VERIFICATION_SAMPLES,
+} from "@/lib/config/demo";
 import { provideVerificationDocumentsAction } from "@/lib/actions/verification";
 import {
   ROLE_ALLOWED_TYPES,
@@ -98,6 +103,7 @@ export default function ProvideVerificationDocumentsForm({
   );
   const [serverError, setServerError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
+  const [useSamples, setUseSamples] = useState(false);
 
   const errorTextStyle: React.CSSProperties = {
     color: "var(--color-auth-error-text)",
@@ -116,7 +122,7 @@ export default function ProvideVerificationDocumentsForm({
 
     const nextErrors: Record<string, string> = {};
     for (const role of roles) {
-      if (!slots[role]?.file) nextErrors[role] = tp("fileRequired");
+      if (!useSamples && !slots[role]?.file) nextErrors[role] = tp("fileRequired");
     }
     const ackError =
       acknowledgmentText.length > 0 && !acknowledged
@@ -131,10 +137,11 @@ export default function ProvideVerificationDocumentsForm({
     const fd = new FormData();
     fd.append("locale", locale);
     fd.append("acknowledged", acknowledged ? "true" : "false");
+    if (useSamples) fd.append(DEMO_SAMPLES_FIELD, "true");
     for (const role of roles) {
       fd.append("roles", role);
       const slot = slots[role];
-      if (slot.file) fd.append(`doc.${role}.file`, slot.file);
+      if (!useSamples && slot.file) fd.append(`doc.${role}.file`, slot.file);
       if (role !== "PHOTO") fd.append(`doc.${role}.type`, slot.type);
     }
 
@@ -160,6 +167,16 @@ export default function ProvideVerificationDocumentsForm({
         >
           {tp("heading")}
         </p>
+
+        <DemoSamplesPanel
+          attached={useSamples}
+          onUse={() => {
+            setUseSamples(true);
+            setFileErrors({});
+          }}
+          onUndo={() => setUseSamples(false)}
+          disabled={submitting}
+        />
 
         {roles.map((role) => {
           const key = LABEL_KEY[role];
@@ -206,6 +223,7 @@ export default function ProvideVerificationDocumentsForm({
 
               <FileUploadField
                 id={`provide-documents-file-${role}`}
+                sampleName={useSamples ? DEMO_VERIFICATION_SAMPLES[role].filename : undefined}
                 label={t(`${key}.label`)}
                 hint={t(`${key}.hint`)}
                 accept={
