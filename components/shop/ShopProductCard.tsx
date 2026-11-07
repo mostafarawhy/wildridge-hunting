@@ -70,7 +70,7 @@ export default function ShopProductCard(props: ShopProductCardFullProps) {
   const badgeColor = !inStock
     ? "var(--color-content-tertiary)"
     : isLowStock
-      ? "var(--color-action-primary)"
+      ? "var(--color-status-warning)"
       : "var(--color-accent-text)";
 
   return (

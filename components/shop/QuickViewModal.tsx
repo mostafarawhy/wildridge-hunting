@@ -506,6 +506,8 @@ export default function QuickViewModal({
                 <IdRequiredNotice variant="compact" />
               )}
 
+              {!isWide && addonsBlock}
+
               {description && (
                 <ProductDescription
                   heading={t("description_heading")}
@@ -525,8 +527,6 @@ export default function QuickViewModal({
                   <SpecsTable specs={detail.specs} locale={locale} />
                 </div>
               )}
-
-              {!isWide && addonsBlock}
             </>
           )}
           </div>
