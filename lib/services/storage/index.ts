@@ -114,6 +114,8 @@ export async function createSignedUrl(
 }
 
 export async function deleteFile(bucket: string, path: string): Promise<void> {
+  if (path.startsWith("seed/")) return;
+
   const { error } = await getStorageClient()
     .storage.from(bucket)
     .remove([path]);
@@ -183,13 +185,14 @@ export async function deleteFiles(
   bucket: string,
   paths: string[],
 ): Promise<void> {
-  if (paths.length === 0) return;
+  const removable = paths.filter((path) => !path.startsWith("seed/"));
+  if (removable.length === 0) return;
 
-  const { error } = await getStorageClient().storage.from(bucket).remove(paths);
+  const { error } = await getStorageClient().storage.from(bucket).remove(removable);
 
   if (error) {
     throw new Error(
-      `[storage] Failed to delete ${paths.length} files from ${bucket}: ${error.message}`,
+      `[storage] Failed to delete ${removable.length} files from ${bucket}: ${error.message}`,
     );
   }
 }
