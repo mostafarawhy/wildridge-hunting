@@ -4,6 +4,8 @@ import { useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import AuthInput from "@/components/auth/AuthInput";
 import FileUploadField from "@/components/auth/FileUploadField";
+import DemoSamplesPanel from "@/components/auth/DemoSamplesPanel";
+import { DEMO_B2B_SAMPLES, DEMO_SAMPLES_FIELD } from "@/lib/config/demo";
 import Select from "@/components/ui/Select";
 import Button from "@/components/ui/Button";
 import { useRouter } from "@/i18n/navigation";
@@ -129,6 +131,7 @@ export default function B2BRegisterForm({
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [formError, setFormError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [useSamples, setUseSamples] = useState(false);
 
   const inputStyle: React.CSSProperties = {
     width: "100%",
@@ -223,7 +226,7 @@ export default function B2BRegisterForm({
     const nextRowErrors: Record<string, RowErrors> = {};
     for (const row of rows) {
       const rowErr: RowErrors = {};
-      if (!row.file) rowErr.file = t("validation.fileRequired");
+      if (!useSamples && !row.file) rowErr.file = t("validation.fileRequired");
       if (row.type === "OTHER" && !row.label.trim())
         rowErr.label = t("validation.nameRequired");
       if (rowErr.file || rowErr.label) nextRowErrors[row.key] = rowErr;
@@ -260,9 +263,10 @@ export default function B2BRegisterForm({
     fd.append("acknowledged", acknowledged ? "true" : "false");
     fd.append("locale", locale);
     fd.append("docCount", String(rows.length));
+    if (useSamples) fd.append(DEMO_SAMPLES_FIELD, "true");
     rows.forEach((row, i) => {
       fd.append(`doc.${i}.type`, row.type);
-      if (row.file) fd.append(`doc.${i}.file`, row.file);
+      if (!useSamples && row.file) fd.append(`doc.${i}.file`, row.file);
       fd.append(`doc.${i}.number`, row.locked ? "" : row.number.trim());
       fd.append(`doc.${i}.label`, row.label.trim());
     });
@@ -534,6 +538,23 @@ export default function B2BRegisterForm({
         <SectionHeading label={t("sections.documents")} />
 
         <div style={{ display: "flex", flexDirection: "column", gap: "0.875rem" }}>
+          <DemoSamplesPanel
+            attached={useSamples}
+            onUse={() => {
+              setUseSamples(true);
+              setRowErrors((prev) =>
+                Object.fromEntries(
+                  Object.entries(prev).map(([key, err]) => [
+                    key,
+                    { ...err, file: undefined },
+                  ]),
+                ),
+              );
+            }}
+            onUndo={() => setUseSamples(false)}
+            disabled={loading}
+          />
+
           {rows.map((row, index) => {
             const errors = rowErrors[row.key] ?? {};
             const instructionKey = INSTRUCTION_KEY_BY_TYPE[row.type];
@@ -644,6 +665,7 @@ export default function B2BRegisterForm({
 
                   <FileUploadField
                     id={`b2b-register-file-${row.key}`}
+                    sampleName={useSamples ? DEMO_B2B_SAMPLES[row.type].filename : undefined}
                     label={t("documents.fileLabel")}
                     hint={t("documents.fileHint")}
                     accept=".jpg,.jpeg,.png,.pdf"

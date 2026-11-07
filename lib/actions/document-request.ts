@@ -1,6 +1,11 @@
 "use server";
 
-import { demoUploadRefusal, isDemoMode } from "@/lib/config/demo";
+import {
+  DEMO_B2B_SAMPLES,
+  DEMO_SAMPLES_FIELD,
+  demoUploadRefusal,
+  isDemoMode,
+} from "@/lib/config/demo";
 import { revalidatePath } from "next/cache";
 import { after } from "next/server";
 
@@ -422,7 +427,8 @@ export type ProvideB2BDocumentsResult<T = void> =
 export async function provideB2BDocumentsAction(
   formData: FormData,
 ): Promise<ProvideB2BDocumentsResult<{ accountId: string }>> {
-  if (isDemoMode()) return demoUploadRefusal();
+  const useSamples = isDemoMode() && formData instanceof FormData && formData.get(DEMO_SAMPLES_FIELD) === "true";
+  if (isDemoMode() && !useSamples) return demoUploadRefusal();
 
   const session = await auth();
   const customerId = await getSessionCustomerId();
@@ -460,15 +466,15 @@ export async function provideB2BDocumentsAction(
   }> = [];
 
   for (let i = 0; i < docCount; i++) {
-    const file = formData.get(`doc.${i}.file`);
-    if (!(file instanceof File) || file.size === 0) {
+    const file = useSamples ? null : formData.get(`doc.${i}.file`);
+    if (!useSamples && (!(file instanceof File) || file.size === 0)) {
       return {
         success: false,
         error: "Every document must include a file.",
         errorCode: "NO_FILES_PROVIDED",
       };
     }
-    files.push(file);
+    if (file instanceof File) files.push(file);
     documentsInput.push({
       type: formData.get(`doc.${i}.type`),
       declaredNumber: trimmedFieldOrNull(formData.get(`doc.${i}.number`)),
@@ -584,8 +590,7 @@ export async function provideB2BDocumentsAction(
   }> = [];
 
   try {
-    for (let i = 0; i < files.length; i++) {
-      const file = files[i];
+    for (let i = 0; i < parsed.data.documents.length; i++) {
       const doc = parsed.data.documents[i];
       const declaredNumber =
         doc.declaredNumber !== null
@@ -595,6 +600,19 @@ export async function provideB2BDocumentsAction(
             : doc.type === "VAT_CERTIFICATE"
               ? (account.vatNumber ?? null)
               : null;
+      if (useSamples) {
+        const sample = DEMO_B2B_SAMPLES[doc.type];
+        uploadEntries.push({
+          storageKey: sample.storageKey,
+          type: doc.type,
+          filename: sample.filename,
+          mimeType: sample.mimeType,
+          declaredNumber,
+          label: doc.label,
+        });
+        continue;
+      }
+      const file = files[i];
       const filename = sanitizeFilename(i, file.name);
       const path = `b2b-documents/${customerId}/${accountId}/${submittedAt.getTime()}/${filename}`;
       const detectedMime = detectedMimeByFile.get(file)!;

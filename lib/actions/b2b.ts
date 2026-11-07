@@ -1,6 +1,11 @@
 "use server";
 
-import { demoUploadRefusal, isDemoMode } from "@/lib/config/demo";
+import {
+  DEMO_B2B_SAMPLES,
+  DEMO_SAMPLES_FIELD,
+  demoUploadRefusal,
+  isDemoMode,
+} from "@/lib/config/demo";
 import { revalidatePath } from "next/cache";
 import { after } from "next/server";
 
@@ -70,7 +75,8 @@ function sanitizeFilename(index: number, originalName: string): string {
 export async function submitB2BRegistrationAction(
   formData: FormData,
 ): Promise<B2BActionResult<{ accountId: string }>> {
-  if (isDemoMode()) return demoUploadRefusal();
+  const useSamples = isDemoMode() && formData instanceof FormData && formData.get(DEMO_SAMPLES_FIELD) === "true";
+  if (isDemoMode() && !useSamples) return demoUploadRefusal();
 
   const session = await auth();
   const customerId = await getSessionCustomerId();
@@ -120,15 +126,15 @@ export async function submitB2BRegistrationAction(
   }> = [];
 
   for (let i = 0; i < docCount; i++) {
-    const file = formData.get(`doc.${i}.file`);
-    if (!(file instanceof File) || file.size === 0) {
+    const file = useSamples ? null : formData.get(`doc.${i}.file`);
+    if (!useSamples && (!(file instanceof File) || file.size === 0)) {
       return {
         success: false,
         error: "Every document must include a file.",
         errorCode: "NO_FILES_PROVIDED",
       };
     }
-    files.push(file);
+    if (file instanceof File) files.push(file);
     documentsInput.push({
       type: formData.get(`doc.${i}.type`),
       declaredNumber: trimmedFieldOrNull(formData.get(`doc.${i}.number`)),
@@ -298,7 +304,7 @@ export async function submitB2BRegistrationAction(
   const accountId = account.id;
 
   const uploadEntries: Array<{
-    file: File;
+    filename: string;
     storageKey: string;
     type: B2BRegistrationDocumentsInput["documents"][number]["type"];
     detectedMime: string;
@@ -307,8 +313,7 @@ export async function submitB2BRegistrationAction(
   }> = [];
 
   try {
-    for (let i = 0; i < files.length; i++) {
-      const file = files[i];
+    for (let i = 0; i < parsedDocuments.data.documents.length; i++) {
       const doc = parsedDocuments.data.documents[i];
       const declaredNumber =
         doc.declaredNumber !== null
@@ -318,6 +323,19 @@ export async function submitB2BRegistrationAction(
             : doc.type === "VAT_CERTIFICATE"
               ? (vatNumber ?? null)
               : null;
+      if (useSamples) {
+        const sample = DEMO_B2B_SAMPLES[doc.type];
+        uploadEntries.push({
+          filename: sample.filename,
+          storageKey: sample.storageKey,
+          type: doc.type,
+          detectedMime: sample.mimeType,
+          declaredNumber,
+          label: doc.label,
+        });
+        continue;
+      }
+      const file = files[i];
       const filename = sanitizeFilename(i, file.name);
       const path = `b2b-documents/${customerId}/${accountId}/${submittedAt.getTime()}/${filename}`;
       const detectedMime = detectedMimeByFile.get(file)!;
@@ -328,7 +346,7 @@ export async function submitB2BRegistrationAction(
         contentType: detectedMime,
       });
       uploadEntries.push({
-        file,
+        filename: file.name,
         storageKey: result.storageKey,
         type: doc.type,
         detectedMime,
@@ -360,7 +378,7 @@ export async function submitB2BRegistrationAction(
   try {
     await db.$transaction(async (tx) => {
       for (const {
-        file,
+        filename,
         storageKey,
         type,
         detectedMime,
@@ -371,7 +389,7 @@ export async function submitB2BRegistrationAction(
           data: {
             b2bAccountId: accountId,
             type,
-            filename: file.name,
+            filename,
             storageKey,
             mimeType: detectedMime,
             declaredNumber,
