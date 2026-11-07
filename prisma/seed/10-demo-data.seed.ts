@@ -928,6 +928,7 @@ export async function seedDemoData(db: PrismaClient) {
     ["verification-docs", "seed/sample-photo.png", "documents/sample-photo.png"],
     ["b2b-documents", "seed/sample-trade-licence.png", "documents/sample-trade-licence.png"],
     ["b2b-documents", "seed/sample-vat-certificate.png", "documents/sample-vat-certificate.png"],
+    ["b2b-documents", "seed/sample-document.png", "documents/sample-document.png"],
     ["payment-proofs", DEMO_PLACEHOLDER_DOCUMENT.key, "documents/sample-document.png"],
   ];
   let uploaded = 0;
