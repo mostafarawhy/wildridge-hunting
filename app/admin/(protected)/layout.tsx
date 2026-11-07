@@ -33,6 +33,21 @@ export default async function AdminProtectedLayout({
         backgroundColor: "var(--color-shop-bg)",
       }}
     >
+      <p
+        role="note"
+        className="lg:hidden"
+        style={{
+          margin: 0,
+          padding: "0.5rem 1rem",
+          fontSize: "var(--text-body-sm)",
+          color: "#374151",
+          backgroundColor: "#f3f4f6",
+          borderBottom: "1px solid var(--color-shop-divider)",
+        }}
+      >
+        The admin is designed for desktop. Everything works here, but a larger
+        screen shows more at once.
+      </p>
       <AdminSidebar
         staffRole={staffRole}
         name={staff.name}
