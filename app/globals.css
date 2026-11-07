@@ -743,6 +743,10 @@ html[dir="rtl"] .brand-wordmark--checkout {
   body:has([data-mobile-tabbar]) {
     padding-bottom: calc(64px + env(safe-area-inset-bottom));
   }
+
+  body:has([data-pdp-buybar]) {
+    padding-bottom: calc(4.5rem + env(safe-area-inset-bottom));
+  }
 }
 
 .card-touch-action { display: none; }

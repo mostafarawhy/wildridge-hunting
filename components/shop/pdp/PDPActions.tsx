@@ -147,6 +147,7 @@ export default function PDPActions({
     showBar && (isBusinessMode || inStock) ? (
       <div
         className="fixed bottom-0 inset-x-0 lg:hidden"
+        data-pdp-buybar
         style={{
           backgroundColor: "var(--color-auth-input-bg)",
           borderTop: "1px solid var(--color-shop-divider)",
@@ -157,25 +158,37 @@ export default function PDPActions({
         <div className="flex items-center gap-3">
           <div className="flex flex-col flex-1 min-w-0">
             <span
-              className="text-body-sm truncate"
+              className={`truncate ${isBusinessMode ? "text-body-sm" : "text-xs"}`}
               style={{
-                color: "var(--primitive-black)",
-                fontWeight: "var(--font-medium)",
+                color: isBusinessMode
+                  ? "var(--primitive-black)"
+                  : "var(--color-content-tertiary)",
+                fontWeight: isBusinessMode ? "var(--font-medium)" : undefined,
               }}
             >
               {productName}
             </span>
             {!isBusinessMode && (
-              <span
-                dir="ltr"
-                className="text-xs tabular-nums"
-                style={{
-                  color: "var(--color-content-tertiary)",
-                  alignSelf: "flex-start",
-                }}
-              >
-                {formatAED(total)}
-              </span>
+              <div className="flex items-baseline gap-2">
+                <span
+                  dir="ltr"
+                  className="text-body tabular-nums"
+                  style={{
+                    color: "var(--primitive-black)",
+                    fontWeight: "var(--font-bold)",
+                  }}
+                >
+                  {formatAED(total)}
+                </span>
+                {qty > 1 && (
+                  <span
+                    className="text-xs"
+                    style={{ color: "var(--color-content-tertiary)" }}
+                  >
+                    {t("qty_label")} {qty}
+                  </span>
+                )}
+              </div>
             )}
           </div>
           {isBusinessMode ? (
