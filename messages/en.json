@@ -2139,6 +2139,8 @@
     "gallery_thumb": "View image",
     "back": "Go back",
     "total_label": "Total",
+    "breakdown_line": "{qty} × {name}",
+    "addons_count": "{count, plural, one {# accessory} other {# accessories}}",
     "view_product": "View Product",
     "notify_me": "Notify Me",
     "min_price": "Min Price",

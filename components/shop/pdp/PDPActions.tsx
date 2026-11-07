@@ -8,7 +8,7 @@ import QuantitySelector from "@/components/ui/QuantitySelector";
 import Button from "@/components/ui/Button";
 import { useCartStore } from "@/lib/stores/cart-store";
 import { addToCartAction } from "@/lib/actions/cart";
-import { formatAED, sumMoney, multiplyMoney } from "@/lib/utils/currency";
+import { formatAED, multiplyMoney, selectionTotal } from "@/lib/utils/currency";
 
 import type { AddOn } from "@/components/shop/AddOnSelector";
 import WishlistButton from "@/components/wishlist/WishlistButton";
@@ -62,6 +62,7 @@ export default function PDPActions({
   const addQuoteLine = useQuoteStore((s) => s.addLine);
   const openQuoteDrawer = useQuoteStore((s) => s.openDrawer);
 
+  const chosenAddons = addons.filter((a) => selectedAddonIds.includes(a.id));
   const showB2BNudge = qty >= B2B_NUDGE_THRESHOLD;
 
   useEffect(() => {
@@ -96,7 +97,6 @@ export default function PDPActions({
   }
 
   function handleAddToQuote() {
-    const chosen = addons.filter((a) => selectedAddonIds.includes(a.id));
     addQuoteLine({
       productSku,
       slugEn: productSlugEn,
@@ -109,7 +109,7 @@ export default function PDPActions({
       quantity: qty,
       selectedAddons: [],
     });
-    for (const a of chosen) {
+    for (const a of chosenAddons) {
       addQuoteLine({
         productSku: a.id,
         slugEn: a.slugEn,
@@ -126,13 +126,9 @@ export default function PDPActions({
     openQuoteDrawer();
   }
 
-  const total = multiplyMoney(
-    sumMoney([
-      basePrice,
-      sumMoney(
-        addons.filter((a) => selectedAddonIds.includes(a.id)).map((a) => a.price),
-      ),
-    ]),
+  const total = selectionTotal(
+    basePrice,
+    chosenAddons.map((a) => a.price),
     qty,
   );
 
@@ -180,12 +176,19 @@ export default function PDPActions({
                 >
                   {formatAED(total)}
                 </span>
-                {qty > 1 && (
+                {(qty > 1 || chosenAddons.length > 0) && (
                   <span
                     className="text-xs"
                     style={{ color: "var(--color-content-tertiary)" }}
                   >
-                    {t("qty_label")} {qty}
+                    {[
+                      qty > 1 ? `${t("qty_label")} ${qty}` : null,
+                      chosenAddons.length > 0
+                        ? t("addons_count", { count: chosenAddons.length })
+                        : null,
+                    ]
+                      .filter(Boolean)
+                      .join(" · ")}
                   </span>
                 )}
               </div>
@@ -367,24 +370,57 @@ export default function PDPActions({
 
       <div className="flex flex-col gap-3">
         {inStock && (
-          <div className="flex items-baseline justify-between gap-3 sm:hidden">
-            <span
-              className="text-eyebrow tracking-widest uppercase"
-              style={{ color: "var(--color-content-tertiary)" }}
-            >
-              {t("total_label")}
-            </span>
-            <span
-              dir="ltr"
-              className="text-body-lg tabular-nums"
-              style={{
-                color: "var(--primitive-black)",
-                fontWeight: "var(--font-bold)",
-              }}
-            >
-              {formatAED(total)}
-            </span>
-          </div>
+          <>
+            <div className="flex items-baseline justify-between gap-3 lg:hidden">
+              <span
+                className="text-eyebrow tracking-widest uppercase"
+                style={{ color: "var(--color-content-tertiary)" }}
+              >
+                {t("total_label")}
+              </span>
+              <span
+                dir="ltr"
+                aria-live="polite"
+                className="text-body-lg tabular-nums"
+                style={{
+                  color: "var(--primitive-black)",
+                  fontWeight: "var(--font-bold)",
+                }}
+              >
+                {formatAED(total)}
+              </span>
+            </div>
+            {(qty > 1 || chosenAddons.length > 0) && (
+              <div className="flex flex-col gap-1 lg:hidden">
+                {[
+                  { key: "product", name: productName, price: basePrice },
+                  ...chosenAddons.map((a) => ({
+                    key: a.id,
+                    name:
+                      locale === "ar"
+                        ? a.nameAr
+                        : locale === "ru"
+                          ? a.nameRu
+                          : a.name,
+                    price: a.price,
+                  })),
+                ].map((line) => (
+                  <div
+                    key={line.key}
+                    className="flex justify-between gap-3 text-xs"
+                    style={{ color: "var(--color-content-tertiary)" }}
+                  >
+                    <span className="min-w-0 truncate">
+                      {t("breakdown_line", { qty, name: line.name })}
+                    </span>
+                    <span dir="ltr" className="tabular-nums shrink-0">
+                      {formatAED(multiplyMoney(line.price, qty))}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </>
         )}
         <div ref={ctaRef} className="flex items-center gap-3">
           <div className="flex-1">
@@ -402,12 +438,12 @@ export default function PDPActions({
                   {t("add_to_cart")}
                   <span
                     aria-hidden="true"
-                    className="hidden sm:inline"
+                    className="hidden lg:inline"
                     style={{ marginInline: "0.5em" }}
                   >
                     ·
                   </span>
-                  <span dir="ltr" className="hidden sm:inline tabular-nums">
+                  <span dir="ltr" className="hidden lg:inline tabular-nums">
                     {formatAED(total)}
                   </span>
                 </>

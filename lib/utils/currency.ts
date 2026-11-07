@@ -29,6 +29,10 @@ export function multiplyMoney(unit: number, quantity: number): number {
   return Math.round(unit * FILS_PER_AED * quantity) / FILS_PER_AED;
 }
 
+export function selectionTotal(unitPrice: number, addonPrices: number[], quantity: number): number {
+  return sumMoney([unitPrice, ...addonPrices].map((price) => multiplyMoney(price, quantity)));
+}
+
 /**
  * Display formatter. AED-prefixed, locale-aware grouping.
  * For Arabic locale, uses Arabic-Indic numerals via Intl.
