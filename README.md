@@ -4,8 +4,8 @@ A trilingual e-commerce platform for a regulated retail category, in English, Ar
 
 Wildridge is the portfolio edition of a platform I designed and built on my own for a retail client. The client edition has not launched yet. This edition runs on its own infrastructure, with a fictional brand, fictional product brands and generated demo data.
 
-**Live demo:** link coming with the first deploy
-**Admin:** `/admin/login`. The sign-in pages have one-click demo accounts for a customer, a business customer and a limited staff member.
+**Live demo:** https://wildridge-hunting.vercel.app
+**Admin:** `/admin/login`. The sign-in pages have one-click demo accounts for a customer, a business customer and a limited staff member. Customer and staff sessions share one sign-in cookie, so open the admin in a private window.
 
 > This is a demo. No card is charged and no email is sent. All data resets every night.
 
@@ -87,6 +87,10 @@ flowchart LR
 ## Tech stack
 
 Next.js 15 (App Router, Server Components, server actions) · React 19 · TypeScript · Prisma 7 · PostgreSQL and Storage on Supabase · Auth.js v5 · next-intl 4 · Zod 4 · Zustand 5 · Tailwind CSS 4 · Framer Motion · Recharts · SheetJS · Resend · Klaviyo · Vercel · GitHub Actions
+
+## Testing
+
+Automated tests are the next step. Until they land, every change ships after a type check, lint, a production build and a manual browser walk of the screens it touches.
 
 ## Running locally
 
