@@ -33,9 +33,6 @@ export const authConfig = {
       const isProtected = PROTECTED_PREFIXES.some((prefix) =>
         withoutLocale.startsWith(prefix),
       );
-      const isAuthPage =
-        withoutLocale.startsWith("/auth/login") ||
-        withoutLocale.startsWith("/auth/register");
       const isAuthed = auth?.user?.principal === "customer";
 
       if (isProtected && !isAuthed) {
@@ -45,11 +42,6 @@ export const authConfig = {
         );
         loginUrl.searchParams.set("callbackUrl", pathname);
         return Response.redirect(loginUrl);
-      }
-
-      if (isAuthPage && isAuthed) {
-        const locale = request.nextUrl.pathname.split("/")[1] || "en";
-        return Response.redirect(new URL(`/${locale}`, request.nextUrl.origin));
       }
 
       return true;

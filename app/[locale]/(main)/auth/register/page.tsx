@@ -1,8 +1,10 @@
 import { BRAND } from "@/lib/config/brand";
 import DemoAccessButtons from "@/components/auth/DemoAccessButtons";
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import { auth } from "@/auth";
 import RegisterFormCompact from "@/components/auth/RegisterFormCompact";
 import { isUaePassEnabled } from "@/lib/env.client";
 import UaePassButton from "@/components/auth/UaePassButton";
@@ -24,6 +26,12 @@ export default async function RegisterPage({ params, searchParams }: Props) {
   const t = await getTranslations("auth.register");
   const tAuth = await getTranslations("auth");
   const { callbackUrl } = await searchParams;
+
+  const session = await auth();
+  if (session?.user?.principal === "customer") {
+    redirect(ensureLocale(callbackUrl, locale) ?? `/${locale}`);
+  }
+
   const uaePassCallbackUrl = callbackUrl ?? "/checkout";
   const resolvedCallbackUrl = ensureLocale(callbackUrl, locale) ?? `/${locale}`;
 
