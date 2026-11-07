@@ -58,20 +58,26 @@ export default function ShopProductCard(props: ShopProductCardFullProps) {
   const isLowStock = inStock && availableStock <= lowStockThreshold;
   const imageUrl = getImageUrl(primaryImage?.storageKey);
 
-  const showBadge =
-    !inStock || isLowStock || (isNewArrival && inStock && !isLowStock);
+  const onSale =
+    compareAtPrice !== null && compareAtPrice > price && !isBusinessMode;
+
+  const showBadge = !inStock || isLowStock || onSale || isNewArrival;
 
   const badgeLabel = !inStock
     ? t("badge_out_of_stock")
     : isLowStock
       ? t("badge_low_stock")
-      : t("badge_new");
+      : onSale
+        ? t("badge_sale")
+        : t("badge_new");
 
   const badgeColor = !inStock
     ? "var(--color-content-tertiary)"
     : isLowStock
       ? "var(--color-status-warning)"
-      : "var(--color-accent-text)";
+      : onSale
+        ? "var(--color-action-primary)"
+        : "var(--color-accent-text)";
 
   return (
     <article
@@ -366,7 +372,7 @@ export default function ShopProductCard(props: ShopProductCardFullProps) {
           </p>
         )}
 
-        <div className="flex items-center gap-3 mt-1">
+        <div className="flex flex-wrap items-baseline gap-x-2 mt-1">
           {isBusinessMode ? (
             <span
               style={{
@@ -380,6 +386,7 @@ export default function ShopProductCard(props: ShopProductCardFullProps) {
           ) : (
             <>
               <span
+                className="whitespace-nowrap"
                 style={{
                   color: !inStock
                     ? "var(--color-content-tertiary)"
@@ -394,6 +401,7 @@ export default function ShopProductCard(props: ShopProductCardFullProps) {
               </span>
               {compareAtPrice && compareAtPrice > price && (
                 <span
+                  className="whitespace-nowrap"
                   style={{
                     color: "var(--color-content-tertiary)",
                     fontSize: "var(--text-body-sm)",
