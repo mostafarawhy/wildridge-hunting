@@ -11,7 +11,7 @@ Wildridge is the portfolio edition of a platform I designed and built on my own 
 
 ## At a glance
 
-- 100 routes, 44 on the storefront and 56 in the admin, built with the Next.js App Router, React Server Components and server actions.
+- 99 pages, 43 on the storefront and 56 in the admin, built with the Next.js App Router, React Server Components and server actions.
 - Three languages, with the Arabic layout built on logical CSS properties rather than a mirrored stylesheet.
 - 66 database tables behind Prisma 7 on PostgreSQL.
 - 8 staff roles and 26 permissions, checked on the server for every admin action.
@@ -28,7 +28,7 @@ Wildridge is the portfolio edition of a platform I designed and built on my own 
 - Coupons, reward coupons issued automatically after qualifying orders, and a loyalty program with earn rules, point spending and a points ledger.
 
 ### Payments
-- Card payments behind a provider interface: a mock provider (used in this demo) and an N-Genius adapter. A failed payment can be retried.
+- Card payments behind a provider interface: a mock provider (used in this demo) and a stubbed N-Genius provider that is not wired up yet. A failed payment can be retried.
 - Offline payments recorded by staff with proof uploads; a VAT tax invoice and a printable receipt.
 
 ### Orders and operations
